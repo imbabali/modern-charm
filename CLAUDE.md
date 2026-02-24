@@ -117,7 +117,7 @@ src/
 - Web implementation uses Playfair Display (headings) + Inter (body) via Google Fonts as close web-safe alternatives
 
 ## Next Steps / TODO
-- [ ] Replace placeholder gradients with real event photos
+- [x] ~~Replace placeholder gradients with real event photos~~ — Done (Allan & Pauline wedding, 34 images)
 - [ ] Add real SVG logo (recreate from logo-reference.png)
 - [ ] Connect contact form to backend (e.g., Resend, EmailJS)
 - [ ] Connect newsletter to email service (e.g., Mailchimp, ConvertKit)
@@ -125,7 +125,8 @@ src/
 - [x] ~~Add real contact info~~ — Done (phones, email, social links)
 - [x] ~~Add real team members~~ — Done (Philip & Benjamin)
 - [ ] Add Google Maps embed on contact page
-- [ ] Add real testimonials and portfolio items
+- [x] ~~Add real portfolio items~~ — Done (Allan & Pauline wedding gallery)
+- [ ] Add real testimonials
 - [ ] Add blog post detail pages
 - [ ] Implement SEO (meta tags per page, sitemap, robots.txt)
 - [ ] Add page transition animations
@@ -135,3 +136,4 @@ src/
 ## Progress Log
 - **2026-02-24**: Initial build — complete website with 9 pages, all components, deployed to Vercel
 - **2026-02-24**: Integrated real business card data — contact info, team members, social links, WhatsApp number, brand fonts organized
+- **2026-02-24**: Downloaded 34 photos from Allan & Pauline wedding (Google Drive), optimized for web, integrated across Homepage (hero, about, portfolio, stats, CTA), About page, Services page, and Portfolio page

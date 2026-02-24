@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import {
   ChevronRight,
@@ -32,6 +33,8 @@ const services = [
       "Aisle decor & ceremony styling",
     ],
     gradient: "from-primary/30 via-accent/20 to-primary-light/30",
+    image: "/images/portfolio/allan-pauline/img_0748.jpg",
+    imageAlt: "Wedding reception tablescape with lavender florals and elegant table settings",
   },
   {
     icon: Building2,
@@ -47,6 +50,8 @@ const services = [
       "Exhibition & trade show design",
     ],
     gradient: "from-primary-dark/30 via-primary/20 to-accent/20",
+    image: "/images/portfolio/allan-pauline/img_0061.jpg",
+    imageAlt: "Elegant church venue interior with ceremony aisle styling",
   },
   {
     icon: Drum,
@@ -62,6 +67,8 @@ const services = [
       "Ceremonial area setup & styling",
     ],
     gradient: "from-accent/30 via-primary/20 to-accent-light/30",
+    image: "/images/portfolio/allan-pauline/img_0291.jpg",
+    imageAlt: "Bride with veil in traditional ceremony styling",
   },
   {
     icon: PartyPopper,
@@ -77,6 +84,8 @@ const services = [
       "Photo-worthy decor moments",
     ],
     gradient: "from-primary-light/30 via-cream-dark to-accent/20",
+    image: "/images/portfolio/allan-pauline/img_0767.jpg",
+    imageAlt: "Stunning floral installation at reception celebration",
   },
   {
     icon: Baby,
@@ -92,6 +101,8 @@ const services = [
       "Games & activity area setup",
     ],
     gradient: "from-accent-light/30 via-cream-dark to-primary/20",
+    image: "/images/portfolio/allan-pauline/img_0646.jpg",
+    imageAlt: "Intimate close-up portrait with elegant tiara detail",
   },
   {
     icon: ClipboardList,
@@ -107,6 +118,8 @@ const services = [
       "Post-event breakdown & wrap-up",
     ],
     gradient: "from-primary/20 via-primary-light/20 to-accent/30",
+    image: "/images/portfolio/allan-pauline/img_0614.jpg",
+    imageAlt: "Couple first dance under arch showcasing full venue styling",
   },
 ];
 
@@ -149,26 +162,19 @@ export default function ServicesPage() {
                     isReversed ? "lg:direction-rtl" : ""
                   }`}
                 >
-                  {/* Image Placeholder */}
+                  {/* Service Image */}
                   <div
                     className={`${isReversed ? "lg:order-2" : "lg:order-1"}`}
                   >
-                    <div
-                      className={`aspect-[4/3] rounded-2xl bg-gradient-to-br ${service.gradient} relative overflow-hidden group`}
-                    >
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="text-center">
-                          <div className="w-20 h-20 rounded-full bg-white/20 backdrop-blur-sm mx-auto mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                            <Icon className="h-9 w-9 text-primary" />
-                          </div>
-                          <p className="text-dark/50 text-sm font-medium">
-                            {service.title}
-                          </p>
-                        </div>
-                      </div>
-                      {/* Decorative circles */}
-                      <div className="absolute -top-8 -right-8 w-32 h-32 rounded-full bg-white/10" />
-                      <div className="absolute -bottom-6 -left-6 w-24 h-24 rounded-full bg-white/10" />
+                    <div className="aspect-[4/3] rounded-2xl relative overflow-hidden group">
+                      <Image
+                        src={service.image}
+                        alt={service.imageAlt}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        quality={80}
+                        sizes="(max-width: 1024px) 100vw, 50vw"
+                      />
                     </div>
                   </div>
 

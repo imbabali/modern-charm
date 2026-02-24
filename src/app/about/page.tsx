@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import {
   Palette,
@@ -82,19 +83,17 @@ export default function AboutPage() {
       <section className="py-20 md:py-28 bg-cream">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            {/* Placeholder Image */}
+            {/* Story Image */}
             <div className="relative">
-              <div className="aspect-[4/5] rounded-2xl bg-gradient-to-br from-primary/20 via-accent/20 to-primary-light/30 overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary to-accent mx-auto mb-4 flex items-center justify-center">
-                      <span className="text-white font-heading text-2xl font-bold">
-                        MC
-                      </span>
-                    </div>
-                    <p className="text-muted text-sm">Our Story in Pictures</p>
-                  </div>
-                </div>
+              <div className="aspect-[4/5] rounded-2xl overflow-hidden relative">
+                <Image
+                  src="/images/about-couple.jpg"
+                  alt="Modern Charm Uganda - Couple portrait under floral arch"
+                  fill
+                  className="object-cover"
+                  quality={80}
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
               </div>
               {/* Decorative accent */}
               <div className="absolute -bottom-4 -right-4 w-24 h-24 rounded-xl bg-accent/20 -z-10" />
@@ -274,8 +273,16 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 md:py-28 bg-gradient-to-br from-primary-dark via-primary to-primary-light relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDM0djItSDI0di0yaDEyek0zNiAyNHYySDI0di0yaDEyeiIvPjwvZz48L2c+PC9zdmc+')] opacity-30" />
+      <section className="py-20 md:py-28 relative overflow-hidden">
+        <Image
+          src="/images/reception-decor.jpg"
+          alt="Reception with floral installation"
+          fill
+          className="object-cover"
+          quality={80}
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/90 via-primary/85 to-primary-light/90" />
         <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
             Ready to Create Something Beautiful?

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ChevronRight, Instagram, ExternalLink } from "lucide-react";
 
 type Category = "all" | "weddings" | "corporate" | "traditional" | "celebrations";
@@ -12,7 +13,8 @@ interface PortfolioProject {
   description: string;
   category: Category;
   categoryLabel: string;
-  gradient: string;
+  image?: string;
+  gradient?: string;
   aspect: string;
 }
 
@@ -24,92 +26,92 @@ const categories: { key: Category; label: string }[] = [
   { key: "celebrations", label: "Celebrations" },
 ];
 
-const projects: PortfolioProject[] = [
+const portfolioItems: PortfolioProject[] = [
   {
     id: 1,
-    title: "The Nakasero Garden Wedding",
-    description: "A lush garden ceremony with cascading florals and gold accents",
+    title: "Allan & Pauline's Reception",
+    description: "Lavender floral tablescape with rustic wooden farm tables",
     category: "weddings",
     categoryLabel: "Wedding",
-    gradient: "from-primary via-primary-light to-accent/40",
+    image: "/images/portfolio/allan-pauline/img_0748.jpg",
     aspect: "aspect-[3/4]",
   },
   {
     id: 2,
-    title: "MTN Product Launch",
-    description: "Bold brand activation with dynamic lighting and modular staging",
+    title: "Enchanted Floral Installation",
+    description: "Statement floral backdrop with lavender, pink and white blooms",
+    category: "weddings",
+    categoryLabel: "Wedding",
+    image: "/images/portfolio/allan-pauline/img_0767.jpg",
+    aspect: "aspect-[4/5]",
+  },
+  {
+    id: 3,
+    title: "First Dance Under the Stars",
+    description: "Romantic dance under a custom wooden arch with hanging lanterns",
+    category: "weddings",
+    categoryLabel: "Wedding",
+    image: "/images/portfolio/allan-pauline/img_0614.jpg",
+    aspect: "aspect-square",
+  },
+  {
+    id: 4,
+    title: "Sacred Moments",
+    description: "Couple's grand exit through a stunning domed church",
+    category: "weddings",
+    categoryLabel: "Wedding",
+    image: "/images/portfolio/allan-pauline/img_0061.jpg",
+    aspect: "aspect-[3/4]",
+  },
+  {
+    id: 5,
+    title: "Love in Bloom",
+    description: "Intimate couple portrait beneath cascading floral canopy",
+    category: "weddings",
+    categoryLabel: "Wedding",
+    image: "/images/portfolio/allan-pauline/img_0632.jpg",
+    aspect: "aspect-[4/5]",
+  },
+  {
+    id: 6,
+    title: "The Bridal Portrait",
+    description: "Timeless black & white bridal elegance on the grand staircase",
+    category: "weddings",
+    categoryLabel: "Wedding",
+    image: "/images/portfolio/allan-pauline/_dsc5915.jpg",
+    aspect: "aspect-[3/4]",
+  },
+  {
+    id: 7,
+    title: "Under the Veil",
+    description: "Delicate bridal beauty captured in a moment of reflection",
+    category: "weddings",
+    categoryLabel: "Wedding",
+    image: "/images/portfolio/allan-pauline/img_0291.jpg",
+    aspect: "aspect-square",
+  },
+  {
+    id: 8,
+    title: "A Royal Embrace",
+    description: "Tender moment between bride and groom, crowned in elegance",
+    category: "weddings",
+    categoryLabel: "Wedding",
+    image: "/images/portfolio/allan-pauline/img_0646.jpg",
+    aspect: "aspect-[4/5]",
+  },
+  {
+    id: 9,
+    title: "Corporate Gala Night",
+    description: "Black-tie elegance with crystal centrepieces and ambient uplighting",
     category: "corporate",
     categoryLabel: "Corporate",
     gradient: "from-primary-dark via-primary to-primary-light",
     aspect: "aspect-square",
   },
   {
-    id: 3,
-    title: "The Buganda Royal Kwanjula",
-    description: "Traditional bark-cloth inspired decor with modern floral installations",
-    category: "traditional",
-    categoryLabel: "Traditional",
-    gradient: "from-accent via-accent-light to-primary/30",
-    aspect: "aspect-[4/5]",
-  },
-  {
-    id: 4,
-    title: "Golden Anniversary Dinner",
-    description: "An intimate 50th anniversary celebration in gold and ivory",
-    category: "celebrations",
-    categoryLabel: "Celebration",
-    gradient: "from-accent-light via-cream-dark to-accent/40",
-    aspect: "aspect-[3/4]",
-  },
-  {
-    id: 5,
-    title: "Lake Victoria Sunset Wedding",
-    description: "Waterside reception with floating candles and draped fabric canopies",
-    category: "weddings",
-    categoryLabel: "Wedding",
-    gradient: "from-primary-light via-accent/30 to-primary",
-    aspect: "aspect-[4/5]",
-  },
-  {
-    id: 6,
-    title: "Stanbic Bank Gala Night",
-    description: "Black-tie elegance with crystal centrepieces and ambient uplighting",
-    category: "corporate",
-    categoryLabel: "Corporate",
-    gradient: "from-primary-dark to-primary via-primary/80",
-    aspect: "aspect-square",
-  },
-  {
-    id: 7,
-    title: "Ankole Kuhingira Ceremony",
-    description: "Vibrant Ankole cultural colours woven into contemporary design",
-    category: "traditional",
-    categoryLabel: "Traditional",
-    gradient: "from-accent via-primary/30 to-accent-light",
-    aspect: "aspect-[3/4]",
-  },
-  {
-    id: 8,
-    title: "Princess Themed 5th Birthday",
-    description: "A fairytale wonderland with balloon installations and pastel florals",
-    category: "celebrations",
-    categoryLabel: "Celebration",
-    gradient: "from-primary-light via-accent-light/40 to-cream-dark",
-    aspect: "aspect-[4/5]",
-  },
-  {
-    id: 9,
-    title: "The Munyonyo Ballroom Wedding",
-    description: "Grand ballroom transformation with towering floral centrepieces",
-    category: "weddings",
-    categoryLabel: "Wedding",
-    gradient: "from-primary via-accent/30 to-primary-dark",
-    aspect: "aspect-square",
-  },
-  {
     id: 10,
-    title: "Kampala Fashion Week Stage",
-    description: "Runway styling and experiential design for East Africa's fashion elite",
+    title: "Product Launch Event",
+    description: "Bold brand activation with dynamic lighting and modular staging",
     category: "corporate",
     categoryLabel: "Corporate",
     gradient: "from-primary-dark via-accent/20 to-primary",
@@ -117,20 +119,20 @@ const projects: PortfolioProject[] = [
   },
   {
     id: 11,
-    title: "Tooro Introduction Ceremony",
-    description: "A regal fusion of Tooro tradition with contemporary tablescaping",
+    title: "Traditional Kwanjula Ceremony",
+    description: "Traditional bark-cloth inspired decor with modern floral installations",
     category: "traditional",
     categoryLabel: "Traditional",
-    gradient: "from-accent-light via-primary/20 to-accent",
+    gradient: "from-accent via-accent-light to-primary/30",
     aspect: "aspect-[4/5]",
   },
   {
     id: 12,
-    title: "Elegant Bridal Shower",
-    description: "Blush and gold intimate celebration with a floral photo wall",
+    title: "Golden Anniversary Celebration",
+    description: "An intimate 50th anniversary celebration in gold and ivory",
     category: "celebrations",
     categoryLabel: "Celebration",
-    gradient: "from-accent/40 via-cream-dark to-primary-light/30",
+    gradient: "from-accent-light via-cream-dark to-accent/40",
     aspect: "aspect-[3/4]",
   },
 ];
@@ -140,8 +142,8 @@ export default function PortfolioPage() {
 
   const filteredProjects =
     activeFilter === "all"
-      ? projects
-      : projects.filter((p) => p.category === activeFilter);
+      ? portfolioItems
+      : portfolioItems.filter((p) => p.category === activeFilter);
 
   return (
     <main className="font-body">
@@ -192,14 +194,29 @@ export default function PortfolioPage() {
                 key={project.id}
                 className="break-inside-avoid group relative rounded-2xl overflow-hidden cursor-pointer"
               >
-                {/* Placeholder Image */}
-                <div
-                  className={`${project.aspect} bg-gradient-to-br ${project.gradient} w-full`}
-                >
-                  {/* Subtle pattern inside */}
-                  <div className="absolute inset-0 flex items-center justify-center opacity-30">
-                    <div className="w-16 h-16 rounded-full border-2 border-white/40" />
-                  </div>
+                {/* Image or Gradient Placeholder */}
+                <div className={`${project.aspect} w-full`}>
+                  {project.image ? (
+                    <div className="relative w-full h-full">
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        quality={80}
+                      />
+                    </div>
+                  ) : (
+                    <div
+                      className={`w-full h-full bg-gradient-to-br ${project.gradient}`}
+                    >
+                      {/* Subtle pattern inside */}
+                      <div className="absolute inset-0 flex items-center justify-center opacity-30">
+                        <div className="w-16 h-16 rounded-full border-2 border-white/40" />
+                      </div>
+                    </div>
+                  )}
                 </div>
 
                 {/* Hover Overlay */}

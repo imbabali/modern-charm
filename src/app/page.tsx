@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
   Heart,
   Building2,
@@ -17,17 +18,16 @@ export default function Home() {
       {/* ================================================================
           SECTION 1 — HERO
           ================================================================ */}
-      <section className="relative flex min-h-screen flex-col items-center justify-center px-6 text-center">
-        {/* Background gradient (placeholder for future image) */}
-        <div
-          className="absolute inset-0 -z-10"
-          style={{
-            background:
-              "linear-gradient(160deg, #1A1A1A 0%, #2D5B52 35%, #3D7A6E 60%, #2D5B52 85%, #1A1A1A 100%)",
-          }}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <Image
+          src="/images/hero-wedding.jpg"
+          alt="Luxury wedding reception styled by Modern Charm Uganda featuring lavender floral tablescape and white tents"
+          fill
+          className="object-cover"
+          priority
+          quality={85}
         />
-        {/* Overlay for depth */}
-        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-black/40 via-transparent to-black/60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
 
         {/* Decorative floating shapes */}
         <div className="pointer-events-none absolute top-20 left-10 h-72 w-72 rounded-full bg-accent/10 blur-3xl" />
@@ -36,7 +36,7 @@ export default function Home() {
         <div className="pointer-events-none absolute bottom-1/3 left-1/4 h-1 w-16 -rotate-12 bg-accent/20" />
 
         {/* Content */}
-        <div className="relative mx-auto max-w-4xl">
+        <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
           {/* Small tagline above heading */}
           <div className="mb-6 flex items-center justify-center gap-2">
             <span className="h-px w-8 bg-accent" />
@@ -88,22 +88,18 @@ export default function Home() {
           ================================================================ */}
       <section className="bg-cream px-6 py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2 lg:gap-20">
-          {/* Left — Decorative placeholder image area */}
+          {/* Left — About image */}
           <div className="relative">
-            <div className="aspect-[4/5] w-full overflow-hidden rounded-2xl bg-gradient-to-br from-primary/20 via-accent/10 to-primary/5">
+            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl">
+              <Image
+                src="/images/about-couple.jpg"
+                alt="Couple portrait under floral arch styled by Modern Charm Uganda"
+                fill
+                className="object-cover"
+                quality={85}
+              />
               {/* Inner decorative frame */}
               <div className="absolute inset-6 rounded-xl border border-accent/30" />
-              {/* Central content placeholder */}
-              <div className="flex h-full flex-col items-center justify-center p-12 text-center">
-                <div className="mb-4 h-px w-16 bg-accent" />
-                <span className="font-heading text-2xl font-semibold text-primary">
-                  Modern Charm
-                </span>
-                <span className="font-body mt-1 text-sm tracking-widest text-muted uppercase">
-                  Uganda
-                </span>
-                <div className="mt-4 h-px w-16 bg-accent" />
-              </div>
             </div>
             {/* Floating decorative accent box */}
             <div className="absolute -right-4 -bottom-4 h-32 w-32 rounded-xl bg-accent/15 -z-10 lg:-right-6 lg:-bottom-6 lg:h-40 lg:w-40" />
@@ -321,14 +317,16 @@ export default function Home() {
           SECTION 4 — STATS
           ================================================================ */}
       <section className="relative overflow-hidden px-6 py-24">
-        {/* Background */}
-        <div
-          className="absolute inset-0 -z-10"
-          style={{
-            background:
-              "linear-gradient(135deg, #2D5B52 0%, #3D7A6E 50%, #2D5B52 100%)",
-          }}
+        {/* Background image */}
+        <Image
+          src="/images/reception-decor.jpg"
+          alt="Stunning reception with lavender and pink floral installation"
+          fill
+          className="object-cover"
+          quality={85}
         />
+        {/* Heavy dark overlay so stats remain readable */}
+        <div className="absolute inset-0 bg-black/80" />
         {/* Decorative elements */}
         <div className="pointer-events-none absolute top-0 left-0 h-full w-full">
           <div className="absolute top-10 left-10 h-40 w-40 rounded-full bg-white/5 blur-2xl" />
@@ -337,7 +335,7 @@ export default function Home() {
           <div className="absolute top-1/4 right-1/3 h-px w-20 rotate-12 bg-white/10" />
         </div>
 
-        <div className="mx-auto max-w-7xl">
+        <div className="relative z-10 mx-auto max-w-7xl">
           {/* Section label */}
           <div className="mb-16 text-center">
             <div className="mb-4 flex items-center justify-center gap-3">
@@ -429,12 +427,12 @@ export default function Home() {
           <div className="grid auto-rows-[240px] grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {/* Large — spans 2 cols & 2 rows */}
             <div className="group relative overflow-hidden rounded-2xl sm:col-span-2 sm:row-span-2">
-              <div
-                className="absolute inset-0 transition-transform duration-500 group-hover:scale-105"
-                style={{
-                  background:
-                    "linear-gradient(135deg, #3D7A6E 0%, #2D5B52 40%, #C4915C 100%)",
-                }}
+              <Image
+                src="/images/portfolio/allan-pauline/img_0748.jpg"
+                alt="Wide reception setup shot from Allan and Pauline's wedding"
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                quality={85}
               />
               <div className="absolute inset-0 bg-black/20 transition-opacity duration-300 group-hover:bg-black/10" />
               <div className="absolute bottom-6 left-6">
@@ -449,12 +447,12 @@ export default function Home() {
 
             {/* Small 1 */}
             <div className="group relative overflow-hidden rounded-2xl">
-              <div
-                className="absolute inset-0 transition-transform duration-500 group-hover:scale-105"
-                style={{
-                  background:
-                    "linear-gradient(135deg, #D4A574 0%, #C4915C 100%)",
-                }}
+              <Image
+                src="/images/portfolio/allan-pauline/img_0061.jpg"
+                alt="Couple walking down the aisle in a domed church"
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                quality={85}
               />
               <div className="absolute inset-0 bg-black/10 transition-opacity duration-300 group-hover:bg-black/0" />
               <div className="absolute bottom-4 left-4">
@@ -469,12 +467,12 @@ export default function Home() {
 
             {/* Small 2 */}
             <div className="group relative overflow-hidden rounded-2xl">
-              <div
-                className="absolute inset-0 transition-transform duration-500 group-hover:scale-105"
-                style={{
-                  background:
-                    "linear-gradient(135deg, #3D7A6E 0%, #5A9E90 100%)",
-                }}
+              <Image
+                src="/images/portfolio/allan-pauline/img_0291.jpg"
+                alt="Intimate bride with veil closeup"
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                quality={85}
               />
               <div className="absolute inset-0 bg-black/10 transition-opacity duration-300 group-hover:bg-black/0" />
               <div className="absolute bottom-4 left-4">
@@ -489,12 +487,12 @@ export default function Home() {
 
             {/* Small 3 */}
             <div className="group relative overflow-hidden rounded-2xl">
-              <div
-                className="absolute inset-0 transition-transform duration-500 group-hover:scale-105"
-                style={{
-                  background:
-                    "linear-gradient(135deg, #C4915C 0%, #3D7A6E 100%)",
-                }}
+              <Image
+                src="/images/portfolio/allan-pauline/img_0646.jpg"
+                alt="Close-up of couple, bride wearing tiara"
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                quality={85}
               />
               <div className="absolute inset-0 bg-black/10 transition-opacity duration-300 group-hover:bg-black/0" />
               <div className="absolute bottom-4 left-4">
@@ -509,12 +507,12 @@ export default function Home() {
 
             {/* Large 2 — spans 2 cols */}
             <div className="group relative overflow-hidden rounded-2xl sm:col-span-2">
-              <div
-                className="absolute inset-0 transition-transform duration-500 group-hover:scale-105"
-                style={{
-                  background:
-                    "linear-gradient(135deg, #2D5B52 0%, #D4A574 50%, #C4915C 100%)",
-                }}
+              <Image
+                src="/images/portfolio/allan-pauline/img_0767.jpg"
+                alt="Reception floral installation at Allan and Pauline's wedding"
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                quality={85}
               />
               <div className="absolute inset-0 bg-black/20 transition-opacity duration-300 group-hover:bg-black/10" />
               <div className="absolute bottom-6 left-6">
@@ -529,12 +527,12 @@ export default function Home() {
 
             {/* Small 4 */}
             <div className="group relative overflow-hidden rounded-2xl">
-              <div
-                className="absolute inset-0 transition-transform duration-500 group-hover:scale-105"
-                style={{
-                  background:
-                    "linear-gradient(135deg, #5A9E90 0%, #3D7A6E 50%, #2D5B52 100%)",
-                }}
+              <Image
+                src="/images/portfolio/allan-pauline/img_0614.jpg"
+                alt="Couple dancing under wooden arch with floral decorations"
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                quality={85}
               />
               <div className="absolute inset-0 bg-black/10 transition-opacity duration-300 group-hover:bg-black/0" />
               <div className="absolute bottom-4 left-4">
@@ -676,14 +674,16 @@ export default function Home() {
           SECTION 7 — CTA SECTION
           ================================================================ */}
       <section className="relative overflow-hidden px-6 py-24">
-        {/* Background */}
-        <div
-          className="absolute inset-0 -z-10"
-          style={{
-            background:
-              "linear-gradient(160deg, #2D5B52 0%, #3D7A6E 40%, #3D7A6E 60%, #2D5B52 100%)",
-          }}
+        {/* Background image */}
+        <Image
+          src="/images/hero-dance.jpg"
+          alt="Couple dancing under wooden arch with hanging lanterns and floral decorations"
+          fill
+          className="object-cover"
+          quality={85}
         />
+        {/* Heavy dark teal overlay */}
+        <div className="absolute inset-0 bg-[#2D5B52]/85" />
         {/* Decorative elements */}
         <div className="pointer-events-none absolute top-8 left-8 h-px w-24 bg-accent/40" />
         <div className="pointer-events-none absolute top-8 left-8 h-24 w-px bg-accent/40" />
@@ -692,7 +692,7 @@ export default function Home() {
         <div className="pointer-events-none absolute top-1/2 left-1/4 h-40 w-40 -translate-y-1/2 rounded-full bg-accent/5 blur-3xl" />
         <div className="pointer-events-none absolute top-1/3 right-1/4 h-32 w-32 rounded-full bg-white/5 blur-2xl" />
 
-        <div className="relative mx-auto max-w-3xl text-center">
+        <div className="relative z-10 mx-auto max-w-3xl text-center">
           {/* Gold decorative line */}
           <div className="mx-auto mb-8 flex items-center justify-center gap-2">
             <span className="h-px w-16 bg-accent/60" />
