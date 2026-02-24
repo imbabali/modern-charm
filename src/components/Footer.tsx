@@ -32,17 +32,17 @@ const services = [
 
 const socialLinks = [
   {
-    href: "https://instagram.com/moderncharmuganda",
+    href: "https://instagram.com/moderncharm_events",
     label: "Instagram",
     icon: Instagram,
   },
   {
-    href: "https://facebook.com/moderncharmuganda",
+    href: "https://facebook.com/moderncharmevents",
     label: "Facebook",
     icon: Facebook,
   },
   {
-    href: "https://tiktok.com/@moderncharmuganda",
+    href: "https://tiktok.com/@moderncharmevents",
     label: "TikTok",
     /* TikTok icon — lucide-react does not have a TikTok icon, so we use a
        small inline SVG wrapped in a component-like function below. We still
@@ -179,20 +179,20 @@ export default function Footer() {
             <ul className="space-y-4">
               <li>
                 <a
-                  href="tel:+256700000000"
+                  href="tel:+256779399409"
                   className="flex items-start gap-3 text-white/70 text-sm hover:text-accent-light transition-colors group"
                 >
                   <Phone className="w-4 h-4 mt-0.5 text-accent shrink-0 group-hover:scale-110 transition-transform" />
-                  +256 700 000 000
+                  +256 779 399 409
                 </a>
               </li>
               <li>
                 <a
-                  href="mailto:hello@moderncharmuganda.com"
+                  href="mailto:moderncharm30@gmail.com"
                   className="flex items-start gap-3 text-white/70 text-sm hover:text-accent-light transition-colors group"
                 >
                   <Mail className="w-4 h-4 mt-0.5 text-accent shrink-0 group-hover:scale-110 transition-transform" />
-                  hello@moderncharmuganda.com
+                  moderncharm30@gmail.com
                 </a>
               </li>
               <li>

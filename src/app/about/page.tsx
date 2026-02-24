@@ -44,19 +44,14 @@ const features = [
 
 const teamMembers = [
   {
-    name: "Amara Nakamya",
-    role: "Founder & Creative Director",
+    name: "Philip Travis Higiro",
+    role: "Events Director",
     gradient: "from-primary to-primary-dark",
   },
   {
-    name: "David Ssemakula",
-    role: "Lead Event Coordinator",
+    name: "Benjamin Bicung",
+    role: "Business Development",
     gradient: "from-accent to-accent-light",
-  },
-  {
-    name: "Faith Nabirye",
-    role: "Head of Floral & Styling",
-    gradient: "from-primary-light to-primary",
   },
 ];
 
@@ -251,7 +246,7 @@ export default function AboutPage() {
               dedicated to making your celebration unforgettable.
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 lg:gap-10 max-w-2xl mx-auto">
             {teamMembers.map((member) => (
               <div
                 key={member.name}

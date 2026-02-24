@@ -6,7 +6,7 @@ import { MessageCircle } from "lucide-react";
 export default function WhatsAppButton() {
   const [isHovered, setIsHovered] = useState(false);
 
-  const phoneNumber = "256700000000"; // Placeholder — replace with actual number
+  const phoneNumber = "256779399409";
   const message = encodeURIComponent(
     "Hello Modern Charm! I'd like to inquire about your event styling services."
   );

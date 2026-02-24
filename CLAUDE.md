@@ -101,12 +101,29 @@ src/
 - Contact form is UI-only — needs backend integration
 - Newsletter form is UI-only — needs email service integration
 
+## Team
+- **Philip Travis Higiro** — Events Director | +256 779 399 409
+- **Benjamin Bicung** — Business Development | +256 775 826 795
+
+## Contact Details
+- Phone: +256 779 399 409 / +256 775 826 795
+- Email: moderncharm30@gmail.com
+- Facebook: moderncharmevents
+- Instagram: @moderncharm_events
+- Location: Kampala, Uganda
+
+## Brand Fonts
+- Brand uses **Avenir LT Std** (Heavy, Medium, Roman) — font files in `public/fonts/`
+- Web implementation uses Playfair Display (headings) + Inter (body) via Google Fonts as close web-safe alternatives
+
 ## Next Steps / TODO
 - [ ] Replace placeholder gradients with real event photos
 - [ ] Add real SVG logo (recreate from logo-reference.png)
 - [ ] Connect contact form to backend (e.g., Resend, EmailJS)
 - [ ] Connect newsletter to email service (e.g., Mailchimp, ConvertKit)
-- [ ] Add real WhatsApp number
+- [x] ~~Add real WhatsApp number~~ — Done (Philip's: +256 779 399 409)
+- [x] ~~Add real contact info~~ — Done (phones, email, social links)
+- [x] ~~Add real team members~~ — Done (Philip & Benjamin)
 - [ ] Add Google Maps embed on contact page
 - [ ] Add real testimonials and portfolio items
 - [ ] Add blog post detail pages
@@ -117,3 +134,4 @@ src/
 
 ## Progress Log
 - **2026-02-24**: Initial build — complete website with 9 pages, all components, deployed to Vercel
+- **2026-02-24**: Integrated real business card data — contact info, team members, social links, WhatsApp number, brand fonts organized

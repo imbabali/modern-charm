@@ -12,7 +12,6 @@ import {
   Send,
   Instagram,
   Facebook,
-  Twitter,
   ArrowRight,
 } from "lucide-react";
 
@@ -37,14 +36,14 @@ const contactInfo = [
   {
     icon: Phone,
     label: "Phone",
-    value: "+256 XXX XXX XXX",
-    href: "tel:+256000000000",
+    value: "+256 779 399 409 / +256 775 826 795",
+    href: "tel:+256779399409",
   },
   {
     icon: Mail,
     label: "Email",
-    value: "info@moderncharmug.com",
-    href: "mailto:info@moderncharmug.com",
+    value: "moderncharm30@gmail.com",
+    href: "mailto:moderncharm30@gmail.com",
   },
   {
     icon: MapPin,
@@ -69,12 +68,7 @@ const socialLinks = [
   {
     icon: Facebook,
     label: "Facebook",
-    href: "https://facebook.com/moderncharmug",
-  },
-  {
-    icon: Twitter,
-    label: "Twitter",
-    href: "https://twitter.com/moderncharm_ug",
+    href: "https://facebook.com/moderncharmevents",
   },
 ];
 
