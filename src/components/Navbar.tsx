@@ -1,0 +1,237 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { Menu, X, Sparkles } from "lucide-react";
+
+const navLinks = [
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/services", label: "Services" },
+  { href: "/portfolio", label: "Portfolio" },
+  { href: "/testimonials", label: "Testimonials" },
+  { href: "/blog", label: "Blog" },
+  { href: "/pricing", label: "Pricing" },
+  { href: "/faq", label: "FAQ" },
+  { href: "/contact", label: "Contact" },
+];
+
+export default function Navbar() {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Close mobile menu on route change
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [pathname]);
+
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMobileMenuOpen]);
+
+  const isActive = (href: string) => {
+    if (href === "/") return pathname === "/";
+    return pathname.startsWith(href);
+  };
+
+  return (
+    <>
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          isScrolled
+            ? "bg-white/95 backdrop-blur-md shadow-md"
+            : "bg-transparent"
+        }`}
+      >
+        <div className="container-custom">
+          <nav className="flex items-center justify-between h-20 lg:h-22">
+            {/* Logo */}
+            <Link href="/" className="flex items-center gap-2 group">
+              {/* MC Monogram */}
+              <div
+                className={`relative flex items-center justify-center w-11 h-11 rounded-lg border-2 transition-all duration-300 ${
+                  isScrolled
+                    ? "border-primary bg-primary"
+                    : "border-white bg-white/10 backdrop-blur-sm"
+                } group-hover:scale-105`}
+              >
+                <span
+                  className={`font-heading text-lg font-bold tracking-tight transition-colors duration-300 ${
+                    isScrolled ? "text-white" : "text-white"
+                  }`}
+                >
+                  MC
+                </span>
+              </div>
+              {/* Brand Name */}
+              <div className="flex flex-col">
+                <span
+                  className={`font-heading text-xl font-bold tracking-wider transition-colors duration-300 ${
+                    isScrolled ? "text-dark" : "text-white"
+                  }`}
+                >
+                  MODERN CHARM
+                </span>
+                <span
+                  className={`text-[10px] font-body tracking-[0.25em] uppercase transition-colors duration-300 ${
+                    isScrolled ? "text-accent" : "text-accent-light"
+                  }`}
+                >
+                  Uganda
+                </span>
+              </div>
+            </Link>
+
+            {/* Desktop Navigation */}
+            <div className="hidden xl:flex items-center gap-1">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`nav-link-underline relative px-3 py-2 text-sm font-medium transition-colors duration-200 ${
+                    isActive(link.href)
+                      ? isScrolled
+                        ? "text-primary"
+                        : "text-white"
+                      : isScrolled
+                        ? "text-dark/70 hover:text-primary"
+                        : "text-white/80 hover:text-white"
+                  } ${isActive(link.href) ? "active" : ""}`}
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+
+            {/* Desktop CTA + Mobile Hamburger */}
+            <div className="flex items-center gap-4">
+              {/* Book Consultation CTA — Desktop */}
+              <Link
+                href="/contact"
+                className={`hidden lg:inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
+                  isScrolled
+                    ? "bg-accent text-white hover:bg-accent-dark shadow-sm hover:shadow-md"
+                    : "bg-accent text-white hover:bg-accent-dark shadow-lg"
+                } hover:-translate-y-0.5`}
+              >
+                <Sparkles className="w-4 h-4" />
+                Book Consultation
+              </Link>
+
+              {/* Mobile Menu Button */}
+              <button
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className={`xl:hidden p-2 rounded-lg transition-colors duration-200 ${
+                  isScrolled
+                    ? "text-dark hover:bg-cream-dark"
+                    : "text-white hover:bg-white/10"
+                }`}
+                aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+                aria-expanded={isMobileMenuOpen}
+              >
+                {isMobileMenuOpen ? (
+                  <X className="w-6 h-6" />
+                ) : (
+                  <Menu className="w-6 h-6" />
+                )}
+              </button>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+      {/* Mobile Menu Overlay */}
+      <div
+        className={`fixed inset-0 z-40 bg-dark/50 backdrop-blur-sm transition-opacity duration-300 xl:hidden ${
+          isMobileMenuOpen
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
+        }`}
+        onClick={() => setIsMobileMenuOpen(false)}
+        aria-hidden="true"
+      />
+
+      {/* Mobile Menu Drawer */}
+      <div
+        className={`fixed top-0 right-0 z-50 h-full w-80 max-w-[85vw] bg-white shadow-2xl transition-transform duration-300 ease-out xl:hidden ${
+          isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        {/* Drawer Header */}
+        <div className="flex items-center justify-between p-6 border-b border-cream-dark">
+          <div className="flex items-center gap-2">
+            <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-primary">
+              <span className="font-heading text-sm font-bold text-white tracking-tight">
+                MC
+              </span>
+            </div>
+            <span className="font-heading text-lg font-bold tracking-wider text-dark">
+              MODERN CHARM
+            </span>
+          </div>
+          <button
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="p-2 rounded-lg text-muted hover:bg-cream-dark transition-colors"
+            aria-label="Close menu"
+          >
+            <X className="w-5 h-5" />
+          </button>
+        </div>
+
+        {/* Drawer Nav Links */}
+        <nav className="flex flex-col p-6 gap-1 overflow-y-auto max-h-[calc(100vh-180px)]">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={`flex items-center px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 ${
+                isActive(link.href)
+                  ? "bg-primary/10 text-primary font-semibold"
+                  : "text-dark/70 hover:bg-cream-dark hover:text-dark"
+              }`}
+            >
+              {link.label}
+              {isActive(link.href) && (
+                <span className="ml-auto w-1.5 h-1.5 rounded-full bg-accent" />
+              )}
+            </Link>
+          ))}
+        </nav>
+
+        {/* Drawer CTA */}
+        <div className="absolute bottom-0 left-0 right-0 p-6 border-t border-cream-dark bg-white">
+          <Link
+            href="/contact"
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="flex items-center justify-center gap-2 w-full px-5 py-3 rounded-full bg-accent text-white font-semibold text-sm transition-all duration-300 hover:bg-accent-dark shadow-md"
+          >
+            <Sparkles className="w-4 h-4" />
+            Book Consultation
+          </Link>
+        </div>
+      </div>
+    </>
+  );
+}
