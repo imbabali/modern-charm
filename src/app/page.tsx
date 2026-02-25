@@ -346,16 +346,23 @@ export default function Home() {
           SECTION 4 — STATS
           ================================================================ */}
       <section aria-label="Our impact in numbers" className="relative overflow-hidden px-6 py-24">
-        {/* Background image */}
-        <Image
-          src="/images/reception-decor.jpg"
-          alt=""
+        {/* Background video — event reel 1 */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          poster="/images/reception-decor.jpg"
+          className="absolute inset-0 h-full w-full object-cover"
           aria-hidden="true"
-          fill
-          sizes="100vw"
-          className="object-cover"
-          quality={85}
-        />
+          tabIndex={-1}
+        >
+          <source
+            src="https://6jblcdd6pq0suc42.public.blob.vercel-storage.com/videos/event-reel-1.mp4"
+            type="video/mp4"
+          />
+        </video>
         {/* Heavy dark overlay so stats remain readable */}
         <div className="absolute inset-0 bg-black/80" />
         {/* Decorative elements */}
@@ -717,16 +724,23 @@ export default function Home() {
           SECTION 7 — CTA SECTION
           ================================================================ */}
       <section aria-label="Call to action" className="relative overflow-hidden px-6 py-24">
-        {/* Background image */}
-        <Image
-          src="/images/hero-dance.jpg"
-          alt=""
+        {/* Background video — event reel 2 */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          poster="/images/hero-dance.jpg"
+          className="absolute inset-0 h-full w-full object-cover"
           aria-hidden="true"
-          fill
-          sizes="100vw"
-          className="object-cover"
-          quality={85}
-        />
+          tabIndex={-1}
+        >
+          <source
+            src="https://6jblcdd6pq0suc42.public.blob.vercel-storage.com/videos/event-reel-2.mp4"
+            type="video/mp4"
+          />
+        </video>
         {/* Heavy dark teal overlay */}
         <div className="absolute inset-0 bg-[#2D5B52]/85" />
         {/* Decorative elements */}
