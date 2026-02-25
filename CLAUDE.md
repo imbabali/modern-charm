@@ -97,9 +97,13 @@ src/
 - Tailwind v4 uses `@theme inline` block in globals.css — NOT tailwind.config.ts
 - Client components marked with `"use client"` only where needed (Portfolio, FAQ, Contact, Navbar, WhatsApp, Newsletter)
 - All pages pre-render as static content
-- Images are currently placeholders (CSS gradients) — to be replaced with real photos
-- Contact form is UI-only — needs backend integration
-- Newsletter form is UI-only — needs email service integration
+- Base CSS styles wrapped in `@layer base` so Tailwind utilities always override them
+- 3 video reels hosted on Vercel Blob CDN (hero, stats parallax, CTA on homepage)
+- HeroCarousel component provides crossfade image carousels on all sub-page heroes
+- Services page sections have anchor IDs (`#weddings`, `#corporate`, `#traditional`, `#birthdays`, `#showers`, `#planning`) for hash navigation
+- Homepage service cards and footer service links use hash navigation to scroll to correct service
+- Contact form POSTs to `/api/contact` (Resend API)
+- Newsletter form POSTs to `/api/newsletter` (Resend API)
 
 ## Team
 - **Philip Travis Higiro** — Events Director | +256 779 399 409
@@ -140,3 +144,10 @@ src/
 - **2026-02-24**: Initial build — complete website with 9 pages, all components, deployed to Vercel
 - **2026-02-24**: Integrated real business card data — contact info, team members, social links, WhatsApp number, brand fonts organized
 - **2026-02-24**: Downloaded 34 photos from Allan & Pauline wedding (Google Drive), optimized for web, integrated across Homepage (hero, about, portfolio, stats, CTA), About page, Services page, and Portfolio page
+- **2026-02-25**: Added Oscar & Sandra (40 images) and Wedding Highlights (25 images) photo galleries
+- **2026-02-25**: Integrated 3 video reels on homepage via Vercel Blob CDN — hero (reel-2), stats parallax (reel-1), CTA (reel-3 cropped to remove watermark)
+- **2026-02-25**: Created HeroCarousel component with crossfade transitions for all sub-page hero sections
+- **2026-02-25**: Fixed hero heading color — moved base CSS into `@layer base` so `text-accent-light` (gold) renders correctly over Tailwind v4's cascade
+- **2026-02-25**: Reduced all video/image overlay opacity by ⅓ across all pages for better media visibility
+- **2026-02-25**: Full link/button audit across all pages — fixed 6 broken service anchor links, updated footer service links, removed non-functional "View Project" from portfolio hover overlay
+- **2026-02-25**: Accessibility audit — 42+ fixes across 15 files (aria labels, roles, heading hierarchy, focus management, keyboard navigation)
