@@ -33,8 +33,8 @@ const services = [
       "Aisle decor & ceremony styling",
     ],
     gradient: "from-primary/30 via-accent/20 to-primary-light/30",
-    image: "/images/portfolio/allan-pauline/img_0748.jpg",
-    imageAlt: "Wedding reception tablescape with lavender florals and elegant table settings",
+    image: "/images/portfolio/oscar-sandra/IMG_0795.jpg",
+    imageAlt: "Grand wedding reception with black & white decor, gold arches and floral installations",
   },
   {
     icon: Building2,
@@ -50,8 +50,8 @@ const services = [
       "Exhibition & trade show design",
     ],
     gradient: "from-primary-dark/30 via-primary/20 to-accent/20",
-    image: "/images/portfolio/allan-pauline/img_0061.jpg",
-    imageAlt: "Elegant church venue interior with ceremony aisle styling",
+    image: "/images/portfolio/oscar-sandra/IMG_0947.jpg",
+    imageAlt: "Dapper groomsmen in black tie with grooms in white tuxedos at luxury reception",
   },
   {
     icon: Drum,
@@ -67,8 +67,8 @@ const services = [
       "Ceremonial area setup & styling",
     ],
     gradient: "from-accent/30 via-primary/20 to-accent-light/30",
-    image: "/images/portfolio/allan-pauline/img_0291.jpg",
-    imageAlt: "Bride with veil in traditional ceremony styling",
+    image: "/images/portfolio/wedding-highlights/IMG_3893.jpg",
+    imageAlt: "Intimate moment as couple holds hands before the candle wall and floral backdrop",
   },
   {
     icon: PartyPopper,
@@ -84,8 +84,8 @@ const services = [
       "Photo-worthy decor moments",
     ],
     gradient: "from-primary-light/30 via-cream-dark to-accent/20",
-    image: "/images/portfolio/allan-pauline/img_0767.jpg",
-    imageAlt: "Stunning floral installation at reception celebration",
+    image: "/images/portfolio/oscar-sandra/IMG_0882.jpg",
+    imageAlt: "Bridesmaids dancing joyfully in champagne gowns against dramatic reception backdrop",
   },
   {
     icon: Baby,
@@ -101,8 +101,8 @@ const services = [
       "Games & activity area setup",
     ],
     gradient: "from-accent-light/30 via-cream-dark to-primary/20",
-    image: "/images/portfolio/allan-pauline/img_0646.jpg",
-    imageAlt: "Intimate close-up portrait with elegant tiara detail",
+    image: "/images/portfolio/oscar-sandra/IMG_1930.jpg",
+    imageAlt: "Bride and bridesmaids in matching silk robes during pre-ceremony preparations",
   },
   {
     icon: ClipboardList,
@@ -118,8 +118,8 @@ const services = [
       "Post-event breakdown & wrap-up",
     ],
     gradient: "from-primary/20 via-primary-light/20 to-accent/30",
-    image: "/images/portfolio/allan-pauline/img_0614.jpg",
-    imageAlt: "Couple first dance under arch showcasing full venue styling",
+    image: "/images/portfolio/wedding-highlights/IMG_3879.jpg",
+    imageAlt: "Full bridal party portrait with sage bridesmaids and candle wall backdrop at styled venue",
   },
 ];
 

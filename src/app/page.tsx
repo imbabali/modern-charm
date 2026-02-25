@@ -425,11 +425,91 @@ export default function Home() {
 
           {/* Bento grid */}
           <div className="grid auto-rows-[240px] grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {/* Large — spans 2 cols & 2 rows */}
+            {/* Large — spans 2 cols & 2 rows: Oscar & Sandra Reception */}
             <div className="group relative overflow-hidden rounded-2xl sm:col-span-2 sm:row-span-2">
               <Image
+                src="/images/portfolio/oscar-sandra/IMG_0795.jpg"
+                alt="Oscar & Sandra's grand reception with black & white decor, gold arches and white floral installations"
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                quality={85}
+              />
+              <div className="absolute inset-0 bg-black/20 transition-opacity duration-300 group-hover:bg-black/10" />
+              <div className="absolute bottom-6 left-6">
+                <span className="font-body rounded-full bg-white/20 px-3 py-1 text-xs font-medium tracking-wide text-white backdrop-blur-sm">
+                  Wedding
+                </span>
+                <h3 className="font-heading mt-2 text-xl font-bold text-white">
+                  Oscar &amp; Sandra&apos;s Grand Reception
+                </h3>
+              </div>
+            </div>
+
+            {/* Small 1: Wedding Highlights — Bridesmaids */}
+            <div className="group relative overflow-hidden rounded-2xl">
+              <Image
+                src="/images/portfolio/wedding-highlights/IMG_3876.jpg"
+                alt="Bridesmaids in sage green gowns with peach bouquets"
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                quality={85}
+              />
+              <div className="absolute inset-0 bg-black/10 transition-opacity duration-300 group-hover:bg-black/0" />
+              <div className="absolute bottom-4 left-4">
+                <span className="font-body rounded-full bg-white/20 px-3 py-1 text-xs font-medium tracking-wide text-white backdrop-blur-sm">
+                  Wedding
+                </span>
+                <h3 className="font-heading mt-2 text-base font-bold text-white">
+                  Sage &amp; Peach Elegance
+                </h3>
+              </div>
+            </div>
+
+            {/* Small 2: Oscar & Sandra — Couple framed through chairs */}
+            <div className="group relative overflow-hidden rounded-2xl">
+              <Image
+                src="/images/portfolio/oscar-sandra/IMG_0834.jpg"
+                alt="Couple framed through oval-back reception chairs"
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                quality={85}
+              />
+              <div className="absolute inset-0 bg-black/10 transition-opacity duration-300 group-hover:bg-black/0" />
+              <div className="absolute bottom-4 left-4">
+                <span className="font-body rounded-full bg-white/20 px-3 py-1 text-xs font-medium tracking-wide text-white backdrop-blur-sm">
+                  Wedding
+                </span>
+                <h3 className="font-heading mt-2 text-base font-bold text-white">
+                  Through the Looking Glass
+                </h3>
+              </div>
+            </div>
+
+            {/* Small 3: Wedding Highlights — Couple with bouquet */}
+            <div className="group relative overflow-hidden rounded-2xl">
+              <Image
+                src="/images/portfolio/wedding-highlights/IMG_3884.jpg"
+                alt="Couple walking through styled reception with blush bouquet"
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                quality={85}
+              />
+              <div className="absolute inset-0 bg-black/10 transition-opacity duration-300 group-hover:bg-black/0" />
+              <div className="absolute bottom-4 left-4">
+                <span className="font-body rounded-full bg-white/20 px-3 py-1 text-xs font-medium tracking-wide text-white backdrop-blur-sm">
+                  Wedding
+                </span>
+                <h3 className="font-heading mt-2 text-base font-bold text-white">
+                  Love Among the Roses
+                </h3>
+              </div>
+            </div>
+
+            {/* Large 2 — spans 2 cols: Allan & Pauline Reception */}
+            <div className="group relative overflow-hidden rounded-2xl sm:col-span-2">
+              <Image
                 src="/images/portfolio/allan-pauline/img_0748.jpg"
-                alt="Wide reception setup shot from Allan and Pauline's wedding"
+                alt="Allan & Pauline's lavender floral tablescape reception"
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
                 quality={85}
@@ -445,11 +525,11 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Small 1 */}
+            {/* Small 4: Oscar & Sandra — Groomsmen Toast */}
             <div className="group relative overflow-hidden rounded-2xl">
               <Image
-                src="/images/portfolio/allan-pauline/img_0061.jpg"
-                alt="Couple walking down the aisle in a domed church"
+                src="/images/portfolio/oscar-sandra/IMG_0267.jpg"
+                alt="Groomsmen raising glasses in a black & white toast"
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
                 quality={85}
@@ -457,90 +537,10 @@ export default function Home() {
               <div className="absolute inset-0 bg-black/10 transition-opacity duration-300 group-hover:bg-black/0" />
               <div className="absolute bottom-4 left-4">
                 <span className="font-body rounded-full bg-white/20 px-3 py-1 text-xs font-medium tracking-wide text-white backdrop-blur-sm">
-                  Corporate
+                  Celebration
                 </span>
                 <h3 className="font-heading mt-2 text-base font-bold text-white">
-                  Annual Gala Dinner
-                </h3>
-              </div>
-            </div>
-
-            {/* Small 2 */}
-            <div className="group relative overflow-hidden rounded-2xl">
-              <Image
-                src="/images/portfolio/allan-pauline/img_0291.jpg"
-                alt="Intimate bride with veil closeup"
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
-                quality={85}
-              />
-              <div className="absolute inset-0 bg-black/10 transition-opacity duration-300 group-hover:bg-black/0" />
-              <div className="absolute bottom-4 left-4">
-                <span className="font-body rounded-full bg-white/20 px-3 py-1 text-xs font-medium tracking-wide text-white backdrop-blur-sm">
-                  Traditional
-                </span>
-                <h3 className="font-heading mt-2 text-base font-bold text-white">
-                  Kwanjula Ceremony
-                </h3>
-              </div>
-            </div>
-
-            {/* Small 3 */}
-            <div className="group relative overflow-hidden rounded-2xl">
-              <Image
-                src="/images/portfolio/allan-pauline/img_0646.jpg"
-                alt="Close-up of couple, bride wearing tiara"
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
-                quality={85}
-              />
-              <div className="absolute inset-0 bg-black/10 transition-opacity duration-300 group-hover:bg-black/0" />
-              <div className="absolute bottom-4 left-4">
-                <span className="font-body rounded-full bg-white/20 px-3 py-1 text-xs font-medium tracking-wide text-white backdrop-blur-sm">
-                  Birthday
-                </span>
-                <h3 className="font-heading mt-2 text-base font-bold text-white">
-                  Golden 50th Celebration
-                </h3>
-              </div>
-            </div>
-
-            {/* Large 2 — spans 2 cols */}
-            <div className="group relative overflow-hidden rounded-2xl sm:col-span-2">
-              <Image
-                src="/images/portfolio/allan-pauline/img_0767.jpg"
-                alt="Reception floral installation at Allan and Pauline's wedding"
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
-                quality={85}
-              />
-              <div className="absolute inset-0 bg-black/20 transition-opacity duration-300 group-hover:bg-black/10" />
-              <div className="absolute bottom-6 left-6">
-                <span className="font-body rounded-full bg-white/20 px-3 py-1 text-xs font-medium tracking-wide text-white backdrop-blur-sm">
-                  Bridal Shower
-                </span>
-                <h3 className="font-heading mt-2 text-xl font-bold text-white">
-                  Enchanted Bridal Soiree
-                </h3>
-              </div>
-            </div>
-
-            {/* Small 4 */}
-            <div className="group relative overflow-hidden rounded-2xl">
-              <Image
-                src="/images/portfolio/allan-pauline/img_0614.jpg"
-                alt="Couple dancing under wooden arch with floral decorations"
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
-                quality={85}
-              />
-              <div className="absolute inset-0 bg-black/10 transition-opacity duration-300 group-hover:bg-black/0" />
-              <div className="absolute bottom-4 left-4">
-                <span className="font-body rounded-full bg-white/20 px-3 py-1 text-xs font-medium tracking-wide text-white backdrop-blur-sm">
-                  Baby Shower
-                </span>
-                <h3 className="font-heading mt-2 text-base font-bold text-white">
-                  Welcome Little One
+                  Groomsmen&apos;s Toast
                 </h3>
               </div>
             </div>
