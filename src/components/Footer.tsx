@@ -8,6 +8,7 @@ import {
   Heart,
 } from "lucide-react";
 import NewsletterForm from "@/components/NewsletterForm";
+import Logo from "@/components/Logo";
 
 const quickLinks = [
   { href: "/", label: "Home" },
@@ -89,11 +90,7 @@ export default function Footer() {
           <div className="lg:col-span-1">
             {/* Logo */}
             <Link href="/" className="inline-flex items-center gap-2 group">
-              <div className="flex items-center justify-center w-10 h-10 rounded-lg border-2 border-white/30 bg-white/10 group-hover:bg-white/20 transition-colors">
-                <span className="font-heading text-base font-bold text-white tracking-tight">
-                  MC
-                </span>
-              </div>
+              <Logo className="w-10 h-10 text-accent-light" />
               <div className="flex flex-col">
                 <span className="font-heading text-lg font-bold tracking-wider text-white">
                   MODERN CHARM
