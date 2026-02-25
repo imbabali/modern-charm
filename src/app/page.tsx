@@ -737,7 +737,7 @@ export default function Home() {
           tabIndex={-1}
         >
           <source
-            src="https://6jblcdd6pq0suc42.public.blob.vercel-storage.com/videos/event-reel-3.mp4"
+            src="https://6jblcdd6pq0suc42.public.blob.vercel-storage.com/videos/event-reel-3-cropped.mp4"
             type="video/mp4"
           />
         </video>
