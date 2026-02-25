@@ -19,14 +19,32 @@ export default function Home() {
           SECTION 1 — HERO
           ================================================================ */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <Image
-          src="/images/hero-wedding.jpg"
-          alt="Luxury wedding reception styled by Modern Charm Uganda featuring lavender floral tablescape and white tents"
-          fill
-          className="object-cover"
-          priority
-          quality={85}
-        />
+        {/* Background video — autoplay muted loop for cinematic hero */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          poster="/images/hero-wedding.jpg"
+          className="absolute inset-0 h-full w-full object-cover"
+        >
+          <source
+            src="https://6jblcdd6pq0suc42.public.blob.vercel-storage.com/videos/event-reel-3.mp4"
+            type="video/mp4"
+          />
+        </video>
+        {/* Fallback static image for browsers that don't support video */}
+        <noscript>
+          <Image
+            src="/images/hero-wedding.jpg"
+            alt="Luxury wedding reception styled by Modern Charm Uganda featuring lavender floral tablescape and white tents"
+            fill
+            className="object-cover"
+            priority
+            quality={85}
+          />
+        </noscript>
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
 
         {/* Decorative floating shapes */}
