@@ -30,7 +30,7 @@ const nextConfig: NextConfig = {
               "media-src 'self' https://6jblcdd6pq0suc42.public.blob.vercel-storage.com",
               "font-src 'self'",
               "connect-src 'self' https://vitals.vercel-insights.com https://va.vercel-scripts.com",
-              "frame-src 'self' https://www.google.com",
+              "frame-src 'self'",
               "object-src 'none'",
               "base-uri 'self'",
             ].join("; "),

@@ -168,12 +168,44 @@ export default function ContactContent() {
         </div>
       </section>
 
-      {/* Contact Content */}
+      {/* Contact Info Bar */}
+      <section className="bg-white border-b border-cream-dark">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 md:py-14">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {contactInfo.map((item) => {
+              const Icon = item.icon;
+              const Inner = (
+                <div className="flex items-center gap-4 group">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 flex-shrink-0 group-hover:bg-primary/20 transition-colors">
+                    <Icon className="h-5 w-5 text-primary" aria-hidden="true" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold tracking-widest uppercase text-muted mb-0.5">
+                      {item.label}
+                    </p>
+                    <p className="text-dark font-medium text-sm">{item.value}</p>
+                  </div>
+                </div>
+              );
+
+              return item.href ? (
+                <a key={item.label} href={item.href} className="block">
+                  {Inner}
+                </a>
+              ) : (
+                <div key={item.label}>{Inner}</div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Form + Social Sidebar */}
       <section className="py-16 md:py-24 bg-cream">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
             {/* Left Column — Contact Form */}
-            <div className="lg:col-span-3">
+            <div className="lg:col-span-2">
               <div className="bg-white rounded-2xl p-6 md:p-10 shadow-sm">
                 <h2 className="font-heading text-2xl md:text-3xl font-bold text-dark mb-2">
                   Tell Us About Your Event
@@ -381,44 +413,45 @@ export default function ContactContent() {
               </div>
             </div>
 
-            {/* Right Column — Contact Info */}
-            <div className="lg:col-span-2 space-y-6">
-              {/* Contact Cards */}
-              <div className="space-y-4">
-                {contactInfo.map((item) => {
-                  const Icon = item.icon;
-                  const Content = (
-                    <div className="flex items-start gap-4 bg-white rounded-xl p-5 hover:shadow-md transition-shadow duration-300">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 flex-shrink-0">
-                        <Icon className="h-5 w-5 text-primary" aria-hidden="true" />
-                      </div>
-                      <div>
-                        <p className="text-xs font-semibold tracking-widest uppercase text-muted mb-1">
-                          {item.label}
-                        </p>
-                        <p className="text-dark font-medium">{item.value}</p>
-                      </div>
+            {/* Right Column — Why Us + Social */}
+            <div className="lg:col-span-1 space-y-6">
+              {/* Why Contact Us */}
+              <div className="bg-white rounded-2xl p-6 md:p-8 shadow-sm">
+                <h3 className="font-heading text-xl font-bold text-dark mb-4">
+                  What Happens Next?
+                </h3>
+                <ol className="space-y-4">
+                  <li className="flex gap-3">
+                    <span className="flex h-7 w-7 items-center justify-center rounded-full bg-primary text-white text-xs font-bold flex-shrink-0">1</span>
+                    <div>
+                      <p className="text-sm font-semibold text-dark">We receive your inquiry</p>
+                      <p className="text-xs text-muted mt-0.5">Our team reviews every detail you share.</p>
                     </div>
-                  );
-
-                  return item.href ? (
-                    <a
-                      key={item.label}
-                      href={item.href}
-                      className="block"
-                    >
-                      {Content}
-                    </a>
-                  ) : (
-                    <div key={item.label}>{Content}</div>
-                  );
-                })}
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="flex h-7 w-7 items-center justify-center rounded-full bg-primary text-white text-xs font-bold flex-shrink-0">2</span>
+                    <div>
+                      <p className="text-sm font-semibold text-dark">Free consultation call</p>
+                      <p className="text-xs text-muted mt-0.5">We schedule a call to understand your vision.</p>
+                    </div>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="flex h-7 w-7 items-center justify-center rounded-full bg-primary text-white text-xs font-bold flex-shrink-0">3</span>
+                    <div>
+                      <p className="text-sm font-semibold text-dark">Custom proposal</p>
+                      <p className="text-xs text-muted mt-0.5">You receive a tailored quote within 48 hours.</p>
+                    </div>
+                  </li>
+                </ol>
               </div>
 
               {/* Social Media */}
-              <div className="bg-white rounded-xl p-5">
-                <p className="text-xs font-semibold tracking-widest uppercase text-muted mb-4">
+              <div className="bg-white rounded-2xl p-6 md:p-8 shadow-sm">
+                <h3 className="font-heading text-xl font-bold text-dark mb-4">
                   Follow Us
+                </h3>
+                <p className="text-sm text-muted mb-4">
+                  See our latest work and get inspired for your event.
                 </p>
                 <div className="flex items-center gap-3">
                   {socialLinks.map((social) => {
@@ -437,21 +470,6 @@ export default function ContactContent() {
                     );
                   })}
                 </div>
-              </div>
-
-              {/* Map */}
-              <div className="rounded-xl overflow-hidden aspect-[4/3]">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127672.75772083989!2d32.52291174218754!3d0.31327959999999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dbc0f90af4c61%3A0x1ba56f5e3a30c9f0!2sKampala%2C%20Uganda!5e0!3m2!1sen!2sus!4v1709000000000!5m2!1sen!2sus"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Modern Charm Uganda location in Kampala"
-                  className="w-full h-full"
-                />
               </div>
             </div>
           </div>
