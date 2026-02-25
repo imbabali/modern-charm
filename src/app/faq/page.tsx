@@ -1,18 +1,17 @@
-"use client";
+import type { Metadata } from "next";
+import FAQContent from "@/components/FAQContent";
+import type { FAQCategory } from "@/components/FAQContent";
 
-import { useState } from "react";
-import { ChevronDown } from "lucide-react";
-import Link from "next/link";
-
-interface FAQItem {
-  question: string;
-  answer: string;
-}
-
-interface FAQCategory {
-  category: string;
-  items: FAQItem[];
-}
+export const metadata: Metadata = {
+  title: "FAQ | Modern Charm Uganda",
+  description:
+    "Find answers to common questions about Modern Charm Uganda's event styling services, pricing, booking process, and more.",
+  openGraph: {
+    title: "FAQ | Modern Charm Uganda",
+    description:
+      "Find answers to common questions about our event styling services, pricing, and booking process.",
+  },
+};
 
 const faqData: FAQCategory[] = [
   {
@@ -87,125 +86,29 @@ const faqData: FAQCategory[] = [
   },
 ];
 
-function FAQAccordionItem({
-  item,
-  isOpen,
-  onToggle,
-}: {
-  item: FAQItem;
-  isOpen: boolean;
-  onToggle: () => void;
-}) {
-  return (
-    <div className="border-b border-cream-dark last:border-b-0">
-      <button
-        onClick={onToggle}
-        className="flex w-full items-center justify-between gap-4 py-6 text-left transition-colors hover:text-primary"
-        aria-expanded={isOpen}
-      >
-        <span className="font-heading text-lg font-semibold text-dark pr-4">
-          {item.question}
-        </span>
-        <ChevronDown
-          className={`h-5 w-5 shrink-0 text-primary transition-transform duration-300 ${
-            isOpen ? "rotate-180" : "rotate-0"
-          }`}
-        />
-      </button>
-      <div
-        className={`grid transition-all duration-300 ease-in-out ${
-          isOpen ? "grid-rows-[1fr] pb-6 opacity-100" : "grid-rows-[0fr] opacity-0"
-        }`}
-      >
-        <div className="overflow-hidden">
-          <p className="font-body text-base leading-relaxed text-muted pr-10">
-            {item.answer}
-          </p>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 export default function FAQPage() {
-  const [openItems, setOpenItems] = useState<Set<string>>(new Set());
-
-  const toggleItem = (id: string) => {
-    setOpenItems((prev) => {
-      const next = new Set(prev);
-      if (next.has(id)) {
-        next.delete(id);
-      } else {
-        next.add(id);
-      }
-      return next;
-    });
-  };
-
   return (
-    <main className="min-h-screen bg-cream">
-      {/* Hero Banner */}
-      <section className="bg-gradient-to-br from-primary-dark via-primary to-primary-light px-6 py-24 text-center text-white md:py-32">
-        <div className="mx-auto max-w-3xl">
-          <h1 className="font-heading text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl">
-            Frequently Asked Questions
-          </h1>
-          <p className="mt-6 font-body text-lg leading-relaxed text-white/90 md:text-xl">
-            Everything you need to know about working with Modern Charm
-          </p>
-        </div>
-      </section>
-
-      {/* FAQ Accordion */}
-      <section className="px-6 py-20 md:py-28">
-        <div className="mx-auto max-w-3xl">
-          {faqData.map((category, catIndex) => (
-            <div key={catIndex} className={catIndex > 0 ? "mt-14" : ""}>
-              {/* Category Header */}
-              <div className="mb-6 flex items-center gap-4">
-                <h2 className="font-heading text-2xl font-bold text-dark">
-                  {category.category}
-                </h2>
-                <div className="h-px flex-1 bg-cream-dark" />
-              </div>
-
-              {/* FAQ Items */}
-              <div className="rounded-xl bg-white p-2 shadow-sm md:p-4">
-                {category.items.map((item, itemIndex) => {
-                  const id = `${catIndex}-${itemIndex}`;
-                  return (
-                    <FAQAccordionItem
-                      key={id}
-                      item={item}
-                      isOpen={openItems.has(id)}
-                      onToggle={() => toggleItem(id)}
-                    />
-                  );
-                })}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Bottom CTA */}
-      <section className="bg-gradient-to-br from-primary-dark via-primary to-primary-light px-6 py-20 text-center md:py-28">
-        <div className="mx-auto max-w-2xl">
-          <h2 className="font-heading text-3xl font-bold text-white md:text-4xl">
-            Still have questions?
-          </h2>
-          <p className="mt-4 font-body text-lg text-white/85">
-            Contact us directly and we&apos;ll be happy to help you plan your
-            perfect celebration.
-          </p>
-          <Link
-            href="/contact"
-            className="mt-8 inline-block rounded-full bg-accent px-10 py-4 font-body text-base font-semibold text-white shadow-lg transition-all duration-300 hover:bg-accent-light hover:shadow-xl"
-          >
-            Contact Us
-          </Link>
-        </div>
-      </section>
-    </main>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqData.flatMap((cat) =>
+              cat.items.map((item) => ({
+                "@type": "Question",
+                name: item.question,
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: item.answer,
+                },
+              }))
+            ),
+          }),
+        }}
+      />
+      <FAQContent faqData={faqData} />
+    </>
   );
 }
