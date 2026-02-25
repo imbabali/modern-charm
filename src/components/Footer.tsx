@@ -86,28 +86,28 @@ export default function Footer() {
 
       {/* Main Footer Content */}
       <div className="container-custom py-8">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-5">
           {/* Column 1 — Brand */}
           <div>
-            <Link href="/" className="inline-flex items-center gap-1.5 group">
-              <Logo className="w-8 h-8 text-accent-light" />
+            <Link href="/" className="inline-flex items-center gap-2 group">
+              <Logo className="w-10 h-10 text-accent-light" />
               <div className="flex flex-col">
-                <span className="font-heading text-sm font-bold tracking-wider text-white leading-tight">
+                <span className="font-heading text-lg font-bold tracking-wider text-white">
                   MODERN CHARM
                 </span>
-                <span className="text-[8px] font-body tracking-[0.2em] uppercase text-white/80">
+                <span className="text-[9px] font-body tracking-[0.25em] uppercase text-white">
                   Uganda
                 </span>
               </div>
             </Link>
 
-            <p className="mt-2.5 text-white/90 text-xs leading-relaxed">
+            <p className="mt-2.5 text-white text-sm leading-relaxed max-w-xs">
               Transforming ordinary venues into extraordinary experiences
               across Uganda.
             </p>
 
             {/* Social Icons */}
-            <div className="mt-3 flex items-center gap-2">
+            <div className="mt-3 flex items-center gap-2.5">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
@@ -115,12 +115,12 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="flex items-center justify-center w-8 h-8 rounded-full bg-white/10 text-white transition-all duration-300 hover:bg-accent hover:text-white hover:scale-110"
+                  className="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 text-white transition-all duration-300 hover:bg-accent hover:text-white hover:scale-110"
                 >
                   {social.icon ? (
-                    <social.icon className="w-3.5 h-3.5" aria-hidden="true" />
+                    <social.icon className="w-4.5 h-4.5" aria-hidden="true" />
                   ) : (
-                    <TikTokIcon className="w-3.5 h-3.5" />
+                    <TikTokIcon className="w-4.5 h-4.5" />
                   )}
                 </a>
               ))}
@@ -129,15 +129,15 @@ export default function Footer() {
 
           {/* Column 2 — Quick Links */}
           <div>
-            <h3 className="font-heading text-sm font-semibold text-white mb-3">
+            <h3 className="font-heading text-lg font-semibold text-white mb-3">
               Quick Links
             </h3>
-            <ul className="space-y-1.5">
+            <ul className="space-y-1">
               {quickLinks.map((link) => (
                 <li key={link.href + link.label}>
                   <Link
                     href={link.href}
-                    className="text-white/90 text-xs hover:text-white transition-colors duration-200 inline-flex items-center gap-1.5"
+                    className="text-white text-sm hover:text-white transition-colors duration-200 inline-flex items-center gap-2"
                   >
                     <span className="w-1 h-1 rounded-full bg-accent/50" />
                     {link.label}
@@ -149,15 +149,15 @@ export default function Footer() {
 
           {/* Column 3 — Services */}
           <div>
-            <h3 className="font-heading text-sm font-semibold text-white mb-3">
+            <h3 className="font-heading text-lg font-semibold text-white mb-3">
               Our Services
             </h3>
-            <ul className="space-y-1.5">
+            <ul className="space-y-1">
               {services.map((service, index) => (
                 <li key={index}>
                   <Link
                     href={service.href}
-                    className="text-white/90 text-xs hover:text-white transition-colors duration-200 inline-flex items-center gap-1.5"
+                    className="text-white text-sm hover:text-white transition-colors duration-200 inline-flex items-center gap-2"
                   >
                     <span className="w-1 h-1 rounded-full bg-accent/50" />
                     {service.label}
@@ -169,31 +169,31 @@ export default function Footer() {
 
           {/* Column 4 — Contact + Newsletter */}
           <div>
-            <h3 className="font-heading text-sm font-semibold text-white mb-3">
+            <h3 className="font-heading text-lg font-semibold text-white mb-3">
               Contact Us
             </h3>
             <ul className="space-y-1.5">
               <li>
                 <a
                   href="tel:+256779399409"
-                  className="flex items-center gap-2 text-white/90 text-xs hover:text-white transition-colors group"
+                  className="flex items-center gap-2.5 text-white text-sm hover:text-white transition-colors group"
                 >
-                  <Phone className="w-3 h-3 text-accent shrink-0" aria-hidden="true" />
+                  <Phone className="w-4 h-4 text-accent shrink-0" aria-hidden="true" />
                   +256 779 399 409
                 </a>
               </li>
               <li>
                 <a
                   href="mailto:moderncharm30@gmail.com"
-                  className="flex items-center gap-2 text-white/90 text-xs hover:text-white transition-colors group"
+                  className="flex items-center gap-2.5 text-white text-sm hover:text-white transition-colors group"
                 >
-                  <Mail className="w-3 h-3 text-accent shrink-0" aria-hidden="true" />
+                  <Mail className="w-4 h-4 text-accent shrink-0" aria-hidden="true" />
                   moderncharm30@gmail.com
                 </a>
               </li>
               <li>
-                <div className="flex items-center gap-2 text-white/90 text-xs">
-                  <MapPin className="w-3 h-3 text-accent shrink-0" aria-hidden="true" />
+                <div className="flex items-center gap-2.5 text-white text-sm">
+                  <MapPin className="w-4 h-4 text-accent shrink-0" aria-hidden="true" />
                   <span>Kampala, Uganda</span>
                 </div>
               </li>
@@ -201,8 +201,11 @@ export default function Footer() {
 
             {/* Newsletter */}
             <div className="mt-3">
-              <p className="text-white/80 text-xs mb-1.5">
-                Stay inspired — get styling tips & offers.
+              <h4 className="text-sm font-semibold text-white mb-1.5">
+                Stay Inspired
+              </h4>
+              <p className="text-white text-xs mb-1.5 leading-relaxed">
+                Subscribe for styling tips, trends, and offers.
               </p>
               <NewsletterForm />
             </div>

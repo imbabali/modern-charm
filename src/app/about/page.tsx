@@ -291,10 +291,10 @@ export default function AboutPage() {
       {/* CTA Section */}
       <section className="py-20 md:py-28 relative overflow-hidden">
         <Image
-          src="/images/reception-decor.jpg"
-          alt="Reception with floral installation"
+          src="/images/portfolio/oscar-sandra/IMG_0795.jpg"
+          alt="Luxury black and white reception with gold arches and crystal chandeliers"
           fill
-          className="object-cover object-top"
+          className="object-cover"
           quality={80}
           sizes="100vw"
         />
