@@ -42,3 +42,4 @@ next-env.d.ts
 
 # large video files (served from Vercel Blob CDN)
 public/videos/
+.env*.local
