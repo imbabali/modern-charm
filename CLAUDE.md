@@ -129,9 +129,12 @@ src/
 - [x] ~~Add real WhatsApp number~~ — Done (Philip's: +256 779 399 409)
 - [x] ~~Add real contact info~~ — Done (phones, email, social links)
 - [x] ~~Add real team members~~ — Done (Philip & Benjamin)
-- [x] ~~Add Google Maps embed on contact page~~ — Done (Kampala, Uganda iframe embed)
+- [x] ~~Add Google Maps embed on contact page~~ — Removed (contact page redesigned without map)
 - [x] ~~Add real portfolio items~~ — Done (Allan & Pauline wedding gallery)
-- [ ] Add real testimonials
+- [ ] Add real testimonials (currently placeholder)
+- [ ] Add real team photos (Philip & Benjamin — currently gradient initials)
+- [ ] Add real photos for corporate, traditional, celebration portfolio categories
+- [ ] Verify homepage stats accuracy (500+ Events, 8+ Years, 50+ Venue Partners)
 - [x] ~~Add blog post detail pages~~ — Done (7 blog posts with dynamic [slug] routing)
 - [x] ~~Implement SEO~~ — Done (metadataBase, sitemap.ts with blog slugs, robots.ts, JSON-LD EventPlanning + LocalBusiness + Article + FAQ schemas, per-page OG/Twitter/canonical tags)
 - [x] ~~Add page transition animations~~ — Done (AnimateOnScroll component, CSS scroll animations)
@@ -156,3 +159,7 @@ src/
 - **2026-02-25**: Deep contrast audit via Vercel accessibility checker — changed all hero headings from text-accent-light to text-white (accent-light fails on semi-transparent overlays), bumped footer text from white/85 to white, fixed hover:text-accent-light → hover:text-white in footer links, fixed navbar mobile active link contrast, fixed newsletter input placeholder contrast, fixed all text-white/80 instances across 13 files
 - **2026-02-25**: Funky WhatsApp button — replaced generic MessageCircle with WhatsApp SVG logo, always-visible "Let's chat!" speech bubble with wiggle + float animations, Modern Charm brand colors (gold button, teal bubble), compact footer spacing (~100px savings)
 - **2026-02-25**: Vercel 2026 production audit — full compliance: CSP + HSTS + DNS-Prefetch headers, React Compiler + Strict Mode, optimizePackageImports, canonical URLs on all pages, per-page OG/Twitter tags, blog posts in sitemap, Article + LocalBusiness JSON-LD schemas, global-error.tsx, fixed pricing heading hierarchy, extracted Portfolio into server component for metadata
+- **2026-02-25**: Contact page redesign — removed Google Maps, added horizontal contact info bar + "What Happens Next?" process steps sidebar
+- **2026-02-25**: About page polish — removed mission/vision numbering, matched CTA overlay to hero opacity, swapped CTA to landscape image
+- **2026-02-25**: Footer compacted — tighter spacing throughout (py, gap, space-y), original font sizes preserved
+- **2026-02-25**: Client readiness audit — removed "Coming Soon" blog section + "Featured Image" text, removed 4 gradient placeholder portfolio items, deleted boilerplate SVGs + business-cards.pdf, removed console.error from API routes, cleaned placeholder comments, fixed unused import in Navbar
