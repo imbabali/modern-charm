@@ -258,16 +258,16 @@ export default function PortfolioPage() {
       : portfolioItems.filter((p) => p.category === activeFilter);
 
   return (
-    <main className="font-body">
+    <div className="font-body">
       {/* Hero Banner */}
       <section className="relative bg-gradient-to-br from-primary-dark via-primary to-primary-light py-24 md:py-32">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDM0djItSDI0di0yaDEyek0zNiAyNHYySDI0di0yaDEyeiIvPjwvZz48L2c+PC9zdmc+')] opacity-30" />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-          <nav className="mb-6 flex items-center justify-center gap-2 text-sm text-white/70">
+          <nav aria-label="Breadcrumb" className="mb-6 flex items-center justify-center gap-2 text-sm text-white/90">
             <Link href="/" className="hover:text-white transition-colors">
               Home
             </Link>
-            <ChevronRight className="h-4 w-4" />
+            <ChevronRight className="h-4 w-4" aria-hidden="true" />
             <span className="text-white font-medium">Portfolio</span>
           </nav>
           <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
@@ -402,7 +402,7 @@ export default function PortfolioPage() {
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-6">
             Ready to Start Your Story?
           </h2>
-          <p className="text-white/80 text-lg mb-10 max-w-2xl mx-auto">
+          <p className="text-white/90 text-lg mb-10 max-w-2xl mx-auto">
             Let us create a celebration that&apos;s uniquely yours. Reach out
             today and let&apos;s begin planning something beautiful.
           </p>
@@ -415,6 +415,6 @@ export default function PortfolioPage() {
           </Link>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

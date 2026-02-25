@@ -84,7 +84,7 @@ function CategoryBadge({ category }: { category: string }) {
 
 export default function BlogPage() {
   return (
-    <main className="min-h-screen bg-cream">
+    <div className="min-h-screen bg-cream">
       {/* Hero Banner */}
       <section className="bg-gradient-to-br from-primary-dark via-primary to-primary-light px-6 py-24 text-center text-white md:py-32">
         <div className="mx-auto max-w-3xl">
@@ -211,6 +211,6 @@ export default function BlogPage() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

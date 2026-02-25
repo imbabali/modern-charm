@@ -72,7 +72,7 @@ function StarRating({ rating }: { rating: number }) {
 
 export default function TestimonialsPage() {
   return (
-    <main className="min-h-screen bg-cream">
+    <div className="min-h-screen bg-cream">
       {/* Hero Banner */}
       <section className="bg-gradient-to-br from-primary-dark via-primary to-primary-light px-6 py-24 text-center text-white md:py-32">
         <div className="mx-auto max-w-3xl">
@@ -170,7 +170,7 @@ export default function TestimonialsPage() {
           <h2 className="font-heading text-3xl font-bold text-white md:text-4xl">
             Ready to create your own story?
           </h2>
-          <p className="mt-4 font-body text-lg text-white/85">
+          <p className="mt-4 font-body text-lg text-white/90">
             Let&apos;s talk about bringing your vision to life.
           </p>
           <Link
@@ -181,6 +181,6 @@ export default function TestimonialsPage() {
           </Link>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

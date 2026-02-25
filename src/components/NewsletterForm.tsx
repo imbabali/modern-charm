@@ -19,7 +19,7 @@ export default function NewsletterForm() {
         className="px-4 py-2.5 bg-accent hover:bg-accent-dark rounded-r-lg transition-colors duration-300 flex items-center justify-center"
         aria-label="Subscribe to newsletter"
       >
-        <Send className="w-4 h-4 text-white" />
+        <Send className="w-4 h-4 text-white" aria-hidden="true" />
       </button>
     </form>
   );

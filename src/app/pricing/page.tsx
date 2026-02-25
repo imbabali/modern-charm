@@ -102,7 +102,7 @@ const addOns = [
 
 export default function PricingPage() {
   return (
-    <main className="min-h-screen bg-cream">
+    <div className="min-h-screen bg-cream">
       {/* Hero Banner */}
       <section className="bg-gradient-to-br from-primary-dark via-primary to-primary-light px-6 py-24 text-center text-white md:py-32">
         <div className="mx-auto max-w-3xl">
@@ -245,7 +245,7 @@ export default function PricingPage() {
           <h2 className="font-heading text-3xl font-bold text-white md:text-4xl">
             Need something custom?
           </h2>
-          <p className="mt-4 font-body text-lg text-white/85">
+          <p className="mt-4 font-body text-lg text-white/90">
             Let&apos;s design your perfect package, tailored to your vision,
             your venue, and your budget.
           </p>
@@ -257,6 +257,6 @@ export default function PricingPage() {
           </Link>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

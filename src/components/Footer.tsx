@@ -67,7 +67,7 @@ function TikTokIcon({ className }: { className?: string }) {
 
 export default function Footer() {
   return (
-    <footer className="bg-primary text-white">
+    <footer className="bg-primary text-white" aria-label="Site footer">
       {/* Tagline Banner */}
       <div className="bg-primary-dark">
         <div className="container-custom py-8 text-center">
@@ -76,7 +76,7 @@ export default function Footer() {
           </p>
           <div className="mt-3 flex items-center justify-center gap-1.5">
             <span className="w-8 h-px bg-accent" />
-            <Heart className="w-4 h-4 text-accent fill-accent" />
+            <Heart className="w-4 h-4 text-accent fill-accent" aria-hidden="true" />
             <span className="w-8 h-px bg-accent" />
           </div>
         </div>
@@ -104,7 +104,7 @@ export default function Footer() {
               </div>
             </Link>
 
-            <p className="mt-4 text-white/70 text-sm leading-relaxed max-w-xs">
+            <p className="mt-4 text-white/85 text-sm leading-relaxed max-w-xs">
               Transforming ordinary venues into extraordinary experiences. We
               bring elegance, creativity, and modern sophistication to every
               celebration in Uganda.
@@ -119,7 +119,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 text-white/80 transition-all duration-300 hover:bg-accent hover:text-white hover:scale-110"
+                  className="flex items-center justify-center w-11 h-11 rounded-full bg-white/10 text-white/80 transition-all duration-300 hover:bg-accent hover:text-white hover:scale-110"
                 >
                   {social.icon ? (
                     <social.icon className="w-4.5 h-4.5" />
@@ -141,7 +141,7 @@ export default function Footer() {
                 <li key={link.href + link.label}>
                   <Link
                     href={link.href}
-                    className="text-white/70 text-sm hover:text-accent-light transition-colors duration-200 inline-flex items-center gap-2"
+                    className="text-white/85 text-sm hover:text-accent-light transition-colors duration-200 inline-flex items-center gap-2"
                   >
                     <span className="w-1 h-1 rounded-full bg-accent/50" />
                     {link.label}
@@ -161,7 +161,7 @@ export default function Footer() {
                 <li key={index}>
                   <Link
                     href={service.href}
-                    className="text-white/70 text-sm hover:text-accent-light transition-colors duration-200 inline-flex items-center gap-2"
+                    className="text-white/85 text-sm hover:text-accent-light transition-colors duration-200 inline-flex items-center gap-2"
                   >
                     <span className="w-1 h-1 rounded-full bg-accent/50" />
                     {service.label}
@@ -180,24 +180,24 @@ export default function Footer() {
               <li>
                 <a
                   href="tel:+256779399409"
-                  className="flex items-start gap-3 text-white/70 text-sm hover:text-accent-light transition-colors group"
+                  className="flex items-start gap-3 text-white/85 text-sm hover:text-accent-light transition-colors group"
                 >
-                  <Phone className="w-4 h-4 mt-0.5 text-accent shrink-0 group-hover:scale-110 transition-transform" />
+                  <Phone className="w-4 h-4 mt-0.5 text-accent shrink-0 group-hover:scale-110 transition-transform" aria-hidden="true" />
                   +256 779 399 409
                 </a>
               </li>
               <li>
                 <a
                   href="mailto:moderncharm30@gmail.com"
-                  className="flex items-start gap-3 text-white/70 text-sm hover:text-accent-light transition-colors group"
+                  className="flex items-start gap-3 text-white/85 text-sm hover:text-accent-light transition-colors group"
                 >
-                  <Mail className="w-4 h-4 mt-0.5 text-accent shrink-0 group-hover:scale-110 transition-transform" />
+                  <Mail className="w-4 h-4 mt-0.5 text-accent shrink-0 group-hover:scale-110 transition-transform" aria-hidden="true" />
                   moderncharm30@gmail.com
                 </a>
               </li>
               <li>
-                <div className="flex items-start gap-3 text-white/70 text-sm">
-                  <MapPin className="w-4 h-4 mt-0.5 text-accent shrink-0" />
+                <div className="flex items-start gap-3 text-white/85 text-sm">
+                  <MapPin className="w-4 h-4 mt-0.5 text-accent shrink-0" aria-hidden="true" />
                   <span>Kampala, Uganda</span>
                 </div>
               </li>
@@ -208,7 +208,7 @@ export default function Footer() {
               <h4 className="text-sm font-semibold text-white mb-3">
                 Stay Inspired
               </h4>
-              <p className="text-white/60 text-xs mb-3 leading-relaxed">
+              <p className="text-white/85 text-xs mb-3 leading-relaxed">
                 Subscribe for event styling tips, trends, and exclusive offers.
               </p>
               <NewsletterForm />
@@ -219,24 +219,10 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="border-t border-white/10">
-        <div className="container-custom py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-white/50 text-xs text-center sm:text-left">
+        <div className="container-custom py-6 flex items-center justify-center">
+          <p className="text-white/80 text-xs text-center">
             &copy; 2026 Modern Charm Uganda. All rights reserved.
           </p>
-          <div className="flex items-center gap-6">
-            <Link
-              href="/privacy"
-              className="text-white/50 text-xs hover:text-accent-light transition-colors"
-            >
-              Privacy Policy
-            </Link>
-            <Link
-              href="/terms"
-              className="text-white/50 text-xs hover:text-accent-light transition-colors"
-            >
-              Terms of Service
-            </Link>
-          </div>
         </div>
       </div>
     </footer>
