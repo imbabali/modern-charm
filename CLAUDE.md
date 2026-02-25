@@ -95,7 +95,8 @@ src/
 
 ## Development Notes
 - Tailwind v4 uses `@theme inline` block in globals.css — NOT tailwind.config.ts
-- Client components marked with `"use client"` only where needed (Portfolio, FAQ, Contact, Navbar, WhatsApp, Newsletter)
+- Client components marked with `"use client"` only where needed (PortfolioContent, FAQ, Contact, Navbar, WhatsApp, Newsletter, HeroCarousel, AnimateOnScroll)
+- Portfolio page uses server component wrapper (metadata) + PortfolioContent client component (filtering)
 - All pages pre-render as static content
 - Base CSS styles wrapped in `@layer base` so Tailwind utilities always override them
 - 3 video reels hosted on Vercel Blob CDN (hero, stats parallax, CTA on homepage)
@@ -132,9 +133,9 @@ src/
 - [x] ~~Add real portfolio items~~ — Done (Allan & Pauline wedding gallery)
 - [ ] Add real testimonials
 - [x] ~~Add blog post detail pages~~ — Done (7 blog posts with dynamic [slug] routing)
-- [x] ~~Implement SEO~~ — Done (metadataBase, sitemap.ts, robots.ts, JSON-LD, per-page OG tags, FAQ schema)
+- [x] ~~Implement SEO~~ — Done (metadataBase, sitemap.ts with blog slugs, robots.ts, JSON-LD EventPlanning + LocalBusiness + Article + FAQ schemas, per-page OG/Twitter/canonical tags)
 - [x] ~~Add page transition animations~~ — Done (AnimateOnScroll component, CSS scroll animations)
-- [x] ~~Performance optimization~~ — Done (AVIF format, image sizes, font trimming, security headers)
+- [x] ~~Performance optimization~~ — Done (AVIF format, image sizes, font trimming, security headers, React Compiler, optimizePackageImports)
 - [x] ~~Analytics integration~~ — Done (@vercel/analytics + @vercel/speed-insights)
 - [ ] Set up RESEND_API_KEY environment variable on Vercel for contact form + newsletter
 - [ ] Verify custom domain (moderncharmuganda.com) in Resend for branded sender emails
@@ -153,3 +154,5 @@ src/
 - **2026-02-25**: Accessibility audit — 42+ fixes across 15 files (aria labels, roles, heading hierarchy, focus management, keyboard navigation)
 - **2026-02-25**: WCAG 2.2 AA color contrast audit — darkened accent-dark (#A87A4A → #855E2E, 5.77:1 on white) and muted (#6B7280 → #5F6570, 5.05:1 on cream-dark), updated all text-accent/bg-accent usages across 16 files, 18/18 combinations pass
 - **2026-02-25**: Deep contrast audit via Vercel accessibility checker — changed all hero headings from text-accent-light to text-white (accent-light fails on semi-transparent overlays), bumped footer text from white/85 to white, fixed hover:text-accent-light → hover:text-white in footer links, fixed navbar mobile active link contrast, fixed newsletter input placeholder contrast, fixed all text-white/80 instances across 13 files
+- **2026-02-25**: Funky WhatsApp button — replaced generic MessageCircle with WhatsApp SVG logo, always-visible "Let's chat!" speech bubble with wiggle + float animations, Modern Charm brand colors (gold button, teal bubble), compact footer spacing (~100px savings)
+- **2026-02-25**: Vercel 2026 production audit — full compliance: CSP + HSTS + DNS-Prefetch headers, React Compiler + Strict Mode, optimizePackageImports, canonical URLs on all pages, per-page OG/Twitter tags, blog posts in sitemap, Article + LocalBusiness JSON-LD schemas, global-error.tsx, fixed pricing heading hierarchy, extracted Portfolio into server component for metadata
