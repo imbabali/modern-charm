@@ -3,7 +3,8 @@
 import { useState, useEffect } from "react";
 
 export default function WhatsAppButton() {
-  const [hidden, setHidden] = useState(false);
+  const [overFooter, setOverFooter] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const phoneNumber = "256779399409";
   const message = encodeURIComponent(
@@ -11,13 +12,13 @@ export default function WhatsAppButton() {
   );
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 
-  /* Hide the button when the footer enters the viewport */
+  /* Detect when footer enters the viewport */
   useEffect(() => {
     const footer = document.querySelector("footer");
     if (!footer) return;
 
     const observer = new IntersectionObserver(
-      ([entry]) => setHidden(entry.isIntersecting),
+      ([entry]) => setOverFooter(entry.isIntersecting),
       { threshold: 0.1 }
     );
 
@@ -25,21 +26,52 @@ export default function WhatsAppButton() {
     return () => observer.disconnect();
   }, []);
 
+  /* Detect when mobile menu drawer is open */
+  useEffect(() => {
+    const observer = new MutationObserver(() => {
+      const drawer = document.querySelector<HTMLElement>('[role="dialog"][aria-modal="true"]');
+      if (!drawer) return;
+      // Drawer is visible when it's not translated off-screen
+      const isVisible = !drawer.classList.contains("translate-x-full");
+      setMenuOpen(isVisible);
+    });
+
+    observer.observe(document.body, {
+      subtree: true,
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  const branded = overFooter || menuOpen;
+
   return (
     <div
-      className={`fixed bottom-6 right-6 z-50 flex items-center gap-3 transition-all duration-500 ${
-        hidden
-          ? "translate-y-24 opacity-0 pointer-events-none"
-          : "translate-y-0 opacity-100"
+      className={`fixed bottom-6 right-6 z-40 flex items-center gap-3 transition-all duration-500 ${
+        branded ? "translate-y-0 opacity-100" : "translate-y-0 opacity-100"
       }`}
     >
       {/* Speech Bubble — always visible */}
-      <div className="animate-chat-bubble relative bg-white rounded-2xl shadow-lg px-4 py-2.5">
-        <span className="text-sm font-semibold text-dark whitespace-nowrap">
+      <div
+        className={`animate-chat-bubble relative rounded-2xl shadow-lg px-4 py-2.5 transition-colors duration-500 ${
+          branded ? "bg-primary-dark" : "bg-white"
+        }`}
+      >
+        <span
+          className={`text-sm font-semibold whitespace-nowrap transition-colors duration-500 ${
+            branded ? "text-white" : "text-dark"
+          }`}
+        >
           Let&apos;s chat! 💬
         </span>
         {/* Triangle tail pointing right toward the button */}
-        <div className="absolute top-1/2 -right-2 -translate-y-1/2 w-0 h-0 border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent border-l-[8px] border-l-white" />
+        <div
+          className={`absolute top-1/2 -right-2 -translate-y-1/2 w-0 h-0 border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent border-l-[8px] transition-colors duration-500 ${
+            branded ? "border-l-primary-dark" : "border-l-white"
+          }`}
+        />
       </div>
 
       {/* WhatsApp Button */}
@@ -48,7 +80,11 @@ export default function WhatsAppButton() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat with us on WhatsApp"
-        className="flex items-center justify-center w-14 h-14 rounded-full bg-[#25D366] text-white shadow-xl transition-all duration-300 hover:bg-[#20BD5A] hover:scale-110 hover:rotate-[-8deg] hover:shadow-2xl animate-whatsapp-pulse animate-whatsapp-wiggle"
+        className={`flex items-center justify-center w-14 h-14 rounded-full text-white shadow-xl transition-all duration-500 hover:scale-110 hover:rotate-[-8deg] hover:shadow-2xl animate-whatsapp-pulse animate-whatsapp-wiggle ${
+          branded
+            ? "bg-accent hover:bg-accent-dark"
+            : "bg-[#25D366] hover:bg-[#20BD5A]"
+        }`}
       >
         {/* WhatsApp SVG logo */}
         <svg
