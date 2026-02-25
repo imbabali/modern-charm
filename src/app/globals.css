@@ -112,6 +112,49 @@
   animation: whatsapp-pulse 2s infinite;
 }
 
+/* WhatsApp wiggle animation — periodic attention-grabbing rotation */
+@keyframes whatsapp-wiggle {
+  0%, 60%, 100% {
+    transform: rotate(0deg);
+  }
+  65% {
+    transform: rotate(-12deg);
+  }
+  70% {
+    transform: rotate(10deg);
+  }
+  75% {
+    transform: rotate(-8deg);
+  }
+  80% {
+    transform: rotate(6deg);
+  }
+  85% {
+    transform: rotate(-3deg);
+  }
+  90% {
+    transform: rotate(0deg);
+  }
+}
+
+.animate-whatsapp-wiggle {
+  animation: whatsapp-wiggle 5s ease-in-out infinite;
+}
+
+/* Chat bubble floating animation */
+@keyframes chat-bubble-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.animate-chat-bubble {
+  animation: chat-bubble-float 3s ease-in-out infinite;
+}
+
 /* Nav link hover underline animation */
 .nav-link-underline {
   position: relative;
@@ -170,7 +213,9 @@
     scroll-behavior: auto !important;
   }
 
-  .animate-whatsapp-pulse {
+  .animate-whatsapp-pulse,
+  .animate-whatsapp-wiggle,
+  .animate-chat-bubble {
     animation: none;
   }
 }

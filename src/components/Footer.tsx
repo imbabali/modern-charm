@@ -72,11 +72,11 @@ export default function Footer() {
     <footer className="bg-primary text-white" aria-label="Site footer">
       {/* Tagline Banner */}
       <div className="bg-primary-dark">
-        <div className="container-custom py-8 text-center">
-          <p className="font-heading text-2xl md:text-3xl font-semibold text-white/95 italic">
+        <div className="container-custom py-4 text-center">
+          <p className="font-heading text-xl md:text-2xl font-semibold text-white/95 italic">
             &ldquo;Let us add Modern Charm to your celebration&rdquo;
           </p>
-          <div className="mt-3 flex items-center justify-center gap-1.5">
+          <div className="mt-2 flex items-center justify-center gap-1.5">
             <span className="w-8 h-px bg-accent" />
             <Heart className="w-4 h-4 text-accent fill-accent" aria-hidden="true" />
             <span className="w-8 h-px bg-accent" />
@@ -85,8 +85,8 @@ export default function Footer() {
       </div>
 
       {/* Main Footer Content */}
-      <div className="container-custom py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+      <div className="container-custom py-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
           {/* Column 1 — Brand */}
           <div className="lg:col-span-1">
             {/* Logo */}
@@ -102,14 +102,14 @@ export default function Footer() {
               </div>
             </Link>
 
-            <p className="mt-4 text-white text-sm leading-relaxed max-w-xs">
+            <p className="mt-3 text-white text-sm leading-relaxed max-w-xs">
               Transforming ordinary venues into extraordinary experiences. We
               bring elegance, creativity, and modern sophistication to every
               celebration in Uganda.
             </p>
 
             {/* Social Icons */}
-            <div className="mt-6 flex items-center gap-3">
+            <div className="mt-4 flex items-center gap-3">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
@@ -131,10 +131,10 @@ export default function Footer() {
 
           {/* Column 2 — Quick Links */}
           <div>
-            <h3 className="font-heading text-lg font-semibold text-white mb-6">
+            <h3 className="font-heading text-lg font-semibold text-white mb-4">
               Quick Links
             </h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.href + link.label}>
                   <Link
@@ -151,10 +151,10 @@ export default function Footer() {
 
           {/* Column 3 — Services */}
           <div>
-            <h3 className="font-heading text-lg font-semibold text-white mb-6">
+            <h3 className="font-heading text-lg font-semibold text-white mb-4">
               Our Services
             </h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2">
               {services.map((service, index) => (
                 <li key={index}>
                   <Link
@@ -171,10 +171,10 @@ export default function Footer() {
 
           {/* Column 4 — Contact + Newsletter */}
           <div>
-            <h3 className="font-heading text-lg font-semibold text-white mb-6">
+            <h3 className="font-heading text-lg font-semibold text-white mb-4">
               Contact Us
             </h3>
-            <ul className="space-y-4">
+            <ul className="space-y-2.5">
               <li>
                 <a
                   href="tel:+256779399409"
@@ -202,11 +202,11 @@ export default function Footer() {
             </ul>
 
             {/* Newsletter */}
-            <div className="mt-8">
-              <h4 className="text-sm font-semibold text-white mb-3">
+            <div className="mt-5">
+              <h4 className="text-sm font-semibold text-white mb-2">
                 Stay Inspired
               </h4>
-              <p className="text-white text-xs mb-3 leading-relaxed">
+              <p className="text-white text-xs mb-2 leading-relaxed">
                 Subscribe for event styling tips, trends, and exclusive offers.
               </p>
               <NewsletterForm />
@@ -217,7 +217,7 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="border-t border-white/10">
-        <div className="container-custom py-6 flex items-center justify-center">
+        <div className="container-custom py-4 flex items-center justify-center">
           <p className="text-white/95 text-xs text-center">
             &copy; 2026 Modern Charm Uganda. All rights reserved.
           </p>
