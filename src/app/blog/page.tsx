@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ArrowRight, Calendar } from "lucide-react";
 import Link from "next/link";
+import { blogPosts } from "@/data/blog-posts";
 
 export const metadata: Metadata = {
   title: "Our Journal | Modern Charm Uganda",
@@ -8,71 +9,8 @@ export const metadata: Metadata = {
     "Tips, trends, and behind-the-scenes stories from the world of event styling in Uganda. Your guide to unforgettable celebrations.",
 };
 
-const featuredPost = {
-  title: "The Ultimate Guide to Planning a Ugandan Wedding in 2026",
-  excerpt:
-    "From choosing between a garden ceremony and a grand ballroom, to navigating the beautiful blend of traditional and modern elements — this comprehensive guide covers everything you need to know about planning your dream wedding in Uganda this year.",
-  category: "Weddings",
-  date: "February 18, 2026",
-  slug: "#",
-};
-
-const blogPosts = [
-  {
-    title: "Top 10 Wedding Decor Trends in Uganda for 2026",
-    excerpt:
-      "From sustainable florals to immersive lighting experiences, discover the trends that are shaping Ugandan weddings this year.",
-    category: "Weddings",
-    date: "February 12, 2026",
-    gradient: "from-primary/60 to-primary-dark/80",
-    slug: "#",
-  },
-  {
-    title: "How to Plan the Perfect Kwanjula Ceremony",
-    excerpt:
-      "A step-by-step guide to honouring tradition while adding your own modern touch to this beautiful Buganda introduction ceremony.",
-    category: "Traditional",
-    date: "February 5, 2026",
-    gradient: "from-accent/60 to-accent-light/80",
-    slug: "#",
-  },
-  {
-    title: "Corporate Event Planning: A Complete Checklist",
-    excerpt:
-      "Whether it is a product launch or an annual gala, this checklist ensures nothing falls through the cracks.",
-    category: "Corporate",
-    date: "January 28, 2026",
-    gradient: "from-primary-light/60 to-primary/80",
-    slug: "#",
-  },
-  {
-    title: "Choosing the Right Color Palette for Your Event",
-    excerpt:
-      "Colour sets the mood for your entire celebration. Learn how to select a palette that tells your unique story.",
-    category: "Tips",
-    date: "January 20, 2026",
-    gradient: "from-accent-light/60 to-accent/80",
-    slug: "#",
-  },
-  {
-    title: "Behind the Scenes: A Luxury Lakeside Wedding",
-    excerpt:
-      "Take a peek behind the curtain at one of our most breathtaking weddings set along the shores of Lake Victoria.",
-    category: "Portfolio",
-    date: "January 14, 2026",
-    gradient: "from-primary-dark/60 to-primary-light/80",
-    slug: "#",
-  },
-  {
-    title: "Budget-Friendly Event Styling Ideas",
-    excerpt:
-      "You don't need a massive budget to create a stunning event. Here are our top tips for stylish celebrations on any budget.",
-    category: "Tips",
-    date: "January 6, 2026",
-    gradient: "from-accent/50 to-primary/70",
-    slug: "#",
-  },
-];
+const featuredPost = blogPosts.find((post) => post.featured) ?? blogPosts[0];
+const gridPosts = blogPosts.filter((post) => !post.featured);
 
 function CategoryBadge({ category }: { category: string }) {
   return (
@@ -101,7 +39,7 @@ export default function BlogPage() {
       {/* Featured Blog Post */}
       <section className="px-6 py-20 md:py-28">
         <div className="mx-auto max-w-6xl">
-          <Link href={featuredPost.slug} className="group block">
+          <Link href={`/blog/${featuredPost.slug}`} className="group block">
             <div className="overflow-hidden rounded-2xl bg-white shadow-md transition-all duration-300 hover:shadow-xl md:flex">
               {/* Image Placeholder */}
               <div className="relative h-64 w-full bg-gradient-to-br from-primary via-primary-light to-accent md:h-auto md:w-1/2">
@@ -149,8 +87,12 @@ export default function BlogPage() {
           </p>
 
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {blogPosts.map((post, index) => (
-              <Link key={index} href={post.slug} className="group block">
+            {gridPosts.map((post) => (
+              <Link
+                key={post.slug}
+                href={`/blog/${post.slug}`}
+                className="group block"
+              >
                 <article className="h-full overflow-hidden rounded-xl bg-cream transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
                   {/* Image Placeholder */}
                   <div
