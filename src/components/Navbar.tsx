@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, Sparkles } from "lucide-react";
@@ -21,6 +21,9 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+  const drawerRef = useRef<HTMLDivElement>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -50,6 +53,26 @@ export default function Navbar() {
     };
   }, [isMobileMenuOpen]);
 
+  // Close mobile menu on Escape key
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setIsMobileMenuOpen(false);
+    };
+    if (isMobileMenuOpen) {
+      document.addEventListener("keydown", handleEscape);
+    }
+    return () => document.removeEventListener("keydown", handleEscape);
+  }, [isMobileMenuOpen]);
+
+  // Focus management for mobile drawer
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      closeButtonRef.current?.focus();
+    } else {
+      menuButtonRef.current?.focus();
+    }
+  }, [isMobileMenuOpen]);
+
   const isActive = (href: string) => {
     if (href === "/") return pathname === "/";
     return pathname.startsWith(href);
@@ -65,7 +88,7 @@ export default function Navbar() {
         }`}
       >
         <div className="container-custom">
-          <nav className="flex items-center justify-between h-20 lg:h-22">
+          <nav aria-label="Main navigation" className="flex items-center justify-between h-20 lg:h-22">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2 group">
               {/* MC Monogram */}
@@ -109,7 +132,7 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`nav-link-underline relative px-3 py-2 text-sm font-medium transition-colors duration-200 ${
+                  className={`nav-link-underline relative px-3 py-2 text-sm font-medium transition-colors duration-200 focus-visible:text-accent focus-visible:outline-none ${
                     isActive(link.href)
                       ? isScrolled
                         ? "text-primary"
@@ -135,14 +158,15 @@ export default function Navbar() {
                     : "bg-accent text-white hover:bg-accent-dark shadow-lg"
                 } hover:-translate-y-0.5`}
               >
-                <Sparkles className="w-4 h-4" />
+                <Sparkles className="w-4 h-4" aria-hidden="true" />
                 Book Consultation
               </Link>
 
               {/* Mobile Menu Button */}
               <button
+                ref={menuButtonRef}
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className={`xl:hidden p-2 rounded-lg transition-colors duration-200 ${
+                className={`xl:hidden p-2.5 rounded-lg transition-colors duration-200 ${
                   isScrolled
                     ? "text-dark hover:bg-cream-dark"
                     : "text-white hover:bg-white/10"
@@ -174,6 +198,10 @@ export default function Navbar() {
 
       {/* Mobile Menu Drawer */}
       <div
+        ref={drawerRef}
+        role="dialog"
+        aria-modal="true"
+        aria-label="Navigation menu"
         className={`fixed top-0 right-0 z-50 h-full w-80 max-w-[85vw] bg-white shadow-2xl transition-transform duration-300 ease-out xl:hidden ${
           isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
@@ -191,6 +219,7 @@ export default function Navbar() {
             </span>
           </div>
           <button
+            ref={closeButtonRef}
             onClick={() => setIsMobileMenuOpen(false)}
             className="p-2 rounded-lg text-muted hover:bg-cream-dark transition-colors"
             aria-label="Close menu"
@@ -200,7 +229,7 @@ export default function Navbar() {
         </div>
 
         {/* Drawer Nav Links */}
-        <nav className="flex flex-col p-6 gap-1 overflow-y-auto max-h-[calc(100vh-180px)]">
+        <nav aria-label="Mobile navigation" className="flex flex-col p-6 gap-1 overflow-y-auto max-h-[calc(100vh-180px)]">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -227,7 +256,7 @@ export default function Navbar() {
             onClick={() => setIsMobileMenuOpen(false)}
             className="flex items-center justify-center gap-2 w-full px-5 py-3 rounded-full bg-accent text-white font-semibold text-sm transition-all duration-300 hover:bg-accent-dark shadow-md"
           >
-            <Sparkles className="w-4 h-4" />
+            <Sparkles className="w-4 h-4" aria-hidden="true" />
             Book Consultation
           </Link>
         </div>

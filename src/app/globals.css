@@ -31,8 +31,6 @@ body {
   background-color: var(--color-cream);
   color: var(--color-dark);
   line-height: 1.7;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 /* ===== Typography ===== */
@@ -49,6 +47,13 @@ h1, h2, h3, h4, h5, h6 {
 ::selection {
   background-color: var(--color-accent-light);
   color: var(--color-dark);
+}
+
+/* ===== Focus Styles (Accessibility) ===== */
+
+:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
 }
 
 /* ===== Scrollbar ===== */
@@ -72,19 +77,6 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ===== Custom Utility Classes ===== */
 
-/* Section padding — consistent vertical rhythm */
-.section-padding {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
-}
-
-@media (min-width: 768px) {
-  .section-padding {
-    padding-top: 7rem;
-    padding-bottom: 7rem;
-  }
-}
-
 /* Container with max width and horizontal padding */
 .container-custom {
   max-width: 80rem;
@@ -99,135 +91,6 @@ h1, h2, h3, h4, h5, h6 {
     padding-left: 2rem;
     padding-right: 2rem;
   }
-}
-
-/* Section heading — centered with accent underline */
-.section-heading {
-  font-family: var(--font-heading);
-  font-size: 2.25rem;
-  font-weight: 700;
-  text-align: center;
-  color: var(--color-dark);
-  margin-bottom: 1rem;
-  position: relative;
-}
-
-@media (min-width: 768px) {
-  .section-heading {
-    font-size: 3rem;
-  }
-}
-
-.section-heading::after {
-  content: "";
-  display: block;
-  width: 4rem;
-  height: 3px;
-  background-color: var(--color-accent);
-  margin: 0.75rem auto 0;
-  border-radius: 2px;
-}
-
-/* Section subheading */
-.section-subheading {
-  font-family: var(--font-body);
-  font-size: 1.125rem;
-  color: var(--color-muted);
-  text-align: center;
-  max-width: 40rem;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 3rem;
-}
-
-/* Accent underline decoration for inline text */
-.accent-underline {
-  position: relative;
-  display: inline-block;
-}
-
-.accent-underline::after {
-  content: "";
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: var(--color-accent);
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.3s ease;
-}
-
-.accent-underline:hover::after {
-  transform: scaleX(1);
-  transform-origin: left;
-}
-
-/* Gold gradient text */
-.text-gradient-gold {
-  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Elegant card style */
-.card-elegant {
-  background-color: white;
-  border-radius: 0.75rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
-}
-
-.card-elegant:hover {
-  box-shadow: 0 10px 25px rgba(61, 122, 110, 0.1), 0 4px 10px rgba(0, 0, 0, 0.05);
-  transform: translateY(-2px);
-}
-
-/* Button base */
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 0.75rem 2rem;
-  background-color: var(--color-primary);
-  color: white;
-  font-weight: 600;
-  border-radius: 0.5rem;
-  transition: all 0.3s ease;
-  font-family: var(--font-body);
-  font-size: 0.9375rem;
-  letter-spacing: 0.01em;
-}
-
-.btn-primary:hover {
-  background-color: var(--color-primary-dark);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(61, 122, 110, 0.3);
-}
-
-.btn-accent {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 0.75rem 2rem;
-  background-color: var(--color-accent);
-  color: white;
-  font-weight: 600;
-  border-radius: 0.5rem;
-  transition: all 0.3s ease;
-  font-family: var(--font-body);
-  font-size: 0.9375rem;
-  letter-spacing: 0.01em;
-}
-
-.btn-accent:hover {
-  background-color: var(--color-accent-dark);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(196, 145, 92, 0.35);
 }
 
 /* WhatsApp pulse animation */
@@ -245,22 +108,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .animate-whatsapp-pulse {
   animation: whatsapp-pulse 2s infinite;
-}
-
-/* Fade in up animation */
-@keyframes fade-in-up {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-fade-in-up {
-  animation: fade-in-up 0.6s ease-out forwards;
 }
 
 /* Nav link hover underline animation */
@@ -285,4 +132,21 @@ h1, h2, h3, h4, h5, h6 {
 .nav-link-underline.active::after {
   transform: scaleX(1);
   transform-origin: left;
+}
+
+/* ===== Reduced Motion ===== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .animate-whatsapp-pulse {
+    animation: none;
+  }
 }

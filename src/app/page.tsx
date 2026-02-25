@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import {
   Heart,
   Building2,
@@ -18,7 +19,7 @@ export default function Home() {
       {/* ================================================================
           SECTION 1 — HERO
           ================================================================ */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section aria-label="Hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background video — autoplay muted loop for cinematic hero */}
         <video
           autoPlay
@@ -28,6 +29,8 @@ export default function Home() {
           preload="metadata"
           poster="/images/hero-wedding.jpg"
           className="absolute inset-0 h-full w-full object-cover"
+          aria-hidden="true"
+          tabIndex={-1}
         >
           <source
             src="https://6jblcdd6pq0suc42.public.blob.vercel-storage.com/videos/event-reel-3.mp4"
@@ -78,25 +81,25 @@ export default function Home() {
 
           {/* CTA Buttons */}
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <a
+            <Link
               href="/portfolio"
               className="font-body group inline-flex items-center gap-2 rounded-full border-2 border-white/40 px-8 py-4 text-sm font-semibold tracking-wide text-white uppercase transition-all duration-300 hover:border-accent-light hover:bg-white/5 hover:text-accent-light"
             >
               Explore Our Work
-              <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-            </a>
-            <a
+              <ArrowRight aria-hidden="true" className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+            </Link>
+            <Link
               href="/contact"
               className="font-body inline-flex items-center gap-2 rounded-full bg-accent px-8 py-4 text-sm font-semibold tracking-wide text-white uppercase transition-all duration-300 hover:bg-accent-light hover:shadow-lg hover:shadow-accent/25"
             >
               Book a Consultation
-              <Sparkles className="h-4 w-4" />
-            </a>
+              <Sparkles aria-hidden="true" className="h-4 w-4" />
+            </Link>
           </div>
         </div>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+        <div aria-hidden="true" className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
           <ChevronDown className="h-6 w-6 text-white/50" />
         </div>
       </section>
@@ -104,7 +107,7 @@ export default function Home() {
       {/* ================================================================
           SECTION 2 — ABOUT PREVIEW
           ================================================================ */}
-      <section className="bg-cream px-6 py-24">
+      <section aria-label="About us" className="bg-cream px-6 py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2 lg:gap-20">
           {/* Left — About image */}
           <div className="relative">
@@ -113,6 +116,7 @@ export default function Home() {
                 src="/images/about-couple.jpg"
                 alt="Couple portrait under floral arch styled by Modern Charm Uganda"
                 fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
                 quality={85}
               />
@@ -160,13 +164,14 @@ export default function Home() {
               </span>
             </p>
 
-            <a
+            <Link
               href="/about"
+              aria-label="Learn more about Modern Charm Uganda"
               className="font-body group mt-8 inline-flex items-center gap-2 text-sm font-semibold tracking-wide text-primary uppercase transition-colors duration-300 hover:text-accent"
             >
               Learn More
-              <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-            </a>
+              <ArrowRight aria-hidden="true" className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+            </Link>
           </div>
         </div>
       </section>
@@ -174,7 +179,7 @@ export default function Home() {
       {/* ================================================================
           SECTION 3 — SERVICES
           ================================================================ */}
-      <section className="bg-white px-6 py-24">
+      <section aria-label="Our services" className="bg-white px-6 py-24">
         <div className="mx-auto max-w-7xl">
           {/* Section header */}
           <div className="mx-auto mb-16 max-w-2xl text-center">
@@ -210,13 +215,14 @@ export default function Home() {
                 floral arches to table settings, we design every detail with
                 love and precision.
               </p>
-              <a
+              <Link
                 href="/services#weddings"
+                aria-label="Learn more about Wedding Styling and Decor"
                 className="font-body mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-colors duration-300 group-hover:text-accent"
               >
                 Learn More
-                <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
-              </a>
+                <ArrowRight aria-hidden="true" className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+              </Link>
             </div>
 
             {/* Card 2 — Corporate Events */}
@@ -232,13 +238,14 @@ export default function Home() {
                 experiences. Product launches, galas, conferences, and team
                 celebrations — styled with impact.
               </p>
-              <a
+              <Link
                 href="/services#corporate"
+                aria-label="Learn more about Corporate Events"
                 className="font-body mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-colors duration-300 group-hover:text-accent"
               >
                 Learn More
-                <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
-              </a>
+                <ArrowRight aria-hidden="true" className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+              </Link>
             </div>
 
             {/* Card 3 — Traditional Ceremonies */}
@@ -254,13 +261,14 @@ export default function Home() {
                 setups. We blend cultural tradition with modern elegance for a
                 truly memorable ceremony.
               </p>
-              <a
+              <Link
                 href="/services#traditional"
+                aria-label="Learn more about Traditional Ceremonies"
                 className="font-body mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-colors duration-300 group-hover:text-accent"
               >
                 Learn More
-                <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
-              </a>
+                <ArrowRight aria-hidden="true" className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+              </Link>
             </div>
 
             {/* Card 4 — Birthdays & Anniversaries */}
@@ -276,13 +284,14 @@ export default function Home() {
                 birthday or a golden anniversary, we create themes that reflect
                 your unique story.
               </p>
-              <a
+              <Link
                 href="/services#birthdays"
+                aria-label="Learn more about Birthday and Anniversary Celebrations"
                 className="font-body mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-colors duration-300 group-hover:text-accent"
               >
                 Learn More
-                <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
-              </a>
+                <ArrowRight aria-hidden="true" className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+              </Link>
             </div>
 
             {/* Card 5 — Showers */}
@@ -297,13 +306,14 @@ export default function Home() {
                 Intimate, joyful, and beautifully styled — our shower setups are
                 designed to celebrate new beginnings with warmth and elegance.
               </p>
-              <a
+              <Link
                 href="/services#showers"
+                aria-label="Learn more about Bridal and Baby Showers"
                 className="font-body mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-colors duration-300 group-hover:text-accent"
               >
                 Learn More
-                <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
-              </a>
+                <ArrowRight aria-hidden="true" className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+              </Link>
             </div>
 
             {/* Card 6 — Event Planning */}
@@ -319,13 +329,14 @@ export default function Home() {
                 End-to-end planning, vendor coordination, and on-the-day
                 management you can trust.
               </p>
-              <a
+              <Link
                 href="/services#planning"
+                aria-label="Learn more about Event Planning and Coordination"
                 className="font-body mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-colors duration-300 group-hover:text-accent"
               >
                 Learn More
-                <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
-              </a>
+                <ArrowRight aria-hidden="true" className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+              </Link>
             </div>
           </div>
         </div>
@@ -334,12 +345,14 @@ export default function Home() {
       {/* ================================================================
           SECTION 4 — STATS
           ================================================================ */}
-      <section className="relative overflow-hidden px-6 py-24">
+      <section aria-label="Our impact in numbers" className="relative overflow-hidden px-6 py-24">
         {/* Background image */}
         <Image
           src="/images/reception-decor.jpg"
-          alt="Stunning reception with lavender and pink floral installation"
+          alt=""
+          aria-hidden="true"
           fill
+          sizes="100vw"
           className="object-cover"
           quality={85}
         />
@@ -420,7 +433,7 @@ export default function Home() {
       {/* ================================================================
           SECTION 5 — PORTFOLIO PREVIEW
           ================================================================ */}
-      <section className="bg-white px-6 py-24">
+      <section aria-label="Portfolio preview" className="bg-white px-6 py-24">
         <div className="mx-auto max-w-7xl">
           {/* Section header */}
           <div className="mx-auto mb-16 max-w-2xl text-center">
@@ -449,6 +462,7 @@ export default function Home() {
                 src="/images/portfolio/oscar-sandra/IMG_0795.jpg"
                 alt="Oscar & Sandra's grand reception with black & white decor, gold arches and white floral installations"
                 fill
+                sizes="(max-width: 640px) 100vw, 50vw"
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
                 quality={85}
               />
@@ -469,6 +483,7 @@ export default function Home() {
                 src="/images/portfolio/wedding-highlights/IMG_3876.jpg"
                 alt="Bridesmaids in sage green gowns with peach bouquets"
                 fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
                 quality={85}
               />
@@ -489,6 +504,7 @@ export default function Home() {
                 src="/images/portfolio/oscar-sandra/IMG_0834.jpg"
                 alt="Couple framed through oval-back reception chairs"
                 fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
                 quality={85}
               />
@@ -509,6 +525,7 @@ export default function Home() {
                 src="/images/portfolio/wedding-highlights/IMG_3884.jpg"
                 alt="Couple walking through styled reception with blush bouquet"
                 fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
                 quality={85}
               />
@@ -529,6 +546,7 @@ export default function Home() {
                 src="/images/portfolio/allan-pauline/img_0748.jpg"
                 alt="Allan & Pauline's lavender floral tablescape reception"
                 fill
+                sizes="(max-width: 640px) 100vw, 50vw"
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
                 quality={85}
               />
@@ -549,6 +567,7 @@ export default function Home() {
                 src="/images/portfolio/oscar-sandra/IMG_0267.jpg"
                 alt="Groomsmen raising glasses in a black & white toast"
                 fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
                 quality={85}
               />
@@ -566,13 +585,13 @@ export default function Home() {
 
           {/* CTA */}
           <div className="mt-12 text-center">
-            <a
+            <Link
               href="/portfolio"
               className="font-body group inline-flex items-center gap-2 rounded-full bg-primary px-8 py-4 text-sm font-semibold tracking-wide text-white uppercase transition-all duration-300 hover:bg-primary-dark hover:shadow-lg hover:shadow-primary/25"
             >
               View Full Gallery
-              <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-            </a>
+              <ArrowRight aria-hidden="true" className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+            </Link>
           </div>
         </div>
       </section>
@@ -580,7 +599,7 @@ export default function Home() {
       {/* ================================================================
           SECTION 6 — TESTIMONIALS
           ================================================================ */}
-      <section className="bg-cream px-6 py-24">
+      <section aria-label="Client testimonials" className="bg-cream px-6 py-24">
         <div className="mx-auto max-w-7xl">
           {/* Section header */}
           <div className="mx-auto mb-16 max-w-2xl text-center">
@@ -604,13 +623,15 @@ export default function Home() {
           <div className="grid gap-8 md:grid-cols-3">
             {/* Testimonial 1 */}
             <div className="relative rounded-2xl bg-white p-8 shadow-sm transition-shadow duration-300 hover:shadow-md">
-              <Quote className="mb-4 h-8 w-8 text-accent/60" />
-              <p className="font-body text-base leading-relaxed text-dark/80 italic">
-                &ldquo;Modern Charm turned our wedding into a fairy tale. Every
-                single detail was perfect — from the floral centrepieces to the
-                lighting. Our guests are still talking about it months
-                later!&rdquo;
-              </p>
+              <Quote aria-hidden="true" className="mb-4 h-8 w-8 text-accent/60" />
+              <blockquote>
+                <p className="font-body text-base leading-relaxed text-dark/80 italic">
+                  &ldquo;Modern Charm turned our wedding into a fairy tale. Every
+                  single detail was perfect — from the floral centrepieces to the
+                  lighting. Our guests are still talking about it months
+                  later!&rdquo;
+                </p>
+              </blockquote>
               <div className="mt-6 flex items-center gap-3">
                 {/* Avatar placeholder */}
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10">
@@ -633,13 +654,15 @@ export default function Home() {
 
             {/* Testimonial 2 */}
             <div className="relative rounded-2xl bg-white p-8 shadow-sm transition-shadow duration-300 hover:shadow-md md:-mt-4">
-              <Quote className="mb-4 h-8 w-8 text-accent/60" />
-              <p className="font-body text-base leading-relaxed text-dark/80 italic">
-                &ldquo;We hired Modern Charm for our company&apos;s annual gala
-                and the result was absolutely world-class. Professional,
-                creative, and incredibly easy to work with. They understood our
-                brand vision perfectly.&rdquo;
-              </p>
+              <Quote aria-hidden="true" className="mb-4 h-8 w-8 text-accent/60" />
+              <blockquote>
+                <p className="font-body text-base leading-relaxed text-dark/80 italic">
+                  &ldquo;We hired Modern Charm for our company&apos;s annual gala
+                  and the result was absolutely world-class. Professional,
+                  creative, and incredibly easy to work with. They understood our
+                  brand vision perfectly.&rdquo;
+                </p>
+              </blockquote>
               <div className="mt-6 flex items-center gap-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10">
                   <span className="font-heading text-sm font-bold text-primary">
@@ -660,13 +683,15 @@ export default function Home() {
 
             {/* Testimonial 3 */}
             <div className="relative rounded-2xl bg-white p-8 shadow-sm transition-shadow duration-300 hover:shadow-md">
-              <Quote className="mb-4 h-8 w-8 text-accent/60" />
-              <p className="font-body text-base leading-relaxed text-dark/80 italic">
-                &ldquo;Our Kwanjula was the talk of the village! Modern Charm
-                blended our Ankole traditions with such beautiful modern
-                touches. My family was so impressed. I could not have asked for
-                a better team.&rdquo;
-              </p>
+              <Quote aria-hidden="true" className="mb-4 h-8 w-8 text-accent/60" />
+              <blockquote>
+                <p className="font-body text-base leading-relaxed text-dark/80 italic">
+                  &ldquo;Our Kwanjula was the talk of the village! Modern Charm
+                  blended our Ankole traditions with such beautiful modern
+                  touches. My family was so impressed. I could not have asked for
+                  a better team.&rdquo;
+                </p>
+              </blockquote>
               <div className="mt-6 flex items-center gap-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10">
                   <span className="font-heading text-sm font-bold text-primary">
@@ -691,12 +716,14 @@ export default function Home() {
       {/* ================================================================
           SECTION 7 — CTA SECTION
           ================================================================ */}
-      <section className="relative overflow-hidden px-6 py-24">
+      <section aria-label="Call to action" className="relative overflow-hidden px-6 py-24">
         {/* Background image */}
         <Image
           src="/images/hero-dance.jpg"
-          alt="Couple dancing under wooden arch with hanging lanterns and floral decorations"
+          alt=""
+          aria-hidden="true"
           fill
+          sizes="100vw"
           className="object-cover"
           quality={85}
         />
@@ -714,7 +741,7 @@ export default function Home() {
           {/* Gold decorative line */}
           <div className="mx-auto mb-8 flex items-center justify-center gap-2">
             <span className="h-px w-16 bg-accent/60" />
-            <Sparkles className="h-5 w-5 text-accent-light" />
+            <Sparkles aria-hidden="true" className="h-5 w-5 text-accent-light" />
             <span className="h-px w-16 bg-accent/60" />
           </div>
 
@@ -731,13 +758,13 @@ export default function Home() {
 
           {/* CTA Button */}
           <div className="mt-10">
-            <a
+            <Link
               href="/contact"
               className="font-body group inline-flex items-center gap-2 rounded-full bg-accent px-10 py-5 text-base font-semibold tracking-wide text-white uppercase transition-all duration-300 hover:bg-accent-light hover:shadow-xl hover:shadow-accent/30"
             >
               Start Planning Your Event
-              <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
-            </a>
+              <ArrowRight aria-hidden="true" className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+            </Link>
           </div>
 
           {/* Bottom decorative line */}
