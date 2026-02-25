@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ChevronRight, Instagram, ExternalLink } from "lucide-react";
+import { ChevronRight, Instagram } from "lucide-react";
 import HeroCarousel from "@/components/HeroCarousel";
 
 type Category = "all" | "weddings" | "corporate" | "traditional" | "celebrations";
@@ -352,11 +352,6 @@ export default function PortfolioPage() {
                   <p className="text-white/80 text-sm leading-relaxed">
                     {project.description}
                   </p>
-                  <div className="mt-4">
-                    <span className="inline-flex items-center gap-1.5 text-accent-light text-sm font-medium">
-                      View Project <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
-                    </span>
-                  </div>
                 </div>
 
                 {/* Always-visible tag (mobile-friendly) */}
