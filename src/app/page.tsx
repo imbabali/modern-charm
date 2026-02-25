@@ -743,6 +743,8 @@ export default function Home() {
         </video>
         {/* Heavy dark teal overlay */}
         <div className="absolute inset-0 bg-[#2D5B52]/57" />
+        {/* Extra gradient to hide watermark remnant in bottom-left corner */}
+        <div className="absolute inset-0 bg-gradient-to-tr from-[#2D5B52] via-transparent to-transparent opacity-80" />
         {/* Decorative elements */}
         <div className="pointer-events-none absolute top-8 left-8 h-px w-24 bg-accent/40" />
         <div className="pointer-events-none absolute top-8 left-8 h-24 w-px bg-accent/40" />
