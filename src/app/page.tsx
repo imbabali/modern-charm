@@ -48,7 +48,7 @@ export default function Home() {
             quality={85}
           />
         </noscript>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/27 to-black/47" />
 
         {/* Decorative floating shapes */}
         <div className="pointer-events-none absolute top-20 left-10 h-72 w-72 rounded-full bg-accent/10 blur-3xl" />
@@ -364,7 +364,7 @@ export default function Home() {
           />
         </video>
         {/* Heavy dark overlay so stats remain readable */}
-        <div className="absolute inset-0 bg-black/80" />
+        <div className="absolute inset-0 bg-black/53" />
         {/* Decorative elements */}
         <div className="pointer-events-none absolute top-0 left-0 h-full w-full">
           <div className="absolute top-10 left-10 h-40 w-40 rounded-full bg-white/5 blur-2xl" />
@@ -742,7 +742,7 @@ export default function Home() {
           />
         </video>
         {/* Heavy dark teal overlay */}
-        <div className="absolute inset-0 bg-[#2D5B52]/85" />
+        <div className="absolute inset-0 bg-[#2D5B52]/57" />
         {/* Decorative elements */}
         <div className="pointer-events-none absolute top-8 left-8 h-px w-24 bg-accent/40" />
         <div className="pointer-events-none absolute top-8 left-8 h-24 w-px bg-accent/40" />
