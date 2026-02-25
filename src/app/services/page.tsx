@@ -193,7 +193,7 @@ export default function ServicesPage() {
                   >
                     <div className="flex items-center gap-3 mb-4">
                       <div className="flex h-10 w-10 items-center justify-center rounded-full bg-accent/10">
-                        <Icon className="h-5 w-5 text-accent" />
+                        <Icon className="h-5 w-5 text-accent" aria-hidden="true" />
                       </div>
                       <span className="text-accent font-heading text-xs font-semibold tracking-widest uppercase">
                         Service {String(index + 1).padStart(2, "0")}
@@ -221,7 +221,7 @@ export default function ServicesPage() {
                       className="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white font-semibold px-6 py-3 rounded-full transition-colors duration-300 shadow-md hover:shadow-lg"
                     >
                       Get a Quote
-                      <ArrowRight className="h-4 w-4" />
+                      <ArrowRight className="h-4 w-4" aria-hidden="true" />
                     </Link>
                   </div>
                 </div>
@@ -248,7 +248,7 @@ export default function ServicesPage() {
             className="inline-flex items-center gap-2 bg-accent hover:bg-accent-light text-white font-semibold px-8 py-4 rounded-full text-lg transition-colors duration-300 shadow-lg hover:shadow-xl"
           >
             Let&apos;s Create Something Custom
-            <ArrowRight className="h-5 w-5" />
+            <ArrowRight className="h-5 w-5" aria-hidden="true" />
           </Link>
         </div>
       </section>

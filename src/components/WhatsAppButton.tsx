@@ -33,6 +33,8 @@ export default function WhatsAppButton() {
         aria-label="Chat with us on WhatsApp"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
+        onFocus={() => setIsHovered(true)}
+        onBlur={() => setIsHovered(false)}
         className="flex items-center justify-center w-14 h-14 rounded-full bg-[#25D366] text-white shadow-xl transition-all duration-300 hover:bg-[#20BD5A] hover:scale-110 hover:shadow-2xl animate-whatsapp-pulse"
       >
         <MessageCircle className="w-7 h-7 fill-white" aria-hidden="true" />

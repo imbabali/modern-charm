@@ -184,7 +184,7 @@ export default function ContactContent() {
                 </p>
 
                 {isSubmitted ? (
-                  <div role="status" className="text-center py-12">
+                  <div role="status" aria-live="polite" className="text-center py-12">
                     <div className="w-16 h-16 rounded-full bg-primary/10 mx-auto mb-4 flex items-center justify-center">
                       <Send className="h-7 w-7 text-primary" aria-hidden="true" />
                     </div>
@@ -390,7 +390,7 @@ export default function ContactContent() {
                   const Content = (
                     <div className="flex items-start gap-4 bg-white rounded-xl p-5 hover:shadow-md transition-shadow duration-300">
                       <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 flex-shrink-0">
-                        <Icon className="h-5 w-5 text-primary" />
+                        <Icon className="h-5 w-5 text-primary" aria-hidden="true" />
                       </div>
                       <div>
                         <p className="text-xs font-semibold tracking-widest uppercase text-muted mb-1">
@@ -432,7 +432,7 @@ export default function ContactContent() {
                         aria-label={social.label}
                         className="flex h-11 w-11 items-center justify-center rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-white transition-colors duration-300"
                       >
-                        <Icon className="h-5 w-5" />
+                        <Icon className="h-5 w-5" aria-hidden="true" />
                       </a>
                     );
                   })}

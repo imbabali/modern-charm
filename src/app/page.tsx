@@ -33,7 +33,7 @@ export default function Home() {
           tabIndex={-1}
         >
           <source
-            src="https://6jblcdd6pq0suc42.public.blob.vercel-storage.com/videos/event-reel-2.mp4"
+            src="https://6jblcdd6pq0suc42.public.blob.vercel-storage.com/videos/event-reel-2-dMjQwBM9z06NXej30wRdP2BPGKd2lc.mp4"
             type="video/mp4"
           />
         </video>
@@ -205,7 +205,7 @@ export default function Home() {
             {/* Card 1 — Wedding Styling */}
             <div className="group relative rounded-2xl border border-gray-100 bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-xl hover:shadow-accent/5">
               <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-accent/10 group-hover:text-accent">
-                <Heart className="h-7 w-7" />
+                <Heart className="h-7 w-7" aria-hidden="true" />
               </div>
               <h3 className="font-heading text-xl font-bold text-dark">
                 Wedding Styling &amp; Decor
@@ -228,7 +228,7 @@ export default function Home() {
             {/* Card 2 — Corporate Events */}
             <div className="group relative rounded-2xl border border-gray-100 bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-xl hover:shadow-accent/5">
               <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-accent/10 group-hover:text-accent">
-                <Building2 className="h-7 w-7" />
+                <Building2 className="h-7 w-7" aria-hidden="true" />
               </div>
               <h3 className="font-heading text-xl font-bold text-dark">
                 Corporate Events
@@ -251,7 +251,7 @@ export default function Home() {
             {/* Card 3 — Traditional Ceremonies */}
             <div className="group relative rounded-2xl border border-gray-100 bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-xl hover:shadow-accent/5">
               <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-accent/10 group-hover:text-accent">
-                <Crown className="h-7 w-7" />
+                <Crown className="h-7 w-7" aria-hidden="true" />
               </div>
               <h3 className="font-heading text-xl font-bold text-dark">
                 Traditional Ceremonies
@@ -274,7 +274,7 @@ export default function Home() {
             {/* Card 4 — Birthdays & Anniversaries */}
             <div className="group relative rounded-2xl border border-gray-100 bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-xl hover:shadow-accent/5">
               <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-accent/10 group-hover:text-accent">
-                <Cake className="h-7 w-7" />
+                <Cake className="h-7 w-7" aria-hidden="true" />
               </div>
               <h3 className="font-heading text-xl font-bold text-dark">
                 Birthday &amp; Anniversary Celebrations
@@ -297,7 +297,7 @@ export default function Home() {
             {/* Card 5 — Showers */}
             <div className="group relative rounded-2xl border border-gray-100 bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-xl hover:shadow-accent/5">
               <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-accent/10 group-hover:text-accent">
-                <Gift className="h-7 w-7" />
+                <Gift className="h-7 w-7" aria-hidden="true" />
               </div>
               <h3 className="font-heading text-xl font-bold text-dark">
                 Bridal Showers &amp; Baby Showers
@@ -319,7 +319,7 @@ export default function Home() {
             {/* Card 6 — Event Planning */}
             <div className="group relative rounded-2xl border border-gray-100 bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-xl hover:shadow-accent/5">
               <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-accent/10 group-hover:text-accent">
-                <ClipboardList className="h-7 w-7" />
+                <ClipboardList className="h-7 w-7" aria-hidden="true" />
               </div>
               <h3 className="font-heading text-xl font-bold text-dark">
                 Event Planning &amp; Coordination

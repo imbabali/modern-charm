@@ -79,6 +79,7 @@ export default function NewsletterForm() {
       </form>
       {message && (
         <p
+          role={status === "error" ? "alert" : "status"}
           className={`mt-2 text-xs flex items-center gap-1 ${
             status === "success" ? "text-green-300" : "text-red-300"
           }`}

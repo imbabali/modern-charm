@@ -123,6 +123,7 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
+                  aria-current={isActive(link.href) ? "page" : undefined}
                   className={`nav-link-underline relative px-3 py-2 text-sm font-medium transition-colors duration-200 focus-visible:text-accent focus-visible:outline-none ${
                     isActive(link.href)
                       ? isScrolled
@@ -222,6 +223,7 @@ export default function Navbar() {
               key={link.href}
               href={link.href}
               onClick={() => setIsMobileMenuOpen(false)}
+              aria-current={isActive(link.href) ? "page" : undefined}
               className={`flex items-center px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 ${
                 isActive(link.href)
                   ? "bg-primary/10 text-primary font-semibold"

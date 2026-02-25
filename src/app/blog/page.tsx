@@ -72,12 +72,12 @@ export default function BlogPage() {
                   {featuredPost.excerpt}
                 </p>
                 <div className="mt-6 flex items-center gap-2 font-body text-sm text-muted">
-                  <Calendar className="h-4 w-4" />
+                  <Calendar className="h-4 w-4" aria-hidden="true" />
                   <span>{featuredPost.date}</span>
                 </div>
                 <div className="mt-6 inline-flex items-center gap-2 font-body text-sm font-semibold text-primary transition-colors group-hover:text-primary-dark">
                   Read More
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
                 </div>
               </div>
             </div>
@@ -123,12 +123,12 @@ export default function BlogPage() {
                     </p>
                     <div className="mt-4 flex items-center justify-between">
                       <div className="flex items-center gap-1.5 font-body text-xs text-muted">
-                        <Calendar className="h-3.5 w-3.5" />
+                        <Calendar className="h-3.5 w-3.5" aria-hidden="true" />
                         <span>{post.date}</span>
                       </div>
                       <span className="inline-flex items-center gap-1 font-body text-xs font-semibold text-primary transition-colors group-hover:text-primary-dark">
                         Read More
-                        <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />
+                        <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
                       </span>
                     </div>
                   </div>
@@ -143,9 +143,9 @@ export default function BlogPage() {
       <section className="px-6 py-20 md:py-28">
         <div className="mx-auto max-w-2xl text-center">
           <div className="rounded-2xl bg-cream-dark p-10 md:p-14">
-            <h3 className="font-heading text-2xl font-bold text-dark md:text-3xl">
+            <h2 className="font-heading text-2xl font-bold text-dark md:text-3xl">
               More Content Coming Soon
-            </h3>
+            </h2>
             <p className="mx-auto mt-4 max-w-lg font-body text-base leading-relaxed text-muted">
               We&apos;re working on more articles, guides, and behind-the-scenes
               content. In the meantime, follow us on Instagram for daily

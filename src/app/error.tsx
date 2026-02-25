@@ -7,7 +7,7 @@ export default function Error({
   reset: () => void;
 }) {
   return (
-    <div className="flex min-h-[60vh] flex-col items-center justify-center px-6 py-24 text-center">
+    <div role="alert" className="flex min-h-[60vh] flex-col items-center justify-center px-6 py-24 text-center">
       <h1 className="font-heading text-4xl font-bold text-dark sm:text-5xl">
         Something went wrong
       </h1>
