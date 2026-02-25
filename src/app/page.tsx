@@ -20,7 +20,7 @@ export default function Home() {
           SECTION 1 — HERO
           ================================================================ */}
       <section aria-label="Hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background video — autoplay muted loop for cinematic hero */}
+        {/* Background video — event reel 2 */}
         <video
           autoPlay
           muted
@@ -33,7 +33,7 @@ export default function Home() {
           tabIndex={-1}
         >
           <source
-            src="https://6jblcdd6pq0suc42.public.blob.vercel-storage.com/videos/event-reel-3.mp4"
+            src="https://6jblcdd6pq0suc42.public.blob.vercel-storage.com/videos/event-reel-2.mp4"
             type="video/mp4"
           />
         </video>
@@ -345,8 +345,8 @@ export default function Home() {
       {/* ================================================================
           SECTION 4 — STATS
           ================================================================ */}
-      <section aria-label="Our impact in numbers" className="relative overflow-hidden px-6 py-24">
-        {/* Background video — event reel 1 */}
+      <section aria-label="Our impact in numbers" className="relative overflow-hidden px-6 py-24 [clip-path:inset(0)]">
+        {/* Background video — event reel 1, fixed parallax effect */}
         <video
           autoPlay
           muted
@@ -354,7 +354,7 @@ export default function Home() {
           playsInline
           preload="metadata"
           poster="/images/reception-decor.jpg"
-          className="absolute inset-0 h-full w-full object-cover"
+          className="fixed inset-0 h-full w-full object-cover"
           aria-hidden="true"
           tabIndex={-1}
         >
@@ -724,7 +724,7 @@ export default function Home() {
           SECTION 7 — CTA SECTION
           ================================================================ */}
       <section aria-label="Call to action" className="relative overflow-hidden px-6 py-24">
-        {/* Background video — event reel 2 */}
+        {/* Background video — event reel 3 */}
         <video
           autoPlay
           muted
@@ -737,7 +737,7 @@ export default function Home() {
           tabIndex={-1}
         >
           <source
-            src="https://6jblcdd6pq0suc42.public.blob.vercel-storage.com/videos/event-reel-2.mp4"
+            src="https://6jblcdd6pq0suc42.public.blob.vercel-storage.com/videos/event-reel-3.mp4"
             type="video/mp4"
           />
         </video>
