@@ -640,7 +640,6 @@ export default function Home() {
                 </p>
               </blockquote>
               <div className="mt-6 flex items-center gap-3">
-                {/* Avatar placeholder */}
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10">
                   <span className="font-heading text-sm font-bold text-primary">
                     NK

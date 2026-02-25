@@ -120,7 +120,6 @@ export default function TestimonialsPage() {
               <Quote className="mt-4 h-10 w-10 rotate-180 text-accent/40 md:h-14 md:w-14" aria-hidden="true" />
 
               <div className="mt-10 flex flex-col items-center gap-4">
-                {/* Client Photo Placeholder */}
                 <div className="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent shadow-md">
                   <span className="font-heading text-2xl font-bold text-white">
                     S&D

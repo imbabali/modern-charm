@@ -63,15 +63,9 @@ export default function BlogPage() {
         <div className="mx-auto max-w-6xl">
           <Link href={`/blog/${featuredPost.slug}`} className="group block">
             <div className="overflow-hidden rounded-2xl bg-white shadow-md transition-all duration-300 hover:shadow-xl md:flex">
-              {/* Image Placeholder */}
               <div className="relative h-64 w-full bg-gradient-to-br from-primary via-primary-light to-accent md:h-auto md:w-1/2">
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="mx-auto h-16 w-16 rounded-full bg-white/20 backdrop-blur-sm" />
-                    <p className="mt-3 font-body text-sm text-white/90">
-                      Featured Image
-                    </p>
-                  </div>
+                  <div className="h-16 w-16 rounded-full bg-white/20 backdrop-blur-sm" />
                 </div>
               </div>
 
@@ -116,7 +110,6 @@ export default function BlogPage() {
                 className="group block"
               >
                 <article className="h-full overflow-hidden rounded-xl bg-cream transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
-                  {/* Image Placeholder */}
                   <div
                     className={`relative h-48 w-full bg-gradient-to-br ${post.gradient}`}
                   >
@@ -152,29 +145,6 @@ export default function BlogPage() {
         </div>
       </section>
 
-      {/* Coming Soon Note */}
-      <section className="px-6 py-20 md:py-28">
-        <div className="mx-auto max-w-2xl text-center">
-          <div className="rounded-2xl bg-cream-dark p-10 md:p-14">
-            <h2 className="font-heading text-2xl font-bold text-dark md:text-3xl">
-              More Content Coming Soon
-            </h2>
-            <p className="mx-auto mt-4 max-w-lg font-body text-base leading-relaxed text-muted">
-              We&apos;re working on more articles, guides, and behind-the-scenes
-              content. In the meantime, follow us on Instagram for daily
-              inspiration!
-            </p>
-            <a
-              href="https://instagram.com/moderncharm_events"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-8 inline-block rounded-full bg-accent-dark px-10 py-4 font-body text-base font-semibold text-white shadow-lg transition-all duration-300 hover:bg-accent hover:shadow-xl"
-            >
-              Follow @moderncharm_events
-            </a>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

@@ -267,7 +267,6 @@ export default function AboutPage() {
                 key={member.name}
                 className="group text-center rounded-2xl bg-cream p-8 hover:shadow-lg transition-all duration-300"
               >
-                {/* Avatar Placeholder */}
                 <div
                   className={`mx-auto mb-6 h-32 w-32 rounded-full bg-gradient-to-br ${member.gradient} flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform duration-300`}
                 >

@@ -6,7 +6,7 @@ import Image from "next/image";
 import { ChevronRight, Instagram } from "lucide-react";
 import HeroCarousel from "@/components/HeroCarousel";
 
-type Category = "all" | "weddings" | "corporate" | "traditional" | "celebrations";
+type Category = "all" | "weddings";
 
 interface PortfolioProject {
   id: number;
@@ -14,17 +14,13 @@ interface PortfolioProject {
   description: string;
   category: Category;
   categoryLabel: string;
-  image?: string;
-  gradient?: string;
+  image: string;
   aspect: string;
 }
 
 const categories: { key: Category; label: string }[] = [
   { key: "all", label: "All" },
   { key: "weddings", label: "Weddings" },
-  { key: "corporate", label: "Corporate" },
-  { key: "traditional", label: "Traditional" },
-  { key: "celebrations", label: "Celebrations" },
 ];
 
 const portfolioItems: PortfolioProject[] = [
@@ -211,43 +207,6 @@ const portfolioItems: PortfolioProject[] = [
     image: "/images/portfolio/allan-pauline/img_0646.jpg",
     aspect: "aspect-[3/4]",
   },
-  // === Placeholders for other categories ===
-  {
-    id: 21,
-    title: "Corporate Gala Night",
-    description: "Black-tie elegance with crystal centrepieces and ambient uplighting",
-    category: "corporate",
-    categoryLabel: "Corporate",
-    gradient: "from-primary-dark via-primary to-primary-light",
-    aspect: "aspect-square",
-  },
-  {
-    id: 22,
-    title: "Product Launch Event",
-    description: "Bold brand activation with dynamic lighting and modular staging",
-    category: "corporate",
-    categoryLabel: "Corporate",
-    gradient: "from-primary-dark via-accent/20 to-primary",
-    aspect: "aspect-[3/4]",
-  },
-  {
-    id: 23,
-    title: "Traditional Kwanjula Ceremony",
-    description: "Traditional bark-cloth inspired decor with modern floral installations",
-    category: "traditional",
-    categoryLabel: "Traditional",
-    gradient: "from-accent via-accent-light to-primary/30",
-    aspect: "aspect-[4/5]",
-  },
-  {
-    id: 24,
-    title: "Golden Anniversary Celebration",
-    description: "An intimate 50th anniversary celebration in gold and ivory",
-    category: "celebrations",
-    categoryLabel: "Celebration",
-    gradient: "from-accent-light via-cream-dark to-accent/40",
-    aspect: "aspect-[3/4]",
-  },
 ];
 
 export default function PortfolioContent() {
@@ -316,29 +275,17 @@ export default function PortfolioContent() {
                 key={project.id}
                 className="break-inside-avoid group relative rounded-2xl overflow-hidden cursor-pointer"
               >
-                {/* Image or Gradient Placeholder */}
                 <div className={`${project.aspect} w-full`}>
-                  {project.image ? (
-                    <div className="relative w-full h-full">
-                      <Image
-                        src={project.image}
-                        alt={project.title}
-                        fill
-                        className="object-cover transition-transform duration-700 group-hover:scale-105"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        quality={80}
-                      />
-                    </div>
-                  ) : (
-                    <div
-                      className={`w-full h-full bg-gradient-to-br ${project.gradient}`}
-                    >
-                      {/* Subtle pattern inside */}
-                      <div className="absolute inset-0 flex items-center justify-center opacity-30">
-                        <div className="w-16 h-16 rounded-full border-2 border-white/40" />
-                      </div>
-                    </div>
-                  )}
+                  <div className="relative w-full h-full">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      quality={80}
+                    />
+                  </div>
                 </div>
 
                 {/* Hover Overlay */}
