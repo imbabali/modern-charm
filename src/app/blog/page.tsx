@@ -8,6 +8,19 @@ export const metadata: Metadata = {
   title: "Our Journal | Modern Charm Uganda",
   description:
     "Tips, trends, and behind-the-scenes stories from the world of event styling in Uganda. Your guide to unforgettable celebrations.",
+  alternates: { canonical: "https://modern-charm.vercel.app/blog" },
+  openGraph: {
+    title: "Our Journal | Modern Charm Uganda",
+    description:
+      "Tips, trends, and behind-the-scenes stories from the world of event styling in Uganda.",
+    url: "https://modern-charm.vercel.app/blog",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Our Journal | Modern Charm Uganda",
+    description:
+      "Tips, trends, and behind-the-scenes stories from the world of event styling in Uganda.",
+  },
 };
 
 const featuredPost = blogPosts.find((post) => post.featured) ?? blogPosts[0];

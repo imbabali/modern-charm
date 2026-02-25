@@ -7,6 +7,19 @@ export const metadata: Metadata = {
   title: "Client Stories | Modern Charm Uganda",
   description:
     "Hear from the people who trusted Modern Charm Uganda with their most special moments. Real reviews from real clients across Kampala and beyond.",
+  alternates: { canonical: "https://modern-charm.vercel.app/testimonials" },
+  openGraph: {
+    title: "Client Stories | Modern Charm Uganda",
+    description:
+      "Real reviews from real clients across Kampala and beyond.",
+    url: "https://modern-charm.vercel.app/testimonials",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Client Stories | Modern Charm Uganda",
+    description:
+      "Real reviews from real clients across Kampala and beyond.",
+  },
 };
 
 const featuredTestimonial = {

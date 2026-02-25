@@ -16,6 +16,19 @@ export const metadata: Metadata = {
   title: "Our Packages | Modern Charm Uganda",
   description:
     "Transparent pricing for every celebration. Explore our Essential, Premium, and Grand event styling packages tailored to your needs.",
+  alternates: { canonical: "https://modern-charm.vercel.app/pricing" },
+  openGraph: {
+    title: "Our Packages | Modern Charm Uganda",
+    description:
+      "Explore our Essential, Premium, and Grand event styling packages tailored to your needs.",
+    url: "https://modern-charm.vercel.app/pricing",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Our Packages | Modern Charm Uganda",
+    description:
+      "Explore our Essential, Premium, and Grand event styling packages tailored to your needs.",
+  },
 };
 
 const packages = [
@@ -148,9 +161,9 @@ export default function PricingPage() {
                 )}
 
                 <div className="text-center">
-                  <h3 className="font-heading text-2xl font-bold text-dark">
+                  <h2 className="font-heading text-2xl font-bold text-dark">
                     {pkg.name}
-                  </h3>
+                  </h2>
                   <p className="mt-2 font-body text-sm text-muted">
                     {pkg.description}
                   </p>

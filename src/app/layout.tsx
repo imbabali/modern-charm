@@ -61,6 +61,9 @@ export const metadata: Metadata = {
       "Full-service event styling and decor in Kampala, Uganda. Transforming venues into breathtaking experiences.",
     images: ["/images/hero-wedding.jpg"],
   },
+  alternates: {
+    canonical: "https://modern-charm.vercel.app",
+  },
   robots: {
     index: true,
     follow: true,
@@ -96,26 +99,60 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "EventPlanning",
-              "name": "Modern Charm Uganda",
-              "description": "Full-service event styling and decor company based in Kampala, Uganda specializing in weddings, corporate events, and celebrations.",
-              "url": "https://modern-charm.vercel.app",
-              "telephone": ["+256779399409", "+256775826795"],
-              "email": "moderncharm30@gmail.com",
-              "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Kampala",
-                "addressCountry": "UG"
+            __html: JSON.stringify([
+              {
+                "@context": "https://schema.org",
+                "@type": "EventPlanning",
+                "name": "Modern Charm Uganda",
+                "description": "Full-service event styling and decor company based in Kampala, Uganda specializing in weddings, corporate events, and celebrations.",
+                "url": "https://modern-charm.vercel.app",
+                "telephone": ["+256779399409", "+256775826795"],
+                "email": "moderncharm30@gmail.com",
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressLocality": "Kampala",
+                  "addressCountry": "UG"
+                },
+                "sameAs": [
+                  "https://instagram.com/moderncharm_events",
+                  "https://facebook.com/moderncharmevents"
+                ],
+                "image": "https://modern-charm.vercel.app/images/hero-wedding.jpg",
+                "priceRange": "UGX 2,000,000 - 12,000,000+"
               },
-              "sameAs": [
-                "https://instagram.com/moderncharm_events",
-                "https://facebook.com/moderncharmevents"
-              ],
-              "image": "https://modern-charm.vercel.app/images/hero-wedding.jpg",
-              "priceRange": "UGX 2,000,000 - 12,000,000+"
-            }),
+              {
+                "@context": "https://schema.org",
+                "@type": "LocalBusiness",
+                "name": "Modern Charm Uganda",
+                "description": "Premium event styling and decor company in Kampala, Uganda.",
+                "url": "https://modern-charm.vercel.app",
+                "telephone": "+256779399409",
+                "email": "moderncharm30@gmail.com",
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressLocality": "Kampala",
+                  "addressRegion": "Central",
+                  "addressCountry": "UG"
+                },
+                "geo": {
+                  "@type": "GeoCoordinates",
+                  "latitude": 0.3476,
+                  "longitude": 32.5825
+                },
+                "openingHoursSpecification": {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                  "opens": "08:00",
+                  "closes": "18:00"
+                },
+                "sameAs": [
+                  "https://instagram.com/moderncharm_events",
+                  "https://facebook.com/moderncharmevents"
+                ],
+                "image": "https://modern-charm.vercel.app/images/hero-wedding.jpg",
+                "priceRange": "UGX 2,000,000 - 12,000,000+"
+              }
+            ]),
           }}
         />
         <Analytics />

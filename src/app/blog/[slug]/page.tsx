@@ -19,7 +19,15 @@ export async function generateMetadata({
   return {
     title: `${post.title} | Modern Charm Uganda`,
     description: post.excerpt,
+    alternates: { canonical: `https://modern-charm.vercel.app/blog/${slug}` },
     openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      url: `https://modern-charm.vercel.app/blog/${slug}`,
+      type: "article",
+    },
+    twitter: {
+      card: "summary_large_image",
       title: post.title,
       description: post.excerpt,
     },
@@ -82,6 +90,31 @@ export default async function BlogPostPage({
           />
         </div>
       </article>
+
+      {/* Article JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": post.title,
+            "description": post.excerpt,
+            "datePublished": new Date(post.date).toISOString(),
+            "author": {
+              "@type": "Organization",
+              "name": "Modern Charm Uganda",
+              "url": "https://modern-charm.vercel.app",
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Modern Charm Uganda",
+              "url": "https://modern-charm.vercel.app",
+            },
+            "mainEntityOfPage": `https://modern-charm.vercel.app/blog/${slug}`,
+          }),
+        }}
+      />
 
       {/* Back to Blog */}
       <section className="px-6 pb-20">

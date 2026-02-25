@@ -6,7 +6,15 @@ export const metadata: Metadata = {
   title: "FAQ | Modern Charm Uganda",
   description:
     "Find answers to common questions about Modern Charm Uganda's event styling services, pricing, booking process, and more.",
+  alternates: { canonical: "https://modern-charm.vercel.app/faq" },
   openGraph: {
+    title: "FAQ | Modern Charm Uganda",
+    description:
+      "Find answers to common questions about our event styling services, pricing, and booking process.",
+    url: "https://modern-charm.vercel.app/faq",
+  },
+  twitter: {
+    card: "summary_large_image",
     title: "FAQ | Modern Charm Uganda",
     description:
       "Find answers to common questions about our event styling services, pricing, and booking process.",

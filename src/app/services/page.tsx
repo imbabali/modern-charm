@@ -17,6 +17,19 @@ export const metadata: Metadata = {
   title: "Our Services | Modern Charm Uganda",
   description:
     "From intimate gatherings to grand celebrations — discover Modern Charm Uganda's full range of event styling, decor, and planning services in Kampala.",
+  alternates: { canonical: "https://modern-charm.vercel.app/services" },
+  openGraph: {
+    title: "Our Services | Modern Charm Uganda",
+    description:
+      "Discover Modern Charm Uganda's full range of event styling, decor, and planning services in Kampala.",
+    url: "https://modern-charm.vercel.app/services",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Our Services | Modern Charm Uganda",
+    description:
+      "Discover Modern Charm Uganda's full range of event styling, decor, and planning services in Kampala.",
+  },
 };
 
 const services = [

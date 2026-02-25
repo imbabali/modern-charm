@@ -15,6 +15,19 @@ export const metadata: Metadata = {
   title: "About Us | Modern Charm Uganda",
   description:
     "Learn about Modern Charm Uganda — Kampala's premier event styling & decor company blending Ugandan heritage with modern elegance.",
+  alternates: { canonical: "https://modern-charm.vercel.app/about" },
+  openGraph: {
+    title: "About Us | Modern Charm Uganda",
+    description:
+      "Kampala's premier event styling & decor company blending Ugandan heritage with modern elegance.",
+    url: "https://modern-charm.vercel.app/about",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Us | Modern Charm Uganda",
+    description:
+      "Kampala's premier event styling & decor company blending Ugandan heritage with modern elegance.",
+  },
 };
 
 const features = [
