@@ -67,9 +67,9 @@ export default function Home() {
             <span className="h-px w-8 bg-accent" />
           </div>
 
-          <h1 className="font-heading text-5xl leading-tight font-bold tracking-tight text-white sm:text-6xl md:text-7xl lg:text-8xl">
+          <h1 className="font-heading text-5xl leading-tight font-bold tracking-tight text-accent-light sm:text-6xl md:text-7xl lg:text-8xl">
             Where Charm{" "}
-            <span className="italic text-primary-light">Meets</span>
+            <span className="italic text-white">Meets</span>
             <br />
             Celebration
           </h1>

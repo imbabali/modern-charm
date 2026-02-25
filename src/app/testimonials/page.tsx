@@ -86,7 +86,7 @@ export default function TestimonialsPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/70 via-primary-dark/40 to-primary-dark/70" />
         <div className="relative z-10 mx-auto max-w-3xl drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]">
-          <h1 className="font-heading text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl">
+          <h1 className="font-heading text-4xl font-bold tracking-tight text-accent-light md:text-5xl lg:text-6xl">
             Client Stories
           </h1>
           <p className="mt-6 font-body text-lg leading-relaxed text-white/90 md:text-xl">

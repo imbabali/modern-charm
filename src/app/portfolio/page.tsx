@@ -279,7 +279,7 @@ export default function PortfolioPage() {
             <ChevronRight className="h-4 w-4" aria-hidden="true" />
             <span className="text-white font-medium">Portfolio</span>
           </nav>
-          <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
+          <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-accent-light mb-4">
             Our Portfolio
           </h1>
           <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
