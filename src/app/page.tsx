@@ -61,20 +61,20 @@ export default function Home() {
           {/* Small tagline above heading */}
           <div className="mb-6 flex items-center justify-center gap-2">
             <span className="h-px w-8 bg-accent" />
-            <span className="font-body text-sm tracking-[0.25em] font-medium text-accent-light uppercase">
+            <span className="font-body text-sm tracking-[0.25em] font-medium text-white uppercase">
               Premium Event Styling
             </span>
             <span className="h-px w-8 bg-accent" />
           </div>
 
-          <h1 className="font-heading text-5xl leading-tight font-bold tracking-tight text-accent-light sm:text-6xl md:text-7xl lg:text-8xl">
+          <h1 className="font-heading text-5xl leading-tight font-bold tracking-tight text-white sm:text-6xl md:text-7xl lg:text-8xl">
             Where Charm{" "}
-            <span className="italic text-white">Meets</span>
+            <span className="italic text-accent-light">Meets</span>
             <br />
             Celebration
           </h1>
 
-          <p className="font-body mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-white/80 sm:text-xl">
+          <p className="font-body mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-white/90 sm:text-xl">
             Premium event styling &amp; d&eacute;cor for weddings, corporate
             events, and unforgettable celebrations across Uganda.
           </p>
@@ -377,11 +377,11 @@ export default function Home() {
           {/* Section label */}
           <div className="mb-16 text-center">
             <div className="mb-4 flex items-center justify-center gap-3">
-              <span className="h-px w-10 bg-accent-light/50" />
-              <span className="font-body text-xs tracking-[0.3em] font-semibold text-accent-light uppercase">
+              <span className="h-px w-10 bg-white/50" />
+              <span className="font-body text-xs tracking-[0.3em] font-semibold text-white uppercase">
                 Our Impact
               </span>
-              <span className="h-px w-10 bg-accent-light/50" />
+              <span className="h-px w-10 bg-white/50" />
             </div>
             <h2 className="font-heading text-4xl font-bold text-white sm:text-5xl">
               Numbers That Speak
@@ -764,7 +764,7 @@ export default function Home() {
             <span className="italic text-accent-light">Extraordinary</span>?
           </h2>
 
-          <p className="font-body mx-auto mt-6 max-w-xl text-lg leading-relaxed text-white/80">
+          <p className="font-body mx-auto mt-6 max-w-xl text-lg leading-relaxed text-white/90">
             Let us bring your vision to life. Whether it&apos;s a grand wedding,
             an intimate gathering, or a show-stopping corporate event — your
             celebration deserves the Modern Charm touch.

@@ -109,7 +109,7 @@ export default function Navbar() {
                 </span>
                 <span
                   className={`text-[10px] font-body tracking-[0.25em] uppercase transition-colors duration-300 ${
-                    isScrolled ? "text-accent-dark" : "text-accent-light"
+                    isScrolled ? "text-accent-dark" : "text-white/90"
                   }`}
                 >
                   Uganda
@@ -131,7 +131,7 @@ export default function Navbar() {
                         : "text-white"
                       : isScrolled
                         ? "text-dark/70 hover:text-primary"
-                        : "text-white/80 hover:text-white"
+                        : "text-white/90 hover:text-white"
                   } ${isActive(link.href) ? "active" : ""}`}
                 >
                   {link.label}
@@ -226,7 +226,7 @@ export default function Navbar() {
               aria-current={isActive(link.href) ? "page" : undefined}
               className={`flex items-center px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 ${
                 isActive(link.href)
-                  ? "bg-primary/10 text-primary font-semibold"
+                  ? "bg-primary/10 text-primary-dark font-semibold"
                   : "text-dark/70 hover:bg-cream-dark hover:text-dark"
               }`}
             >

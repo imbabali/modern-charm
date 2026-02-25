@@ -35,7 +35,7 @@ export default function BlogPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/47 via-primary-dark/27 to-primary-dark/47" />
         <div className="relative z-10 mx-auto max-w-3xl drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]">
-          <h1 className="font-heading text-4xl font-bold tracking-tight text-accent-light md:text-5xl lg:text-6xl">
+          <h1 className="font-heading text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl">
             Our Journal
           </h1>
           <p className="mt-6 font-body text-lg leading-relaxed text-white/90 md:text-xl">
@@ -55,7 +55,7 @@ export default function BlogPage() {
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-center">
                     <div className="mx-auto h-16 w-16 rounded-full bg-white/20 backdrop-blur-sm" />
-                    <p className="mt-3 font-body text-sm text-white/70">
+                    <p className="mt-3 font-body text-sm text-white/90">
                       Featured Image
                     </p>
                   </div>
