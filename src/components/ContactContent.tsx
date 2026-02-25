@@ -362,7 +362,7 @@ export default function ContactContent() {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-accent hover:bg-accent-light disabled:opacity-60 disabled:cursor-not-allowed text-white font-semibold px-8 py-4 rounded-full text-lg transition-colors duration-300 shadow-md hover:shadow-lg cursor-pointer"
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-accent-dark hover:bg-accent disabled:opacity-60 disabled:cursor-not-allowed text-white font-semibold px-8 py-4 rounded-full text-lg transition-colors duration-300 shadow-md hover:shadow-lg cursor-pointer"
                     >
                       {isSubmitting ? (
                         <>

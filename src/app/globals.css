@@ -10,11 +10,11 @@
   --color-primary-light: #4A9488;
   --color-accent: #C4915C;
   --color-accent-light: #D4A574;
-  --color-accent-dark: #A87A4A;
+  --color-accent-dark: #855E2E;
   --color-cream: #FDFAF6;
   --color-cream-dark: #F5EDE3;
   --color-dark: #1A1A1A;
-  --color-muted: #6B7280;
+  --color-muted: #5F6570;
 
   /* Font Families */
   --font-heading: var(--font-playfair-display), "Playfair Display", Georgia, serif;

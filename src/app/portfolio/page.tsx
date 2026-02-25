@@ -343,7 +343,7 @@ export default function PortfolioPage() {
 
                 {/* Hover Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                  <span className="inline-block bg-accent text-white text-xs font-semibold px-3 py-1 rounded-full mb-3 w-fit">
+                  <span className="inline-block bg-accent-dark text-white text-xs font-semibold px-3 py-1 rounded-full mb-3 w-fit">
                     {project.categoryLabel}
                   </span>
                   <h3 className="font-heading text-xl font-bold text-white mb-2">
@@ -413,7 +413,7 @@ export default function PortfolioPage() {
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 bg-accent hover:bg-accent-light text-white font-semibold px-8 py-4 rounded-full text-lg transition-colors duration-300 shadow-lg hover:shadow-xl"
+            className="inline-flex items-center gap-2 bg-accent-dark hover:bg-accent text-white font-semibold px-8 py-4 rounded-full text-lg transition-colors duration-300 shadow-lg hover:shadow-xl"
           >
             Get in Touch
             <ChevronRight className="h-5 w-5" />

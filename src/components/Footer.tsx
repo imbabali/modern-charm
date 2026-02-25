@@ -96,7 +96,7 @@ export default function Footer() {
                 <span className="font-heading text-lg font-bold tracking-wider text-white">
                   MODERN CHARM
                 </span>
-                <span className="text-[9px] font-body tracking-[0.25em] uppercase text-accent-light">
+                <span className="text-[9px] font-body tracking-[0.25em] uppercase text-white/80">
                   Uganda
                 </span>
               </div>

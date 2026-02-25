@@ -109,7 +109,7 @@ export default function Navbar() {
                 </span>
                 <span
                   className={`text-[10px] font-body tracking-[0.25em] uppercase transition-colors duration-300 ${
-                    isScrolled ? "text-accent" : "text-accent-light"
+                    isScrolled ? "text-accent-dark" : "text-accent-light"
                   }`}
                 >
                   Uganda
@@ -124,7 +124,7 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   aria-current={isActive(link.href) ? "page" : undefined}
-                  className={`nav-link-underline relative px-3 py-2 text-sm font-medium transition-colors duration-200 focus-visible:text-accent focus-visible:outline-none ${
+                  className={`nav-link-underline relative px-3 py-2 text-sm font-medium transition-colors duration-200 focus-visible:text-accent-dark focus-visible:outline-none ${
                     isActive(link.href)
                       ? isScrolled
                         ? "text-primary"
@@ -146,8 +146,8 @@ export default function Navbar() {
                 href="/contact"
                 className={`hidden lg:inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
                   isScrolled
-                    ? "bg-accent text-white hover:bg-accent-dark shadow-sm hover:shadow-md"
-                    : "bg-accent text-white hover:bg-accent-dark shadow-lg"
+                    ? "bg-accent-dark text-white hover:bg-accent shadow-sm hover:shadow-md"
+                    : "bg-accent-dark text-white hover:bg-accent shadow-lg"
                 } hover:-translate-y-0.5`}
               >
                 <Sparkles className="w-4 h-4" aria-hidden="true" />
@@ -243,7 +243,7 @@ export default function Navbar() {
           <Link
             href="/contact"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="flex items-center justify-center gap-2 w-full px-5 py-3 rounded-full bg-accent text-white font-semibold text-sm transition-all duration-300 hover:bg-accent-dark shadow-md"
+            className="flex items-center justify-center gap-2 w-full px-5 py-3 rounded-full bg-accent-dark text-white font-semibold text-sm transition-all duration-300 hover:bg-accent shadow-md"
           >
             <Sparkles className="w-4 h-4" aria-hidden="true" />
             Book Consultation

@@ -111,7 +111,7 @@ export default function AboutPage() {
 
             {/* Story Text */}
             <div>
-              <span className="inline-block text-accent font-heading text-sm font-semibold tracking-widest uppercase mb-3">
+              <span className="inline-block text-accent-dark font-heading text-sm font-semibold tracking-widest uppercase mb-3">
                 Our Story
               </span>
               <h2 className="font-heading text-3xl md:text-4xl font-bold text-dark mb-6">
@@ -153,7 +153,7 @@ export default function AboutPage() {
       <section className="py-20 md:py-28 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <span className="inline-block text-accent font-heading text-sm font-semibold tracking-widest uppercase mb-3">
+            <span className="inline-block text-accent-dark font-heading text-sm font-semibold tracking-widest uppercase mb-3">
               What Drives Us
             </span>
             <h2 className="font-heading text-3xl md:text-4xl font-bold text-dark">
@@ -204,7 +204,7 @@ export default function AboutPage() {
       <section className="py-20 md:py-28 bg-cream-dark">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <span className="inline-block text-accent font-heading text-sm font-semibold tracking-widest uppercase mb-3">
+            <span className="inline-block text-accent-dark font-heading text-sm font-semibold tracking-widest uppercase mb-3">
               The Modern Charm Difference
             </span>
             <h2 className="font-heading text-3xl md:text-4xl font-bold text-dark">
@@ -243,7 +243,7 @@ export default function AboutPage() {
       <section className="py-20 md:py-28 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <span className="inline-block text-accent font-heading text-sm font-semibold tracking-widest uppercase mb-3">
+            <span className="inline-block text-accent-dark font-heading text-sm font-semibold tracking-widest uppercase mb-3">
               Meet the Creatives
             </span>
             <h2 className="font-heading text-3xl md:text-4xl font-bold text-dark">
@@ -274,7 +274,7 @@ export default function AboutPage() {
                 <h3 className="font-heading text-xl font-bold text-dark mb-1">
                   {member.name}
                 </h3>
-                <p className="text-accent font-medium text-sm">{member.role}</p>
+                <p className="text-accent-dark font-medium text-sm">{member.role}</p>
               </div>
             ))}
           </div>
@@ -304,7 +304,7 @@ export default function AboutPage() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 bg-accent hover:bg-accent-light text-white font-semibold px-8 py-4 rounded-full text-lg transition-colors duration-300 shadow-lg hover:shadow-xl"
+              className="inline-flex items-center gap-2 bg-accent-dark hover:bg-accent text-white font-semibold px-8 py-4 rounded-full text-lg transition-colors duration-300 shadow-lg hover:shadow-xl"
             >
               Start Planning Your Event
               <ArrowRight className="h-5 w-5" aria-hidden="true" />

@@ -202,7 +202,7 @@ export default function ServicesPage() {
                       <div className="flex h-10 w-10 items-center justify-center rounded-full bg-accent/10">
                         <Icon className="h-5 w-5 text-accent" aria-hidden="true" />
                       </div>
-                      <span className="text-accent font-heading text-xs font-semibold tracking-widest uppercase">
+                      <span className="text-accent-dark font-heading text-xs font-semibold tracking-widest uppercase">
                         Service {String(index + 1).padStart(2, "0")}
                       </span>
                     </div>
@@ -252,7 +252,7 @@ export default function ServicesPage() {
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 bg-accent hover:bg-accent-light text-white font-semibold px-8 py-4 rounded-full text-lg transition-colors duration-300 shadow-lg hover:shadow-xl"
+            className="inline-flex items-center gap-2 bg-accent-dark hover:bg-accent text-white font-semibold px-8 py-4 rounded-full text-lg transition-colors duration-300 shadow-lg hover:shadow-xl"
           >
             Let&apos;s Create Something Custom
             <ArrowRight className="h-5 w-5" aria-hidden="true" />

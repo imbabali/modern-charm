@@ -15,7 +15,7 @@ const gridPosts = blogPosts.filter((post) => !post.featured);
 
 function CategoryBadge({ category }: { category: string }) {
   return (
-    <span className="inline-block rounded-full bg-accent/15 px-3 py-1 font-body text-xs font-semibold tracking-wide text-accent uppercase">
+    <span className="inline-block rounded-full bg-accent/15 px-3 py-1 font-body text-xs font-semibold tracking-wide text-accent-dark uppercase">
       {category}
     </span>
   );
@@ -155,7 +155,7 @@ export default function BlogPage() {
               href="https://instagram.com/moderncharm_events"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-8 inline-block rounded-full bg-accent px-10 py-4 font-body text-base font-semibold text-white shadow-lg transition-all duration-300 hover:bg-accent-light hover:shadow-xl"
+              className="mt-8 inline-block rounded-full bg-accent-dark px-10 py-4 font-body text-base font-semibold text-white shadow-lg transition-all duration-300 hover:bg-accent hover:shadow-xl"
             >
               Follow @moderncharm_events
             </a>

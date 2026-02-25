@@ -147,7 +147,7 @@ export default function FAQContent({ faqData }: { faqData: FAQCategory[] }) {
           </p>
           <Link
             href="/contact"
-            className="mt-8 inline-block rounded-full bg-accent px-10 py-4 font-body text-base font-semibold text-white shadow-lg transition-all duration-300 hover:bg-accent-light hover:shadow-xl"
+            className="mt-8 inline-block rounded-full bg-accent-dark px-10 py-4 font-body text-base font-semibold text-white shadow-lg transition-all duration-300 hover:bg-accent hover:shadow-xl"
           >
             Contact Us
           </Link>

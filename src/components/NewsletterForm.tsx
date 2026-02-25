@@ -65,7 +65,7 @@ export default function NewsletterForm() {
         <button
           type="submit"
           disabled={status === "loading" || status === "success"}
-          className="px-4 py-2.5 bg-accent hover:bg-accent-dark disabled:opacity-60 disabled:cursor-not-allowed rounded-r-lg transition-colors duration-300 flex items-center justify-center"
+          className="px-4 py-2.5 bg-accent-dark hover:bg-accent disabled:opacity-60 disabled:cursor-not-allowed rounded-r-lg transition-colors duration-300 flex items-center justify-center"
           aria-label="Subscribe to newsletter"
         >
           {status === "loading" ? (

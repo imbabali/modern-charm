@@ -90,7 +90,7 @@ export default function Home() {
             </Link>
             <Link
               href="/contact"
-              className="font-body inline-flex items-center gap-2 rounded-full bg-accent px-8 py-4 text-sm font-semibold tracking-wide text-white uppercase transition-all duration-300 hover:bg-accent-light hover:shadow-lg hover:shadow-accent/25"
+              className="font-body inline-flex items-center gap-2 rounded-full bg-accent-dark px-8 py-4 text-sm font-semibold tracking-wide text-white uppercase transition-all duration-300 hover:bg-accent hover:shadow-lg hover:shadow-accent/25"
             >
               Book a Consultation
               <Sparkles aria-hidden="true" className="h-4 w-4" />
@@ -131,7 +131,7 @@ export default function Home() {
           <div>
             <div className="mb-4 flex items-center gap-3">
               <span className="h-px w-10 bg-accent" />
-              <span className="font-body text-xs tracking-[0.3em] font-semibold text-accent uppercase">
+              <span className="font-body text-xs tracking-[0.3em] font-semibold text-accent-dark uppercase">
                 About Us
               </span>
             </div>
@@ -167,7 +167,7 @@ export default function Home() {
             <Link
               href="/about"
               aria-label="Learn more about Modern Charm Uganda"
-              className="font-body group mt-8 inline-flex items-center gap-2 text-sm font-semibold tracking-wide text-primary uppercase transition-colors duration-300 hover:text-accent"
+              className="font-body group mt-8 inline-flex items-center gap-2 text-sm font-semibold tracking-wide text-primary uppercase transition-colors duration-300 hover:text-accent-dark"
             >
               Learn More
               <ArrowRight aria-hidden="true" className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -185,7 +185,7 @@ export default function Home() {
           <div className="mx-auto mb-16 max-w-2xl text-center">
             <div className="mb-4 flex items-center justify-center gap-3">
               <span className="h-px w-10 bg-accent" />
-              <span className="font-body text-xs tracking-[0.3em] font-semibold text-accent uppercase">
+              <span className="font-body text-xs tracking-[0.3em] font-semibold text-accent-dark uppercase">
                 What We Do
               </span>
               <span className="h-px w-10 bg-accent" />
@@ -204,7 +204,7 @@ export default function Home() {
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {/* Card 1 — Wedding Styling */}
             <div className="group relative rounded-2xl border border-gray-100 bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-xl hover:shadow-accent/5">
-              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-accent/10 group-hover:text-accent">
+              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-accent/10 group-hover:text-accent-dark">
                 <Heart className="h-7 w-7" aria-hidden="true" />
               </div>
               <h3 className="font-heading text-xl font-bold text-dark">
@@ -218,7 +218,7 @@ export default function Home() {
               <Link
                 href="/services#weddings"
                 aria-label="Learn more about Wedding Styling and Decor"
-                className="font-body mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-colors duration-300 group-hover:text-accent"
+                className="font-body mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-colors duration-300 group-hover:text-accent-dark"
               >
                 Learn More
                 <ArrowRight aria-hidden="true" className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
@@ -227,7 +227,7 @@ export default function Home() {
 
             {/* Card 2 — Corporate Events */}
             <div className="group relative rounded-2xl border border-gray-100 bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-xl hover:shadow-accent/5">
-              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-accent/10 group-hover:text-accent">
+              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-accent/10 group-hover:text-accent-dark">
                 <Building2 className="h-7 w-7" aria-hidden="true" />
               </div>
               <h3 className="font-heading text-xl font-bold text-dark">
@@ -241,7 +241,7 @@ export default function Home() {
               <Link
                 href="/services#corporate"
                 aria-label="Learn more about Corporate Events"
-                className="font-body mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-colors duration-300 group-hover:text-accent"
+                className="font-body mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-colors duration-300 group-hover:text-accent-dark"
               >
                 Learn More
                 <ArrowRight aria-hidden="true" className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
@@ -250,7 +250,7 @@ export default function Home() {
 
             {/* Card 3 — Traditional Ceremonies */}
             <div className="group relative rounded-2xl border border-gray-100 bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-xl hover:shadow-accent/5">
-              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-accent/10 group-hover:text-accent">
+              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-accent/10 group-hover:text-accent-dark">
                 <Crown className="h-7 w-7" aria-hidden="true" />
               </div>
               <h3 className="font-heading text-xl font-bold text-dark">
@@ -264,7 +264,7 @@ export default function Home() {
               <Link
                 href="/services#traditional"
                 aria-label="Learn more about Traditional Ceremonies"
-                className="font-body mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-colors duration-300 group-hover:text-accent"
+                className="font-body mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-colors duration-300 group-hover:text-accent-dark"
               >
                 Learn More
                 <ArrowRight aria-hidden="true" className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
@@ -273,7 +273,7 @@ export default function Home() {
 
             {/* Card 4 — Birthdays & Anniversaries */}
             <div className="group relative rounded-2xl border border-gray-100 bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-xl hover:shadow-accent/5">
-              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-accent/10 group-hover:text-accent">
+              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-accent/10 group-hover:text-accent-dark">
                 <Cake className="h-7 w-7" aria-hidden="true" />
               </div>
               <h3 className="font-heading text-xl font-bold text-dark">
@@ -287,7 +287,7 @@ export default function Home() {
               <Link
                 href="/services#birthdays"
                 aria-label="Learn more about Birthday and Anniversary Celebrations"
-                className="font-body mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-colors duration-300 group-hover:text-accent"
+                className="font-body mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-colors duration-300 group-hover:text-accent-dark"
               >
                 Learn More
                 <ArrowRight aria-hidden="true" className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
@@ -296,7 +296,7 @@ export default function Home() {
 
             {/* Card 5 — Showers */}
             <div className="group relative rounded-2xl border border-gray-100 bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-xl hover:shadow-accent/5">
-              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-accent/10 group-hover:text-accent">
+              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-accent/10 group-hover:text-accent-dark">
                 <Gift className="h-7 w-7" aria-hidden="true" />
               </div>
               <h3 className="font-heading text-xl font-bold text-dark">
@@ -309,7 +309,7 @@ export default function Home() {
               <Link
                 href="/services#showers"
                 aria-label="Learn more about Bridal and Baby Showers"
-                className="font-body mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-colors duration-300 group-hover:text-accent"
+                className="font-body mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-colors duration-300 group-hover:text-accent-dark"
               >
                 Learn More
                 <ArrowRight aria-hidden="true" className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
@@ -318,7 +318,7 @@ export default function Home() {
 
             {/* Card 6 — Event Planning */}
             <div className="group relative rounded-2xl border border-gray-100 bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-xl hover:shadow-accent/5">
-              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-accent/10 group-hover:text-accent">
+              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-accent/10 group-hover:text-accent-dark">
                 <ClipboardList className="h-7 w-7" aria-hidden="true" />
               </div>
               <h3 className="font-heading text-xl font-bold text-dark">
@@ -332,7 +332,7 @@ export default function Home() {
               <Link
                 href="/services#planning"
                 aria-label="Learn more about Event Planning and Coordination"
-                className="font-body mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-colors duration-300 group-hover:text-accent"
+                className="font-body mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-colors duration-300 group-hover:text-accent-dark"
               >
                 Learn More
                 <ArrowRight aria-hidden="true" className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
@@ -446,7 +446,7 @@ export default function Home() {
           <div className="mx-auto mb-16 max-w-2xl text-center">
             <div className="mb-4 flex items-center justify-center gap-3">
               <span className="h-px w-10 bg-accent" />
-              <span className="font-body text-xs tracking-[0.3em] font-semibold text-accent uppercase">
+              <span className="font-body text-xs tracking-[0.3em] font-semibold text-accent-dark uppercase">
                 Our Work
               </span>
               <span className="h-px w-10 bg-accent" />
@@ -612,7 +612,7 @@ export default function Home() {
           <div className="mx-auto mb-16 max-w-2xl text-center">
             <div className="mb-4 flex items-center justify-center gap-3">
               <span className="h-px w-10 bg-accent" />
-              <span className="font-body text-xs tracking-[0.3em] font-semibold text-accent uppercase">
+              <span className="font-body text-xs tracking-[0.3em] font-semibold text-accent-dark uppercase">
                 Testimonials
               </span>
               <span className="h-px w-10 bg-accent" />
@@ -774,7 +774,7 @@ export default function Home() {
           <div className="mt-10">
             <Link
               href="/contact"
-              className="font-body group inline-flex items-center gap-2 rounded-full bg-accent px-10 py-5 text-base font-semibold tracking-wide text-white uppercase transition-all duration-300 hover:bg-accent-light hover:shadow-xl hover:shadow-accent/30"
+              className="font-body group inline-flex items-center gap-2 rounded-full bg-accent-dark px-10 py-5 text-base font-semibold tracking-wide text-white uppercase transition-all duration-300 hover:bg-accent hover:shadow-xl hover:shadow-accent/30"
             >
               Start Planning Your Event
               <ArrowRight aria-hidden="true" className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />

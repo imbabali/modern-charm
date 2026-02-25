@@ -27,11 +27,11 @@ Website for **Modern Charm Uganda** (@moderncharm_events) — a full-service eve
 | Primary Light | `#4A9488` | `primary-light` | Lighter teal accents |
 | Gold/Copper | `#C4915C` | `accent` | CTAs, highlights, accents |
 | Light Gold | `#D4A574` | `accent-light` | Stats numbers, subtle accents |
-| Dark Gold | `#A87A4A` | `accent-dark` | Hover on gold elements |
+| Dark Gold | `#855E2E` | `accent-dark` | CTAs, text on light bg (WCAG AA) |
 | Cream | `#FDFAF6` | `cream` | Page backgrounds |
 | Dark Cream | `#F5EDE3` | `cream-dark` | Card backgrounds, sections |
 | Dark | `#1A1A1A` | `dark` | Body text |
-| Muted | `#6B7280` | `muted` | Secondary text |
+| Muted | `#5F6570` | `muted` | Secondary text (WCAG AA) |
 
 ### Typography
 - **Headings**: Playfair Display (serif) — `font-heading`
@@ -151,3 +151,4 @@ src/
 - **2026-02-25**: Reduced all video/image overlay opacity by ⅓ across all pages for better media visibility
 - **2026-02-25**: Full link/button audit across all pages — fixed 6 broken service anchor links, updated footer service links, removed non-functional "View Project" from portfolio hover overlay
 - **2026-02-25**: Accessibility audit — 42+ fixes across 15 files (aria labels, roles, heading hierarchy, focus management, keyboard navigation)
+- **2026-02-25**: WCAG 2.2 AA color contrast audit — darkened accent-dark (#A87A4A → #855E2E, 5.77:1 on white) and muted (#6B7280 → #5F6570, 5.05:1 on cream-dark), updated all text-accent/bg-accent usages across 16 files, 18/18 combinations pass

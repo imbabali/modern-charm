@@ -140,7 +140,7 @@ export default function PricingPage() {
                 {/* Most Popular Badge */}
                 {pkg.featured && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                    <span className="inline-flex items-center gap-1.5 rounded-full bg-accent px-5 py-1.5 font-body text-xs font-bold tracking-wide text-white uppercase shadow-md">
+                    <span className="inline-flex items-center gap-1.5 rounded-full bg-accent-dark px-5 py-1.5 font-body text-xs font-bold tracking-wide text-white uppercase shadow-md">
                       <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
                       Most Popular
                     </span>
@@ -184,7 +184,7 @@ export default function PricingPage() {
                   href="/contact"
                   className={`mt-10 block w-full rounded-full py-4 text-center font-body text-sm font-semibold transition-all duration-300 ${
                     pkg.featured
-                      ? "bg-accent text-white shadow-md hover:bg-accent-light hover:shadow-lg"
+                      ? "bg-accent-dark text-white shadow-md hover:bg-accent hover:shadow-lg"
                       : "border-2 border-primary text-primary hover:bg-primary hover:text-white"
                   }`}
                 >
@@ -237,7 +237,7 @@ export default function PricingPage() {
                     <h3 className="font-heading text-base font-semibold text-dark">
                       {addon.name}
                     </h3>
-                    <p className="mt-0.5 font-body text-sm text-accent font-medium">
+                    <p className="mt-0.5 font-body text-sm text-accent-dark font-medium">
                       {addon.price}
                     </p>
                   </div>
@@ -260,7 +260,7 @@ export default function PricingPage() {
           </p>
           <Link
             href="/contact"
-            className="mt-8 inline-block rounded-full bg-accent px-10 py-4 font-body text-base font-semibold text-white shadow-lg transition-all duration-300 hover:bg-accent-light hover:shadow-xl"
+            className="mt-8 inline-block rounded-full bg-accent-dark px-10 py-4 font-body text-base font-semibold text-white shadow-lg transition-all duration-300 hover:bg-accent hover:shadow-xl"
           >
             Get a Custom Quote
           </Link>
