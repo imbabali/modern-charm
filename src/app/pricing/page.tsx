@@ -108,9 +108,9 @@ export default function PricingPage() {
       <section className="relative overflow-hidden px-6 py-32 text-center text-white md:py-40 lg:py-44">
         <HeroCarousel
           images={[
-            "/images/portfolio/oscar-sandra/IMG_0895.jpg",
-            "/images/portfolio/wedding-highlights/IMG_3886.jpg",
-            "/images/portfolio/allan-pauline/img_0733.jpg",
+            "/images/portfolio/oscar-sandra/IMG_0834.jpg",
+            "/images/portfolio/oscar-sandra/IMG_1985.jpg",
+            "/images/portfolio/oscar-sandra/IMG_0795.jpg",
           ]}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/70 via-primary-dark/40 to-primary-dark/70" />
@@ -141,7 +141,7 @@ export default function PricingPage() {
                 {pkg.featured && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2">
                     <span className="inline-flex items-center gap-1.5 rounded-full bg-accent px-5 py-1.5 font-body text-xs font-bold tracking-wide text-white uppercase shadow-md">
-                      <Sparkles className="h-3.5 w-3.5" />
+                      <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
                       Most Popular
                     </span>
                   </div>
@@ -172,7 +172,7 @@ export default function PricingPage() {
                 <ul className="space-y-4">
                   {pkg.features.map((feature, i) => (
                     <li key={i} className="flex items-start gap-3">
-                      <Check className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                      <Check className="mt-0.5 h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
                       <span className="font-body text-sm text-dark/80">
                         {feature}
                       </span>
@@ -234,9 +234,9 @@ export default function PricingPage() {
                     <Icon className="h-5 w-5 text-primary" />
                   </div>
                   <div>
-                    <h4 className="font-heading text-base font-semibold text-dark">
+                    <h3 className="font-heading text-base font-semibold text-dark">
                       {addon.name}
-                    </h4>
+                    </h3>
                     <p className="mt-0.5 font-body text-sm text-accent font-medium">
                       {addon.price}
                     </p>

@@ -266,7 +266,7 @@ export default function PortfolioPage() {
           images={[
             "/images/portfolio/oscar-sandra/IMG_0834.jpg",
             "/images/portfolio/allan-pauline/img_0748.jpg",
-            "/images/portfolio/wedding-highlights/IMG_3876.jpg",
+            "/images/portfolio/oscar-sandra/IMG_0882.jpg",
             "/images/portfolio/oscar-sandra/IMG_1930.jpg",
           ]}
         />
@@ -297,6 +297,7 @@ export default function PortfolioPage() {
               <button
                 key={cat.key}
                 onClick={() => setActiveFilter(cat.key)}
+                aria-pressed={activeFilter === cat.key}
                 className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 cursor-pointer ${
                   activeFilter === cat.key
                     ? "bg-primary text-white shadow-md"
@@ -353,7 +354,7 @@ export default function PortfolioPage() {
                   </p>
                   <div className="mt-4">
                     <span className="inline-flex items-center gap-1.5 text-accent-light text-sm font-medium">
-                      View Project <ExternalLink className="h-3.5 w-3.5" />
+                      View Project <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
                     </span>
                   </div>
                 </div>
@@ -383,7 +384,7 @@ export default function PortfolioPage() {
       <section className="py-16 md:py-24 bg-white">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-primary to-accent mb-6">
-            <Instagram className="h-8 w-8 text-white" />
+            <Instagram className="h-8 w-8 text-white" aria-hidden="true" />
           </div>
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-dark mb-4">
             Want to See More?
@@ -398,7 +399,7 @@ export default function PortfolioPage() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-primary-light hover:from-primary-dark hover:to-primary text-white font-semibold px-8 py-4 rounded-full text-lg transition-all duration-300 shadow-lg hover:shadow-xl"
           >
-            <Instagram className="h-5 w-5" />
+            <Instagram className="h-5 w-5" aria-hidden="true" />
             @moderncharm_events
           </a>
         </div>

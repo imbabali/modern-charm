@@ -64,9 +64,9 @@ export default function AboutPage() {
       <section className="relative overflow-hidden py-32 md:py-40 lg:py-44">
         <HeroCarousel
           images={[
-            "/images/about-couple.jpg",
-            "/images/portfolio/oscar-sandra/IMG_0833.jpg",
-            "/images/portfolio/wedding-highlights/IMG_3884.jpg",
+            "/images/portfolio/oscar-sandra/IMG_0795.jpg",
+            "/images/portfolio/oscar-sandra/IMG_2416.jpg",
+            "/images/portfolio/oscar-sandra/IMG_1930.jpg",
             "/images/portfolio/allan-pauline/img_0748.jpg",
           ]}
         />
@@ -224,7 +224,7 @@ export default function AboutPage() {
                   className="group rounded-2xl bg-white p-6 md:p-8 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
                 >
                   <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
-                    <Icon className="h-7 w-7 text-primary group-hover:text-white transition-colors duration-300" />
+                    <Icon className="h-7 w-7 text-primary group-hover:text-white transition-colors duration-300" aria-hidden="true" />
                   </div>
                   <h3 className="font-heading text-lg font-bold text-dark mb-3">
                     {feature.title}
@@ -307,7 +307,7 @@ export default function AboutPage() {
               className="inline-flex items-center gap-2 bg-accent hover:bg-accent-light text-white font-semibold px-8 py-4 rounded-full text-lg transition-colors duration-300 shadow-lg hover:shadow-xl"
             >
               Start Planning Your Event
-              <ArrowRight className="h-5 w-5" />
+              <ArrowRight className="h-5 w-5" aria-hidden="true" />
             </Link>
             <Link
               href="/portfolio"

@@ -56,10 +56,11 @@ const testimonials = [
 
 function StarRating({ rating }: { rating: number }) {
   return (
-    <div className="flex gap-1">
+    <div className="flex gap-1" role="img" aria-label={`${rating} out of 5 stars`}>
       {Array.from({ length: 5 }).map((_, i) => (
         <Star
           key={i}
+          aria-hidden="true"
           className={`h-4 w-4 ${
             i < rating
               ? "fill-accent text-accent"
@@ -79,8 +80,8 @@ export default function TestimonialsPage() {
         <HeroCarousel
           images={[
             "/images/portfolio/oscar-sandra/IMG_0882.jpg",
-            "/images/portfolio/allan-pauline/img_0023.jpg",
-            "/images/portfolio/wedding-highlights/IMG_3893.jpg",
+            "/images/portfolio/oscar-sandra/IMG_0947.jpg",
+            "/images/portfolio/wedding-highlights/IMG_3879.jpg",
           ]}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/70 via-primary-dark/40 to-primary-dark/70" />
@@ -120,10 +121,11 @@ export default function TestimonialsPage() {
                     {featuredTestimonial.event}
                   </p>
                 </div>
-                <div className="flex gap-1">
+                <div className="flex gap-1" role="img" aria-label="5 out of 5 stars">
                   {Array.from({ length: 5 }).map((_, i) => (
                     <Star
                       key={i}
+                      aria-hidden="true"
                       className="h-5 w-5 fill-accent text-accent"
                     />
                   ))}
@@ -151,7 +153,7 @@ export default function TestimonialsPage() {
                 key={index}
                 className="group rounded-xl bg-cream-dark p-8 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10"
               >
-                <Quote className="mb-4 h-8 w-8 text-accent/50" />
+                <Quote className="mb-4 h-8 w-8 text-accent/50" aria-hidden="true" />
                 <p className="font-body text-base leading-relaxed text-dark/80 italic">
                   &ldquo;{testimonial.text}&rdquo;
                 </p>
