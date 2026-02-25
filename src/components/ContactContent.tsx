@@ -14,6 +14,7 @@ import {
   Facebook,
   ArrowRight,
 } from "lucide-react";
+import HeroCarousel from "@/components/HeroCarousel";
 
 const eventTypes = [
   "Wedding",
@@ -141,9 +142,16 @@ export default function ContactContent() {
   return (
     <div className="font-body">
       {/* Hero Banner */}
-      <section className="relative bg-gradient-to-br from-primary-dark via-primary to-primary-light py-24 md:py-32">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDM0djItSDI0di0yaDEyek0zNiAyNHYySDI0di0yaDEyeiIvPjwvZz48L2c+PC9zdmc+')] opacity-30" />
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
+      <section className="relative overflow-hidden py-24 md:py-32">
+        <HeroCarousel
+          images={[
+            "/images/portfolio/oscar-sandra/IMG_2408.jpg",
+            "/images/portfolio/wedding-highlights/IMG_3884.jpg",
+            "/images/portfolio/allan-pauline/img_0023.jpg",
+          ]}
+        />
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <nav aria-label="Breadcrumb" className="mb-6 flex items-center justify-center gap-2 text-sm text-white/90">
             <Link href="/" className="hover:text-white transition-colors">
               Home

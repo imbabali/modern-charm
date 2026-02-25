@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Star, Quote } from "lucide-react";
 import Link from "next/link";
+import HeroCarousel from "@/components/HeroCarousel";
 
 export const metadata: Metadata = {
   title: "Client Stories | Modern Charm Uganda",
@@ -74,8 +75,16 @@ export default function TestimonialsPage() {
   return (
     <div className="min-h-screen bg-cream">
       {/* Hero Banner */}
-      <section className="bg-gradient-to-br from-primary-dark via-primary to-primary-light px-6 py-24 text-center text-white md:py-32">
-        <div className="mx-auto max-w-3xl">
+      <section className="relative overflow-hidden px-6 py-24 text-center text-white md:py-32">
+        <HeroCarousel
+          images={[
+            "/images/portfolio/oscar-sandra/IMG_0882.jpg",
+            "/images/portfolio/allan-pauline/img_0023.jpg",
+            "/images/portfolio/wedding-highlights/IMG_3893.jpg",
+          ]}
+        />
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="relative z-10 mx-auto max-w-3xl">
           <h1 className="font-heading text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl">
             Client Stories
           </h1>
