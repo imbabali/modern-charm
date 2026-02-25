@@ -118,20 +118,23 @@ src/
 
 ## Next Steps / TODO
 - [x] ~~Replace placeholder gradients with real event photos~~ — Done (Allan & Pauline wedding, 34 images)
-- [ ] Add real SVG logo (recreate from logo-reference.png)
-- [ ] Connect contact form to backend (e.g., Resend, EmailJS)
-- [ ] Connect newsletter to email service (e.g., Mailchimp, ConvertKit)
+- [x] ~~Add real SVG logo (recreate from logo-reference.png)~~ — Done (Logo.tsx component, integrated in Navbar + Footer)
+- [x] ~~Connect contact form to backend~~ — Done (Resend API at /api/contact, needs RESEND_API_KEY env var)
+- [x] ~~Connect newsletter to email service~~ — Done (Resend API at /api/newsletter, needs RESEND_API_KEY env var)
 - [x] ~~Add real WhatsApp number~~ — Done (Philip's: +256 779 399 409)
 - [x] ~~Add real contact info~~ — Done (phones, email, social links)
 - [x] ~~Add real team members~~ — Done (Philip & Benjamin)
-- [ ] Add Google Maps embed on contact page
+- [x] ~~Add Google Maps embed on contact page~~ — Done (Kampala, Uganda iframe embed)
 - [x] ~~Add real portfolio items~~ — Done (Allan & Pauline wedding gallery)
 - [ ] Add real testimonials
-- [ ] Add blog post detail pages
-- [ ] Implement SEO (meta tags per page, sitemap, robots.txt)
-- [ ] Add page transition animations
-- [ ] Performance optimization (image optimization, lazy loading)
-- [ ] Analytics integration (Google Analytics, Vercel Analytics)
+- [x] ~~Add blog post detail pages~~ — Done (7 blog posts with dynamic [slug] routing)
+- [x] ~~Implement SEO~~ — Done (metadataBase, sitemap.ts, robots.ts, JSON-LD, per-page OG tags, FAQ schema)
+- [x] ~~Add page transition animations~~ — Done (AnimateOnScroll component, CSS scroll animations)
+- [x] ~~Performance optimization~~ — Done (AVIF format, image sizes, font trimming, security headers)
+- [x] ~~Analytics integration~~ — Done (@vercel/analytics + @vercel/speed-insights)
+- [ ] Set up RESEND_API_KEY environment variable on Vercel for contact form + newsletter
+- [ ] Verify custom domain (moderncharmuganda.com) in Resend for branded sender emails
+- [ ] Add RESEND_AUDIENCE_ID for newsletter subscriber management
 
 ## Progress Log
 - **2026-02-24**: Initial build — complete website with 9 pages, all components, deployed to Vercel
