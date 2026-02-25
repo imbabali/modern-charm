@@ -176,9 +176,6 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
             {/* Mission Card */}
             <div className="relative rounded-2xl bg-cream p-8 md:p-10 border-l-4 border-accent group hover:shadow-lg transition-shadow duration-300">
-              <div className="absolute top-6 right-6 text-accent/20 font-heading text-7xl font-bold leading-none select-none">
-                01
-              </div>
               <h3 className="font-heading text-2xl font-bold text-dark mb-4">
                 Our Mission
               </h3>
@@ -194,9 +191,6 @@ export default function AboutPage() {
 
             {/* Vision Card */}
             <div className="relative rounded-2xl bg-cream p-8 md:p-10 border-l-4 border-accent group hover:shadow-lg transition-shadow duration-300">
-              <div className="absolute top-6 right-6 text-accent/20 font-heading text-7xl font-bold leading-none select-none">
-                02
-              </div>
               <h3 className="font-heading text-2xl font-bold text-dark mb-4">
                 Our Vision
               </h3>
@@ -300,11 +294,11 @@ export default function AboutPage() {
           src="/images/reception-decor.jpg"
           alt="Reception with floral installation"
           fill
-          className="object-cover"
+          className="object-cover object-top"
           quality={80}
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/90 via-primary/85 to-primary-light/90" />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/47 via-primary-dark/27 to-primary-dark/47" />
         <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
             Ready to Create Something Beautiful?
