@@ -131,7 +131,7 @@ src/
 - [x] ~~Add real team members~~ — Done (Philip & Benjamin)
 - [x] ~~Add Google Maps embed on contact page~~ — Removed (contact page redesigned without map)
 - [x] ~~Add real portfolio items~~ — Done (Allan & Pauline wedding gallery)
-- [ ] Add real testimonials (currently placeholder)
+- [ ] Add real testimonials — currently placeholder; need real reviews from Instagram comments/DMs or Google Reviews. Updates needed in `src/app/testimonials/page.tsx` (featured + 6 grid) and `src/app/page.tsx` (3 homepage cards). No Google Business profile exists yet; Instagram @moderncharm_events has reviews in post comments but they aren't scrapable programmatically
 - [ ] Add real team photos (Philip & Benjamin — currently gradient initials)
 - [ ] Add real photos for corporate, traditional, celebration portfolio categories
 - [ ] Verify homepage stats accuracy (500+ Events, 8+ Years, 50+ Venue Partners)
@@ -143,6 +143,8 @@ src/
 - [ ] Set up RESEND_API_KEY environment variable on Vercel for contact form + newsletter
 - [ ] Verify custom domain (moderncharmuganda.com) in Resend for branded sender emails
 - [ ] Add RESEND_AUDIENCE_ID for newsletter subscriber management
+- [ ] Set up Google Business Profile for Modern Charm Uganda (enables Google Reviews)
+- [ ] Submit sitemap to Google Search Console (https://modern-charm.vercel.app/sitemap.xml)
 
 ## Progress Log
 - **2026-02-24**: Initial build — complete website with 9 pages, all components, deployed to Vercel
