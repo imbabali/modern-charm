@@ -105,7 +105,7 @@ export default function PricingPage() {
   return (
     <div className="min-h-screen bg-cream">
       {/* Hero Banner */}
-      <section className="relative overflow-hidden px-6 py-24 text-center text-white md:py-32">
+      <section className="relative overflow-hidden px-6 py-32 text-center text-white md:py-40 lg:py-44">
         <HeroCarousel
           images={[
             "/images/portfolio/oscar-sandra/IMG_0895.jpg",
@@ -113,8 +113,8 @@ export default function PricingPage() {
             "/images/portfolio/allan-pauline/img_0733.jpg",
           ]}
         />
-        <div className="absolute inset-0 bg-black/50" />
-        <div className="relative z-10 mx-auto max-w-3xl">
+        <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/70 via-primary-dark/40 to-primary-dark/70" />
+        <div className="relative z-10 mx-auto max-w-3xl drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]">
           <h1 className="font-heading text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl">
             Our Packages
           </h1>

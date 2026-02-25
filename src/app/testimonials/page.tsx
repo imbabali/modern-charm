@@ -75,7 +75,7 @@ export default function TestimonialsPage() {
   return (
     <div className="min-h-screen bg-cream">
       {/* Hero Banner */}
-      <section className="relative overflow-hidden px-6 py-24 text-center text-white md:py-32">
+      <section className="relative overflow-hidden px-6 py-32 text-center text-white md:py-40 lg:py-44">
         <HeroCarousel
           images={[
             "/images/portfolio/oscar-sandra/IMG_0882.jpg",
@@ -83,8 +83,8 @@ export default function TestimonialsPage() {
             "/images/portfolio/wedding-highlights/IMG_3893.jpg",
           ]}
         />
-        <div className="absolute inset-0 bg-black/50" />
-        <div className="relative z-10 mx-auto max-w-3xl">
+        <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/70 via-primary-dark/40 to-primary-dark/70" />
+        <div className="relative z-10 mx-auto max-w-3xl drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]">
           <h1 className="font-heading text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl">
             Client Stories
           </h1>
@@ -98,13 +98,12 @@ export default function TestimonialsPage() {
       <section className="px-6 py-20 md:py-28">
         <div className="mx-auto max-w-4xl">
           <div className="relative rounded-2xl bg-cream p-8 shadow-lg ring-1 ring-accent/20 md:p-14">
-            <Quote className="absolute top-6 left-6 h-12 w-12 text-accent/30 md:top-10 md:left-10 md:h-16 md:w-16" />
-            <Quote className="absolute right-6 bottom-6 h-12 w-12 rotate-180 text-accent/30 md:right-10 md:bottom-10 md:h-16 md:w-16" />
-
             <div className="relative z-10 flex flex-col items-center text-center">
+              <Quote className="mb-4 h-10 w-10 text-accent/40 md:h-14 md:w-14" aria-hidden="true" />
               <p className="font-body text-base leading-relaxed text-dark/80 italic md:text-lg lg:text-xl lg:leading-9">
-                &ldquo;{featuredTestimonial.text}&rdquo;
+                {featuredTestimonial.text}
               </p>
+              <Quote className="mt-4 h-10 w-10 rotate-180 text-accent/40 md:h-14 md:w-14" aria-hidden="true" />
 
               <div className="mt-10 flex flex-col items-center gap-4">
                 {/* Client Photo Placeholder */}
