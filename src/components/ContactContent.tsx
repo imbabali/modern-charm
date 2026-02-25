@@ -85,6 +85,7 @@ export default function ContactContent() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState("");
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -98,26 +99,43 @@ export default function ContactContent() {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setError("");
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-
-    // Reset after showing success
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({
-        fullName: "",
-        email: "",
-        phone: "",
-        eventType: "",
-        eventDate: "",
-        budgetRange: "",
-        message: "",
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
       });
-    }, 4000);
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        setError(data.error || "Something went wrong. Please try again.");
+        setIsSubmitting(false);
+        return;
+      }
+
+      setIsSubmitting(false);
+      setIsSubmitted(true);
+
+      // Reset after showing success
+      setTimeout(() => {
+        setIsSubmitted(false);
+        setFormData({
+          fullName: "",
+          email: "",
+          phone: "",
+          eventType: "",
+          eventDate: "",
+          budgetRange: "",
+          message: "",
+        });
+      }, 4000);
+    } catch {
+      setError("Failed to send message. Please check your connection and try again.");
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -325,6 +343,13 @@ export default function ContactContent() {
                       />
                     </div>
 
+                    {/* Error Message */}
+                    {error && (
+                      <div role="alert" className="rounded-lg bg-red-50 border border-red-200 text-red-700 px-4 py-3 text-sm">
+                        {error}
+                      </div>
+                    )}
+
                     {/* Submit Button */}
                     <button
                       type="submit"
@@ -406,26 +431,19 @@ export default function ContactContent() {
                 </div>
               </div>
 
-              {/* Map Placeholder */}
-              <div className="rounded-xl overflow-hidden bg-gradient-to-br from-primary/10 via-cream-dark to-accent/10 aspect-[4/3] flex items-center justify-center relative">
-                <div className="text-center">
-                  <div className="w-14 h-14 rounded-full bg-primary/10 mx-auto mb-3 flex items-center justify-center">
-                    <MapPin className="h-6 w-6 text-primary" />
-                  </div>
-                  <p className="text-dark font-heading font-semibold text-lg">
-                    Map Coming Soon
-                  </p>
-                  <p className="text-muted text-sm mt-1">Kampala, Uganda</p>
-                </div>
-                {/* Decorative dots */}
-                <div className="absolute top-4 right-4 grid grid-cols-3 gap-1.5">
-                  {Array.from({ length: 9 }).map((_, i) => (
-                    <div
-                      key={i}
-                      className="w-1.5 h-1.5 rounded-full bg-primary/20"
-                    />
-                  ))}
-                </div>
+              {/* Map */}
+              <div className="rounded-xl overflow-hidden aspect-[4/3]">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127672.75772083989!2d32.52291174218754!3d0.31327959999999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dbc0f90af4c61%3A0x1ba56f5e3a30c9f0!2sKampala%2C%20Uganda!5e0!3m2!1sen!2sus!4v1709000000000!5m2!1sen!2sus"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Modern Charm Uganda location in Kampala"
+                  className="w-full h-full"
+                />
               </div>
             </div>
           </div>

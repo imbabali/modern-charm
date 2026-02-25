@@ -4,6 +4,7 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, Sparkles } from "lucide-react";
+import Logo from "@/components/Logo";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -92,21 +93,11 @@ export default function Navbar() {
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2 group">
               {/* MC Monogram */}
-              <div
-                className={`relative flex items-center justify-center w-11 h-11 rounded-lg border-2 transition-all duration-300 ${
-                  isScrolled
-                    ? "border-primary bg-primary"
-                    : "border-white bg-white/10 backdrop-blur-sm"
-                } group-hover:scale-105`}
-              >
-                <span
-                  className={`font-heading text-lg font-bold tracking-tight transition-colors duration-300 ${
-                    isScrolled ? "text-white" : "text-white"
-                  }`}
-                >
-                  MC
-                </span>
-              </div>
+              <Logo
+                className={`w-11 h-11 transition-all duration-300 group-hover:scale-105 ${
+                  isScrolled ? "text-accent" : "text-white"
+                }`}
+              />
               {/* Brand Name */}
               <div className="flex flex-col">
                 <span
@@ -209,11 +200,7 @@ export default function Navbar() {
         {/* Drawer Header */}
         <div className="flex items-center justify-between p-6 border-b border-cream-dark">
           <div className="flex items-center gap-2">
-            <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-primary">
-              <span className="font-heading text-sm font-bold text-white tracking-tight">
-                MC
-              </span>
-            </div>
+            <Logo className="w-9 h-9 text-primary" />
             <span className="font-heading text-lg font-bold tracking-wider text-dark">
               MODERN CHARM
             </span>
