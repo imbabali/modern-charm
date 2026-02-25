@@ -22,13 +22,13 @@ const quickLinks = [
 ];
 
 const services = [
-  { href: "/services", label: "Wedding Styling" },
-  { href: "/services", label: "Corporate Events" },
-  { href: "/services", label: "Birthday Parties" },
-  { href: "/services", label: "Bridal Showers" },
-  { href: "/services", label: "Venue Decoration" },
-  { href: "/services", label: "Floral Arrangements" },
-  { href: "/services", label: "Event Consultation" },
+  { href: "/services#weddings", label: "Wedding Styling" },
+  { href: "/services#corporate", label: "Corporate Events" },
+  { href: "/services#birthdays", label: "Birthday Parties" },
+  { href: "/services#showers", label: "Bridal Showers" },
+  { href: "/services#weddings", label: "Venue Decoration" },
+  { href: "/services#weddings", label: "Floral Arrangements" },
+  { href: "/services#planning", label: "Event Consultation" },
 ];
 
 const socialLinks = [

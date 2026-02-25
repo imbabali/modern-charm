@@ -21,6 +21,7 @@ export const metadata: Metadata = {
 
 const services = [
   {
+    id: "weddings",
     icon: Heart,
     title: "Wedding Styling & Decor",
     description:
@@ -38,6 +39,7 @@ const services = [
     imageAlt: "Grand wedding reception with black & white decor, gold arches and floral installations",
   },
   {
+    id: "corporate",
     icon: Building2,
     title: "Corporate Events",
     description:
@@ -55,6 +57,7 @@ const services = [
     imageAlt: "Dapper groomsmen in black tie with grooms in white tuxedos at luxury reception",
   },
   {
+    id: "traditional",
     icon: Drum,
     title: "Traditional Ceremonies",
     description:
@@ -72,6 +75,7 @@ const services = [
     imageAlt: "Intimate moment as couple holds hands before the candle wall and floral backdrop",
   },
   {
+    id: "birthdays",
     icon: PartyPopper,
     title: "Birthday & Anniversary Celebrations",
     description:
@@ -89,6 +93,7 @@ const services = [
     imageAlt: "Bridesmaids dancing joyfully in champagne gowns against dramatic reception backdrop",
   },
   {
+    id: "showers",
     icon: Baby,
     title: "Bridal Showers & Baby Showers",
     description:
@@ -106,6 +111,7 @@ const services = [
     imageAlt: "Bride and bridesmaids in matching silk robes during pre-ceremony preparations",
   },
   {
+    id: "planning",
     icon: ClipboardList,
     title: "Event Planning & Coordination",
     description:
@@ -167,7 +173,8 @@ export default function ServicesPage() {
               return (
                 <div
                   key={service.title}
-                  className={`grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center ${
+                  id={service.id}
+                  className={`scroll-mt-24 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center ${
                     isReversed ? "lg:direction-rtl" : ""
                   }`}
                 >
