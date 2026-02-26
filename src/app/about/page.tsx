@@ -374,11 +374,11 @@ export default function AboutPage() {
               celebrations unforgettable.
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 max-w-5xl mx-auto">
+          <div className="flex flex-wrap justify-center gap-8 lg:gap-10 max-w-5xl mx-auto">
             {teamMembers.map((member) => (
               <div
                 key={member.name}
-                className="group text-center rounded-2xl bg-white p-6 hover:shadow-lg transition-all duration-300"
+                className="group text-center rounded-2xl bg-white p-6 hover:shadow-lg transition-all duration-300 w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.75rem)]"
               >
                 <div className="mx-auto mb-5 h-40 w-40 rounded-full overflow-hidden shadow-lg group-hover:scale-105 transition-transform duration-300 relative">
                   <Image
