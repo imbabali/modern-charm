@@ -73,7 +73,7 @@ const faqData: FAQCategory[] = [
       {
         question: "What is your pricing structure?",
         answer:
-          "We offer three core packages — Essential Charm (starting from UGX 2,000,000), Premium Charm (starting from UGX 5,000,000), and Grand Charm (starting from UGX 12,000,000) — plus fully custom options. Final pricing depends on factors like event size, venue requirements, design complexity, and additional services. We believe in transparent pricing and always provide a detailed breakdown before you commit. Visit our Packages page for a full overview of what each tier includes.",
+          "We offer three core packages — Essential Charm (starting from UGX 2,000,000), Premium Charm (starting from UGX 5,000,000), and Grand Charm (starting from UGX 12,000,000) — plus fully custom options. Final pricing depends on factors like event size, venue requirements, design complexity, and additional services. We believe in transparent pricing and always provide a detailed breakdown before you commit. Contact us to discuss which package suits your event best.",
       },
       {
         question: "Do you require a deposit?",
