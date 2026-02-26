@@ -84,13 +84,21 @@ export default function FAQContent({ faqData }: { faqData: FAQCategory[] }) {
     <div className="min-h-screen bg-cream">
       {/* Hero Banner */}
       <section className="relative overflow-hidden px-6 py-32 text-center text-white md:py-40 lg:py-44">
-        <HeroCarousel
-          images={[
-            "/images/portfolio/oscar-sandra/IMG_1985.jpg",
-            "/images/portfolio/david-michelle/7b7a0761.jpg",
-            "/images/portfolio/wedding-highlights/IMG_3884.jpg",
-          ]}
-        />
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          className="absolute inset-0 h-full w-full object-cover"
+          aria-hidden="true"
+          tabIndex={-1}
+        >
+          <source
+            src="https://6jblcdd6pq0suc42.public.blob.vercel-storage.com/videos/cta-clips/cta-lala-intro-a-1zUWFAVNFO1BD7wYcuclj45E6ogkCI.mp4"
+            type="video/mp4"
+          />
+        </video>
         <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/47 via-primary-dark/27 to-primary-dark/47" />
         <div className="relative z-10 mx-auto max-w-3xl drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]">
           <h1 className="font-heading text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl">
@@ -137,21 +145,13 @@ export default function FAQContent({ faqData }: { faqData: FAQCategory[] }) {
 
       {/* Bottom CTA */}
       <section className="relative overflow-hidden px-6 py-20 text-center md:py-28">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          className="absolute inset-0 h-full w-full object-cover"
-          aria-hidden="true"
-          tabIndex={-1}
-        >
-          <source
-            src="https://6jblcdd6pq0suc42.public.blob.vercel-storage.com/videos/cta-clips/cta-lala-intro-a-1zUWFAVNFO1BD7wYcuclj45E6ogkCI.mp4"
-            type="video/mp4"
-          />
-        </video>
+        <HeroCarousel
+          images={[
+            "/images/portfolio/oscar-sandra/IMG_1985.jpg",
+            "/images/portfolio/david-michelle/7b7a0761.jpg",
+            "/images/portfolio/wedding-highlights/IMG_3884.jpg",
+          ]}
+        />
         <div className="absolute inset-0 bg-primary-dark/57" />
         <div className="relative z-10 mx-auto max-w-2xl">
           <h2 className="font-heading text-3xl font-bold text-white md:text-4xl">

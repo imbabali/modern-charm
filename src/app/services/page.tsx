@@ -140,14 +140,21 @@ export default function ServicesPage() {
     <div className="font-body">
       {/* Hero Banner */}
       <section className="relative overflow-hidden py-32 md:py-40 lg:py-44">
-        <HeroCarousel
-          images={[
-            "/images/portfolio/david-michelle/7b7a0757.jpg",
-            "/images/portfolio/lornas-kuhingira/7b7a9477.jpg",
-            "/images/portfolio/oscar-sandra/IMG_0918.jpg",
-            "/images/portfolio/allan-pauline/img_0791.jpg",
-          ]}
-        />
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          className="absolute inset-0 h-full w-full object-cover"
+          aria-hidden="true"
+          tabIndex={-1}
+        >
+          <source
+            src="https://6jblcdd6pq0suc42.public.blob.vercel-storage.com/videos/cta-clips/cta-sammy-lala-E8PNxd83k6daHHr8FVFOwFfPI2gxG3.mp4"
+            type="video/mp4"
+          />
+        </video>
         <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/47 via-primary-dark/27 to-primary-dark/47" />
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]">
           <nav
@@ -287,21 +294,14 @@ export default function ServicesPage() {
 
       {/* Bottom CTA Section */}
       <section className="py-20 md:py-28 relative overflow-hidden">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          className="absolute inset-0 h-full w-full object-cover"
-          aria-hidden="true"
-          tabIndex={-1}
-        >
-          <source
-            src="https://6jblcdd6pq0suc42.public.blob.vercel-storage.com/videos/cta-clips/cta-sammy-lala-E8PNxd83k6daHHr8FVFOwFfPI2gxG3.mp4"
-            type="video/mp4"
-          />
-        </video>
+        <HeroCarousel
+          images={[
+            "/images/portfolio/david-michelle/7b7a0757.jpg",
+            "/images/portfolio/lornas-kuhingira/7b7a9477.jpg",
+            "/images/portfolio/oscar-sandra/IMG_0918.jpg",
+            "/images/portfolio/allan-pauline/img_0791.jpg",
+          ]}
+        />
         <div className="absolute inset-0 bg-primary-dark/57" />
         <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
