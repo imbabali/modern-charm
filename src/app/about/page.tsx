@@ -321,10 +321,10 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* How We Work Section */}
-      <section className="py-20 md:py-28 bg-white">
+      {/* How We Work — Horizontal Timeline */}
+      <section className="py-20 md:py-28 bg-white overflow-hidden">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
+          <div className="text-center mb-16">
             <span className="inline-block text-accent-dark font-heading text-sm font-semibold tracking-widest uppercase mb-3">
               The Recipe for Our Charm
             </span>
@@ -336,25 +336,70 @@ export default function AboutPage() {
               executed to perfection.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-6 lg:gap-4">
-            {processSteps.map((item, index) => (
-              <div key={item.step} className="relative text-center group">
-                {/* Step number circle */}
-                <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-accent-dark text-white font-heading text-lg font-bold shadow-md group-hover:scale-110 transition-transform duration-300">
-                  {item.step}
+
+          {/* Desktop horizontal timeline */}
+          <div className="hidden md:block relative">
+            {/* Continuous connecting line */}
+            <div className="absolute top-8 left-[10%] right-[10%] h-px bg-gradient-to-r from-accent/0 via-accent/40 to-accent/0" />
+
+            <div className="grid grid-cols-5 gap-4 lg:gap-6">
+              {processSteps.map((item, index) => (
+                <div key={item.step} className="relative text-center group">
+                  {/* Timeline node */}
+                  <div className="relative mx-auto mb-8">
+                    {/* Outer ring pulse on hover */}
+                    <div className="absolute inset-0 mx-auto h-16 w-16 rounded-full bg-accent/20 group-hover:scale-150 group-hover:opacity-0 transition-all duration-700" />
+                    {/* Step circle */}
+                    <div className="relative mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-accent-dark text-white font-heading text-lg font-bold shadow-lg group-hover:bg-primary transition-colors duration-300 ring-4 ring-white">
+                      {item.step}
+                    </div>
+                  </div>
+                  {/* Content card */}
+                  <div className="rounded-xl bg-cream p-5 group-hover:bg-cream-dark group-hover:shadow-md transition-all duration-300">
+                    <h3 className="font-heading text-base font-bold text-dark mb-2">
+                      {item.title}
+                    </h3>
+                    <p className="text-muted text-sm leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
+                  {/* Decorative arrow between steps */}
+                  {index < processSteps.length - 1 && (
+                    <div className="absolute top-[30px] right-0 translate-x-1/2 z-10 text-accent/40">
+                      <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true">
+                        <path d="M2 1l5 5-5 5" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </div>
+                  )}
                 </div>
-                {/* Connector line (hidden on last item and mobile) */}
-                {index < processSteps.length - 1 && (
-                  <div className="hidden md:block absolute top-7 left-[calc(50%+28px)] w-[calc(100%-56px)] h-px bg-accent/30" />
-                )}
-                <h3 className="font-heading text-base font-bold text-dark mb-2">
-                  {item.title}
-                </h3>
-                <p className="text-muted text-sm leading-relaxed">
-                  {item.description}
-                </p>
-              </div>
-            ))}
+              ))}
+            </div>
+          </div>
+
+          {/* Mobile vertical timeline */}
+          <div className="md:hidden relative pl-8">
+            {/* Vertical line */}
+            <div className="absolute left-[15px] top-0 bottom-0 w-px bg-gradient-to-b from-accent/40 via-accent/20 to-accent/40" />
+
+            <div className="space-y-10">
+              {processSteps.map((item) => (
+                <div key={item.step} className="relative">
+                  {/* Timeline dot */}
+                  <div className="absolute -left-8 top-0 flex h-8 w-8 items-center justify-center rounded-full bg-accent-dark text-white font-heading text-xs font-bold shadow-md ring-4 ring-white">
+                    {item.step}
+                  </div>
+                  {/* Content */}
+                  <div className="rounded-xl bg-cream p-5">
+                    <h3 className="font-heading text-base font-bold text-dark mb-2">
+                      {item.title}
+                    </h3>
+                    <p className="text-muted text-sm leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

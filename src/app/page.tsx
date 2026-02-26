@@ -24,8 +24,6 @@ export default function Home() {
             "https://6jblcdd6pq0suc42.public.blob.vercel-storage.com/videos/hero-clips/clip-allan-pauline-1z6j4pUI2pONw0zp6DePgi7dxlmVgD.mp4",
             "https://6jblcdd6pq0suc42.public.blob.vercel-storage.com/videos/hero-clips/clip-david-michelle-GP83vWF5U9gnpiz2Pa5AAVb0GT3qhR.mp4",
             "https://6jblcdd6pq0suc42.public.blob.vercel-storage.com/videos/hero-clips/clip-lornas-kuhingira-2AliKKXbOCPCopwOviA5iPTUT6X8AM.mp4",
-            "https://6jblcdd6pq0suc42.public.blob.vercel-storage.com/videos/hero-clips/clip-chris-philomera-KW11eHp9SdxCA8jMjDZuCM1J0I79fk.mp4",
-            "https://6jblcdd6pq0suc42.public.blob.vercel-storage.com/videos/hero-clips/clip-rayner-racheal-VY5pnoTXq1G5zHObjMehync7HP1tdC.mp4",
           ]}
         />
         {/* Fallback static image for browsers that don't support video */}
