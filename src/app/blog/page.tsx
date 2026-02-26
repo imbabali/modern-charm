@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ArrowRight, Calendar } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { blogPosts } from "@/data/blog-posts";
 import HeroCarousel from "@/components/HeroCarousel";
@@ -63,10 +64,14 @@ export default function BlogPage() {
         <div className="mx-auto max-w-6xl">
           <Link href={`/blog/${featuredPost.slug}`} className="group block">
             <div className="overflow-hidden rounded-2xl bg-white shadow-md transition-all duration-300 hover:shadow-xl md:flex">
-              <div className="relative h-64 w-full bg-gradient-to-br from-primary via-primary-light to-accent md:h-auto md:w-1/2">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="h-16 w-16 rounded-full bg-white/20 backdrop-blur-sm" />
-                </div>
+              <div className="relative h-64 w-full md:h-auto md:w-1/2">
+                <Image
+                  src={featuredPost.image}
+                  alt={featuredPost.title}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
               </div>
 
               {/* Content */}
@@ -110,12 +115,14 @@ export default function BlogPage() {
                 className="group block"
               >
                 <article className="h-full overflow-hidden rounded-xl bg-cream transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
-                  <div
-                    className={`relative h-48 w-full bg-gradient-to-br ${post.gradient}`}
-                  >
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="h-10 w-10 rounded-full bg-white/20 backdrop-blur-sm" />
-                    </div>
+                  <div className="relative h-48 w-full overflow-hidden">
+                    <Image
+                      src={post.image}
+                      alt={post.title}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    />
                   </div>
 
                   {/* Content */}

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ChevronRight, Calendar, ArrowLeft } from "lucide-react";
 import { blogPosts } from "@/data/blog-posts";
@@ -25,6 +26,7 @@ export async function generateMetadata({
       description: post.excerpt,
       url: `https://modern-charm.vercel.app/blog/${slug}`,
       type: "article",
+      images: [{ url: post.image }],
     },
     twitter: {
       card: "summary_large_image",
@@ -46,8 +48,17 @@ export default async function BlogPostPage({
   return (
     <div className="min-h-screen bg-cream">
       {/* Hero */}
-      <section className="bg-gradient-to-br from-primary-dark via-primary to-primary-light px-6 py-24 text-center text-white md:py-32">
-        <div className="mx-auto max-w-3xl">
+      <section className="relative overflow-hidden px-6 py-24 text-center text-white md:py-32">
+        <Image
+          src={post.image}
+          alt={post.title}
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/70 via-primary-dark/50 to-primary-dark/70" />
+        <div className="relative z-10 mx-auto max-w-3xl">
           <nav
             className="mb-6 flex items-center justify-center gap-2 text-sm text-white/90"
             aria-label="Breadcrumb"
@@ -100,6 +111,7 @@ export default async function BlogPostPage({
             "@type": "Article",
             "headline": post.title,
             "description": post.excerpt,
+            "image": `https://modern-charm.vercel.app${post.image}`,
             "datePublished": new Date(post.date).toISOString(),
             "author": {
               "@type": "Organization",

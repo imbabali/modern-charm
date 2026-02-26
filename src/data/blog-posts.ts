@@ -6,6 +6,7 @@ export interface BlogPost {
   category: string;
   date: string;
   gradient: string;
+  image: string;
   featured?: boolean;
 }
 
@@ -39,6 +40,7 @@ export const blogPosts: BlogPost[] = [
     category: "Weddings",
     date: "February 18, 2026",
     gradient: "from-primary via-primary-light to-accent",
+    image: "/images/portfolio/oscar-sandra/IMG_0851.jpg",
     featured: true,
   },
   {
@@ -79,6 +81,7 @@ export const blogPosts: BlogPost[] = [
     category: "Weddings",
     date: "February 12, 2026",
     gradient: "from-primary/60 to-primary-dark/80",
+    image: "/images/portfolio/oscar-sandra/IMG_1917.jpg",
   },
   {
     title: "How to Plan the Perfect Kwanjula Ceremony",
@@ -110,6 +113,7 @@ export const blogPosts: BlogPost[] = [
     category: "Traditional",
     date: "February 5, 2026",
     gradient: "from-accent/60 to-accent-light/80",
+    image: "/images/portfolio/lornas-kuhingira/7b7a9557.jpg",
   },
   {
     title: "Corporate Event Planning: A Complete Checklist",
@@ -141,6 +145,7 @@ export const blogPosts: BlogPost[] = [
     category: "Corporate",
     date: "January 28, 2026",
     gradient: "from-primary-light/60 to-primary/80",
+    image: "/images/portfolio/david-michelle/7b7a0807.jpg",
   },
   {
     title: "Choosing the Right Color Palette for Your Event",
@@ -172,6 +177,7 @@ export const blogPosts: BlogPost[] = [
     category: "Tips",
     date: "January 20, 2026",
     gradient: "from-accent-light/60 to-accent/80",
+    image: "/images/portfolio/wedding-highlights/IMG_3886.jpg",
   },
   {
     title: "Behind the Scenes: A Luxury Lakeside Wedding",
@@ -203,6 +209,7 @@ export const blogPosts: BlogPost[] = [
     category: "Portfolio",
     date: "January 14, 2026",
     gradient: "from-primary-dark/60 to-primary-light/80",
+    image: "/images/portfolio/allan-pauline/img_0652.jpg",
   },
   {
     title: "Budget-Friendly Event Styling Ideas",
@@ -234,5 +241,6 @@ export const blogPosts: BlogPost[] = [
     category: "Tips",
     date: "January 6, 2026",
     gradient: "from-accent/50 to-primary/70",
+    image: "/images/portfolio/sammy-lala/img_3472.jpg",
   },
 ];
