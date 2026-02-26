@@ -154,7 +154,7 @@ export default function ContactContent() {
           tabIndex={-1}
         >
           <source
-            src="https://6jblcdd6pq0suc42.public.blob.vercel-storage.com/videos/cta-clips/cta-lala-intro-b-IJtqrjgXanfbc30d2eRTOpjCN74tlS.mp4"
+            src="https://6jblcdd6pq0suc42.public.blob.vercel-storage.com/videos/cta-clips/cta-joshua-rhona-hjxSNj57PQwgK4Auzr9WHTILPVqxeb.mp4"
             type="video/mp4"
           />
         </video>
