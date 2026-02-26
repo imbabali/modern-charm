@@ -26,45 +26,44 @@ export default function Logo({
       {/*
         Modern Charm MC monogram — traced from logo-reference.png.
 
-        The C is a near-complete circle (gold) open at bottom-right,
-        spanning from ~1 o'clock clockwise to ~5 o'clock.
-        Two small leaf shapes sit at the C's endpoints (top-right
-        and bottom-right of the gap).
-        The M (white/adaptive) is wide and shallow, its outer legs
-        crossing through the C circle.
+        Centre (100,100), radius 55. The gold C arc covers ~264°,
+        opening on the right side with the gap between ~48° above
+        and ~48° below the horizontal. Two small almond-shaped leaf
+        accents sit at the C terminals, pointing radially outward.
+        The M sits inside the C with its outer legs crossing through
+        the arc at the bottom.
       */}
 
-      {/* ---- "C" — near-complete circle, open at bottom-right ---- */}
+      {/* ---- "C" arc — ~264°, opens on the right ---- */}
       <path
-        d="M130 42
-           A 62 62 0 1 0 140 148"
+        d="M137 59 A 55 55 0 1 0 137 141"
         stroke={accentColor}
-        strokeWidth="5.5"
+        strokeWidth="5"
         strokeLinecap="round"
         fill="none"
       />
 
-      {/* ---- Leaf accent — top-right (near C start) ---- */}
+      {/* ---- Leaf accent — top-right (at C start, pointing upper-right) ---- */}
       <path
-        d="M126 38 Q134 28, 142 38 Q134 48, 126 38Z"
+        d="M137 59 Q146 54, 148 46 Q140 52, 137 59Z"
         fill={accentColor}
       />
 
-      {/* ---- Leaf accent — bottom-right (near C end) ---- */}
+      {/* ---- Leaf accent — bottom-right (at C end, pointing lower-right) ---- */}
       <path
-        d="M136 144 Q144 134, 152 144 Q144 154, 136 144Z"
+        d="M137 141 Q146 146, 148 154 Q140 148, 137 141Z"
         fill={accentColor}
       />
 
-      {/* ---- "M" — wide, shallow, legs cross through the C ---- */}
+      {/* ---- "M" — centred inside C, legs cross through arc ---- */}
       <path
-        d="M48 148
-           L78 52
-           L100 108
-           L122 52
-           L152 148"
+        d="M56 152
+           L82 65
+           L100 110
+           L118 65
+           L144 152"
         stroke={letterColor}
-        strokeWidth="5.5"
+        strokeWidth="5"
         strokeLinecap="round"
         strokeLinejoin="round"
         fill="none"
