@@ -18,6 +18,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import HeroCarousel from "@/components/HeroCarousel";
+import ClientLogos from "@/components/ClientLogos";
 
 export const metadata: Metadata = {
   title: "About Us | Modern Charm Uganda",
@@ -355,66 +356,73 @@ export default function AboutPage() {
           </div>
 
           {/* Desktop horizontal timeline */}
-          <div className="hidden md:block relative">
-            {/* Continuous connecting line — sits at the centre of the icon row */}
-            <div className="absolute top-[52px] left-[10%] right-[10%] h-0.5 bg-gradient-to-r from-accent/0 via-accent/30 to-accent/0" />
-            {/* Dashed overlay for texture */}
-            <div className="absolute top-[52px] left-[10%] right-[10%] h-0.5 border-t-2 border-dashed border-accent/20" />
-
-            <div className="grid grid-cols-5 gap-4 lg:gap-8">
+          <div className="hidden md:block">
+            {/* Row 1: Cards for even steps (01, 03, 05) — above the line */}
+            <div className="grid grid-cols-5 gap-4 lg:gap-8 mb-4">
               {processSteps.map((item, index) => {
-                const Icon = item.icon;
                 const isEven = index % 2 === 0;
                 return (
-                  <div key={item.step} className="relative text-center group">
-                    {/* ---- Card ABOVE the line (even steps: 01, 03, 05) ---- */}
-                    {isEven && (
-                      <div className="mb-6 rounded-2xl border border-cream-dark bg-cream p-5 shadow-sm group-hover:shadow-lg group-hover:border-accent/30 transition-all duration-300">
-                        <h3 className="font-heading text-base font-bold text-dark mb-1.5">
-                          {item.title}
-                        </h3>
-                        <p className="text-muted text-sm leading-relaxed">
-                          {item.description}
-                        </p>
-                      </div>
-                    )}
-                    {/* Spacer for odd steps so icon aligns with even icons */}
-                    {!isEven && <div className="mb-6 p-5 invisible rounded-2xl border border-transparent"><h3 className="text-base mb-1.5">&nbsp;</h3><p className="text-sm">&nbsp;</p></div>}
+                  <div key={`top-${item.step}`} className={isEven ? "" : "invisible"}>
+                    <div className="rounded-2xl border border-cream-dark bg-cream p-5 shadow-sm hover:shadow-lg hover:border-accent/30 transition-all duration-300">
+                      <h3 className="font-heading text-base font-bold text-dark mb-1.5">
+                        {item.title}
+                      </h3>
+                      <p className="text-muted text-sm leading-relaxed">
+                        {item.description}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
 
-                    {/* ---- Icon node on the timeline ---- */}
-                    <div className="relative mx-auto mb-6">
-                      {/* Pulse ring on hover */}
-                      <div className="absolute inset-0 mx-auto h-[72px] w-[72px] rounded-full bg-accent/10 group-hover:scale-[1.6] group-hover:opacity-0 transition-all duration-700" />
+            {/* Row 2: Icon nodes + connecting line */}
+            <div className="relative py-2">
+              {/* Connecting line */}
+              <div className="absolute top-1/2 left-[10%] right-[10%] h-0.5 -translate-y-1/2 bg-gradient-to-r from-accent/0 via-accent/30 to-accent/0" />
+              <div className="absolute top-1/2 left-[10%] right-[10%] h-0.5 -translate-y-1/2 border-t-2 border-dashed border-accent/20" />
+
+              <div className="relative grid grid-cols-5 gap-4 lg:gap-8">
+                {processSteps.map((item, index) => {
+                  const Icon = item.icon;
+                  return (
+                    <div key={`icon-${item.step}`} className="flex justify-center relative group">
                       {/* Step number badge */}
-                      <div className="absolute -top-2 -right-2 z-20 flex h-6 w-6 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-white shadow-md ring-2 ring-white">
+                      <div className="absolute -top-2 right-[calc(50%-36px-(-8px))] z-20 flex h-6 w-6 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-white shadow-md ring-2 ring-white">
                         {item.step}
                       </div>
                       {/* Icon circle */}
-                      <div className="relative mx-auto flex h-[72px] w-[72px] items-center justify-center rounded-full bg-accent-dark text-white shadow-lg group-hover:bg-primary transition-colors duration-300 ring-4 ring-white">
-                        <Icon className="h-7 w-7" aria-hidden="true" />
+                      <div className="relative flex h-16 w-16 items-center justify-center rounded-full bg-accent-dark text-white shadow-lg group-hover:bg-primary transition-colors duration-300 ring-4 ring-white">
+                        <Icon className="h-6 w-6" aria-hidden="true" />
                       </div>
+                      {/* Arrow between icons */}
+                      {index < processSteps.length - 1 && (
+                        <div className="absolute top-1/2 -right-2 lg:-right-4 -translate-y-1/2 z-10 text-accent/50">
+                          <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true">
+                            <path d="M2 1l5 5-5 5" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                        </div>
+                      )}
                     </div>
+                  );
+                })}
+              </div>
+            </div>
 
-                    {/* ---- Card BELOW the line (odd steps: 02, 04) ---- */}
-                    {!isEven && (
-                      <div className="mt-0 rounded-2xl border border-cream-dark bg-cream p-5 shadow-sm group-hover:shadow-lg group-hover:border-accent/30 transition-all duration-300">
-                        <h3 className="font-heading text-base font-bold text-dark mb-1.5">
-                          {item.title}
-                        </h3>
-                        <p className="text-muted text-sm leading-relaxed">
-                          {item.description}
-                        </p>
-                      </div>
-                    )}
-
-                    {/* Connector chevron between nodes */}
-                    {index < processSteps.length - 1 && (
-                      <div className="absolute top-[calc(50%)] right-0 translate-x-1/2 z-10 text-accent/40">
-                        <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
-                          <path d="M3 2l5 5-5 5" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                      </div>
-                    )}
+            {/* Row 3: Cards for odd steps (02, 04) — below the line */}
+            <div className="grid grid-cols-5 gap-4 lg:gap-8 mt-4">
+              {processSteps.map((item, index) => {
+                const isEven = index % 2 === 0;
+                return (
+                  <div key={`bot-${item.step}`} className={!isEven ? "" : "invisible"}>
+                    <div className="rounded-2xl border border-cream-dark bg-cream p-5 shadow-sm hover:shadow-lg hover:border-accent/30 transition-all duration-300">
+                      <h3 className="font-heading text-base font-bold text-dark mb-1.5">
+                        {item.title}
+                      </h3>
+                      <p className="text-muted text-sm leading-relaxed">
+                        {item.description}
+                      </p>
+                    </div>
                   </div>
                 );
               })}
@@ -502,37 +510,7 @@ export default function AboutPage() {
       </section>
 
       {/* Trusted By Section */}
-      <section className="py-16 md:py-20 bg-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10">
-            <span className="inline-block text-accent-dark font-heading text-sm font-semibold tracking-widest uppercase mb-3">
-              Our Clientele
-            </span>
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-dark">
-              Trusted By
-            </h2>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
-            {[
-              "UEGCL",
-              "Unicaf University",
-              "KCB Bank",
-              "Hima Cement",
-              "Bloomberg Philanthropies",
-              "MAAD McCann",
-            ].map((client) => (
-              <div
-                key={client}
-                className="flex items-center justify-center h-16 rounded-lg bg-cream px-4 hover:bg-cream-dark transition-colors duration-300"
-              >
-                <span className="font-heading text-sm font-bold text-dark/70 text-center">
-                  {client}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ClientLogos />
 
       {/* CTA Section */}
       <section className="py-20 md:py-28 relative overflow-hidden">

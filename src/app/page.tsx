@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import HeroVideoCarousel from "@/components/HeroVideoCarousel";
 import PortfolioCarousel from "@/components/PortfolioCarousel";
+import ClientLogos from "@/components/ClientLogos";
 
 export default function Home() {
   return (
@@ -399,42 +400,42 @@ export default function Home() {
                 alt: "Oscar & Sandra's grand reception with black & white decor, gold arches and white floral installations",
                 label: "Wedding",
                 title: "Oscar & Sandra's Grand Reception",
-                href: "/contact",
+                href: "/portfolio/oscar-sandra",
               },
               {
                 image: "/images/portfolio/wedding-highlights/IMG_3876.jpg",
                 alt: "Bridesmaids in sage green gowns with peach bouquets",
                 label: "Wedding",
                 title: "Sage & Peach Elegance",
-                href: "/contact",
+                href: "/portfolio/wedding-highlights",
               },
               {
                 image: "/images/portfolio/david-michelle/7b7a0805.jpg",
                 alt: "Luxurious head table with DM monogram, pink florals and crystal chandeliers",
                 label: "Wedding",
                 title: "David & Michelle's Luxe Reception",
-                href: "/contact",
+                href: "/portfolio/david-michelle",
               },
               {
                 image: "/images/portfolio/lornas-kuhingira/7b7a9519.jpg",
                 alt: "Elegant Kuhingira reception with sage green linens, pink floral chandeliers, and cross-back chairs",
                 label: "Traditional",
                 title: "Lorna's Kuhingira",
-                href: "/contact",
+                href: "/portfolio/lornas-kuhingira",
               },
               {
                 image: "/images/portfolio/allan-pauline/img_0748.jpg",
                 alt: "Allan & Pauline's lavender floral tablescape reception",
                 label: "Wedding",
-                title: "Garden Wedding at Lake Victoria",
-                href: "/contact",
+                title: "Allan & Pauline's Garden Wedding",
+                href: "/portfolio/allan-pauline",
               },
               {
-                image: "/images/portfolio/oscar-sandra/IMG_0267.jpg",
-                alt: "Groomsmen raising glasses in a black & white toast",
-                label: "Celebration",
-                title: "Groomsmen's Toast",
-                href: "/contact",
+                image: "/images/portfolio/sammy-lala/img_3472.jpg",
+                alt: "Sammy & Lala's wedding celebration with elegant decor",
+                label: "Wedding",
+                title: "Sammy & Lala's Celebration",
+                href: "/portfolio/sammy-lala",
               },
             ]}
           />
@@ -442,10 +443,10 @@ export default function Home() {
           {/* CTA */}
           <div className="mt-12 text-center">
             <Link
-              href="/contact"
+              href="/portfolio"
               className="font-body group inline-flex items-center gap-2 rounded-full bg-primary px-8 py-4 text-sm font-semibold tracking-wide text-white uppercase transition-all duration-300 hover:bg-primary-dark hover:shadow-lg hover:shadow-primary/25"
             >
-              Start Your Project
+              View All Projects
               <ArrowRight aria-hidden="true" className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
           </div>
@@ -455,34 +456,7 @@ export default function Home() {
       {/* ================================================================
           SECTION 6 — TRUSTED BY / CLIENTELE
           ================================================================ */}
-      <section aria-label="Our clients" className="bg-cream-dark px-6 py-16">
-        <div className="mx-auto max-w-7xl">
-          <div className="text-center mb-10">
-            <span className="font-body text-xs tracking-[0.3em] font-semibold text-accent-dark uppercase">
-              Trusted By
-            </span>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 items-center">
-            {[
-              "UEGCL",
-              "Unicaf University",
-              "KCB Bank",
-              "Hima Cement",
-              "Bloomberg Philanthropies",
-              "MAAD McCann",
-            ].map((client) => (
-              <div
-                key={client}
-                className="flex items-center justify-center h-16 rounded-xl bg-white px-4 shadow-sm hover:shadow-md transition-shadow duration-300"
-              >
-                <span className="font-heading text-sm font-bold text-dark/60 text-center">
-                  {client}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ClientLogos />
 
       {/* ================================================================
           SECTION 7 — TESTIMONIALS
