@@ -204,3 +204,5 @@ src/
 - **2026-02-26**: CTA landscape audit — replaced 8 portrait images with landscape alternatives across 7 CTA sections. All 21 CTA images now unique, zero cross-page duplicates
 - **2026-02-26**: Fixed HeroCarousel image cropping — changed object-[center_25%] to object-center for balanced display
 - **2026-02-26**: Expanded Rayner & Rachael portfolio from 2 to 31 curated images (selected from 908 originals). Full wedding coverage: bridal prep, church ceremony, couple portraits, venue decor, cake, reception, golden-hour garden shots. Renamed to "Colorful Chandelier Reception". All images resized to 1600px max, quality 80 (7.1 MB total). Removed 267 MB raw source folder.
+- **2026-02-26**: CTA image positioning — shifted all HeroCarousel objectPosition and video objectPosition from "center 20%" to "center 35%" across all 7 CTA sections + homepage CTA video + FAQ hero video for better lower-body framing
+- **2026-02-26**: Homepage Featured Work — converted static 3-column grid to infinite horizontal scrolling marquee (PortfolioCarousel client component, CSS @keyframes marquee, pauses on hover, respects prefers-reduced-motion)
