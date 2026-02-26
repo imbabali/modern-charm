@@ -12,11 +12,11 @@ export default function Logo({ className = "", size = 44 }: LogoProps) {
       style={{ width: size, height: size }}
     >
       <Image
-        src="/images/logo-reference.png"
+        src="/images/logo-gold.jpg"
         alt="Modern Charm monogram"
         fill
         sizes={`${size}px`}
-        className="object-cover object-[center_32%]"
+        className="object-cover object-[center_30%]"
         priority
       />
     </div>

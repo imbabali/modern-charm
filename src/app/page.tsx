@@ -9,8 +9,8 @@ import {
   ChevronDown,
 } from "lucide-react";
 import HeroVideoCarousel from "@/components/HeroVideoCarousel";
-import PortfolioCarousel from "@/components/PortfolioCarousel";
 import ClientLogos from "@/components/ClientLogos";
+import { portfolioEvents, categoryLabels } from "@/data/portfolio-events";
 
 export default function Home() {
   return (
@@ -380,53 +380,46 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Horizontal carousel */}
-          <PortfolioCarousel
-            slides={[
-              {
-                image: "/images/portfolio/oscar-sandra/IMG_0795.jpg",
-                alt: "Grand reception with black & white decor, gold arches and white floral installations",
-                label: "Event Planning & Coordination",
-                title: "Grand Black & Gold Reception",
-                href: "/portfolio/oscar-sandra",
-              },
-              {
-                image: "/images/portfolio/wedding-highlights/IMG_3876.jpg",
-                alt: "Bridesmaids in sage green gowns with peach bouquets",
-                label: "Event Styling & Decor",
-                title: "Sage & Peach Elegance",
-                href: "/portfolio/wedding-highlights",
-              },
-              {
-                image: "/images/portfolio/david-michelle/7b7a0805.jpg",
-                alt: "Luxurious head table with pink florals and crystal chandeliers",
-                label: "Event Planning & Coordination",
-                title: "Pink & Gold Luxe Reception",
-                href: "/portfolio/david-michelle",
-              },
-              {
-                image: "/images/portfolio/lornas-kuhingira/7b7a9519.jpg",
-                alt: "Elegant Kuhingira reception with sage green linens, pink floral chandeliers, and cross-back chairs",
-                label: "Event Planning & Coordination",
-                title: "Traditional Kuhingira Ceremony",
-                href: "/portfolio/lornas-kuhingira",
-              },
-              {
-                image: "/images/portfolio/allan-pauline/img_0748.jpg",
-                alt: "Lavender floral tablescape at a garden wedding reception",
-                label: "Event Planning & Coordination",
-                title: "Lavender Garden Wedding",
-                href: "/portfolio/allan-pauline",
-              },
-              {
-                image: "/images/portfolio/sammy-lala/img_3472.jpg",
-                alt: "Classic wedding celebration with elegant decor",
-                label: "Event Planning & Coordination",
-                title: "Classic Wedding Celebration",
-                href: "/portfolio/sammy-lala",
-              },
-            ]}
-          />
+          {/* Event grid — same data as portfolio page */}
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {portfolioEvents.map((event) => (
+              <Link
+                key={event.slug}
+                href={`/portfolio/${event.slug}`}
+                className="group relative overflow-hidden rounded-2xl bg-cream shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+              >
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <Image
+                    src={event.coverImage}
+                    alt={event.description}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    quality={80}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/5 to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-40" />
+                  <span className="absolute top-4 left-4 rounded-full bg-white/20 px-3 py-1 font-body text-xs font-medium tracking-wide text-white backdrop-blur-sm">
+                    {categoryLabels[event.category]}
+                  </span>
+                  <span className="absolute top-4 right-4 rounded-full bg-white/20 px-3 py-1 font-body text-xs font-medium text-white backdrop-blur-sm">
+                    {event.images.length} photos
+                  </span>
+                </div>
+                <div className="p-6">
+                  <h3 className="font-heading text-xl font-bold text-dark group-hover:text-primary transition-colors duration-300">
+                    {event.title}
+                  </h3>
+                  <p className="mt-2 font-body text-sm leading-relaxed text-muted line-clamp-2">
+                    {event.description}
+                  </p>
+                  <span className="mt-4 inline-flex items-center gap-1.5 font-body text-sm font-semibold text-accent-dark transition-colors group-hover:text-primary">
+                    View Gallery
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
 
           {/* CTA */}
           <div className="mt-12 text-center">
