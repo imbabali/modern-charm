@@ -103,7 +103,7 @@ src/
 - Services page has 2 anchor IDs (`#planning`, `#styling`) for hash navigation
 - Footer service links use hash navigation to scroll to correct service category
 - All images deduplicated — no image path used more than once across the site (except hero-wedding.jpg in OG/meta tags)
-- Blog posts have `image` field — real event photos on listing tiles and detail page heroes (no more gradient placeholders)
+- Blog posts have `image` field (listing tiles) and `heroImages` array (detail page hero carousel with 3 images each) — real event photos, no gradient placeholders
 - Blog detail pages include OG image and JSON-LD image metadata
 - Contact form POSTs to `/api/contact` (Resend API)
 - Newsletter form POSTs to `/api/newsletter` (Resend API)
@@ -176,3 +176,4 @@ src/
 - **2026-02-26**: Resized all 167 images to max 1600px (team photos 800px) at quality 80 — 58.6 MB → 34.8 MB (41% reduction), average 213 KB per image
 - **2026-02-26**: Replaced all placeholder testimonials with 7 real client reviews extracted from WhatsApp/Instagram screenshots — featured: Mr. & Mrs. Mugagga Mulindwa, grid: The Senkungus, Oscar & Sandra, Lala T., Noah N., + 2 anonymous. Updated both testimonials page and homepage
 - **2026-02-26**: Replaced blog gradient placeholders with real event photos — added `image` field to BlogPost interface, assigned unique photos to all 7 posts (matched to article content), updated listing tiles + detail page heroes with next/image, added OG image + JSON-LD image metadata
+- **2026-02-26**: Blog article heroes now use HeroCarousel with 3 crossfade images each (heroImages array), matching the carousel pattern on all other sub-pages. 21 unique unused images assigned across 7 posts
