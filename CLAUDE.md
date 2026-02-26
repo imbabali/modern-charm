@@ -134,7 +134,7 @@ src/
 - [x] ~~Add real team members~~ — Done (Philip & Benjamin)
 - [x] ~~Add Google Maps embed on contact page~~ — Removed (contact page redesigned without map)
 - [x] ~~Add real portfolio items~~ — Done (Allan & Pauline wedding gallery)
-- [ ] Add real testimonials — currently placeholder; need real reviews from Instagram comments/DMs or Google Reviews. Updates needed in `src/app/testimonials/page.tsx` (featured + 6 grid) and `src/app/page.tsx` (3 homepage cards). No Google Business profile exists yet; Instagram @moderncharm_events has reviews in post comments but they aren't scrapable programmatically
+- [x] ~~Add real testimonials~~ — Done (7 real reviews from WhatsApp/Instagram screenshots: Mr. & Mrs. Mugagga Mulindwa, The Senkungus, Oscar & Sandra, Lala T., Noah N., + 2 anonymous WhatsApp reviews)
 - [x] ~~Add real team photos~~ — Done (5 team members extracted from company profile PDF)
 - [ ] Verify homepage stats accuracy (500+ Events, 6+ Years, 50+ Venue Partners)
 - [x] ~~Add blog post detail pages~~ — Done (7 blog posts with dynamic [slug] routing)
@@ -171,3 +171,5 @@ src/
 - **2026-02-26**: Added 25 new event photos from Google Drive — David & Michelle wedding (8 photos), Lorna's Kuhingira ceremony (14 photos), Allan & Pauline styling (3 photos). All images optimized for web (max 2400px, quality 82)
 - **2026-02-26**: Restructured services into 2 main categories: (1) Event Planning & Coordination (planning, management, concept development, product launches) (2) Event Styling & Decor (styling, corporate gifting). Updated homepage, footer, and all service links
 - **2026-02-26**: Full image deduplication — audited all 40+ image references across 8 files, replaced all duplicates with unique images from expanded collection. Each page now uses completely unique images
+- **2026-02-26**: Resized all 167 images to max 1600px (team photos 800px) at quality 80 — 58.6 MB → 34.8 MB (41% reduction), average 213 KB per image
+- **2026-02-26**: Replaced all placeholder testimonials with 7 real client reviews extracted from WhatsApp/Instagram screenshots — featured: Mr. & Mrs. Mugagga Mulindwa, grid: The Senkungus, Oscar & Sandra, Lala T., Noah N., + 2 anonymous. Updated both testimonials page and homepage
