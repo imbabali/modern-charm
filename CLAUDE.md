@@ -137,7 +137,7 @@ src/
 - [x] ~~Add Google Maps embed on contact page~~ — Removed (contact page redesigned without map)
 - [x] ~~Add real portfolio items~~ — Done (Allan & Pauline wedding gallery)
 - [x] ~~Add real testimonials~~ — Done (7 real reviews from WhatsApp/Instagram screenshots: Mr. & Mrs. Mugagga Mulindwa, The Senkungus, Oscar & Sandra, Lala T., Noah N., + 2 anonymous WhatsApp reviews)
-- [x] ~~Add real team photos~~ — Done (5 team members extracted from company profile PDF)
+- [x] ~~Add real team photos~~ — Done (5 professional headshots, center-aligned flexbox grid)
 - [ ] Verify homepage stats accuracy (500+ Events, 6+ Years, 50+ Venue Partners)
 - [x] ~~Add blog post detail pages~~ — Done (7 blog posts with dynamic [slug] routing)
 - [x] ~~Implement SEO~~ — Done (metadataBase, sitemap.ts with blog slugs, robots.ts, JSON-LD EventPlanning + LocalBusiness + Article + FAQ schemas, per-page OG/Twitter/canonical tags)
@@ -177,3 +177,4 @@ src/
 - **2026-02-26**: Replaced all placeholder testimonials with 7 real client reviews extracted from WhatsApp/Instagram screenshots — featured: Mr. & Mrs. Mugagga Mulindwa, grid: The Senkungus, Oscar & Sandra, Lala T., Noah N., + 2 anonymous. Updated both testimonials page and homepage
 - **2026-02-26**: Replaced blog gradient placeholders with real event photos — added `image` field to BlogPost interface, assigned unique photos to all 7 posts (matched to article content), updated listing tiles + detail page heroes with next/image, added OG image + JSON-LD image metadata
 - **2026-02-26**: Blog article heroes now use HeroCarousel with 3 crossfade images each (heroImages array), matching the carousel pattern on all other sub-pages. 21 unique unused images assigned across 7 posts
+- **2026-02-26**: Replaced team photos with professional headshots (user-provided), converted Benjamin's PNG to JPG, optimized all to 800px/quality 80. Team grid switched from CSS Grid to flexbox with justify-center for centered last row
