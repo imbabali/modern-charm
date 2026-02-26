@@ -130,7 +130,7 @@ const processSteps = [
     step: "03",
     title: "Client Presentation",
     description:
-      "We present our vision with detailed proposals, mood boards, and plans for your review.",
+      "We present our vision with mood boards, concepts, and plans for your review.",
     icon: Presentation,
   },
   {

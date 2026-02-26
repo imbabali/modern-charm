@@ -92,9 +92,8 @@ export default function Navbar() {
             <Link href="/" className="flex items-center gap-2 group">
               {/* MC Monogram */}
               <Logo
-                className={`w-11 h-11 transition-all duration-300 group-hover:scale-105 ${
-                  isScrolled ? "text-accent" : "text-white"
-                }`}
+                className="transition-all duration-300 group-hover:scale-105"
+                size={44}
               />
               {/* Brand Name */}
               <div className="flex flex-col">
@@ -199,7 +198,7 @@ export default function Navbar() {
         {/* Drawer Header */}
         <div className="flex items-center justify-between p-6 border-b border-cream-dark">
           <div className="flex items-center gap-2">
-            <Logo className="w-9 h-9 text-primary" />
+            <Logo size={36} />
             <span className="font-heading text-lg font-bold tracking-wider text-dark">
               MODERN CHARM
             </span>

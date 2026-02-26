@@ -323,7 +323,7 @@ export default function Home() {
             {/* Stat 1 */}
             <div className="text-center">
               <div className="font-heading text-5xl font-bold text-accent-light sm:text-6xl">
-                500+
+                100+
               </div>
               <div className="mt-2 h-0.5 mx-auto w-8 rounded-full bg-accent/50" />
               <p className="font-body mt-3 text-base font-medium tracking-wide text-white/90">
@@ -360,7 +360,7 @@ export default function Home() {
               </div>
               <div className="mt-2 h-0.5 mx-auto w-8 rounded-full bg-accent/50" />
               <p className="font-body mt-3 text-base font-medium tracking-wide text-white/90">
-                Venue Partners
+                Partners
               </p>
             </div>
           </div>

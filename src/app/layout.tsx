@@ -106,7 +106,7 @@ export default function RootLayout({
                 "name": "Modern Charm Limited",
                 "description": "Premier event management company based in Kampala, Uganda specializing in event planning, styling, corporate events, product launches, and corporate gifting.",
                 "url": "https://modern-charm.vercel.app",
-                "telephone": ["+256779399409", "+256775826795"],
+                "telephone": ["+256779399409", "+256773043256"],
                 "email": "moderncharm30@gmail.com",
                 "address": {
                   "@type": "PostalAddress",

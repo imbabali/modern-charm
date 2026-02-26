@@ -81,9 +81,9 @@ const faqData: FAQCategory[] = [
           "Yes, we require a 40% deposit to secure your date and begin the planning process. This deposit covers initial consultations, concept development, and the sourcing of materials and vendors. The remaining balance is due no later than 2 weeks before the event date. We accept mobile money, bank transfer, and other convenient payment methods. For large or multi-day events, we can arrange a flexible payment schedule.",
       },
       {
-        question: "Can I get a custom quote for my event?",
+        question: "Can I get a package tailored to my event?",
         answer:
-          "Absolutely. Every event is unique, and we are happy to build a custom package tailored to your specific needs and budget. Simply reach out through our Contact page or WhatsApp us at +256 779 399 409. After our initial consultation, we provide a detailed custom proposal and tailored quote within 48 hours.",
+          "Absolutely. Every event is unique, and we are happy to build a package tailored to your specific needs and budget. Simply reach out through our Contact page or WhatsApp us at +256 779 399 409, and we will work with you to create the perfect plan.",
       },
     ],
   },
@@ -93,12 +93,12 @@ const faqData: FAQCategory[] = [
       {
         question: "What is your event planning process?",
         answer:
-          "Our proven five-step process ensures every event is planned and executed to perfection. It starts with a Client Briefing where we learn about your vision, goals, and preferences. Next comes Brainstorming, where our creative team develops unique concepts tailored to your event. We then move into Client Presentation, sharing detailed proposals, mood boards, and plans for your review. After Concept Approval — where we refine until everything matches your expectations — we move to Event Execution, where our team brings everything to life with precision and stays on-site to ensure a seamless experience.",
+          "Our proven five-step process ensures every event is planned and executed to perfection. It starts with a Client Briefing where we learn about your vision, goals, and preferences. Next comes Brainstorming, where our creative team develops unique concepts tailored to your event. We then move into Client Presentation, sharing mood boards and plans for your review. After Concept Approval — where we refine until everything matches your expectations — we move to Event Execution, where our team brings everything to life with precision and stays on-site to ensure a seamless experience.",
       },
       {
         question: "How far in advance should I book?",
         answer:
-          "For weddings and large-scale events, we recommend booking 3 to 6 months in advance to ensure availability and allow ample time for planning. For smaller events such as bridal showers, birthday parties, or corporate gatherings, 1 to 3 months is usually sufficient. That said, we understand some events come together quickly — reach out and we will do our best to accommodate you. Our hours are Monday to Saturday, 8 AM to 6 PM.",
+          "For weddings and large-scale events, we recommend booking 3 to 6 months in advance to ensure availability and allow ample time for planning. For smaller events such as bridal showers, birthday parties, or corporate gatherings, 1 to 3 months is usually sufficient. That said, we understand some events come together quickly — reach out and we will do our best to accommodate you. Our hours are Monday to Saturday, 9 AM to 5 PM.",
       },
       {
         question: "Can I see your previous work?",
@@ -108,7 +108,7 @@ const faqData: FAQCategory[] = [
       {
         question: "How do I get in touch?",
         answer:
-          "You can reach us through our Contact page, call us directly at +256 779 399 409 (Philip) or +256 775 826 795 (Benjamin), email us at moderncharm30@gmail.com, or WhatsApp us anytime. We are also active on Instagram (@moderncharm_events) and Facebook (moderncharmevents). After you reach out, our team reviews your inquiry, schedules a free consultation call, and delivers a custom proposal within 48 hours.",
+          "You can reach us through our Contact page, call us directly at +256 779 399 409 (Philip) or +256 773 043 256 (Benjamin), email us at moderncharm30@gmail.com, or WhatsApp us anytime. We are also active on Instagram (@moderncharm_events) and Facebook (moderncharmevents). After you reach out, our team reviews your inquiry and schedules a consultation call to discuss your event.",
       },
     ],
   },

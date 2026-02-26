@@ -37,7 +37,7 @@ const contactInfo = [
   {
     icon: Phone,
     label: "Phone",
-    value: "+256 779 399 409 / +256 775 826 795",
+    value: "+256 779 399 409 / +256 773 043 256",
     href: "tel:+256779399409",
   },
   {
@@ -55,7 +55,7 @@ const contactInfo = [
   {
     icon: Clock,
     label: "Working Hours",
-    value: "Mon - Sat: 8AM - 6PM",
+    value: "Mon - Sat: 9AM - 5PM",
     href: null,
   },
 ];
@@ -439,15 +439,15 @@ export default function ContactContent() {
                   <li className="flex gap-3">
                     <span className="flex h-7 w-7 items-center justify-center rounded-full bg-primary text-white text-xs font-bold flex-shrink-0">2</span>
                     <div>
-                      <p className="text-sm font-semibold text-dark">Free consultation call</p>
+                      <p className="text-sm font-semibold text-dark">Consultation call scheduled</p>
                       <p className="text-xs text-muted mt-0.5">We schedule a call to understand your vision.</p>
                     </div>
                   </li>
                   <li className="flex gap-3">
                     <span className="flex h-7 w-7 items-center justify-center rounded-full bg-primary text-white text-xs font-bold flex-shrink-0">3</span>
                     <div>
-                      <p className="text-sm font-semibold text-dark">Custom proposal</p>
-                      <p className="text-xs text-muted mt-0.5">You receive a tailored quote within 48 hours.</p>
+                      <p className="text-sm font-semibold text-dark">We get to work</p>
+                      <p className="text-xs text-muted mt-0.5">Planning and coordination begins for your event.</p>
                     </div>
                   </li>
                 </ol>

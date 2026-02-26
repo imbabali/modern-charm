@@ -305,18 +305,17 @@ export default function ServicesPage() {
         <div className="absolute inset-0 bg-primary-dark/57" />
         <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
-            Can&apos;t Find What You&apos;re Looking For?
+            Ready to Get Started?
           </h2>
           <p className="text-white/90 text-lg md:text-xl mb-10 max-w-2xl mx-auto">
             Every event is unique, and we love a creative challenge. Let&apos;s
-            work together to design something custom — tailored entirely to your
-            vision.
+            work together to plan, style, and bring your vision to life.
           </p>
           <Link
             href="/contact"
             className="inline-flex items-center gap-2 bg-accent-dark hover:bg-accent text-white font-semibold px-8 py-4 rounded-full text-lg transition-colors duration-300 shadow-lg hover:shadow-xl"
           >
-            Let&apos;s Create Something Custom
+            Let&apos;s Get Started
             <ArrowRight className="h-5 w-5" aria-hidden="true" />
           </Link>
         </div>
