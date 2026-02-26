@@ -21,6 +21,7 @@ export const portfolioEvents: PortfolioEvent[] = [
     description:
       "A romantic lavender garden wedding set along the shores of Lake Victoria, featuring lush floral installations, crystal-draped canopies, and golden sunset vows.",
     coverImage: "/images/portfolio/allan-pauline/img_0748.jpg",
+    ctaPosition: "center 45%",
     images: [
       "/images/portfolio/allan-pauline/img_0652.jpg",
       "/images/portfolio/allan-pauline/img_0023.jpg",
@@ -49,6 +50,7 @@ export const portfolioEvents: PortfolioEvent[] = [
       "A luxury black-and-white reception with towering gold arches, crystal chandeliers, and dramatic floral centrepieces that redefined opulence in Kampala.",
     coverImage: "/images/portfolio/oscar-sandra/IMG_0882.jpg",
     heroPosition: "center 40%",
+    ctaPosition: "center 45%",
     imagePositions: { 0: "center 40%", 4: "center 65%", 6: "center 50%" },
     images: [
       "/images/portfolio/oscar-sandra/IMG_0882.jpg",
@@ -76,6 +78,7 @@ export const portfolioEvents: PortfolioEvent[] = [
       "A curated collection showcasing sage green bridesmaids, an intimate candle wall, peach bouquets, and dreamy garden ceremony moments.",
     coverImage: "/images/portfolio/wedding-highlights/IMG_3879.jpg",
     heroPosition: "center 35%",
+    ctaPosition: "center 30%",
     images: [
       "/images/portfolio/wedding-highlights/IMG_3879.jpg",
       "/images/portfolio/wedding-highlights/IMG_3876.jpg",
