@@ -28,15 +28,13 @@ export default function Home() {
             "https://6jblcdd6pq0suc42.public.blob.vercel-storage.com/videos/hero-clips/clip-lornas-kuhingira-2AliKKXbOCPCopwOviA5iPTUT6X8AM.mp4",
           ]}
         />
-        {/* Fallback static image for browsers that don't support video */}
+        {/* Fallback static image for browsers without JavaScript */}
         <noscript>
-          <Image
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
             src="/images/hero-wedding.jpg"
             alt="Luxury wedding reception styled by Modern Charm Uganda featuring lavender floral tablescape and white tents"
-            fill
-            className="object-cover"
-            priority
-            quality={85}
+            className="absolute inset-0 h-full w-full object-cover"
           />
         </noscript>
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/27 to-black/47" />

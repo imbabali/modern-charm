@@ -1,6 +1,7 @@
 "use client";
 
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
+import Image from "next/image";
 
 interface HeroVideoCarouselProps {
   clips: string[];
@@ -18,6 +19,7 @@ export default function HeroVideoCarousel({
   const videoB = useRef<HTMLVideoElement>(null);
   const active = useRef(0);
   const clipIdx = useRef(0);
+  const [videoReady, setVideoReady] = useState(false);
 
   useEffect(() => {
     const a = videoA.current;
@@ -25,6 +27,13 @@ export default function HeroVideoCarousel({
     if (!a || !b) return;
 
     const vids = [a, b];
+
+    // Wait for video A to actually start playing before revealing it
+    const onPlaying = () => {
+      setVideoReady(true);
+      a.removeEventListener("playing", onPlaying);
+    };
+    a.addEventListener("playing", onPlaying);
 
     // Video A starts playing clip 0
     a.src = clips[0];
@@ -62,19 +71,33 @@ export default function HeroVideoCarousel({
       }, FADE_MS + 100);
     }, CLIP_MS);
 
-    return () => clearInterval(timer);
+    return () => {
+      clearInterval(timer);
+      a.removeEventListener("playing", onPlaying);
+    };
   }, [clips]);
 
   const transition = `opacity ${FADE_MS}ms ease-in-out`;
 
   return (
     <>
+      {/* Poster image — visible until first video frame is actually playing */}
+      <Image
+        src={poster}
+        alt=""
+        fill
+        priority
+        quality={85}
+        className={`object-cover transition-opacity duration-700 ${
+          videoReady ? "opacity-0" : "opacity-100"
+        }`}
+        aria-hidden="true"
+      />
       <video
         ref={videoA}
         muted
         playsInline
         preload="auto"
-        poster={poster}
         className="absolute inset-0 h-full w-full object-cover"
         style={{ transition, opacity: 1 }}
         aria-hidden="true"
