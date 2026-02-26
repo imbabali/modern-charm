@@ -4,142 +4,136 @@ import Link from "next/link";
 import {
   ChevronRight,
   ArrowRight,
-  Heart,
-  Building2,
-  Drum,
-  PartyPopper,
-  Baby,
   ClipboardList,
+  Palette,
+  Users,
+  Lightbulb,
+  Gift,
+  Rocket,
 } from "lucide-react";
 import HeroCarousel from "@/components/HeroCarousel";
 
 export const metadata: Metadata = {
   title: "Our Services | Modern Charm Uganda",
   description:
-    "From intimate gatherings to grand celebrations — discover Modern Charm Uganda's full range of event styling, decor, and planning services in Kampala.",
+    "From event planning and styling to corporate gifting and product launches — discover Modern Charm Limited's full range of event management services in Kampala.",
   alternates: { canonical: "https://modern-charm.vercel.app/services" },
   openGraph: {
     title: "Our Services | Modern Charm Uganda",
     description:
-      "Discover Modern Charm Uganda's full range of event styling, decor, and planning services in Kampala.",
+      "Discover Modern Charm Limited's full range of event management services in Kampala.",
     url: "https://modern-charm.vercel.app/services",
   },
   twitter: {
     card: "summary_large_image",
     title: "Our Services | Modern Charm Uganda",
     description:
-      "Discover Modern Charm Uganda's full range of event styling, decor, and planning services in Kampala.",
+      "Discover Modern Charm Limited's full range of event management services in Kampala.",
   },
 };
 
 const services = [
   {
-    id: "weddings",
-    icon: Heart,
-    title: "Wedding Styling & Decor",
-    description:
-      "Your wedding day deserves to be nothing short of magical. At Modern Charm, we specialise in creating breathtaking wedding environments that reflect your unique love story. From intimate garden ceremonies on the shores of Lake Victoria to grand ballroom receptions at Kampala's finest venues, our team transforms every space into a romantic masterpiece.",
-    highlights: [
-      "Venue styling & transformation",
-      "Elegant table settings & centrepieces",
-      "Bespoke floral arrangements & installations",
-      "Atmospheric lighting design",
-      "Statement backdrops & arches",
-      "Aisle decor & ceremony styling",
-    ],
-    gradient: "from-primary/30 via-accent/20 to-primary-light/30",
-    image: "/images/portfolio/oscar-sandra/IMG_0795.jpg",
-    imageAlt: "Grand wedding reception with black & white decor, gold arches and floral installations",
-  },
-  {
-    id: "corporate",
-    icon: Building2,
-    title: "Corporate Events",
-    description:
-      "Make a powerful impression with corporate events that reflect your brand's excellence. We understand that business gatherings require a perfect balance of professionalism and creativity. Our team designs sophisticated environments that elevate your corporate identity while ensuring your guests have a memorable, polished experience.",
-    highlights: [
-      "Product launches & brand activations",
-      "Conference & seminar styling",
-      "Gala dinners & awards ceremonies",
-      "Team building event setups",
-      "Brand integration & themed decor",
-      "Exhibition & trade show design",
-    ],
-    gradient: "from-primary-dark/30 via-primary/20 to-accent/20",
-    image: "/images/portfolio/oscar-sandra/IMG_0947.jpg",
-    imageAlt: "Dapper groomsmen in black tie with grooms in white tuxedos at luxury reception",
-  },
-  {
-    id: "traditional",
-    icon: Drum,
-    title: "Traditional Ceremonies",
-    description:
-      "Uganda's cultural ceremonies are rich in meaning and tradition. We honour this heritage by creating stunning decor that respects tradition while infusing contemporary elegance. Whether it's a Kiganda kwanjula, an Ankole kuhingira, or any of Uganda's beautiful introduction ceremonies, we ensure your cultural celebration is both authentic and visually spectacular.",
-    highlights: [
-      "Kwanjula ceremony styling",
-      "Kuhingira & introduction ceremony decor",
-      "Cultural motif integration",
-      "Traditional-meets-modern design concepts",
-      "Themed colour palettes & cultural fabrics",
-      "Ceremonial area setup & styling",
-    ],
-    gradient: "from-accent/30 via-primary/20 to-accent-light/30",
-    image: "/images/portfolio/wedding-highlights/IMG_3893.jpg",
-    imageAlt: "Intimate moment as couple holds hands before the candle wall and floral backdrop",
-  },
-  {
-    id: "birthdays",
-    icon: PartyPopper,
-    title: "Birthday & Anniversary Celebrations",
-    description:
-      "Every milestone deserves a celebration as special as the person being honoured. From a child's whimsical first birthday to an elegant golden anniversary dinner, we design celebrations that capture the spirit of the occasion. Our creative team brings themes to life with stunning detail and infectious energy.",
-    highlights: [
-      "Milestone birthday celebrations",
-      "Custom themed party design",
-      "Elegant anniversary dinners",
-      "Surprise event coordination",
-      "Balloon artistry & installations",
-      "Photo-worthy decor moments",
-    ],
-    gradient: "from-primary-light/30 via-cream-dark to-accent/20",
-    image: "/images/portfolio/oscar-sandra/IMG_0882.jpg",
-    imageAlt: "Bridesmaids dancing joyfully in champagne gowns against dramatic reception backdrop",
-  },
-  {
-    id: "showers",
-    icon: Baby,
-    title: "Bridal Showers & Baby Showers",
-    description:
-      "Celebrate life's most beautiful transitions with intimate, thoughtfully designed gatherings. We create warm, stylish settings for bridal showers that pamper the bride-to-be and baby showers that welcome new life with joy. Every detail — from floral arches to curated party favours — is designed to make the guest of honour feel truly special.",
-    highlights: [
-      "Intimate & elegant venue styling",
-      "Custom themed decor concepts",
-      "Curated party favours & gifts",
-      "Instagram-worthy photo backdrops",
-      "Dessert table & display styling",
-      "Games & activity area setup",
-    ],
-    gradient: "from-accent-light/30 via-cream-dark to-primary/20",
-    image: "/images/portfolio/oscar-sandra/IMG_1930.jpg",
-    imageAlt: "Bride and bridesmaids in matching silk robes during pre-ceremony preparations",
-  },
-  {
     id: "planning",
     icon: ClipboardList,
-    title: "Event Planning & Coordination",
+    title: "Event Planning",
     description:
-      "Behind every seamless event is meticulous planning. Our experienced coordination team takes the stress out of event management, handling every detail from initial concept to final farewell. We work closely with Kampala's best vendors to ensure quality, reliability, and value — so you can relax and enjoy your celebration.",
+      "From concept to execution, our experienced team takes the stress out of event planning. We handle every detail — budgets, timelines, vendor coordination, and logistics — so you can focus on enjoying your celebration. Whether it's an intimate dinner or a large-scale conference, we plan with precision and care.",
     highlights: [
       "Full event planning from concept to execution",
-      "Trusted vendor sourcing & management",
-      "Detailed timeline coordination",
-      "Professional day-of management",
       "Budget planning & optimisation",
+      "Detailed timeline coordination",
+      "Trusted vendor sourcing & management",
+      "Professional day-of management",
       "Post-event breakdown & wrap-up",
     ],
-    gradient: "from-primary/20 via-primary-light/20 to-accent/30",
+    image: "/images/portfolio/oscar-sandra/IMG_0795.jpg",
+    imageAlt: "Grand reception venue with elegant table settings and floral installations",
+  },
+  {
+    id: "styling",
+    icon: Palette,
+    title: "Event Styling",
+    description:
+      "Transform any venue into a breathtaking experience. Our creative team designs immersive environments that reflect your vision and tell your story. From floral installations and lighting design to table settings and statement backdrops — we style every detail to perfection.",
+    highlights: [
+      "Venue styling & transformation",
+      "Bespoke floral arrangements & installations",
+      "Atmospheric lighting design",
+      "Elegant table settings & centrepieces",
+      "Statement backdrops & arches",
+      "Themed colour palettes & decor",
+    ],
+    image: "/images/portfolio/oscar-sandra/IMG_2416.jpg",
+    imageAlt: "Beautifully styled event space with elegant decor and floral arrangements",
+  },
+  {
+    id: "management",
+    icon: Users,
+    title: "Event Management",
+    description:
+      "Our seasoned coordination team ensures everything runs like clockwork. We manage all moving parts of your event — from setup to teardown — with meticulous attention to detail. Our on-site team handles every challenge with grace, so you can be fully present and enjoy every moment.",
+    highlights: [
+      "End-to-end event coordination",
+      "On-site management team",
+      "Vendor & supplier liaison",
+      "Guest management & flow",
+      "Real-time problem solving",
+      "Seamless event transitions",
+    ],
     image: "/images/portfolio/wedding-highlights/IMG_3879.jpg",
-    imageAlt: "Full bridal party portrait with sage bridesmaids and candle wall backdrop at styled venue",
+    imageAlt: "Full bridal party portrait at a beautifully styled venue",
+  },
+  {
+    id: "concept",
+    icon: Lightbulb,
+    title: "Concept Development",
+    description:
+      "Every great event starts with a compelling concept. We work closely with you to understand your vision, then develop unique creative concepts that bring it to life. From mood boards and theme design to spatial planning — we craft experiences that leave lasting impressions.",
+    highlights: [
+      "Creative brainstorming sessions",
+      "Mood boards & visual concepts",
+      "Theme development & design",
+      "Spatial planning & layout",
+      "Brand integration for corporate events",
+      "Cultural motif incorporation",
+    ],
+    image: "/images/portfolio/oscar-sandra/IMG_0947.jpg",
+    imageAlt: "Elegant event setup showcasing creative concept development",
+  },
+  {
+    id: "gifting",
+    icon: Gift,
+    title: "Corporate Gifting",
+    description:
+      "Make a lasting impression with thoughtfully curated corporate gifts. We design and assemble bespoke gift packages for your team, clients, or event guests. From premium hampers to branded packaging — every gift is crafted to reflect your brand's values and appreciation.",
+    highlights: [
+      "Bespoke gift box design & assembly",
+      "Premium hamper curation",
+      "Branded packaging solutions",
+      "Bulk corporate gift orders",
+      "Seasonal & holiday gifting",
+      "Client appreciation packages",
+    ],
+    image: "/images/portfolio/oscar-sandra/IMG_0882.jpg",
+    imageAlt: "Beautifully curated corporate gift packages with premium items",
+  },
+  {
+    id: "launches",
+    icon: Rocket,
+    title: "Product Launches",
+    description:
+      "Launch your product with impact. We create show-stopping environments that spotlight your brand and create buzz. From staging and AV coordination to media setup and brand activations — we ensure your launch event makes the impression it deserves.",
+    highlights: [
+      "Launch event design & styling",
+      "Brand activation setups",
+      "Stage design & AV coordination",
+      "Media & press area setup",
+      "Guest experience design",
+      "Exhibition & display styling",
+    ],
+    image: "/images/portfolio/allan-pauline/img_0748.jpg",
+    imageAlt: "Professionally styled product launch event with elegant setup",
   },
 ];
 
@@ -169,8 +163,8 @@ export default function ServicesPage() {
             Our Services
           </h1>
           <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
-            From intimate gatherings to grand celebrations, we bring your vision
-            to life
+            From event planning and styling to corporate gifting and product
+            launches — we bring your vision to life
           </p>
         </div>
       </section>

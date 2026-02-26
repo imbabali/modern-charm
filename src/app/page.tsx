@@ -82,10 +82,10 @@ export default function Home() {
           {/* CTA Buttons */}
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
-              href="/portfolio"
+              href="/services"
               className="font-body group inline-flex items-center gap-2 rounded-full border-2 border-white/40 px-8 py-4 text-sm font-semibold tracking-wide text-white uppercase transition-all duration-300 hover:border-accent-light hover:bg-white/5 hover:text-accent-light"
             >
-              Explore Our Work
+              Our Services
               <ArrowRight aria-hidden="true" className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
             <Link
@@ -149,12 +149,13 @@ export default function Home() {
             </div>
 
             <p className="font-body text-lg leading-relaxed text-muted">
-              We are a full-service event styling and d&eacute;cor company based
-              in the heart of Kampala, Uganda. From intimate gatherings to grand
-              celebrations, we bring artistry, elegance, and meticulous attention
-              to every detail. Our team transforms ordinary spaces into
-              extraordinary experiences — blending contemporary sophistication
-              with the warmth and vibrancy of Ugandan culture.
+              Modern Charm Limited is a premier event management company
+              dedicated to crafting seamless, impactful, and memorable
+              experiences. With over six years of experience, we have
+              successfully planned and executed a diverse range of events — from
+              corporate functions to large-scale celebrations. Our expertise lies
+              in combining professionalism, meticulous planning, creativity, and
+              adaptability to bring our clients&apos; visions to life.
             </p>
 
             <p className="font-body mt-4 text-lg leading-relaxed text-muted">
@@ -404,7 +405,7 @@ export default function Home() {
             {/* Stat 2 */}
             <div className="text-center">
               <div className="font-heading text-5xl font-bold text-accent-light sm:text-6xl">
-                8+
+                6+
               </div>
               <div className="mt-2 h-0.5 mx-auto w-8 rounded-full bg-accent/50" />
               <p className="font-body mt-3 text-base font-medium tracking-wide text-white/90">
@@ -452,7 +453,7 @@ export default function Home() {
               <span className="h-px w-10 bg-accent" />
             </div>
             <h2 className="font-heading text-4xl font-bold text-dark sm:text-5xl">
-              Our Portfolio
+              Featured Work
             </h2>
             <p className="font-body mt-4 text-lg text-muted">
               A glimpse into the celebrations we have had the honour of
@@ -593,10 +594,10 @@ export default function Home() {
           {/* CTA */}
           <div className="mt-12 text-center">
             <Link
-              href="/portfolio"
+              href="/contact"
               className="font-body group inline-flex items-center gap-2 rounded-full bg-primary px-8 py-4 text-sm font-semibold tracking-wide text-white uppercase transition-all duration-300 hover:bg-primary-dark hover:shadow-lg hover:shadow-primary/25"
             >
-              View Full Gallery
+              Start Your Project
               <ArrowRight aria-hidden="true" className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
           </div>
@@ -604,7 +605,39 @@ export default function Home() {
       </section>
 
       {/* ================================================================
-          SECTION 6 — TESTIMONIALS
+          SECTION 6 — TRUSTED BY / CLIENTELE
+          ================================================================ */}
+      <section aria-label="Our clients" className="bg-cream-dark px-6 py-16">
+        <div className="mx-auto max-w-7xl">
+          <div className="text-center mb-10">
+            <span className="font-body text-xs tracking-[0.3em] font-semibold text-accent-dark uppercase">
+              Trusted By
+            </span>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 items-center">
+            {[
+              "UEGCL",
+              "Unicaf University",
+              "KCB Bank",
+              "Hima Cement",
+              "Bloomberg Philanthropies",
+              "MAAD McCann",
+            ].map((client) => (
+              <div
+                key={client}
+                className="flex items-center justify-center h-16 rounded-xl bg-white px-4 shadow-sm hover:shadow-md transition-shadow duration-300"
+              >
+                <span className="font-heading text-sm font-bold text-dark/60 text-center">
+                  {client}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ================================================================
+          SECTION 7 — TESTIMONIALS
           ================================================================ */}
       <section aria-label="Client testimonials" className="bg-cream px-6 py-24">
         <div className="mx-auto max-w-7xl">

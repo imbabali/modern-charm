@@ -23,9 +23,9 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://modern-charm.vercel.app"),
-  title: "Modern Charm Uganda | Premium Event Styling & Decor",
+  title: "Modern Charm Uganda | Premier Event Management",
   description:
-    "Modern Charm Uganda is a full-service event styling and decor company based in Kampala, Uganda. We specialize in weddings, corporate events, birthday parties, and all celebrations — transforming venues into breathtaking experiences with elegant, modern design.",
+    "Modern Charm Limited is a premier event management company in Kampala, Uganda. We specialize in event planning, styling, corporate events, product launches, and corporate gifting — crafting seamless, impactful, and memorable experiences.",
   keywords: [
     "event styling Uganda",
     "wedding decor Kampala",
@@ -38,9 +38,9 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Modern Charm Uganda" }],
   openGraph: {
-    title: "Modern Charm Uganda | Premium Event Styling & Decor",
+    title: "Modern Charm Uganda | Premier Event Management",
     description:
-      "Full-service event styling and decor in Kampala, Uganda. Weddings, corporate events, birthdays, and more — designed with elegance and modern charm.",
+      "Premier event management in Kampala, Uganda. Event planning, styling, corporate events, product launches, and corporate gifting.",
     url: "https://modern-charm.vercel.app",
     siteName: "Modern Charm Uganda",
     locale: "en_UG",
@@ -103,8 +103,8 @@ export default function RootLayout({
               {
                 "@context": "https://schema.org",
                 "@type": "EventPlanning",
-                "name": "Modern Charm Uganda",
-                "description": "Full-service event styling and decor company based in Kampala, Uganda specializing in weddings, corporate events, and celebrations.",
+                "name": "Modern Charm Limited",
+                "description": "Premier event management company based in Kampala, Uganda specializing in event planning, styling, corporate events, product launches, and corporate gifting.",
                 "url": "https://modern-charm.vercel.app",
                 "telephone": ["+256779399409", "+256775826795"],
                 "email": "moderncharm30@gmail.com",
@@ -118,7 +118,7 @@ export default function RootLayout({
                   "https://facebook.com/moderncharmevents"
                 ],
                 "image": "https://modern-charm.vercel.app/images/hero-wedding.jpg",
-                "priceRange": "UGX 2,000,000 - 12,000,000+"
+                "priceRange": "$$"
               },
               {
                 "@context": "https://schema.org",
@@ -150,7 +150,7 @@ export default function RootLayout({
                   "https://facebook.com/moderncharmevents"
                 ],
                 "image": "https://modern-charm.vercel.app/images/hero-wedding.jpg",
-                "priceRange": "UGX 2,000,000 - 12,000,000+"
+                "priceRange": "$$"
               }
             ]),
           }}

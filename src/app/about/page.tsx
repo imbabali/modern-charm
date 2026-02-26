@@ -2,71 +2,140 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import {
-  Palette,
-  Eye,
-  MapPin,
-  CheckCircle,
   ChevronRight,
   ArrowRight,
+  Award,
+  Eye,
+  Lightbulb,
+  Shield,
+  Handshake,
+  Target,
+  Heart,
 } from "lucide-react";
 import HeroCarousel from "@/components/HeroCarousel";
 
 export const metadata: Metadata = {
   title: "About Us | Modern Charm Uganda",
   description:
-    "Learn about Modern Charm Uganda — Kampala's premier event styling & decor company blending Ugandan heritage with modern elegance.",
+    "Learn about Modern Charm Limited — Kampala's premier event management company crafting seamless, impactful, and memorable experiences with over six years of excellence.",
   alternates: { canonical: "https://modern-charm.vercel.app/about" },
   openGraph: {
     title: "About Us | Modern Charm Uganda",
     description:
-      "Kampala's premier event styling & decor company blending Ugandan heritage with modern elegance.",
+      "Kampala's premier event management company crafting seamless, impactful, and memorable experiences.",
     url: "https://modern-charm.vercel.app/about",
   },
   twitter: {
     card: "summary_large_image",
     title: "About Us | Modern Charm Uganda",
     description:
-      "Kampala's premier event styling & decor company blending Ugandan heritage with modern elegance.",
+      "Kampala's premier event management company crafting seamless, impactful, and memorable experiences.",
   },
 };
 
-const features = [
+const values = [
   {
-    icon: Palette,
-    title: "Bespoke Designs",
+    icon: Award,
+    title: "Excellence",
     description:
-      "Every event is a blank canvas. We craft completely custom designs that reflect your personality, culture, and vision — no cookie-cutter setups, ever.",
+      "We are committed to delivering outstanding results with precision and professionalism.",
   },
   {
     icon: Eye,
     title: "Attention to Detail",
     description:
-      "From the fold of every napkin to the angle of every spotlight, we obsess over the details that transform a good event into an unforgettable one.",
+      "Every element of our events is meticulously planned and flawlessly executed.",
   },
   {
-    icon: MapPin,
-    title: "Local Expertise",
+    icon: Lightbulb,
+    title: "Innovation & Creativity",
     description:
-      "Rooted in Kampala and connected across Uganda, we know the best venues, trusted vendors, and how to navigate every logistical challenge with grace.",
+      "We bring fresh, unique, and customized solutions to every event.",
   },
   {
-    icon: CheckCircle,
-    title: "Seamless Execution",
+    icon: Shield,
+    title: "Dependability",
     description:
-      "Our seasoned coordination team ensures everything runs like clockwork on the day — so you can be fully present and enjoy every moment.",
+      "Our word is our bond — we always strive to go above and beyond to build trust with our clients.",
+  },
+  {
+    icon: Target,
+    title: "Adaptability",
+    description:
+      "We thrive in dynamic environments, ensuring flexibility and efficiency in execution.",
+  },
+  {
+    icon: Handshake,
+    title: "Strategic Negotiation",
+    description:
+      "We leverage our expertise to secure the best deals and value for our clients.",
+  },
+  {
+    icon: Heart,
+    title: "Customer Satisfaction",
+    description:
+      "We are committed to delivering absolute customer satisfaction for every client we meet.",
   },
 ];
 
 const teamMembers = [
   {
-    name: "Philip Travis Higiro",
-    role: "Events Director",
-    gradient: "from-primary to-primary-dark",
+    name: "Philip Higiro",
+    role: "Team Lead",
+    image: "/images/team/philip-higiro.jpg",
   },
   {
     name: "Benjamin Bicung",
-    role: "Business Development",
-    gradient: "from-accent to-accent-light",
+    role: "Project & Finance Manager",
+    image: "/images/team/benjamin-bicung.jpg",
+  },
+  {
+    name: "Lamuel Mukendenta",
+    role: "Technical Lead",
+    image: "/images/team/lamuel-mukendenta.jpg",
+  },
+  {
+    name: "Lilian Nalukenge",
+    role: "Event Manager / Logistics Coordinator",
+    image: "/images/team/lilian-nalukenge.jpg",
+  },
+  {
+    name: "Adonia Waibale",
+    role: "Creative Director",
+    image: "/images/team/adonia-waibale.jpg",
+  },
+];
+
+const processSteps = [
+  {
+    step: "01",
+    title: "Client Briefing",
+    description:
+      "We start by understanding your vision, goals, and preferences through an in-depth consultation.",
+  },
+  {
+    step: "02",
+    title: "Brainstorming",
+    description:
+      "Our creative team develops unique concepts and ideas tailored to your event.",
+  },
+  {
+    step: "03",
+    title: "Client Presentation",
+    description:
+      "We present our vision with detailed proposals, mood boards, and plans for your review.",
+  },
+  {
+    step: "04",
+    title: "Concept Approval",
+    description:
+      "Together we refine the concept until it perfectly matches your expectations.",
+  },
+  {
+    step: "05",
+    title: "Event Execution",
+    description:
+      "Our team brings everything to life with precision, ensuring a seamless and unforgettable experience.",
   },
 ];
 
@@ -96,7 +165,7 @@ export default function AboutPage() {
             About Modern Charm
           </h1>
           <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
-            Where Ugandan heritage meets modern elegance
+            Crafting seamless, impactful, and memorable experiences
           </p>
         </div>
       </section>
@@ -125,36 +194,31 @@ export default function AboutPage() {
             {/* Story Text */}
             <div>
               <span className="inline-block text-accent-dark font-heading text-sm font-semibold tracking-widest uppercase mb-3">
-                Our Story
+                Who We Are
               </span>
               <h2 className="font-heading text-3xl md:text-4xl font-bold text-dark mb-6">
-                Transforming Spaces Into Extraordinary Experiences
+                Premier Event Management
               </h2>
               <div className="space-y-4 text-muted leading-relaxed">
                 <p>
-                  Modern Charm was born from a deep passion for beauty and a
-                  conviction that every celebration deserves to be truly
-                  extraordinary. Founded in the heart of Kampala, our journey
-                  began with a simple vision: to bring world-class event styling
-                  to Uganda while honouring the rich cultural tapestry that makes
-                  our celebrations so special.
+                  Modern Charm Limited is a premier event management company
+                  dedicated to crafting seamless, impactful, and memorable
+                  experiences. With over six years of experience in the industry,
+                  we have successfully planned and executed a diverse range of
+                  events, from corporate functions to large-scale celebrations.
                 </p>
                 <p>
-                  What started as a small styling studio has grown into one of
-                  Kampala&apos;s most sought-after event design companies. We
-                  draw inspiration from Uganda&apos;s breathtaking landscapes,
-                  vibrant traditions, and the warmth of our people — weaving
-                  these elements into designs that feel both timeless and
-                  refreshingly modern.
+                  Our expertise lies in combining professionalism, meticulous
+                  planning, exceptional negotiation skills, creativity, and
+                  adaptability to bring our clients&apos; visions to life. We
+                  pride ourselves on delivering high-quality events tailored to
+                  meet and exceed expectations.
                 </p>
                 <p>
-                  From the intricate bark-cloth textures that nod to Buganda
-                  heritage, to contemporary floral installations that rival any
-                  global stage, we believe in a design philosophy where
-                  tradition and innovation exist in beautiful harmony. Every
-                  event we create tells a story — your story — through
-                  thoughtful design, impeccable detail, and an unwavering
-                  commitment to excellence.
+                  From intimate gatherings to grand celebrations, we bring
+                  artistry, elegance, and meticulous attention to every detail —
+                  blending contemporary sophistication with the warmth and
+                  vibrancy of Ugandan culture.
                 </p>
               </div>
             </div>
@@ -170,74 +234,85 @@ export default function AboutPage() {
               What Drives Us
             </span>
             <h2 className="font-heading text-3xl md:text-4xl font-bold text-dark">
-              Our Mission & Vision
+              Our Vision & Mission
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-            {/* Mission Card */}
-            <div className="relative rounded-2xl bg-cream p-8 md:p-10 border-l-4 border-accent group hover:shadow-lg transition-shadow duration-300">
-              <h3 className="font-heading text-2xl font-bold text-dark mb-4">
-                Our Mission
-              </h3>
-              <p className="text-muted leading-relaxed relative z-10">
-                To craft extraordinary event experiences that celebrate
-                Uganda&apos;s cultural richness while embracing modern
-                sophistication. We are committed to making every client feel
-                seen, heard, and utterly delighted — transforming their vision
-                into breathtaking reality through meticulous styling, creative
-                innovation, and heartfelt service.
-              </p>
-            </div>
-
             {/* Vision Card */}
             <div className="relative rounded-2xl bg-cream p-8 md:p-10 border-l-4 border-accent group hover:shadow-lg transition-shadow duration-300">
               <h3 className="font-heading text-2xl font-bold text-dark mb-4">
                 Our Vision
               </h3>
               <p className="text-muted leading-relaxed relative z-10">
-                To be East Africa&apos;s most trusted and admired event styling
-                brand — known for pushing creative boundaries, setting new
-                standards of elegance, and proving that world-class celebrations
-                belong right here in Uganda. We envision a future where every
-                gathering, big or small, is an opportunity to create beauty and
-                lasting memories.
+                To be the most trusted and innovative event management company,
+                setting new standards in creativity, precision, and client
+                satisfaction.
+              </p>
+            </div>
+
+            {/* Mission Card */}
+            <div className="relative rounded-2xl bg-cream p-8 md:p-10 border-l-4 border-accent group hover:shadow-lg transition-shadow duration-300">
+              <h3 className="font-heading text-2xl font-bold text-dark mb-4">
+                Our Mission
+              </h3>
+              <p className="text-muted leading-relaxed relative z-10">
+                To design and execute world-class events with unmatched attention
+                to detail, strategic planning, and creative excellence, ensuring
+                seamless experiences that leave lasting impressions.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us Section */}
+      {/* Our Values Section */}
       <section className="py-20 md:py-28 bg-cream-dark">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <span className="inline-block text-accent-dark font-heading text-sm font-semibold tracking-widest uppercase mb-3">
-              The Modern Charm Difference
+              What We Stand For
             </span>
             <h2 className="font-heading text-3xl md:text-4xl font-bold text-dark">
-              Why Choose Us
+              Our Values
             </h2>
-            <p className="text-muted mt-4 max-w-2xl mx-auto">
-              We don&apos;t just decorate spaces — we create immersive
-              environments that tell your story and leave your guests in awe.
-            </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-            {features.map((feature) => {
-              const Icon = feature.icon;
+            {values.slice(0, 4).map((value) => {
+              const Icon = value.icon;
               return (
                 <div
-                  key={feature.title}
+                  key={value.title}
                   className="group rounded-2xl bg-white p-6 md:p-8 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
                 >
                   <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
                     <Icon className="h-7 w-7 text-primary group-hover:text-white transition-colors duration-300" aria-hidden="true" />
                   </div>
                   <h3 className="font-heading text-lg font-bold text-dark mb-3">
-                    {feature.title}
+                    {value.title}
                   </h3>
                   <p className="text-muted text-sm leading-relaxed">
-                    {feature.description}
+                    {value.description}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 lg:gap-8 mt-6 lg:mt-8">
+            {values.slice(4).map((value) => {
+              const Icon = value.icon;
+              return (
+                <div
+                  key={value.title}
+                  className="group rounded-2xl bg-white p-6 md:p-8 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                >
+                  <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                    <Icon className="h-7 w-7 text-primary group-hover:text-white transition-colors duration-300" aria-hidden="true" />
+                  </div>
+                  <h3 className="font-heading text-lg font-bold text-dark mb-3">
+                    {value.title}
+                  </h3>
+                  <p className="text-muted text-sm leading-relaxed">
+                    {value.description}
                   </p>
                 </div>
               );
@@ -246,41 +321,114 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Our Team Section */}
+      {/* How We Work Section */}
       <section className="py-20 md:py-28 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <span className="inline-block text-accent-dark font-heading text-sm font-semibold tracking-widest uppercase mb-3">
-              Meet the Creatives
+              The Recipe for Our Charm
             </span>
             <h2 className="font-heading text-3xl md:text-4xl font-bold text-dark">
-              Our Team
+              How We Work
             </h2>
             <p className="text-muted mt-4 max-w-2xl mx-auto">
-              A passionate team of designers, coordinators, and dreamers
-              dedicated to making your celebration unforgettable.
+              Our proven five-step process ensures every event is planned and
+              executed to perfection.
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 lg:gap-10 max-w-2xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-6 lg:gap-4">
+            {processSteps.map((item, index) => (
+              <div key={item.step} className="relative text-center group">
+                {/* Step number circle */}
+                <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-accent-dark text-white font-heading text-lg font-bold shadow-md group-hover:scale-110 transition-transform duration-300">
+                  {item.step}
+                </div>
+                {/* Connector line (hidden on last item and mobile) */}
+                {index < processSteps.length - 1 && (
+                  <div className="hidden md:block absolute top-7 left-[calc(50%+28px)] w-[calc(100%-56px)] h-px bg-accent/30" />
+                )}
+                <h3 className="font-heading text-base font-bold text-dark mb-2">
+                  {item.title}
+                </h3>
+                <p className="text-muted text-sm leading-relaxed">
+                  {item.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Our Team Section */}
+      <section className="py-20 md:py-28 bg-cream">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <span className="inline-block text-accent-dark font-heading text-sm font-semibold tracking-widest uppercase mb-3">
+              The Charming Team
+            </span>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-dark">
+              Meet Our Team
+            </h2>
+            <p className="text-muted mt-4 max-w-2xl mx-auto">
+              A passionate team of professionals dedicated to making your
+              celebrations unforgettable.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 max-w-5xl mx-auto">
             {teamMembers.map((member) => (
               <div
                 key={member.name}
-                className="group text-center rounded-2xl bg-cream p-8 hover:shadow-lg transition-all duration-300"
+                className="group text-center rounded-2xl bg-white p-6 hover:shadow-lg transition-all duration-300"
               >
-                <div
-                  className={`mx-auto mb-6 h-32 w-32 rounded-full bg-gradient-to-br ${member.gradient} flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform duration-300`}
-                >
-                  <span className="text-white font-heading text-3xl font-bold">
-                    {member.name
-                      .split(" ")
-                      .map((n) => n[0])
-                      .join("")}
-                  </span>
+                <div className="mx-auto mb-5 h-40 w-40 rounded-full overflow-hidden shadow-lg group-hover:scale-105 transition-transform duration-300 relative">
+                  <Image
+                    src={member.image}
+                    alt={`${member.name} - ${member.role} at Modern Charm`}
+                    fill
+                    className="object-cover object-top"
+                    sizes="160px"
+                    quality={85}
+                  />
                 </div>
                 <h3 className="font-heading text-xl font-bold text-dark mb-1">
                   {member.name}
                 </h3>
-                <p className="text-accent-dark font-medium text-sm">{member.role}</p>
+                <p className="text-accent-dark font-medium text-sm">
+                  {member.role}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Trusted By Section */}
+      <section className="py-16 md:py-20 bg-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <span className="inline-block text-accent-dark font-heading text-sm font-semibold tracking-widest uppercase mb-3">
+              Our Clientele
+            </span>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-dark">
+              Trusted By
+            </h2>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
+            {[
+              "UEGCL",
+              "Unicaf University",
+              "KCB Bank",
+              "Hima Cement",
+              "Bloomberg Philanthropies",
+              "MAAD McCann",
+            ].map((client) => (
+              <div
+                key={client}
+                className="flex items-center justify-center h-16 rounded-lg bg-cream px-4 hover:bg-cream-dark transition-colors duration-300"
+              >
+                <span className="font-heading text-sm font-bold text-dark/70 text-center">
+                  {client}
+                </span>
               </div>
             ))}
           </div>
@@ -316,10 +464,10 @@ export default function AboutPage() {
               <ArrowRight className="h-5 w-5" aria-hidden="true" />
             </Link>
             <Link
-              href="/portfolio"
+              href="/services"
               className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold px-8 py-4 rounded-full text-lg transition-colors duration-300 border border-white/30"
             >
-              View Our Portfolio
+              View Our Services
             </Link>
           </div>
         </div>

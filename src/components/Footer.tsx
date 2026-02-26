@@ -13,22 +13,20 @@ import Logo from "@/components/Logo";
 const quickLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About Us" },
-  { href: "/portfolio", label: "Portfolio" },
+  { href: "/services", label: "Services" },
   { href: "/testimonials", label: "Testimonials" },
   { href: "/blog", label: "Blog" },
-  { href: "/pricing", label: "Pricing" },
   { href: "/faq", label: "FAQ" },
   { href: "/contact", label: "Contact" },
 ];
 
 const services = [
-  { href: "/services#weddings", label: "Wedding Styling" },
-  { href: "/services#corporate", label: "Corporate Events" },
-  { href: "/services#birthdays", label: "Birthday Parties" },
-  { href: "/services#showers", label: "Bridal Showers" },
-  { href: "/services#weddings", label: "Venue Decoration" },
-  { href: "/services#weddings", label: "Floral Arrangements" },
-  { href: "/services#planning", label: "Event Consultation" },
+  { href: "/services#planning", label: "Event Planning" },
+  { href: "/services#styling", label: "Event Styling" },
+  { href: "/services#management", label: "Event Management" },
+  { href: "/services#concept", label: "Concept Development" },
+  { href: "/services#gifting", label: "Corporate Gifting" },
+  { href: "/services#launches", label: "Product Launches" },
 ];
 
 const socialLinks = [
@@ -102,8 +100,8 @@ export default function Footer() {
             </Link>
 
             <p className="mt-2.5 text-white text-sm leading-relaxed max-w-xs">
-              Transforming ordinary venues into extraordinary experiences
-              across Uganda.
+              Premier event management — crafting seamless, impactful,
+              and memorable experiences across Uganda.
             </p>
 
             {/* Social Icons */}
