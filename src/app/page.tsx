@@ -1,12 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
-  Heart,
-  Building2,
-  Crown,
-  Cake,
-  Gift,
   ClipboardList,
+  Palette,
   Quote,
   ArrowRight,
   Sparkles,
@@ -202,122 +198,8 @@ export default function Home() {
           </div>
 
           {/* Service cards grid */}
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {/* Card 1 — Wedding Styling */}
-            <div className="group relative rounded-2xl border border-gray-100 bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-xl hover:shadow-accent/5">
-              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-accent/10 group-hover:text-accent-dark">
-                <Heart className="h-7 w-7" aria-hidden="true" />
-              </div>
-              <h3 className="font-heading text-xl font-bold text-dark">
-                Wedding Styling &amp; Decor
-              </h3>
-              <p className="font-body mt-3 text-base leading-relaxed text-muted">
-                Transform your dream wedding into a breathtaking reality. From
-                floral arches to table settings, we design every detail with
-                love and precision.
-              </p>
-              <Link
-                href="/services#weddings"
-                aria-label="Learn more about Wedding Styling and Decor"
-                className="font-body mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-colors duration-300 group-hover:text-accent-dark"
-              >
-                Learn More
-                <ArrowRight aria-hidden="true" className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
-              </Link>
-            </div>
-
-            {/* Card 2 — Corporate Events */}
-            <div className="group relative rounded-2xl border border-gray-100 bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-xl hover:shadow-accent/5">
-              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-accent/10 group-hover:text-accent-dark">
-                <Building2 className="h-7 w-7" aria-hidden="true" />
-              </div>
-              <h3 className="font-heading text-xl font-bold text-dark">
-                Corporate Events
-              </h3>
-              <p className="font-body mt-3 text-base leading-relaxed text-muted">
-                Elevate your brand with polished, professional event
-                experiences. Product launches, galas, conferences, and team
-                celebrations — styled with impact.
-              </p>
-              <Link
-                href="/services#corporate"
-                aria-label="Learn more about Corporate Events"
-                className="font-body mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-colors duration-300 group-hover:text-accent-dark"
-              >
-                Learn More
-                <ArrowRight aria-hidden="true" className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
-              </Link>
-            </div>
-
-            {/* Card 3 — Traditional Ceremonies */}
-            <div className="group relative rounded-2xl border border-gray-100 bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-xl hover:shadow-accent/5">
-              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-accent/10 group-hover:text-accent-dark">
-                <Crown className="h-7 w-7" aria-hidden="true" />
-              </div>
-              <h3 className="font-heading text-xl font-bold text-dark">
-                Traditional Ceremonies
-              </h3>
-              <p className="font-body mt-3 text-base leading-relaxed text-muted">
-                Honour your heritage with stunning Kwanjula and Kuhingira
-                setups. We blend cultural tradition with modern elegance for a
-                truly memorable ceremony.
-              </p>
-              <Link
-                href="/services#traditional"
-                aria-label="Learn more about Traditional Ceremonies"
-                className="font-body mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-colors duration-300 group-hover:text-accent-dark"
-              >
-                Learn More
-                <ArrowRight aria-hidden="true" className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
-              </Link>
-            </div>
-
-            {/* Card 4 — Birthdays & Anniversaries */}
-            <div className="group relative rounded-2xl border border-gray-100 bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-xl hover:shadow-accent/5">
-              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-accent/10 group-hover:text-accent-dark">
-                <Cake className="h-7 w-7" aria-hidden="true" />
-              </div>
-              <h3 className="font-heading text-xl font-bold text-dark">
-                Birthday &amp; Anniversary Celebrations
-              </h3>
-              <p className="font-body mt-3 text-base leading-relaxed text-muted">
-                Mark life&apos;s milestones in style. Whether it&apos;s a first
-                birthday or a golden anniversary, we create themes that reflect
-                your unique story.
-              </p>
-              <Link
-                href="/services#birthdays"
-                aria-label="Learn more about Birthday and Anniversary Celebrations"
-                className="font-body mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-colors duration-300 group-hover:text-accent-dark"
-              >
-                Learn More
-                <ArrowRight aria-hidden="true" className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
-              </Link>
-            </div>
-
-            {/* Card 5 — Showers */}
-            <div className="group relative rounded-2xl border border-gray-100 bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-xl hover:shadow-accent/5">
-              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-accent/10 group-hover:text-accent-dark">
-                <Gift className="h-7 w-7" aria-hidden="true" />
-              </div>
-              <h3 className="font-heading text-xl font-bold text-dark">
-                Bridal Showers &amp; Baby Showers
-              </h3>
-              <p className="font-body mt-3 text-base leading-relaxed text-muted">
-                Intimate, joyful, and beautifully styled — our shower setups are
-                designed to celebrate new beginnings with warmth and elegance.
-              </p>
-              <Link
-                href="/services#showers"
-                aria-label="Learn more about Bridal and Baby Showers"
-                className="font-body mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-colors duration-300 group-hover:text-accent-dark"
-              >
-                Learn More
-                <ArrowRight aria-hidden="true" className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
-              </Link>
-            </div>
-
-            {/* Card 6 — Event Planning */}
+          <div className="grid gap-8 sm:grid-cols-2">
+            {/* Card 1 — Event Planning & Coordination */}
             <div className="group relative rounded-2xl border border-gray-100 bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-xl hover:shadow-accent/5">
               <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-accent/10 group-hover:text-accent-dark">
                 <ClipboardList className="h-7 w-7" aria-hidden="true" />
@@ -326,13 +208,66 @@ export default function Home() {
                 Event Planning &amp; Coordination
               </h3>
               <p className="font-body mt-3 text-base leading-relaxed text-muted">
-                Let us handle the logistics so you can enjoy the moment.
-                End-to-end planning, vendor coordination, and on-the-day
-                management you can trust.
+                From concept to execution, we handle every logistical detail —
+                budgets, timelines, vendor coordination, and on-site management.
+                Whether it&apos;s a corporate conference, product launch, or
+                grand celebration, we plan with precision and care.
               </p>
+              <ul className="font-body mt-4 space-y-1.5 text-sm text-dark/80">
+                <li className="flex items-center gap-2">
+                  <span className="h-1.5 w-1.5 rounded-full bg-accent flex-shrink-0" />
+                  Event Planning &amp; Management
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="h-1.5 w-1.5 rounded-full bg-accent flex-shrink-0" />
+                  Concept Development
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="h-1.5 w-1.5 rounded-full bg-accent flex-shrink-0" />
+                  Product Launches
+                </li>
+              </ul>
               <Link
                 href="/services#planning"
                 aria-label="Learn more about Event Planning and Coordination"
+                className="font-body mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-colors duration-300 group-hover:text-accent-dark"
+              >
+                Learn More
+                <ArrowRight aria-hidden="true" className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+              </Link>
+            </div>
+
+            {/* Card 2 — Event Styling & Decor */}
+            <div className="group relative rounded-2xl border border-gray-100 bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-xl hover:shadow-accent/5">
+              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-accent/10 group-hover:text-accent-dark">
+                <Palette className="h-7 w-7" aria-hidden="true" />
+              </div>
+              <h3 className="font-heading text-xl font-bold text-dark">
+                Event Styling &amp; Decor
+              </h3>
+              <p className="font-body mt-3 text-base leading-relaxed text-muted">
+                Transform any venue into a breathtaking experience. Our creative
+                team designs immersive environments — from floral installations
+                and lighting design to bespoke corporate gifts and statement
+                backdrops. We style every detail to perfection.
+              </p>
+              <ul className="font-body mt-4 space-y-1.5 text-sm text-dark/80">
+                <li className="flex items-center gap-2">
+                  <span className="h-1.5 w-1.5 rounded-full bg-accent flex-shrink-0" />
+                  Venue Styling &amp; Decor
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="h-1.5 w-1.5 rounded-full bg-accent flex-shrink-0" />
+                  Floral Design &amp; Installations
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="h-1.5 w-1.5 rounded-full bg-accent flex-shrink-0" />
+                  Corporate Gifting
+                </li>
+              </ul>
+              <Link
+                href="/services#styling"
+                aria-label="Learn more about Event Styling and Decor"
                 className="font-body mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-colors duration-300 group-hover:text-accent-dark"
               >
                 Learn More
@@ -506,11 +441,11 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Small 2: Oscar & Sandra — Couple framed through chairs */}
+            {/* Small 2: David & Michelle — Luxe Head Table */}
             <div className="group relative overflow-hidden rounded-2xl">
               <Image
-                src="/images/portfolio/oscar-sandra/IMG_0834.jpg"
-                alt="Couple framed through oval-back reception chairs"
+                src="/images/portfolio/david-michelle/7b7a0805.jpg"
+                alt="Luxurious head table with DM monogram, pink florals and crystal chandeliers"
                 fill
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -522,16 +457,16 @@ export default function Home() {
                   Wedding
                 </span>
                 <h3 className="font-heading mt-2 text-base font-bold text-white">
-                  Through the Looking Glass
+                  David &amp; Michelle&apos;s Luxe Reception
                 </h3>
               </div>
             </div>
 
-            {/* Small 3: Wedding Highlights — Couple with bouquet */}
+            {/* Small 3: Lorna's Kuhingira — Sage Green Reception */}
             <div className="group relative overflow-hidden rounded-2xl">
               <Image
-                src="/images/portfolio/wedding-highlights/IMG_3884.jpg"
-                alt="Couple walking through styled reception with blush bouquet"
+                src="/images/portfolio/lornas-kuhingira/7b7a9519.jpg"
+                alt="Elegant Kuhingira reception with sage green linens, pink floral chandeliers, and cross-back chairs"
                 fill
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -540,10 +475,10 @@ export default function Home() {
               <div className="absolute inset-0 bg-black/10 transition-opacity duration-300 group-hover:bg-black/0" />
               <div className="absolute bottom-4 left-4">
                 <span className="font-body rounded-full bg-white/20 px-3 py-1 text-xs font-medium tracking-wide text-white backdrop-blur-sm">
-                  Wedding
+                  Traditional
                 </span>
                 <h3 className="font-heading mt-2 text-base font-bold text-white">
-                  Love Among the Roses
+                  Lorna&apos;s Kuhingira
                 </h3>
               </div>
             </div>

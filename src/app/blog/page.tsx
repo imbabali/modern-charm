@@ -41,9 +41,9 @@ export default function BlogPage() {
       <section className="relative overflow-hidden px-6 py-32 text-center text-white md:py-40 lg:py-44">
         <HeroCarousel
           images={[
-            "/images/portfolio/allan-pauline/img_0791.jpg",
+            "/images/portfolio/allan-pauline-styling/img_4838.jpg",
             "/images/portfolio/oscar-sandra/IMG_0951.jpg",
-            "/images/hero-wedding.jpg",
+            "/images/portfolio/oscar-sandra/IMG_0833.jpg",
           ]}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/47 via-primary-dark/27 to-primary-dark/47" />

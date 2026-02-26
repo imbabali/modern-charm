@@ -145,9 +145,9 @@ export default function ContactContent() {
       <section className="relative overflow-hidden py-32 md:py-40 lg:py-44">
         <HeroCarousel
           images={[
-            "/images/portfolio/oscar-sandra/IMG_0947.jpg",
-            "/images/hero-wedding.jpg",
-            "/images/portfolio/allan-pauline/img_0791.jpg",
+            "/images/portfolio/oscar-sandra/IMG_0928.jpg",
+            "/images/portfolio/lornas-kuhingira/7b7a9513.jpg",
+            "/images/portfolio/allan-pauline/img_0697.jpg",
           ]}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/47 via-primary-dark/27 to-primary-dark/47" />

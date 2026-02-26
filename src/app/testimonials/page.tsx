@@ -94,7 +94,7 @@ export default function TestimonialsPage() {
           images={[
             "/images/portfolio/oscar-sandra/IMG_0882.jpg",
             "/images/portfolio/oscar-sandra/IMG_0947.jpg",
-            "/images/portfolio/wedding-highlights/IMG_3879.jpg",
+            "/images/portfolio/lornas-kuhingira/7b7a9543.jpg",
           ]}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/47 via-primary-dark/27 to-primary-dark/47" />

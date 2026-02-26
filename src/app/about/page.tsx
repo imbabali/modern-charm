@@ -146,10 +146,10 @@ export default function AboutPage() {
       <section className="relative overflow-hidden py-32 md:py-40 lg:py-44">
         <HeroCarousel
           images={[
-            "/images/portfolio/oscar-sandra/IMG_0795.jpg",
-            "/images/portfolio/oscar-sandra/IMG_2416.jpg",
+            "/images/portfolio/oscar-sandra/IMG_0846.jpg",
             "/images/portfolio/oscar-sandra/IMG_1930.jpg",
-            "/images/portfolio/allan-pauline/img_0748.jpg",
+            "/images/portfolio/allan-pauline-styling/img_4822.jpg",
+            "/images/portfolio/wedding-highlights/IMG_3879.jpg",
           ]}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/47 via-primary-dark/27 to-primary-dark/47" />
@@ -178,8 +178,8 @@ export default function AboutPage() {
             <div className="relative">
               <div className="aspect-[4/5] rounded-2xl overflow-hidden relative">
                 <Image
-                  src="/images/about-couple.jpg"
-                  alt="Modern Charm Uganda - Couple portrait under floral arch"
+                  src="/images/portfolio/oscar-sandra/IMG_0834.jpg"
+                  alt="Couple framed through elegant oval-back reception chairs"
                   fill
                   className="object-cover"
                   quality={80}
@@ -438,8 +438,8 @@ export default function AboutPage() {
       {/* CTA Section */}
       <section className="py-20 md:py-28 relative overflow-hidden">
         <Image
-          src="/images/portfolio/oscar-sandra/IMG_0795.jpg"
-          alt="Luxury black and white reception with gold arches and crystal chandeliers"
+          src="/images/portfolio/lornas-kuhingira/7b7a9496.jpg"
+          alt="Elegant event setup with pink and green floral installations"
           fill
           className="object-cover"
           quality={80}

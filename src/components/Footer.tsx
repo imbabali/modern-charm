@@ -21,12 +21,8 @@ const quickLinks = [
 ];
 
 const services = [
-  { href: "/services#planning", label: "Event Planning" },
-  { href: "/services#styling", label: "Event Styling" },
-  { href: "/services#management", label: "Event Management" },
-  { href: "/services#concept", label: "Concept Development" },
-  { href: "/services#gifting", label: "Corporate Gifting" },
-  { href: "/services#launches", label: "Product Launches" },
+  { href: "/services#planning", label: "Event Planning & Coordination" },
+  { href: "/services#styling", label: "Event Styling & Decor" },
 ];
 
 const socialLinks = [
