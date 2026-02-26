@@ -95,10 +95,11 @@ src/
 
 ## Development Notes
 - Tailwind v4 uses `@theme inline` block in globals.css — NOT tailwind.config.ts
-- Client components marked with `"use client"` only where needed (FAQ, Contact, Navbar, WhatsApp, Newsletter, HeroCarousel, AnimateOnScroll)
+- Client components marked with `"use client"` only where needed (FAQ, Contact, Navbar, WhatsApp, Newsletter, HeroCarousel, HeroVideoCarousel, AnimateOnScroll)
 - All pages pre-render as static content
 - Base CSS styles wrapped in `@layer base` so Tailwind utilities always override them
-- 3 video reels hosted on Vercel Blob CDN (hero, stats parallax, CTA on homepage)
+- Homepage hero uses HeroVideoCarousel — 6 x 10s clips from different events crossfading (720p, Vercel Blob CDN)
+- 2 additional video reels on Vercel Blob CDN (stats parallax, CTA on homepage)
 - HeroCarousel component provides crossfade image carousels on all sub-page heroes
 - Services page has 2 anchor IDs (`#planning`, `#styling`) for hash navigation
 - Footer service links use hash navigation to scroll to correct service category
@@ -178,3 +179,4 @@ src/
 - **2026-02-26**: Replaced blog gradient placeholders with real event photos — added `image` field to BlogPost interface, assigned unique photos to all 7 posts (matched to article content), updated listing tiles + detail page heroes with next/image, added OG image + JSON-LD image metadata
 - **2026-02-26**: Blog article heroes now use HeroCarousel with 3 crossfade images each (heroImages array), matching the carousel pattern on all other sub-pages. 21 unique unused images assigned across 7 posts
 - **2026-02-26**: Replaced team photos with professional headshots (user-provided), converted Benjamin's PNG to JPG, optimized all to 800px/quality 80. Team grid switched from CSS Grid to flexbox with justify-center for centered last row
+- **2026-02-26**: Homepage hero now plays clips from 6 different events (HeroVideoCarousel component). Trimmed 10s clips from Allan & Pauline, David & Michelle, Lorna's Kuhingira, Chris & Philomera, Rayner & Racheal, Turitwenkas — compressed to 720p (~15 MB total), uploaded to Vercel Blob CDN, crossfade between clips on ended
