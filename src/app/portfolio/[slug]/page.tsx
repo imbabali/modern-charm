@@ -213,7 +213,7 @@ export default async function EventDetailPage({ params }: Props) {
       <section className="relative overflow-hidden px-6 py-20 text-center md:py-28">
         <HeroCarousel
           images={event.images.slice(-3)}
-          objectPosition="center"
+          objectPosition={event.ctaPosition || "center"}
         />
         <div className="absolute inset-0 bg-primary-dark/57" />
         <div className="relative z-10 mx-auto max-w-2xl">
