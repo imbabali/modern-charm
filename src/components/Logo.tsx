@@ -24,62 +24,45 @@ export default function Logo({
       role="img"
     >
       {/*
-        Faithful trace of the Modern Charm MC monogram.
-        - The "C" is a wide copper/gold arc wrapping from upper-right
-          around the left to lower-right.
-        - The "M" sits inside with two sharp peaks and a centre valley,
-          its legs extending just past the C arc.
-        - Two small leaf/petal accents sit at ~10 o'clock (top-left)
-          and ~4 o'clock (bottom-right).
+        Modern Charm MC monogram — traced from logo-reference.png.
+
+        The C is a near-complete circle (gold) open at bottom-right,
+        spanning from ~1 o'clock clockwise to ~5 o'clock.
+        Two small leaf shapes sit at the C's endpoints (top-right
+        and bottom-right of the gap).
+        The M (white/adaptive) is wide and shallow, its outer legs
+        crossing through the C circle.
       */}
 
-      {/* ---- "C" arc (gold/copper accent) ---- */}
+      {/* ---- "C" — near-complete circle, open at bottom-right ---- */}
       <path
-        d="M138 52
-           C118 28, 72 28, 52 58
-           C32 88, 34 126, 54 152
-           C72 174, 118 176, 142 156"
+        d="M130 42
+           A 62 62 0 1 0 140 148"
         stroke={accentColor}
-        strokeWidth="6"
+        strokeWidth="5.5"
         strokeLinecap="round"
         fill="none"
       />
 
-      {/* ---- Leaf accent — top-left (~10 o'clock) ---- */}
-      <g transform="translate(44, 38) rotate(-35, 8, 8)">
-        <path
-          d="M0 8 Q8 -2, 16 8 Q8 18, 0 8Z"
-          fill={accentColor}
-        />
-      </g>
-      <g transform="translate(35, 50) rotate(-35, 6, 6)">
-        <path
-          d="M0 6 Q6 -1.5, 12 6 Q6 13.5, 0 6Z"
-          fill={accentColor}
-        />
-      </g>
-
-      {/* ---- Leaf accent — bottom-right (~4 o'clock) ---- */}
-      <g transform="translate(144, 144) rotate(-35, 8, 8)">
-        <path
-          d="M0 8 Q8 -2, 16 8 Q8 18, 0 8Z"
-          fill={accentColor}
-        />
-      </g>
-      <g transform="translate(153, 132) rotate(-35, 6, 6)">
-        <path
-          d="M0 6 Q6 -1.5, 12 6 Q6 13.5, 0 6Z"
-          fill={accentColor}
-        />
-      </g>
-
-      {/* ---- "M" letter ---- */}
+      {/* ---- Leaf accent — top-right (near C start) ---- */}
       <path
-        d="M56 155
-           L80 55
-           L100 118
-           L120 55
-           L144 155"
+        d="M126 38 Q134 28, 142 38 Q134 48, 126 38Z"
+        fill={accentColor}
+      />
+
+      {/* ---- Leaf accent — bottom-right (near C end) ---- */}
+      <path
+        d="M136 144 Q144 134, 152 144 Q144 154, 136 144Z"
+        fill={accentColor}
+      />
+
+      {/* ---- "M" — wide, shallow, legs cross through the C ---- */}
+      <path
+        d="M48 148
+           L78 52
+           L100 108
+           L122 52
+           L152 148"
         stroke={letterColor}
         strokeWidth="5.5"
         strokeLinecap="round"
