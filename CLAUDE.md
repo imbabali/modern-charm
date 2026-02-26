@@ -38,8 +38,10 @@ Website for **Modern Charm Limited** (@moderncharm_events) — a premier event m
 - **Body**: Inter (sans-serif) — `font-body`
 
 ### Logo
-- MC monogram in gold/copper on teal background
-- "MODERN CHARM" wordmark in white/cream
+- MC monogram in gold/copper on black background
+- "MODERN CHARM" wordmark in white
+- 4 logo variants in `public/images/`: `logo-gold.jpg` (in use), `logo-color.jpg`, `logo-white.jpg`, `logo-dark.jpg`
+- Logo.tsx uses `logo-gold.jpg` with 1.4:1 aspect ratio container + `object-contain` for full visibility
 - Reference image: `public/images/logo-reference.png`
 
 ## Project Structure
@@ -51,15 +53,28 @@ src/
     globals.css         # Tailwind theme + custom styles
     about/page.tsx      # Company story, team (5 members), mission/vision, values, how we work, clientele
     services/page.tsx   # 2 service categories (Event Planning & Coordination, Event Styling & Decor)
+    portfolio/page.tsx  # Filterable portfolio grid (All/Planning/Styling)
+    portfolio/[slug]/page.tsx # Event detail page with image gallery
     testimonials/page.tsx # Client stories + featured testimonial
     blog/page.tsx       # Journal/blog listing
+    blog/[slug]/page.tsx # Blog post detail with HeroCarousel
     faq/page.tsx        # Accordion FAQ (client component)
     contact/page.tsx    # Contact form + info (client component)
   components/
     Navbar.tsx          # Sticky nav, scroll-aware, mobile drawer
     Footer.tsx          # 4-column footer with newsletter
+    Logo.tsx            # Logo component (logo-gold.jpg, 1.4:1 aspect ratio)
+    HeroCarousel.tsx    # Crossfade image carousel for CTA sections
+    HeroVideoCarousel.tsx # Dual-video preloading carousel for homepage hero
+    PortfolioGrid.tsx   # Filterable portfolio grid (client component)
     NewsletterForm.tsx  # Newsletter input (client component)
     WhatsAppButton.tsx  # Floating WhatsApp CTA
+    AnimateOnScroll.tsx # Scroll-triggered animations
+    FAQContent.tsx      # FAQ accordion (client component)
+    ContactContent.tsx  # Contact form + info (client component)
+  data/
+    portfolio-events.ts # 8 event galleries with categories (planning/styling)
+    blog-posts.ts       # 7 blog posts with heroImages arrays
 ```
 
 ## Design Inspiration
@@ -103,7 +118,8 @@ src/
 - HeroCarousel component provides crossfade image carousels on all sub-page heroes
 - Services page has 2 anchor IDs (`#planning`, `#styling`) for hash navigation
 - Footer service links use hash navigation to scroll to correct service category
-- All images deduplicated — no image path used more than once across the site (except hero-wedding.jpg in OG/meta tags)
+- All CTA images deduplicated — 21 unique landscape images across 7 CTA sections, zero cross-page duplicates
+- Blog/portfolio data files share some images intentionally (blog articles about events reuse event photos)
 - Blog posts have `image` field (listing tiles) and `heroImages` array (detail page hero carousel with 3 images each) — real event photos, no gradient placeholders
 - Blog detail pages include OG image and JSON-LD image metadata
 - Contact form POSTs to `/api/contact` (Resend API)
@@ -180,4 +196,10 @@ src/
 - **2026-02-26**: Blog article heroes now use HeroCarousel with 3 crossfade images each (heroImages array), matching the carousel pattern on all other sub-pages. 21 unique unused images assigned across 7 posts
 - **2026-02-26**: Replaced team photos with professional headshots (user-provided), converted Benjamin's PNG to JPG, optimized all to 800px/quality 80. Team grid switched from CSS Grid to flexbox with justify-center for centered last row
 - **2026-02-26**: Homepage hero now plays clips from 6 different events (HeroVideoCarousel component). Trimmed 10s clips from Allan & Pauline, David & Michelle, Lorna's Kuhingira, Chris & Philomera, Rayner & Racheal, Turitwenkas — compressed to 720p (~15 MB total), uploaded to Vercel Blob CDN, crossfade between clips on ended
-- **2026-02-26**: Created portfolio page with filterable grid (All/Weddings/Traditional/Styling) and 8 event detail pages with image galleries, prev/next navigation, and CTAs. New files: `src/data/portfolio-events.ts`, `src/components/PortfolioGrid.tsx`, `src/app/portfolio/page.tsx`, `src/app/portfolio/[slug]/page.tsx`
+- **2026-02-26**: Created portfolio page with filterable grid (All/Planning/Styling) and 8 event detail pages with image galleries, prev/next navigation, and CTAs. New files: `src/data/portfolio-events.ts`, `src/components/PortfolioGrid.tsx`, `src/app/portfolio/page.tsx`, `src/app/portfolio/[slug]/page.tsx`
+- **2026-02-26**: Fixed homepage hero video glitch — removed poster image, videos now play directly without flash
+- **2026-02-26**: Integrated 4 official logo files (logo-gold.jpg, logo-color.jpg, logo-white.jpg, logo-dark.jpg). Logo.tsx uses logo-gold.jpg with 1.4:1 aspect ratio container + object-contain
+- **2026-02-26**: Recategorized portfolio from wedding/traditional/styling to planning/styling (matching service categories). Removed client names from titles (e.g., "Allan & Pauline" → "Lavender Garden Wedding")
+- **2026-02-26**: Homepage Featured Work: replaced hardcoded PortfolioCarousel with data-driven grid from portfolio-events.ts
+- **2026-02-26**: CTA landscape audit — replaced 8 portrait images with landscape alternatives across 7 CTA sections. All 21 CTA images now unique, zero cross-page duplicates
+- **2026-02-26**: Fixed HeroCarousel image cropping — changed object-[center_25%] to object-center for balanced display
