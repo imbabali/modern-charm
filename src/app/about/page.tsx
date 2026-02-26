@@ -11,6 +11,11 @@ import {
   Handshake,
   Target,
   Heart,
+  MessageCircle,
+  Palette,
+  Presentation,
+  CheckCircle,
+  Sparkles,
 } from "lucide-react";
 import HeroCarousel from "@/components/HeroCarousel";
 
@@ -112,30 +117,35 @@ const processSteps = [
     title: "Client Briefing",
     description:
       "We start by understanding your vision, goals, and preferences through an in-depth consultation.",
+    icon: MessageCircle,
   },
   {
     step: "02",
     title: "Brainstorming",
     description:
       "Our creative team develops unique concepts and ideas tailored to your event.",
+    icon: Lightbulb,
   },
   {
     step: "03",
     title: "Client Presentation",
     description:
       "We present our vision with detailed proposals, mood boards, and plans for your review.",
+    icon: Presentation,
   },
   {
     step: "04",
     title: "Concept Approval",
     description:
       "Together we refine the concept until it perfectly matches your expectations.",
+    icon: CheckCircle,
   },
   {
     step: "05",
     title: "Event Execution",
     description:
       "Our team brings everything to life with precision, ensuring a seamless and unforgettable experience.",
+    icon: Sparkles,
   },
 ];
 
@@ -324,7 +334,7 @@ export default function AboutPage() {
       {/* How We Work — Horizontal Timeline */}
       <section className="py-20 md:py-28 bg-white overflow-hidden">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 md:mb-20">
             <span className="inline-block text-accent-dark font-heading text-sm font-semibold tracking-widest uppercase mb-3">
               The Recipe for Our Charm
             </span>
@@ -339,66 +349,103 @@ export default function AboutPage() {
 
           {/* Desktop horizontal timeline */}
           <div className="hidden md:block relative">
-            {/* Continuous connecting line */}
-            <div className="absolute top-8 left-[10%] right-[10%] h-px bg-gradient-to-r from-accent/0 via-accent/40 to-accent/0" />
+            {/* Continuous connecting line — sits at the centre of the icon row */}
+            <div className="absolute top-[52px] left-[10%] right-[10%] h-0.5 bg-gradient-to-r from-accent/0 via-accent/30 to-accent/0" />
+            {/* Dashed overlay for texture */}
+            <div className="absolute top-[52px] left-[10%] right-[10%] h-0.5 border-t-2 border-dashed border-accent/20" />
 
-            <div className="grid grid-cols-5 gap-4 lg:gap-6">
-              {processSteps.map((item, index) => (
-                <div key={item.step} className="relative text-center group">
-                  {/* Timeline node */}
-                  <div className="relative mx-auto mb-8">
-                    {/* Outer ring pulse on hover */}
-                    <div className="absolute inset-0 mx-auto h-16 w-16 rounded-full bg-accent/20 group-hover:scale-150 group-hover:opacity-0 transition-all duration-700" />
-                    {/* Step circle */}
-                    <div className="relative mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-accent-dark text-white font-heading text-lg font-bold shadow-lg group-hover:bg-primary transition-colors duration-300 ring-4 ring-white">
-                      {item.step}
+            <div className="grid grid-cols-5 gap-4 lg:gap-8">
+              {processSteps.map((item, index) => {
+                const Icon = item.icon;
+                const isEven = index % 2 === 0;
+                return (
+                  <div key={item.step} className="relative text-center group">
+                    {/* ---- Card ABOVE the line (even steps: 01, 03, 05) ---- */}
+                    {isEven && (
+                      <div className="mb-6 rounded-2xl border border-cream-dark bg-cream p-5 shadow-sm group-hover:shadow-lg group-hover:border-accent/30 transition-all duration-300">
+                        <h3 className="font-heading text-base font-bold text-dark mb-1.5">
+                          {item.title}
+                        </h3>
+                        <p className="text-muted text-sm leading-relaxed">
+                          {item.description}
+                        </p>
+                      </div>
+                    )}
+                    {/* Spacer for odd steps so icon aligns with even icons */}
+                    {!isEven && <div className="mb-6 p-5 invisible rounded-2xl border border-transparent"><h3 className="text-base mb-1.5">&nbsp;</h3><p className="text-sm">&nbsp;</p></div>}
+
+                    {/* ---- Icon node on the timeline ---- */}
+                    <div className="relative mx-auto mb-6">
+                      {/* Pulse ring on hover */}
+                      <div className="absolute inset-0 mx-auto h-[72px] w-[72px] rounded-full bg-accent/10 group-hover:scale-[1.6] group-hover:opacity-0 transition-all duration-700" />
+                      {/* Step number badge */}
+                      <div className="absolute -top-2 -right-2 z-20 flex h-6 w-6 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-white shadow-md ring-2 ring-white">
+                        {item.step}
+                      </div>
+                      {/* Icon circle */}
+                      <div className="relative mx-auto flex h-[72px] w-[72px] items-center justify-center rounded-full bg-accent-dark text-white shadow-lg group-hover:bg-primary transition-colors duration-300 ring-4 ring-white">
+                        <Icon className="h-7 w-7" aria-hidden="true" />
+                      </div>
                     </div>
+
+                    {/* ---- Card BELOW the line (odd steps: 02, 04) ---- */}
+                    {!isEven && (
+                      <div className="mt-0 rounded-2xl border border-cream-dark bg-cream p-5 shadow-sm group-hover:shadow-lg group-hover:border-accent/30 transition-all duration-300">
+                        <h3 className="font-heading text-base font-bold text-dark mb-1.5">
+                          {item.title}
+                        </h3>
+                        <p className="text-muted text-sm leading-relaxed">
+                          {item.description}
+                        </p>
+                      </div>
+                    )}
+
+                    {/* Connector chevron between nodes */}
+                    {index < processSteps.length - 1 && (
+                      <div className="absolute top-[calc(50%)] right-0 translate-x-1/2 z-10 text-accent/40">
+                        <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
+                          <path d="M3 2l5 5-5 5" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      </div>
+                    )}
                   </div>
-                  {/* Content card */}
-                  <div className="rounded-xl bg-cream p-5 group-hover:bg-cream-dark group-hover:shadow-md transition-all duration-300">
-                    <h3 className="font-heading text-base font-bold text-dark mb-2">
-                      {item.title}
-                    </h3>
-                    <p className="text-muted text-sm leading-relaxed">
-                      {item.description}
-                    </p>
-                  </div>
-                  {/* Decorative arrow between steps */}
-                  {index < processSteps.length - 1 && (
-                    <div className="absolute top-[30px] right-0 translate-x-1/2 z-10 text-accent/40">
-                      <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true">
-                        <path d="M2 1l5 5-5 5" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                    </div>
-                  )}
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
 
           {/* Mobile vertical timeline */}
-          <div className="md:hidden relative pl-8">
+          <div className="md:hidden relative pl-12">
             {/* Vertical line */}
-            <div className="absolute left-[15px] top-0 bottom-0 w-px bg-gradient-to-b from-accent/40 via-accent/20 to-accent/40" />
+            <div className="absolute left-[23px] top-2 bottom-2 w-0.5 bg-gradient-to-b from-accent/10 via-accent/30 to-accent/10" />
 
             <div className="space-y-10">
-              {processSteps.map((item) => (
-                <div key={item.step} className="relative">
-                  {/* Timeline dot */}
-                  <div className="absolute -left-8 top-0 flex h-8 w-8 items-center justify-center rounded-full bg-accent-dark text-white font-heading text-xs font-bold shadow-md ring-4 ring-white">
-                    {item.step}
+              {processSteps.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <div key={item.step} className="relative">
+                    {/* Timeline icon node */}
+                    <div className="absolute -left-12 top-0">
+                      <div className="relative flex h-12 w-12 items-center justify-center rounded-full bg-accent-dark text-white shadow-md ring-4 ring-white">
+                        <Icon className="h-5 w-5" aria-hidden="true" />
+                      </div>
+                      {/* Step badge */}
+                      <div className="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-[9px] font-bold text-white ring-2 ring-white">
+                        {item.step}
+                      </div>
+                    </div>
+                    {/* Content card */}
+                    <div className="rounded-2xl border border-cream-dark bg-cream p-5 shadow-sm">
+                      <h3 className="font-heading text-base font-bold text-dark mb-1.5">
+                        {item.title}
+                      </h3>
+                      <p className="text-muted text-sm leading-relaxed">
+                        {item.description}
+                      </p>
+                    </div>
                   </div>
-                  {/* Content */}
-                  <div className="rounded-xl bg-cream p-5">
-                    <h3 className="font-heading text-base font-bold text-dark mb-2">
-                      {item.title}
-                    </h3>
-                    <p className="text-muted text-sm leading-relaxed">
-                      {item.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </div>
