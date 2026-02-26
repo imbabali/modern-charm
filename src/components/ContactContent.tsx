@@ -476,25 +476,39 @@ export default function ContactContent() {
         </div>
       </section>
 
-      {/* FAQ Teaser */}
-      <section className="py-12 md:py-16 bg-white">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-          <div className="bg-cream rounded-2xl p-8 md:p-12">
-            <h2 className="font-heading text-2xl md:text-3xl font-bold text-dark mb-4">
-              Have Questions?
-            </h2>
-            <p className="text-muted mb-6 max-w-xl mx-auto">
-              Find answers to common questions about our services, pricing,
-              timelines, and more on our FAQ page.
-            </p>
-            <Link
-              href="/faq"
-              className="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white font-semibold px-6 py-3 rounded-full transition-colors duration-300 shadow-md hover:shadow-lg"
-            >
-              Visit Our FAQ
-              <ArrowRight className="h-4 w-4" aria-hidden="true" />
-            </Link>
-          </div>
+      {/* Bottom CTA */}
+      <section className="relative overflow-hidden px-6 py-20 text-center md:py-28">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          className="absolute inset-0 h-full w-full object-cover"
+          aria-hidden="true"
+          tabIndex={-1}
+        >
+          <source
+            src="https://6jblcdd6pq0suc42.public.blob.vercel-storage.com/videos/cta-clips/cta-lala-intro-b-IJtqrjgXanfbc30d2eRTOpjCN74tlS.mp4"
+            type="video/mp4"
+          />
+        </video>
+        <div className="absolute inset-0 bg-primary-dark/57" />
+        <div className="relative z-10 mx-auto max-w-2xl">
+          <h2 className="font-heading text-3xl font-bold text-white md:text-4xl">
+            Have Questions?
+          </h2>
+          <p className="mt-4 font-body text-lg text-white/90">
+            Find answers to common questions about our services, pricing,
+            timelines, and more on our FAQ page.
+          </p>
+          <Link
+            href="/faq"
+            className="inline-flex items-center gap-2 bg-accent-dark hover:bg-accent text-white font-semibold px-6 py-3 rounded-full transition-colors duration-300 shadow-lg hover:shadow-xl"
+          >
+            Visit Our FAQ
+            <ArrowRight className="h-4 w-4" aria-hidden="true" />
+          </Link>
         </div>
       </section>
     </div>

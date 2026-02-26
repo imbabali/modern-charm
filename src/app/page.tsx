@@ -106,7 +106,7 @@ export default function Home() {
                 alt="Couple portrait under floral arch styled by Modern Charm Uganda"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
+                className="object-cover object-[center_35%]"
                 quality={85}
               />
               {/* Inner decorative frame */}
@@ -420,7 +420,7 @@ export default function Home() {
                 alt="Bridesmaids in sage green gowns with peach bouquets"
                 fill
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
                 quality={85}
               />
               <div className="absolute inset-0 bg-black/10 transition-opacity duration-300 group-hover:bg-black/0" />
@@ -462,7 +462,7 @@ export default function Home() {
                 alt="Elegant Kuhingira reception with sage green linens, pink floral chandeliers, and cross-back chairs"
                 fill
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
                 quality={85}
               />
               <div className="absolute inset-0 bg-black/10 transition-opacity duration-300 group-hover:bg-black/0" />
@@ -684,7 +684,7 @@ export default function Home() {
           SECTION 7 — CTA SECTION
           ================================================================ */}
       <section aria-label="Call to action" className="relative overflow-hidden px-6 py-24">
-        {/* Background video — event reel 3 */}
+        {/* Background video — Joshua & Rhona reception */}
         <video
           autoPlay
           muted
@@ -697,7 +697,7 @@ export default function Home() {
           tabIndex={-1}
         >
           <source
-            src="https://6jblcdd6pq0suc42.public.blob.vercel-storage.com/videos/event-reel-3-cropped.mp4"
+            src="https://6jblcdd6pq0suc42.public.blob.vercel-storage.com/videos/cta-clips/cta-joshua-rhona-hjxSNj57PQwgK4Auzr9WHTILPVqxeb.mp4"
             type="video/mp4"
           />
         </video>

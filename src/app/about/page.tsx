@@ -529,16 +529,23 @@ export default function AboutPage() {
 
       {/* CTA Section */}
       <section className="py-20 md:py-28 relative overflow-hidden">
-        <Image
-          src="/images/portfolio/lornas-kuhingira/7b7a9496.jpg"
-          alt="Elegant event setup with pink and green floral installations"
-          fill
-          className="object-cover"
-          quality={80}
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/47 via-primary-dark/27 to-primary-dark/47" />
-        <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          className="absolute inset-0 h-full w-full object-cover"
+          aria-hidden="true"
+          tabIndex={-1}
+        >
+          <source
+            src="https://6jblcdd6pq0suc42.public.blob.vercel-storage.com/videos/cta-clips/cta-chris-philomera-F7rzGC474CW1DxYK7X6N7zoQwtx1ND.mp4"
+            type="video/mp4"
+          />
+        </video>
+        <div className="absolute inset-0 bg-primary-dark/57" />
+        <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
             Ready to Create Something Beautiful?
           </h2>

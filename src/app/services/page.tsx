@@ -193,7 +193,7 @@ export default function ServicesPage() {
                           src={category.image}
                           alt={category.imageAlt}
                           fill
-                          className="object-cover group-hover:scale-105 transition-transform duration-500"
+                          className="object-cover object-[center_30%] group-hover:scale-105 transition-transform duration-500"
                           quality={80}
                           sizes="(max-width: 1024px) 100vw, 50vw"
                         />
@@ -286,9 +286,24 @@ export default function ServicesPage() {
       </section>
 
       {/* Bottom CTA Section */}
-      <section className="py-20 md:py-28 bg-gradient-to-br from-primary-dark via-primary to-primary-light relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDM0djItSDI0di0yaDEyek0zNiAyNHYySDI0di0yaDEyeiIvPjwvZz48L2c+PC9zdmc+')] opacity-30" />
-        <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
+      <section className="py-20 md:py-28 relative overflow-hidden">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          className="absolute inset-0 h-full w-full object-cover"
+          aria-hidden="true"
+          tabIndex={-1}
+        >
+          <source
+            src="https://6jblcdd6pq0suc42.public.blob.vercel-storage.com/videos/cta-clips/cta-sammy-lala-E8PNxd83k6daHHr8FVFOwFfPI2gxG3.mp4"
+            type="video/mp4"
+          />
+        </video>
+        <div className="absolute inset-0 bg-primary-dark/57" />
+        <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
             Can&apos;t Find What You&apos;re Looking For?
           </h2>

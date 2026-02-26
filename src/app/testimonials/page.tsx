@@ -188,8 +188,24 @@ export default function TestimonialsPage() {
       </section>
 
       {/* Bottom CTA */}
-      <section className="bg-gradient-to-br from-primary-dark via-primary to-primary-light px-6 py-20 text-center md:py-28">
-        <div className="mx-auto max-w-2xl">
+      <section className="relative overflow-hidden px-6 py-20 text-center md:py-28">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          className="absolute inset-0 h-full w-full object-cover"
+          aria-hidden="true"
+          tabIndex={-1}
+        >
+          <source
+            src="https://6jblcdd6pq0suc42.public.blob.vercel-storage.com/videos/cta-clips/cta-allan-pauline-2-htCXinnAnQ8ZLoZK1XhjwN71bfWOcg.mp4"
+            type="video/mp4"
+          />
+        </video>
+        <div className="absolute inset-0 bg-primary-dark/57" />
+        <div className="relative z-10 mx-auto max-w-2xl">
           <h2 className="font-heading text-3xl font-bold text-white md:text-4xl">
             Ready to create your own story?
           </h2>
