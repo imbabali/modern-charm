@@ -50,7 +50,7 @@ export const portfolioEvents: PortfolioEvent[] = [
       "A luxury black-and-white reception with towering gold arches, crystal chandeliers, and dramatic floral centrepieces that redefined opulence in Kampala.",
     coverImage: "/images/portfolio/oscar-sandra/IMG_0882.jpg",
     heroPosition: "center 40%",
-    ctaPosition: "center 45%",
+    ctaPosition: "center 40%",
     imagePositions: { 0: "center 40%", 4: "center 65%", 6: "center 50%" },
     images: [
       "/images/portfolio/oscar-sandra/IMG_0882.jpg",
@@ -78,7 +78,6 @@ export const portfolioEvents: PortfolioEvent[] = [
       "A curated collection showcasing sage green bridesmaids, an intimate candle wall, peach bouquets, and dreamy garden ceremony moments.",
     coverImage: "/images/portfolio/wedding-highlights/IMG_3879.jpg",
     heroPosition: "center 35%",
-    ctaPosition: "center 30%",
     images: [
       "/images/portfolio/wedding-highlights/IMG_3879.jpg",
       "/images/portfolio/wedding-highlights/IMG_3876.jpg",
@@ -87,9 +86,9 @@ export const portfolioEvents: PortfolioEvent[] = [
       "/images/portfolio/wedding-highlights/IMG_3884.jpg",
       "/images/portfolio/wedding-highlights/IMG_3886.jpg",
       "/images/portfolio/wedding-highlights/IMG_3889.jpg",
-      "/images/portfolio/wedding-highlights/IMG_3892.jpg",
-      "/images/portfolio/wedding-highlights/IMG_3895.jpg",
-      "/images/portfolio/wedding-highlights/IMG_3898.jpg",
+      "/images/portfolio/wedding-highlights/IMG_3879.jpg",
+      "/images/portfolio/wedding-highlights/IMG_3888_landscape.jpg",
+      "/images/portfolio/wedding-highlights/IMG_3890_landscape.jpg",
     ],
     date: "2025",
   },
@@ -166,6 +165,7 @@ export const portfolioEvents: PortfolioEvent[] = [
       "A breathtaking lakeside wedding featuring a grand tented reception with crystal chandeliers, vibrant floral walls in pink, orange, and yellow, elegant rattan seating, and a stunning multi-tier R&R cake — from church ceremony to golden-hour portraits.",
     coverImage: "/images/portfolio/rayner-racheal/couple-kiss-venue.jpg",
     heroPosition: "center 55%",
+    ctaPosition: "center 35%",
     images: [
       "/images/portfolio/rayner-racheal/couple-kiss-venue.jpg",
       "/images/portfolio/rayner-racheal/bride-smile-curtain.jpg",
