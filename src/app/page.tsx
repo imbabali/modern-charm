@@ -21,22 +21,12 @@ export default function Home() {
       <section aria-label="Hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background video carousel — clips from multiple events */}
         <HeroVideoCarousel
-          poster="/images/hero-wedding.jpg"
           clips={[
             "https://6jblcdd6pq0suc42.public.blob.vercel-storage.com/videos/hero-clips/clip-allan-pauline-1z6j4pUI2pONw0zp6DePgi7dxlmVgD.mp4",
             "https://6jblcdd6pq0suc42.public.blob.vercel-storage.com/videos/hero-clips/clip-david-michelle-GP83vWF5U9gnpiz2Pa5AAVb0GT3qhR.mp4",
             "https://6jblcdd6pq0suc42.public.blob.vercel-storage.com/videos/hero-clips/clip-lornas-kuhingira-2AliKKXbOCPCopwOviA5iPTUT6X8AM.mp4",
           ]}
         />
-        {/* Fallback static image for browsers without JavaScript */}
-        <noscript>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/images/hero-wedding.jpg"
-            alt="Luxury wedding reception styled by Modern Charm Uganda featuring lavender floral tablescape and white tents"
-            className="absolute inset-0 h-full w-full object-cover"
-          />
-        </noscript>
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/27 to-black/47" />
 
         {/* Decorative floating shapes */}
