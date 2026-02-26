@@ -40,13 +40,21 @@ export default function BlogPage() {
     <div className="min-h-screen bg-cream">
       {/* Hero Banner */}
       <section className="relative overflow-hidden px-6 py-32 text-center text-white md:py-40 lg:py-44">
-        <HeroCarousel
-          images={[
-            "/images/portfolio/allan-pauline-styling/img_4838.jpg",
-            "/images/portfolio/oscar-sandra/IMG_0951.jpg",
-            "/images/portfolio/oscar-sandra/IMG_0833.jpg",
-          ]}
-        />
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          className="absolute inset-0 h-full w-full object-cover"
+          aria-hidden="true"
+          tabIndex={-1}
+        >
+          <source
+            src="https://6jblcdd6pq0suc42.public.blob.vercel-storage.com/videos/cta-clips/cta-chris-philomera-b-ookfS48nof7IXvX2wCzZVWRvdLKhmi.mp4"
+            type="video/mp4"
+          />
+        </video>
         <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/47 via-primary-dark/27 to-primary-dark/47" />
         <div className="relative z-10 mx-auto max-w-3xl drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]">
           <h1 className="font-heading text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl">
@@ -149,6 +157,32 @@ export default function BlogPage() {
               </Link>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Bottom CTA */}
+      <section className="relative overflow-hidden px-6 py-20 text-center md:py-28">
+        <HeroCarousel
+          images={[
+            "/images/portfolio/allan-pauline-styling/img_4838.jpg",
+            "/images/portfolio/oscar-sandra/IMG_0951.jpg",
+            "/images/portfolio/oscar-sandra/IMG_0833.jpg",
+          ]}
+        />
+        <div className="absolute inset-0 bg-primary-dark/57" />
+        <div className="relative z-10 mx-auto max-w-2xl">
+          <h2 className="font-heading text-3xl font-bold text-white md:text-4xl">
+            Have a Story to Tell?
+          </h2>
+          <p className="mt-4 font-body text-lg text-white/90">
+            Let us help you create an event worth writing about.
+          </p>
+          <Link
+            href="/contact"
+            className="mt-8 inline-block rounded-full bg-accent-dark px-10 py-4 font-body text-base font-semibold text-white shadow-lg transition-all duration-300 hover:bg-accent hover:shadow-xl"
+          >
+            Start Planning
+          </Link>
         </div>
       </section>
 
