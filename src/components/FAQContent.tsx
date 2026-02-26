@@ -91,6 +91,7 @@ export default function FAQContent({ faqData }: { faqData: FAQCategory[] }) {
           playsInline
           preload="metadata"
           className="absolute inset-0 h-full w-full object-cover"
+          style={{ objectPosition: "center 35%" }}
           aria-hidden="true"
           tabIndex={-1}
         >
@@ -151,7 +152,7 @@ export default function FAQContent({ faqData }: { faqData: FAQCategory[] }) {
             "/images/portfolio/lornas-kuhingira/7b7a9562.jpg",
             "/images/portfolio/lornas-kuhingira/7b7a9609.jpg",
           ]}
-          objectPosition="center 20%"
+          objectPosition="center 35%"
         />
         <div className="absolute inset-0 bg-primary-dark/57" />
         <div className="relative z-10 mx-auto max-w-2xl">

@@ -520,7 +520,7 @@ export default function AboutPage() {
             "/images/portfolio/lornas-kuhingira/7b7a9559.jpg",
             "/images/portfolio/allan-pauline/img_0717.jpg",
           ]}
-          objectPosition="center 20%"
+          objectPosition="center 35%"
         />
         <div className="absolute inset-0 bg-primary-dark/57" />
         <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">

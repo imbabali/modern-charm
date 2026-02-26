@@ -183,6 +183,21 @@
   transform-origin: left;
 }
 
+/* ===== Portfolio Marquee ===== */
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+}
+
 /* ===== Scroll-triggered Animations ===== */
 
 .animate-on-scroll {
@@ -219,7 +234,8 @@
 
   .animate-whatsapp-pulse,
   .animate-whatsapp-wiggle,
-  .animate-chat-bubble {
+  .animate-chat-bubble,
+  .animate-marquee {
     animation: none;
   }
 }

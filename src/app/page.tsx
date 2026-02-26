@@ -10,7 +10,8 @@ import {
 } from "lucide-react";
 import HeroVideoCarousel from "@/components/HeroVideoCarousel";
 import ClientLogos from "@/components/ClientLogos";
-import { portfolioEvents, categoryLabels } from "@/data/portfolio-events";
+import PortfolioCarousel from "@/components/PortfolioCarousel";
+import { portfolioEvents } from "@/data/portfolio-events";
 
 export default function Home() {
   return (
@@ -359,78 +360,38 @@ export default function Home() {
       {/* ================================================================
           SECTION 5 — PORTFOLIO PREVIEW
           ================================================================ */}
-      <section aria-label="Portfolio preview" className="bg-white px-6 py-24">
-        <div className="mx-auto max-w-7xl">
-          {/* Section header */}
-          <div className="mx-auto mb-16 max-w-2xl text-center">
-            <div className="mb-4 flex items-center justify-center gap-3">
-              <span className="h-px w-10 bg-accent" />
-              <span className="font-body text-xs tracking-[0.3em] font-semibold text-accent-dark uppercase">
-                Our Work
-              </span>
-              <span className="h-px w-10 bg-accent" />
-            </div>
-            <h2 className="font-heading text-4xl font-bold text-dark sm:text-5xl">
-              Featured Work
-            </h2>
-            <p className="font-body mt-4 text-lg text-muted">
-              A glimpse into the celebrations we have had the honour of
-              styling. Each event is a unique story brought to life through
-              design.
-            </p>
+      <section aria-label="Portfolio preview" className="bg-white py-24">
+        {/* Section header */}
+        <div className="mx-auto mb-16 max-w-2xl px-6 text-center">
+          <div className="mb-4 flex items-center justify-center gap-3">
+            <span className="h-px w-10 bg-accent" />
+            <span className="font-body text-xs tracking-[0.3em] font-semibold text-accent-dark uppercase">
+              Our Work
+            </span>
+            <span className="h-px w-10 bg-accent" />
           </div>
+          <h2 className="font-heading text-4xl font-bold text-dark sm:text-5xl">
+            Featured Work
+          </h2>
+          <p className="font-body mt-4 text-lg text-muted">
+            A glimpse into the celebrations we have had the honour of
+            styling. Each event is a unique story brought to life through
+            design.
+          </p>
+        </div>
 
-          {/* Event grid — same data as portfolio page */}
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {portfolioEvents.map((event) => (
-              <Link
-                key={event.slug}
-                href={`/portfolio/${event.slug}`}
-                className="group relative overflow-hidden rounded-2xl bg-cream shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
-              >
-                <div className="relative aspect-[4/3] overflow-hidden">
-                  <Image
-                    src={event.coverImage}
-                    alt={event.description}
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    quality={80}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/5 to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-40" />
-                  <span className="absolute top-4 left-4 rounded-full bg-white/20 px-3 py-1 font-body text-xs font-medium tracking-wide text-white backdrop-blur-sm">
-                    {categoryLabels[event.category]}
-                  </span>
-                  <span className="absolute top-4 right-4 rounded-full bg-white/20 px-3 py-1 font-body text-xs font-medium text-white backdrop-blur-sm">
-                    {event.images.length} photos
-                  </span>
-                </div>
-                <div className="p-6">
-                  <h3 className="font-heading text-xl font-bold text-dark group-hover:text-primary transition-colors duration-300">
-                    {event.title}
-                  </h3>
-                  <p className="mt-2 font-body text-sm leading-relaxed text-muted line-clamp-2">
-                    {event.description}
-                  </p>
-                  <span className="mt-4 inline-flex items-center gap-1.5 font-body text-sm font-semibold text-accent-dark transition-colors group-hover:text-primary">
-                    View Gallery
-                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
-                  </span>
-                </div>
-              </Link>
-            ))}
-          </div>
+        {/* Infinite scrolling carousel — full width */}
+        <PortfolioCarousel events={portfolioEvents} />
 
-          {/* CTA */}
-          <div className="mt-12 text-center">
-            <Link
-              href="/portfolio"
-              className="font-body group inline-flex items-center gap-2 rounded-full bg-primary px-8 py-4 text-sm font-semibold tracking-wide text-white uppercase transition-all duration-300 hover:bg-primary-dark hover:shadow-lg hover:shadow-primary/25"
-            >
-              View All Projects
-              <ArrowRight aria-hidden="true" className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-            </Link>
-          </div>
+        {/* CTA */}
+        <div className="mt-12 text-center">
+          <Link
+            href="/portfolio"
+            className="font-body group inline-flex items-center gap-2 rounded-full bg-primary px-8 py-4 text-sm font-semibold tracking-wide text-white uppercase transition-all duration-300 hover:bg-primary-dark hover:shadow-lg hover:shadow-primary/25"
+          >
+            View All Projects
+            <ArrowRight aria-hidden="true" className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+          </Link>
         </div>
       </section>
 
@@ -568,6 +529,7 @@ export default function Home() {
           preload="metadata"
           poster="/images/hero-dance.jpg"
           className="absolute inset-0 h-full w-full object-cover"
+          style={{ objectPosition: "center 35%" }}
           aria-hidden="true"
           tabIndex={-1}
         >
