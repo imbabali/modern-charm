@@ -77,7 +77,7 @@ export default function PortfolioPage() {
             "/images/portfolio/oscar-sandra/IMG_0892.jpg",
             "/images/portfolio/lornas-kuhingira/7b7a9602.jpg",
           ]}
-          objectPosition="center 35%"
+          objectPosition="center 30%"
         />
         <div className="absolute inset-0 bg-primary-dark/57" />
         <div className="relative z-10 mx-auto max-w-2xl">

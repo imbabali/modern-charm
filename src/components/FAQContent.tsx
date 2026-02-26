@@ -91,7 +91,7 @@ export default function FAQContent({ faqData }: { faqData: FAQCategory[] }) {
           playsInline
           preload="metadata"
           className="absolute inset-0 h-full w-full object-cover"
-          style={{ objectPosition: "center 35%" }}
+          style={{ objectPosition: "center 25%" }}
           aria-hidden="true"
           tabIndex={-1}
         >
