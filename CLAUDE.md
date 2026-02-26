@@ -1,7 +1,7 @@
 # Modern Charm Uganda - Project Documentation
 
 ## Project Overview
-Website for **Modern Charm Uganda** (@moderncharm_events) — a full-service event styling & decor company based in Kampala, Uganda. Tagline: *"Some are born with it, others work for it! Then there's us, the ones who make charm happen!"*
+Website for **Modern Charm Limited** (@moderncharm_events) — a premier event management company based in Kampala, Uganda. Tagline: *"Some are born with it, others work for it! Then there's us, the ones who make charm happen!"*
 
 ## Live URLs
 - **Production**: https://modern-charm.vercel.app
@@ -47,14 +47,12 @@ Website for **Modern Charm Uganda** (@moderncharm_events) — a full-service eve
 src/
   app/
     layout.tsx          # Root layout (Navbar + Footer + WhatsApp)
-    page.tsx            # Homepage (7 sections)
+    page.tsx            # Homepage (8 sections incl. clientele)
     globals.css         # Tailwind theme + custom styles
-    about/page.tsx      # Company story, team, mission
-    services/page.tsx   # 6 service categories with details
-    portfolio/page.tsx  # Filterable project gallery (client component)
+    about/page.tsx      # Company story, team (5 members), mission/vision, values, how we work, clientele
+    services/page.tsx   # 6 service offerings (planning, styling, management, concept, gifting, launches)
     testimonials/page.tsx # Client stories + featured testimonial
     blog/page.tsx       # Journal/blog listing
-    pricing/page.tsx    # 3 pricing tiers + add-ons
     faq/page.tsx        # Accordion FAQ (client component)
     contact/page.tsx    # Contact form + info (client component)
   components/
@@ -80,18 +78,21 @@ src/
 - Smooth hover transitions and micro-interactions
 - WhatsApp integration (common in Uganda/East Africa)
 
-## Services Covered
-1. Wedding Styling & Decor
-2. Corporate Events
-3. Traditional Ceremonies (Kwanjula & Kuhingira)
-4. Birthday & Anniversary Celebrations
-5. Bridal Showers & Baby Showers
-6. Event Planning & Coordination
+## Services Covered (from company profile)
+1. Event Planning
+2. Event Styling
+3. Event Management
+4. Concept Development
+5. Corporate Gifting
+6. Product Launches
 
-## Pricing Tiers
-- **Essential Charm**: From 2,000,000 UGX (up to 100 guests)
-- **Premium Charm**: From 5,000,000 UGX (up to 250 guests)
-- **Grand Charm**: From 12,000,000 UGX (unlimited guests)
+## Clientele
+- UEGCL (Uganda Electricity Generation Company Limited)
+- Unicaf University
+- KCB Bank
+- Hima Cement
+- Bloomberg Philanthropies
+- MAAD McCann
 
 ## Development Notes
 - Tailwind v4 uses `@theme inline` block in globals.css — NOT tailwind.config.ts
@@ -101,14 +102,17 @@ src/
 - Base CSS styles wrapped in `@layer base` so Tailwind utilities always override them
 - 3 video reels hosted on Vercel Blob CDN (hero, stats parallax, CTA on homepage)
 - HeroCarousel component provides crossfade image carousels on all sub-page heroes
-- Services page sections have anchor IDs (`#weddings`, `#corporate`, `#traditional`, `#birthdays`, `#showers`, `#planning`) for hash navigation
-- Homepage service cards and footer service links use hash navigation to scroll to correct service
+- Services page sections have anchor IDs (`#planning`, `#styling`, `#management`, `#concept`, `#gifting`, `#launches`) for hash navigation
+- Footer service links use hash navigation to scroll to correct service section
 - Contact form POSTs to `/api/contact` (Resend API)
 - Newsletter form POSTs to `/api/newsletter` (Resend API)
 
-## Team
-- **Philip Travis Higiro** — Events Director | +256 779 399 409
-- **Benjamin Bicung** — Business Development | +256 775 826 795
+## Team (5 members, from company profile)
+- **Philip Higiro** — Team Lead | +256 779 399 409
+- **Benjamin Bicung** — Project & Finance Manager | +256 775 826 795
+- **Lamuel Mukendenta** — Technical Lead
+- **Lilian Nalukenge** — Event Manager / Logistics Coordinator
+- **Adonia Waibale** — Creative Director
 
 ## Contact Details
 - Phone: +256 779 399 409 / +256 775 826 795
@@ -132,9 +136,8 @@ src/
 - [x] ~~Add Google Maps embed on contact page~~ — Removed (contact page redesigned without map)
 - [x] ~~Add real portfolio items~~ — Done (Allan & Pauline wedding gallery)
 - [ ] Add real testimonials — currently placeholder; need real reviews from Instagram comments/DMs or Google Reviews. Updates needed in `src/app/testimonials/page.tsx` (featured + 6 grid) and `src/app/page.tsx` (3 homepage cards). No Google Business profile exists yet; Instagram @moderncharm_events has reviews in post comments but they aren't scrapable programmatically
-- [ ] Add real team photos (Philip & Benjamin — currently gradient initials)
-- [ ] Add real photos for corporate, traditional, celebration portfolio categories
-- [ ] Verify homepage stats accuracy (500+ Events, 8+ Years, 50+ Venue Partners)
+- [x] ~~Add real team photos~~ — Done (5 team members extracted from company profile PDF)
+- [ ] Verify homepage stats accuracy (500+ Events, 6+ Years, 50+ Venue Partners)
 - [x] ~~Add blog post detail pages~~ — Done (7 blog posts with dynamic [slug] routing)
 - [x] ~~Implement SEO~~ — Done (metadataBase, sitemap.ts with blog slugs, robots.ts, JSON-LD EventPlanning + LocalBusiness + Article + FAQ schemas, per-page OG/Twitter/canonical tags)
 - [x] ~~Add page transition animations~~ — Done (AnimateOnScroll component, CSS scroll animations)
@@ -165,3 +168,4 @@ src/
 - **2026-02-25**: About page polish — removed mission/vision numbering, matched CTA overlay to hero opacity, swapped CTA to landscape image
 - **2026-02-25**: Footer compacted — tighter spacing throughout (py, gap, space-y), original font sizes preserved
 - **2026-02-25**: Client readiness audit — removed "Coming Soon" blog section + "Featured Image" text, removed 4 gradient placeholder portfolio items, deleted boilerplate SVGs + business-cards.pdf, removed console.error from API routes, cleaned placeholder comments, fixed unused import in Navbar
+- **2026-02-26**: Major company profile integration — extracted 5 team photos from PDF (Philip Higiro, Benjamin Bicung, Lamuel Mukendenta, Lilian Nalukenge, Adonia Waibale), rewrote About page (mission/vision/values from PDF, 5-step "How We Work" process, "Trusted By" clientele section), rewrote Services page (6 offerings: Event Planning, Styling, Management, Concept Development, Corporate Gifting, Product Launches), updated Homepage (6+ years stat, clientele section, updated about text, updated CTAs), removed Pricing and Portfolio pages, updated Navbar/Footer/sitemap/metadata
