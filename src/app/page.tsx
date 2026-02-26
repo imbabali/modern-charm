@@ -9,6 +9,7 @@ import {
   ChevronDown,
 } from "lucide-react";
 import HeroVideoCarousel from "@/components/HeroVideoCarousel";
+import PortfolioCarousel from "@/components/PortfolioCarousel";
 
 export default function Home() {
   return (
@@ -390,134 +391,53 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Bento grid */}
-          <div className="grid auto-rows-[240px] grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {/* Large — spans 2 cols & 2 rows: Oscar & Sandra Reception */}
-            <div className="group relative overflow-hidden rounded-2xl sm:col-span-2 sm:row-span-2">
-              <Image
-                src="/images/portfolio/oscar-sandra/IMG_0795.jpg"
-                alt="Oscar & Sandra's grand reception with black & white decor, gold arches and white floral installations"
-                fill
-                sizes="(max-width: 640px) 100vw, 50vw"
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
-                quality={85}
-              />
-              <div className="absolute inset-0 bg-black/20 transition-opacity duration-300 group-hover:bg-black/10" />
-              <div className="absolute bottom-6 left-6">
-                <span className="font-body rounded-full bg-white/20 px-3 py-1 text-xs font-medium tracking-wide text-white backdrop-blur-sm">
-                  Wedding
-                </span>
-                <h3 className="font-heading mt-2 text-xl font-bold text-white">
-                  Oscar &amp; Sandra&apos;s Grand Reception
-                </h3>
-              </div>
-            </div>
-
-            {/* Small 1: Wedding Highlights — Bridesmaids */}
-            <div className="group relative overflow-hidden rounded-2xl">
-              <Image
-                src="/images/portfolio/wedding-highlights/IMG_3876.jpg"
-                alt="Bridesmaids in sage green gowns with peach bouquets"
-                fill
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                quality={85}
-              />
-              <div className="absolute inset-0 bg-black/10 transition-opacity duration-300 group-hover:bg-black/0" />
-              <div className="absolute bottom-4 left-4">
-                <span className="font-body rounded-full bg-white/20 px-3 py-1 text-xs font-medium tracking-wide text-white backdrop-blur-sm">
-                  Wedding
-                </span>
-                <h3 className="font-heading mt-2 text-base font-bold text-white">
-                  Sage &amp; Peach Elegance
-                </h3>
-              </div>
-            </div>
-
-            {/* Small 2: David & Michelle — Luxe Head Table */}
-            <div className="group relative overflow-hidden rounded-2xl">
-              <Image
-                src="/images/portfolio/david-michelle/7b7a0805.jpg"
-                alt="Luxurious head table with DM monogram, pink florals and crystal chandeliers"
-                fill
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
-                quality={85}
-              />
-              <div className="absolute inset-0 bg-black/10 transition-opacity duration-300 group-hover:bg-black/0" />
-              <div className="absolute bottom-4 left-4">
-                <span className="font-body rounded-full bg-white/20 px-3 py-1 text-xs font-medium tracking-wide text-white backdrop-blur-sm">
-                  Wedding
-                </span>
-                <h3 className="font-heading mt-2 text-base font-bold text-white">
-                  David &amp; Michelle&apos;s Luxe Reception
-                </h3>
-              </div>
-            </div>
-
-            {/* Small 3: Lorna's Kuhingira — Sage Green Reception */}
-            <div className="group relative overflow-hidden rounded-2xl">
-              <Image
-                src="/images/portfolio/lornas-kuhingira/7b7a9519.jpg"
-                alt="Elegant Kuhingira reception with sage green linens, pink floral chandeliers, and cross-back chairs"
-                fill
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                quality={85}
-              />
-              <div className="absolute inset-0 bg-black/10 transition-opacity duration-300 group-hover:bg-black/0" />
-              <div className="absolute bottom-4 left-4">
-                <span className="font-body rounded-full bg-white/20 px-3 py-1 text-xs font-medium tracking-wide text-white backdrop-blur-sm">
-                  Traditional
-                </span>
-                <h3 className="font-heading mt-2 text-base font-bold text-white">
-                  Lorna&apos;s Kuhingira
-                </h3>
-              </div>
-            </div>
-
-            {/* Large 2 — spans 2 cols: Allan & Pauline Reception */}
-            <div className="group relative overflow-hidden rounded-2xl sm:col-span-2">
-              <Image
-                src="/images/portfolio/allan-pauline/img_0748.jpg"
-                alt="Allan & Pauline's lavender floral tablescape reception"
-                fill
-                sizes="(max-width: 640px) 100vw, 50vw"
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
-                quality={85}
-              />
-              <div className="absolute inset-0 bg-black/20 transition-opacity duration-300 group-hover:bg-black/10" />
-              <div className="absolute bottom-6 left-6">
-                <span className="font-body rounded-full bg-white/20 px-3 py-1 text-xs font-medium tracking-wide text-white backdrop-blur-sm">
-                  Wedding
-                </span>
-                <h3 className="font-heading mt-2 text-xl font-bold text-white">
-                  Garden Wedding at Lake Victoria
-                </h3>
-              </div>
-            </div>
-
-            {/* Small 4: Oscar & Sandra — Groomsmen Toast */}
-            <div className="group relative overflow-hidden rounded-2xl">
-              <Image
-                src="/images/portfolio/oscar-sandra/IMG_0267.jpg"
-                alt="Groomsmen raising glasses in a black & white toast"
-                fill
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
-                quality={85}
-              />
-              <div className="absolute inset-0 bg-black/10 transition-opacity duration-300 group-hover:bg-black/0" />
-              <div className="absolute bottom-4 left-4">
-                <span className="font-body rounded-full bg-white/20 px-3 py-1 text-xs font-medium tracking-wide text-white backdrop-blur-sm">
-                  Celebration
-                </span>
-                <h3 className="font-heading mt-2 text-base font-bold text-white">
-                  Groomsmen&apos;s Toast
-                </h3>
-              </div>
-            </div>
-          </div>
+          {/* Horizontal carousel */}
+          <PortfolioCarousel
+            slides={[
+              {
+                image: "/images/portfolio/oscar-sandra/IMG_0795.jpg",
+                alt: "Oscar & Sandra's grand reception with black & white decor, gold arches and white floral installations",
+                label: "Wedding",
+                title: "Oscar & Sandra's Grand Reception",
+                href: "/contact",
+              },
+              {
+                image: "/images/portfolio/wedding-highlights/IMG_3876.jpg",
+                alt: "Bridesmaids in sage green gowns with peach bouquets",
+                label: "Wedding",
+                title: "Sage & Peach Elegance",
+                href: "/contact",
+              },
+              {
+                image: "/images/portfolio/david-michelle/7b7a0805.jpg",
+                alt: "Luxurious head table with DM monogram, pink florals and crystal chandeliers",
+                label: "Wedding",
+                title: "David & Michelle's Luxe Reception",
+                href: "/contact",
+              },
+              {
+                image: "/images/portfolio/lornas-kuhingira/7b7a9519.jpg",
+                alt: "Elegant Kuhingira reception with sage green linens, pink floral chandeliers, and cross-back chairs",
+                label: "Traditional",
+                title: "Lorna's Kuhingira",
+                href: "/contact",
+              },
+              {
+                image: "/images/portfolio/allan-pauline/img_0748.jpg",
+                alt: "Allan & Pauline's lavender floral tablescape reception",
+                label: "Wedding",
+                title: "Garden Wedding at Lake Victoria",
+                href: "/contact",
+              },
+              {
+                image: "/images/portfolio/oscar-sandra/IMG_0267.jpg",
+                alt: "Groomsmen raising glasses in a black & white toast",
+                label: "Celebration",
+                title: "Groomsmen's Toast",
+                href: "/contact",
+              },
+            ]}
+          />
 
           {/* CTA */}
           <div className="mt-12 text-center">

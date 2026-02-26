@@ -77,6 +77,10 @@
   background: var(--color-primary-dark);
 }
 
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 /* ===== Custom Utility Classes ===== */
 
 /* Container with max width and horizontal padding */
