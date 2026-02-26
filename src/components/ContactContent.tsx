@@ -505,7 +505,7 @@ export default function ContactContent() {
           </p>
           <Link
             href="/faq"
-            className="inline-flex items-center gap-2 bg-accent-dark hover:bg-accent text-white font-semibold px-6 py-3 rounded-full transition-colors duration-300 shadow-lg hover:shadow-xl"
+            className="mt-8 inline-flex items-center gap-2 bg-accent-dark hover:bg-accent text-white font-semibold px-8 py-4 rounded-full transition-colors duration-300 shadow-lg hover:shadow-xl"
           >
             Visit Our FAQ
             <ArrowRight className="h-4 w-4" aria-hidden="true" />

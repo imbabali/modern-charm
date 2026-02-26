@@ -72,7 +72,7 @@ export default function BlogPage() {
         <div className="mx-auto max-w-6xl">
           <Link href={`/blog/${featuredPost.slug}`} className="group block">
             <div className="overflow-hidden rounded-2xl bg-white shadow-md transition-all duration-300 hover:shadow-xl md:flex">
-              <div className="relative h-64 w-full md:h-auto md:w-1/2">
+              <div className="relative h-64 w-full md:min-h-[320px] md:h-auto md:w-1/2">
                 <Image
                   src={featuredPost.image}
                   alt={featuredPost.title}

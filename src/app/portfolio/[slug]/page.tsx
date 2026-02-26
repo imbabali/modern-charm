@@ -8,6 +8,7 @@ import {
   getEventBySlug,
   categoryLabels,
 } from "@/data/portfolio-events";
+import HeroCarousel from "@/components/HeroCarousel";
 
 /* ---------- Static params ---------- */
 
@@ -174,7 +175,7 @@ export default async function EventDetailPage({ params }: Props) {
                 <span className="font-body text-xs font-medium uppercase tracking-wider text-muted">
                   Previous
                 </span>
-                <p className="font-heading text-lg font-bold text-dark group-hover:text-primary transition-colors">
+                <p className="font-heading text-lg font-bold text-dark group-hover:text-primary transition-colors line-clamp-1">
                   {prevEvent.title}
                 </p>
               </div>
@@ -195,7 +196,7 @@ export default async function EventDetailPage({ params }: Props) {
                 <span className="font-body text-xs font-medium uppercase tracking-wider text-muted">
                   Next
                 </span>
-                <p className="font-heading text-lg font-bold text-dark group-hover:text-primary transition-colors">
+                <p className="font-heading text-lg font-bold text-dark group-hover:text-primary transition-colors line-clamp-1">
                   {nextEvent.title}
                 </p>
               </div>
@@ -207,8 +208,13 @@ export default async function EventDetailPage({ params }: Props) {
       </section>
 
       {/* Bottom CTA */}
-      <section className="bg-primary-dark px-6 py-20 text-center md:py-28">
-        <div className="mx-auto max-w-2xl">
+      <section className="relative overflow-hidden px-6 py-20 text-center md:py-28">
+        <HeroCarousel
+          images={event.images.slice(-3)}
+          objectPosition="center 35%"
+        />
+        <div className="absolute inset-0 bg-primary-dark/57" />
+        <div className="relative z-10 mx-auto max-w-2xl">
           <h2 className="font-heading text-3xl font-bold text-white md:text-4xl">
             Ready to plan your event?
           </h2>

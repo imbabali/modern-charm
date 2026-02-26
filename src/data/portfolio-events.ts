@@ -66,7 +66,7 @@ export const portfolioEvents: PortfolioEvent[] = [
   {
     slug: "wedding-highlights",
     title: "Sage & Peach Elegance",
-    category: "styling",
+    category: "planning",
     description:
       "A curated collection showcasing sage green bridesmaids, an intimate candle wall, peach bouquets, and dreamy garden ceremony moments.",
     coverImage: "/images/portfolio/wedding-highlights/IMG_3879.jpg",
@@ -87,7 +87,7 @@ export const portfolioEvents: PortfolioEvent[] = [
   {
     slug: "lornas-kuhingira",
     title: "Traditional Kuhingira Ceremony",
-    category: "planning",
+    category: "styling",
     description:
       "A vibrant Kuhingira ceremony rich in Ankole tradition, with layered draping, cultural attire, and a beautifully styled gift-presentation stage.",
     coverImage: "/images/portfolio/lornas-kuhingira/7b7a9543.jpg",
@@ -110,7 +110,7 @@ export const portfolioEvents: PortfolioEvent[] = [
   {
     slug: "david-michelle",
     title: "Pink & Gold Luxe Reception",
-    category: "planning",
+    category: "styling",
     description:
       "A luxe pink-and-gold reception featuring elegant table arrangements, sweeping aerial views, and an atmosphere of refined celebration.",
     coverImage: "/images/portfolio/david-michelle/7b7a0805.jpg",
@@ -129,7 +129,7 @@ export const portfolioEvents: PortfolioEvent[] = [
   {
     slug: "sammy-lala",
     title: "Classic Wedding Celebration",
-    category: "planning",
+    category: "styling",
     description:
       "A joyful wedding celebration filled with heartfelt moments, stylish florals, and an unforgettable reception atmosphere.",
     coverImage: "/images/portfolio/sammy-lala/img_3558.jpg",

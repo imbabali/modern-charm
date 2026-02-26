@@ -142,7 +142,7 @@ export default function Navbar() {
               {/* Book Consultation CTA — Desktop */}
               <Link
                 href="/contact"
-                className={`hidden lg:inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
+                className={`hidden xl:inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
                   isScrolled
                     ? "bg-accent-dark text-white hover:bg-accent shadow-sm hover:shadow-md"
                     : "bg-accent-dark text-white hover:bg-accent shadow-lg"

@@ -127,12 +127,12 @@ export default function Footer() {
             <h3 className="font-heading text-lg font-semibold text-white mb-3">
               Quick Links
             </h3>
-            <ul className="space-y-1">
+            <ul className="space-y-0">
               {quickLinks.map((link) => (
                 <li key={link.href + link.label}>
                   <Link
                     href={link.href}
-                    className="text-white text-sm hover:text-white transition-colors duration-200 inline-flex items-center gap-2"
+                    className="text-white text-sm hover:text-white transition-colors duration-200 inline-flex items-center gap-2 py-1.5"
                   >
                     <span className="w-1 h-1 rounded-full bg-accent/50" />
                     {link.label}
@@ -147,12 +147,12 @@ export default function Footer() {
             <h3 className="font-heading text-lg font-semibold text-white mb-3">
               Our Services
             </h3>
-            <ul className="space-y-1">
+            <ul className="space-y-0">
               {services.map((service, index) => (
                 <li key={index}>
                   <Link
                     href={service.href}
-                    className="text-white text-sm hover:text-white transition-colors duration-200 inline-flex items-center gap-2"
+                    className="text-white text-sm hover:text-white transition-colors duration-200 inline-flex items-center gap-2 py-1.5"
                   >
                     <span className="w-1 h-1 rounded-full bg-accent/50" />
                     {service.label}
@@ -167,11 +167,11 @@ export default function Footer() {
             <h3 className="font-heading text-lg font-semibold text-white mb-3">
               Contact Us
             </h3>
-            <ul className="space-y-1.5">
+            <ul className="space-y-0">
               <li>
                 <a
                   href="tel:+256779399409"
-                  className="flex items-center gap-2.5 text-white text-sm hover:text-white transition-colors group"
+                  className="flex items-center gap-2.5 text-white text-sm hover:text-white transition-colors group py-1.5"
                 >
                   <Phone className="w-4 h-4 text-accent shrink-0" aria-hidden="true" />
                   +256 779 399 409
@@ -180,14 +180,14 @@ export default function Footer() {
               <li>
                 <a
                   href="mailto:moderncharm30@gmail.com"
-                  className="flex items-center gap-2.5 text-white text-sm hover:text-white transition-colors group"
+                  className="flex items-center gap-2.5 text-white text-sm hover:text-white transition-colors group py-1.5"
                 >
                   <Mail className="w-4 h-4 text-accent shrink-0" aria-hidden="true" />
                   moderncharm30@gmail.com
                 </a>
               </li>
               <li>
-                <div className="flex items-center gap-2.5 text-white text-sm">
+                <div className="flex items-center gap-2.5 text-white text-sm py-1.5">
                   <MapPin className="w-4 h-4 text-accent shrink-0" aria-hidden="true" />
                   <span>Kampala, Uganda</span>
                 </div>

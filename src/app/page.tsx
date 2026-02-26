@@ -309,10 +309,10 @@ export default function Home() {
           </div>
 
           {/* Stats grid */}
-          <div className="grid grid-cols-2 gap-8 lg:grid-cols-4 lg:gap-12">
+          <div className="grid grid-cols-2 gap-4 sm:gap-8 lg:grid-cols-4 lg:gap-12">
             {/* Stat 1 */}
             <div className="text-center">
-              <div className="font-heading text-5xl font-bold text-accent-light sm:text-6xl">
+              <div className="font-heading text-4xl font-bold text-accent-light sm:text-5xl md:text-6xl">
                 100+
               </div>
               <div className="mt-2 h-0.5 mx-auto w-8 rounded-full bg-accent/50" />
@@ -323,7 +323,7 @@ export default function Home() {
 
             {/* Stat 2 */}
             <div className="text-center">
-              <div className="font-heading text-5xl font-bold text-accent-light sm:text-6xl">
+              <div className="font-heading text-4xl font-bold text-accent-light sm:text-5xl md:text-6xl">
                 6+
               </div>
               <div className="mt-2 h-0.5 mx-auto w-8 rounded-full bg-accent/50" />
@@ -334,7 +334,7 @@ export default function Home() {
 
             {/* Stat 3 */}
             <div className="text-center">
-              <div className="font-heading text-5xl font-bold text-accent-light sm:text-6xl">
+              <div className="font-heading text-4xl font-bold text-accent-light sm:text-5xl md:text-6xl">
                 100%
               </div>
               <div className="mt-2 h-0.5 mx-auto w-8 rounded-full bg-accent/50" />
@@ -345,7 +345,7 @@ export default function Home() {
 
             {/* Stat 4 */}
             <div className="text-center">
-              <div className="font-heading text-5xl font-bold text-accent-light sm:text-6xl">
+              <div className="font-heading text-4xl font-bold text-accent-light sm:text-5xl md:text-6xl">
                 50+
               </div>
               <div className="mt-2 h-0.5 mx-auto w-8 rounded-full bg-accent/50" />
@@ -456,7 +456,7 @@ export default function Home() {
             </div>
 
             {/* Testimonial 2 — The Senkungus */}
-            <div className="relative rounded-2xl bg-white p-8 shadow-sm transition-shadow duration-300 hover:shadow-md md:-mt-4">
+            <div className="relative rounded-2xl bg-white p-8 shadow-sm transition-shadow duration-300 hover:shadow-md lg:-mt-4">
               <Quote aria-hidden="true" className="mb-4 h-8 w-8 text-accent/60" />
               <blockquote>
                 <p className="font-body text-base leading-relaxed text-dark/80 italic">

@@ -56,7 +56,7 @@ function FAQAccordionItem({
         }`}
       >
         <div className="overflow-hidden">
-          <p className="font-body text-base leading-relaxed text-muted pr-10">
+          <p className="font-body text-base leading-relaxed text-muted pr-4 md:pr-10">
             {item.answer}
           </p>
         </div>

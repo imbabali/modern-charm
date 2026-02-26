@@ -270,7 +270,7 @@ export default function ServicesPage() {
                               {sub.title}
                             </h3>
                           </div>
-                          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                          <ul className="grid grid-cols-1 lg:grid-cols-2 gap-2.5">
                             {sub.highlights.map((item) => (
                               <li
                                 key={item}
