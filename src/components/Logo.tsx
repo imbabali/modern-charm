@@ -24,46 +24,45 @@ export default function Logo({
       role="img"
     >
       {/*
-        Modern Charm MC monogram — traced from logo-reference.png.
+        Modern Charm MC monogram — traced from official logo files.
 
-        Centre (100,100), radius 55. The gold C arc covers ~264°,
-        opening on the right side with the gap between ~48° above
-        and ~48° below the horizontal. Two small almond-shaped leaf
-        accents sit at the C terminals, pointing radially outward.
-        The M sits inside the C with its outer legs crossing through
-        the arc at the bottom.
+        The C is a gold arc (centre 100,115  r 52) covering ~270°,
+        open on the right. Two small leaf accents sit at the terminals.
+        The M's two outer peaks extend ABOVE the C circle (~y 38),
+        its valley dips to C centre (~y 120), and its feet cross
+        through the arc near the bottom (~y 155).
       */}
 
-      {/* ---- "C" arc — ~264°, opens on the right ---- */}
+      {/* ---- "C" arc — ~270°, opens on the right ---- */}
       <path
-        d="M137 59 A 55 55 0 1 0 137 141"
+        d="M137 78 A 52 52 0 1 0 137 152"
         stroke={accentColor}
-        strokeWidth="5"
+        strokeWidth="5.5"
         strokeLinecap="round"
         fill="none"
       />
 
-      {/* ---- Leaf accent — top-right (at C start, pointing upper-right) ---- */}
+      {/* ---- Leaf accent — top-right (at C start) ---- */}
       <path
-        d="M137 59 Q146 54, 148 46 Q140 52, 137 59Z"
+        d="M137 78 Q144 72, 142 66 Q135 72, 137 78Z"
         fill={accentColor}
       />
 
-      {/* ---- Leaf accent — bottom-right (at C end, pointing lower-right) ---- */}
+      {/* ---- Leaf accent — bottom-right (at C end) ---- */}
       <path
-        d="M137 141 Q146 146, 148 154 Q140 148, 137 141Z"
+        d="M137 152 Q144 158, 142 164 Q135 158, 137 152Z"
         fill={accentColor}
       />
 
-      {/* ---- "M" — centred inside C, legs cross through arc ---- */}
+      {/* ---- "M" — peaks above C, valley inside, legs cross through arc ---- */}
       <path
-        d="M56 152
-           L82 65
-           L100 110
-           L118 65
-           L144 152"
+        d="M58 155
+           L70 38
+           L100 120
+           L130 38
+           L142 155"
         stroke={letterColor}
-        strokeWidth="5"
+        strokeWidth="5.5"
         strokeLinecap="round"
         strokeLinejoin="round"
         fill="none"
