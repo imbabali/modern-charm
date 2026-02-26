@@ -7,6 +7,7 @@ export interface PortfolioEvent {
   description: string;
   coverImage: string;
   heroPosition?: string;
+  imagePositions?: Record<number, string>;
   images: string[];
   date: string;
 }
@@ -19,7 +20,7 @@ export const portfolioEvents: PortfolioEvent[] = [
     description:
       "A romantic lavender garden wedding set along the shores of Lake Victoria, featuring lush floral installations, crystal-draped canopies, and golden sunset vows.",
     coverImage: "/images/portfolio/allan-pauline/img_0652.jpg",
-    heroPosition: "center 25%",
+    heroPosition: "center 30%",
     images: [
       "/images/portfolio/allan-pauline/img_0652.jpg",
       "/images/portfolio/allan-pauline/img_0023.jpg",
@@ -48,6 +49,7 @@ export const portfolioEvents: PortfolioEvent[] = [
       "A luxury black-and-white reception with towering gold arches, crystal chandeliers, and dramatic floral centrepieces that redefined opulence in Kampala.",
     coverImage: "/images/portfolio/oscar-sandra/IMG_0882.jpg",
     heroPosition: "center 40%",
+    imagePositions: { 0: "center 40%", 6: "center 35%" },
     images: [
       "/images/portfolio/oscar-sandra/IMG_0882.jpg",
       "/images/portfolio/oscar-sandra/IMG_0267.jpg",

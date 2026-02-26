@@ -151,6 +151,7 @@ export default async function EventDetailPage({ params }: Props) {
                       : "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   }
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  style={event.imagePositions?.[index] ? { objectPosition: event.imagePositions[index] } : undefined}
                   quality={80}
                   loading={index < 3 ? "eager" : "lazy"}
                 />
@@ -212,7 +213,7 @@ export default async function EventDetailPage({ params }: Props) {
       <section className="relative overflow-hidden px-6 py-20 text-center md:py-28">
         <HeroCarousel
           images={event.images.slice(-3)}
-          objectPosition="center 35%"
+          objectPosition="center"
         />
         <div className="absolute inset-0 bg-primary-dark/57" />
         <div className="relative z-10 mx-auto max-w-2xl">
