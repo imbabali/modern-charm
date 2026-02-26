@@ -148,8 +148,8 @@ export default function FAQContent({ faqData }: { faqData: FAQCategory[] }) {
         <HeroCarousel
           images={[
             "/images/portfolio/oscar-sandra/IMG_1985.jpg",
-            "/images/portfolio/david-michelle/7b7a0761.jpg",
-            "/images/portfolio/wedding-highlights/IMG_3884.jpg",
+            "/images/portfolio/lornas-kuhingira/7b7a9562.jpg",
+            "/images/portfolio/lornas-kuhingira/7b7a9609.jpg",
           ]}
         />
         <div className="absolute inset-0 bg-primary-dark/57" />

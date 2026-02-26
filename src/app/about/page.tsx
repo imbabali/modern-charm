@@ -516,10 +516,9 @@ export default function AboutPage() {
       <section className="py-20 md:py-28 relative overflow-hidden">
         <HeroCarousel
           images={[
-            "/images/portfolio/oscar-sandra/IMG_0846.jpg",
-            "/images/portfolio/oscar-sandra/IMG_1930.jpg",
-            "/images/portfolio/allan-pauline-styling/img_4822.jpg",
-            "/images/portfolio/wedding-highlights/IMG_3879.jpg",
+            "/images/portfolio/oscar-sandra/IMG_0883.jpg",
+            "/images/portfolio/lornas-kuhingira/7b7a9559.jpg",
+            "/images/portfolio/allan-pauline/img_0717.jpg",
           ]}
         />
         <div className="absolute inset-0 bg-primary-dark/57" />

@@ -488,9 +488,9 @@ export default function ContactContent() {
       <section className="relative overflow-hidden px-6 py-20 text-center md:py-28">
         <HeroCarousel
           images={[
-            "/images/portfolio/oscar-sandra/IMG_0928.jpg",
+            "/images/portfolio/lornas-kuhingira/7b7a9480.jpg",
             "/images/portfolio/lornas-kuhingira/7b7a9513.jpg",
-            "/images/portfolio/allan-pauline/img_0697.jpg",
+            "/images/portfolio/oscar-sandra/IMG_0897.jpg",
           ]}
         />
         <div className="absolute inset-0 bg-primary-dark/57" />

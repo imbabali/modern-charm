@@ -164,9 +164,9 @@ export default function BlogPage() {
       <section className="relative overflow-hidden px-6 py-20 text-center md:py-28">
         <HeroCarousel
           images={[
-            "/images/portfolio/allan-pauline-styling/img_4838.jpg",
+            "/images/portfolio/lornas-kuhingira/7b7a9603.jpg",
             "/images/portfolio/oscar-sandra/IMG_0951.jpg",
-            "/images/portfolio/oscar-sandra/IMG_0833.jpg",
+            "/images/portfolio/lornas-kuhingira/7b7a9581.jpg",
           ]}
         />
         <div className="absolute inset-0 bg-primary-dark/57" />

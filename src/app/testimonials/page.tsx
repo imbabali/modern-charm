@@ -199,9 +199,9 @@ export default function TestimonialsPage() {
       <section className="relative overflow-hidden px-6 py-20 text-center md:py-28">
         <HeroCarousel
           images={[
-            "/images/portfolio/oscar-sandra/IMG_0882.jpg",
-            "/images/portfolio/oscar-sandra/IMG_0947.jpg",
-            "/images/portfolio/lornas-kuhingira/7b7a9543.jpg",
+            "/images/portfolio/oscar-sandra/IMG_0795.jpg",
+            "/images/portfolio/lornas-kuhingira/7b7a9567.jpg",
+            "/images/portfolio/lornas-kuhingira/7b7a9579.jpg",
           ]}
         />
         <div className="absolute inset-0 bg-primary-dark/57" />

@@ -73,9 +73,9 @@ export default function PortfolioPage() {
       <section className="relative overflow-hidden px-6 py-20 text-center md:py-28">
         <HeroCarousel
           images={[
-            "/images/portfolio/lornas-kuhingira/7b7a9535.jpg",
-            "/images/portfolio/david-michelle/dji_0436.jpg",
-            "/images/portfolio/sammy-lala/img_3578.jpg",
+            "/images/portfolio/lornas-kuhingira/7b7a9575.jpg",
+            "/images/portfolio/oscar-sandra/IMG_0892.jpg",
+            "/images/portfolio/lornas-kuhingira/7b7a9602.jpg",
           ]}
         />
         <div className="absolute inset-0 bg-primary-dark/57" />
