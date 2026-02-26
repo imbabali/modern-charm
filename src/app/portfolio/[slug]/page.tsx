@@ -72,6 +72,7 @@ export default async function EventDetailPage({ params }: Props) {
           priority
           sizes="100vw"
           className="object-cover"
+          style={{ objectPosition: event.heroPosition || "center" }}
           quality={85}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/47 via-primary-dark/27 to-primary-dark/47" />

@@ -66,7 +66,7 @@ export default function PortfolioGrid({
         </div>
 
         {/* Event grid */}
-        <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {filtered.map((event) => (
             <Link
               key={event.slug}
@@ -79,7 +79,7 @@ export default function PortfolioGrid({
                   src={event.coverImage}
                   alt={`${event.title} — ${event.description}`}
                   fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                   quality={80}
                 />

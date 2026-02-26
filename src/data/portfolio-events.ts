@@ -6,6 +6,7 @@ export interface PortfolioEvent {
   category: EventCategory;
   description: string;
   coverImage: string;
+  heroPosition?: string;
   images: string[];
   date: string;
 }
@@ -18,6 +19,7 @@ export const portfolioEvents: PortfolioEvent[] = [
     description:
       "A romantic lavender garden wedding set along the shores of Lake Victoria, featuring lush floral installations, crystal-draped canopies, and golden sunset vows.",
     coverImage: "/images/portfolio/allan-pauline/img_0652.jpg",
+    heroPosition: "center 25%",
     images: [
       "/images/portfolio/allan-pauline/img_0652.jpg",
       "/images/portfolio/allan-pauline/img_0023.jpg",
@@ -45,6 +47,7 @@ export const portfolioEvents: PortfolioEvent[] = [
     description:
       "A luxury black-and-white reception with towering gold arches, crystal chandeliers, and dramatic floral centrepieces that redefined opulence in Kampala.",
     coverImage: "/images/portfolio/oscar-sandra/IMG_0882.jpg",
+    heroPosition: "center 40%",
     images: [
       "/images/portfolio/oscar-sandra/IMG_0882.jpg",
       "/images/portfolio/oscar-sandra/IMG_0267.jpg",
@@ -70,6 +73,7 @@ export const portfolioEvents: PortfolioEvent[] = [
     description:
       "A curated collection showcasing sage green bridesmaids, an intimate candle wall, peach bouquets, and dreamy garden ceremony moments.",
     coverImage: "/images/portfolio/wedding-highlights/IMG_3879.jpg",
+    heroPosition: "center 35%",
     images: [
       "/images/portfolio/wedding-highlights/IMG_3879.jpg",
       "/images/portfolio/wedding-highlights/IMG_3876.jpg",
@@ -114,6 +118,7 @@ export const portfolioEvents: PortfolioEvent[] = [
     description:
       "A luxe pink-and-gold reception featuring elegant table arrangements, sweeping aerial views, and an atmosphere of refined celebration.",
     coverImage: "/images/portfolio/david-michelle/7b7a0805.jpg",
+    heroPosition: "center 30%",
     images: [
       "/images/portfolio/david-michelle/7b7a0805.jpg",
       "/images/portfolio/david-michelle/7b7a0757.jpg",
@@ -133,6 +138,7 @@ export const portfolioEvents: PortfolioEvent[] = [
     description:
       "A joyful wedding celebration filled with heartfelt moments, stylish florals, and an unforgettable reception atmosphere.",
     coverImage: "/images/portfolio/sammy-lala/img_3558.jpg",
+    heroPosition: "center 40%",
     images: [
       "/images/portfolio/sammy-lala/img_3558.jpg",
       "/images/portfolio/sammy-lala/img_3472.jpg",
@@ -152,6 +158,7 @@ export const portfolioEvents: PortfolioEvent[] = [
     description:
       "A breathtaking lakeside wedding featuring a grand tented reception with crystal chandeliers, vibrant floral walls in pink, orange, and yellow, elegant rattan seating, and a stunning multi-tier R&R cake — from church ceremony to golden-hour portraits.",
     coverImage: "/images/portfolio/rayner-racheal/couple-kiss-venue.jpg",
+    heroPosition: "center 55%",
     images: [
       "/images/portfolio/rayner-racheal/couple-kiss-venue.jpg",
       "/images/portfolio/rayner-racheal/bride-smile-curtain.jpg",
