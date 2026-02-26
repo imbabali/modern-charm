@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { ChevronRight, Calendar, ArrowLeft } from "lucide-react";
 import { blogPosts } from "@/data/blog-posts";
 import { notFound } from "next/navigation";
+import HeroCarousel from "@/components/HeroCarousel";
 
 export function generateStaticParams() {
   return blogPosts.map((post) => ({ slug: post.slug }));
@@ -49,14 +49,7 @@ export default async function BlogPostPage({
     <div className="min-h-screen bg-cream">
       {/* Hero */}
       <section className="relative overflow-hidden px-6 py-24 text-center text-white md:py-32">
-        <Image
-          src={post.image}
-          alt={post.title}
-          fill
-          priority
-          className="object-cover"
-          sizes="100vw"
-        />
+        <HeroCarousel images={post.heroImages} />
         <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/70 via-primary-dark/50 to-primary-dark/70" />
         <div className="relative z-10 mx-auto max-w-3xl">
           <nav

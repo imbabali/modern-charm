@@ -7,6 +7,7 @@ export interface BlogPost {
   date: string;
   gradient: string;
   image: string;
+  heroImages: string[];
   featured?: boolean;
 }
 
@@ -41,6 +42,11 @@ export const blogPosts: BlogPost[] = [
     date: "February 18, 2026",
     gradient: "from-primary via-primary-light to-accent",
     image: "/images/portfolio/oscar-sandra/IMG_0851.jpg",
+    heroImages: [
+      "/images/portfolio/oscar-sandra/IMG_0848.jpg",
+      "/images/portfolio/oscar-sandra/IMG_0854.jpg",
+      "/images/portfolio/oscar-sandra/IMG_0868.jpg",
+    ],
     featured: true,
   },
   {
@@ -82,6 +88,11 @@ export const blogPosts: BlogPost[] = [
     date: "February 12, 2026",
     gradient: "from-primary/60 to-primary-dark/80",
     image: "/images/portfolio/oscar-sandra/IMG_1917.jpg",
+    heroImages: [
+      "/images/portfolio/oscar-sandra/IMG_1919.jpg",
+      "/images/portfolio/oscar-sandra/IMG_1924.jpg",
+      "/images/portfolio/oscar-sandra/IMG_1944.jpg",
+    ],
   },
   {
     title: "How to Plan the Perfect Kwanjula Ceremony",
@@ -114,6 +125,11 @@ export const blogPosts: BlogPost[] = [
     date: "February 5, 2026",
     gradient: "from-accent/60 to-accent-light/80",
     image: "/images/portfolio/lornas-kuhingira/7b7a9557.jpg",
+    heroImages: [
+      "/images/portfolio/lornas-kuhingira/7b7a9524.jpg",
+      "/images/portfolio/lornas-kuhingira/7b7a9532.jpg",
+      "/images/portfolio/lornas-kuhingira/7b7a9535.jpg",
+    ],
   },
   {
     title: "Corporate Event Planning: A Complete Checklist",
@@ -146,6 +162,11 @@ export const blogPosts: BlogPost[] = [
     date: "January 28, 2026",
     gradient: "from-primary-light/60 to-primary/80",
     image: "/images/portfolio/david-michelle/7b7a0807.jpg",
+    heroImages: [
+      "/images/portfolio/david-michelle/7b7a0810.jpg",
+      "/images/portfolio/david-michelle/dji_0407.jpg",
+      "/images/portfolio/david-michelle/dji_0408.jpg",
+    ],
   },
   {
     title: "Choosing the Right Color Palette for Your Event",
@@ -178,6 +199,11 @@ export const blogPosts: BlogPost[] = [
     date: "January 20, 2026",
     gradient: "from-accent-light/60 to-accent/80",
     image: "/images/portfolio/wedding-highlights/IMG_3886.jpg",
+    heroImages: [
+      "/images/portfolio/wedding-highlights/IMG_3887.jpg",
+      "/images/portfolio/wedding-highlights/IMG_3888.jpg",
+      "/images/portfolio/wedding-highlights/IMG_3889.jpg",
+    ],
   },
   {
     title: "Behind the Scenes: A Luxury Lakeside Wedding",
@@ -210,6 +236,11 @@ export const blogPosts: BlogPost[] = [
     date: "January 14, 2026",
     gradient: "from-primary-dark/60 to-primary-light/80",
     image: "/images/portfolio/allan-pauline/img_0652.jpg",
+    heroImages: [
+      "/images/portfolio/allan-pauline/img_0659.jpg",
+      "/images/portfolio/allan-pauline/img_0662.jpg",
+      "/images/portfolio/allan-pauline/img_0675.jpg",
+    ],
   },
   {
     title: "Budget-Friendly Event Styling Ideas",
@@ -242,5 +273,10 @@ export const blogPosts: BlogPost[] = [
     date: "January 6, 2026",
     gradient: "from-accent/50 to-primary/70",
     image: "/images/portfolio/sammy-lala/img_3472.jpg",
+    heroImages: [
+      "/images/portfolio/sammy-lala/img_3473.jpg",
+      "/images/portfolio/sammy-lala/img_3521.jpg",
+      "/images/portfolio/sammy-lala/img_3558.jpg",
+    ],
   },
 ];
