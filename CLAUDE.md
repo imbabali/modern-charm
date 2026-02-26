@@ -95,7 +95,7 @@ src/
 
 ## Development Notes
 - Tailwind v4 uses `@theme inline` block in globals.css — NOT tailwind.config.ts
-- Client components marked with `"use client"` only where needed (FAQ, Contact, Navbar, WhatsApp, Newsletter, HeroCarousel, HeroVideoCarousel, AnimateOnScroll)
+- Client components marked with `"use client"` only where needed (FAQ, Contact, Navbar, WhatsApp, Newsletter, HeroCarousel, HeroVideoCarousel, AnimateOnScroll, PortfolioGrid)
 - All pages pre-render as static content
 - Base CSS styles wrapped in `@layer base` so Tailwind utilities always override them
 - Homepage hero uses HeroVideoCarousel — 6 x 10s clips from different events crossfading (720p, Vercel Blob CDN)
@@ -180,3 +180,4 @@ src/
 - **2026-02-26**: Blog article heroes now use HeroCarousel with 3 crossfade images each (heroImages array), matching the carousel pattern on all other sub-pages. 21 unique unused images assigned across 7 posts
 - **2026-02-26**: Replaced team photos with professional headshots (user-provided), converted Benjamin's PNG to JPG, optimized all to 800px/quality 80. Team grid switched from CSS Grid to flexbox with justify-center for centered last row
 - **2026-02-26**: Homepage hero now plays clips from 6 different events (HeroVideoCarousel component). Trimmed 10s clips from Allan & Pauline, David & Michelle, Lorna's Kuhingira, Chris & Philomera, Rayner & Racheal, Turitwenkas — compressed to 720p (~15 MB total), uploaded to Vercel Blob CDN, crossfade between clips on ended
+- **2026-02-26**: Created portfolio page with filterable grid (All/Weddings/Traditional/Styling) and 8 event detail pages with image galleries, prev/next navigation, and CTAs. New files: `src/data/portfolio-events.ts`, `src/components/PortfolioGrid.tsx`, `src/app/portfolio/page.tsx`, `src/app/portfolio/[slug]/page.tsx`
