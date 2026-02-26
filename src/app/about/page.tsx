@@ -101,7 +101,7 @@ const teamMembers = [
     image: "/images/team/lamuel-mukendenta.jpg",
   },
   {
-    name: "Lilian Nalukenge",
+    name: "Lillian N. Mulindwa",
     role: "Event Manager / Logistics Coordinator",
     image: "/images/team/lilian-nalukenge.jpg",
   },
@@ -516,10 +516,11 @@ export default function AboutPage() {
       <section className="py-20 md:py-28 relative overflow-hidden">
         <HeroCarousel
           images={[
-            "/images/portfolio/oscar-sandra/IMG_0883.jpg",
+            "/images/portfolio/rayner-racheal/venue-chandeliers.jpg",
             "/images/portfolio/lornas-kuhingira/7b7a9559.jpg",
             "/images/portfolio/allan-pauline/img_0717.jpg",
           ]}
+          objectPosition="center 20%"
         />
         <div className="absolute inset-0 bg-primary-dark/57" />
         <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">

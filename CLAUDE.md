@@ -127,13 +127,13 @@ src/
 
 ## Team (5 members, from company profile)
 - **Philip Higiro** — Team Lead | +256 779 399 409
-- **Benjamin Bicung** — Project & Finance Manager | +256 775 826 795
+- **Benjamin Bicung** — Project & Finance Manager | +256 773 043 255
 - **Lamuel Mukendenta** — Technical Lead
-- **Lilian Nalukenge** — Event Manager / Logistics Coordinator
+- **Lillian N. Mulindwa** — Event Manager / Logistics Coordinator
 - **Adonia Waibale** — Creative Director
 
 ## Contact Details
-- Phone: +256 779 399 409 / +256 775 826 795
+- Phone: +256 779 399 409 / +256 773 043 255
 - Email: moderncharm30@gmail.com
 - Facebook: moderncharmevents
 - Instagram: @moderncharm_events
@@ -186,7 +186,7 @@ src/
 - **2026-02-25**: About page polish — removed mission/vision numbering, matched CTA overlay to hero opacity, swapped CTA to landscape image
 - **2026-02-25**: Footer compacted — tighter spacing throughout (py, gap, space-y), original font sizes preserved
 - **2026-02-25**: Client readiness audit — removed "Coming Soon" blog section + "Featured Image" text, removed 4 gradient placeholder portfolio items, deleted boilerplate SVGs + business-cards.pdf, removed console.error from API routes, cleaned placeholder comments, fixed unused import in Navbar
-- **2026-02-26**: Major company profile integration — extracted 5 team photos from PDF (Philip Higiro, Benjamin Bicung, Lamuel Mukendenta, Lilian Nalukenge, Adonia Waibale), rewrote About page (mission/vision/values from PDF, 5-step "How We Work" process, "Trusted By" clientele section), rewrote Services page (6 offerings: Event Planning, Styling, Management, Concept Development, Corporate Gifting, Product Launches), updated Homepage (6+ years stat, clientele section, updated about text, updated CTAs), removed Pricing and Portfolio pages, updated Navbar/Footer/sitemap/metadata
+- **2026-02-26**: Major company profile integration — extracted 5 team photos from PDF (Philip Higiro, Benjamin Bicung, Lamuel Mukendenta, Lillian N. Mulindwa, Adonia Waibale), rewrote About page (mission/vision/values from PDF, 5-step "How We Work" process, "Trusted By" clientele section), rewrote Services page (6 offerings: Event Planning, Styling, Management, Concept Development, Corporate Gifting, Product Launches), updated Homepage (6+ years stat, clientele section, updated about text, updated CTAs), removed Pricing and Portfolio pages, updated Navbar/Footer/sitemap/metadata
 - **2026-02-26**: Added 25 new event photos from Google Drive — David & Michelle wedding (8 photos), Lorna's Kuhingira ceremony (14 photos), Allan & Pauline styling (3 photos). All images optimized for web (max 2400px, quality 82)
 - **2026-02-26**: Restructured services into 2 main categories: (1) Event Planning & Coordination (planning, management, concept development, product launches) (2) Event Styling & Decor (styling, corporate gifting). Updated homepage, footer, and all service links
 - **2026-02-26**: Full image deduplication — audited all 40+ image references across 8 files, replaced all duplicates with unique images from expanded collection. Each page now uses completely unique images

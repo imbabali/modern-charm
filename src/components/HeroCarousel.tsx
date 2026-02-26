@@ -6,11 +6,13 @@ import Image from "next/image";
 interface HeroCarouselProps {
   images: string[];
   interval?: number;
+  objectPosition?: string;
 }
 
 export default function HeroCarousel({
   images,
   interval = 5000,
+  objectPosition = "center",
 }: HeroCarouselProps) {
   const [current, setCurrent] = useState(0);
 
@@ -34,7 +36,8 @@ export default function HeroCarousel({
           alt=""
           fill
           sizes="100vw"
-          className={`object-cover object-center transition-opacity duration-1000 ease-in-out ${
+          style={{ objectPosition }}
+          className={`object-cover transition-opacity duration-1000 ease-in-out ${
             i === current ? "opacity-100" : "opacity-0"
           }`}
           priority={i === 0}

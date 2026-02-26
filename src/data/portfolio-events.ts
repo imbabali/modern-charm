@@ -13,7 +13,7 @@ export interface PortfolioEvent {
 export const portfolioEvents: PortfolioEvent[] = [
   {
     slug: "allan-pauline",
-    title: "Lavender Garden Wedding",
+    title: "Shades of Purple",
     category: "planning",
     description:
       "A romantic lavender garden wedding set along the shores of Lake Victoria, featuring lush floral installations, crystal-draped canopies, and golden sunset vows.",

@@ -37,7 +37,7 @@ const contactInfo = [
   {
     icon: Phone,
     label: "Phone",
-    value: "+256 779 399 409 / +256 773 043 256",
+    value: "+256 779 399 409 / +256 773 043 255",
     href: "tel:+256779399409",
   },
   {
@@ -492,6 +492,7 @@ export default function ContactContent() {
             "/images/portfolio/lornas-kuhingira/7b7a9513.jpg",
             "/images/portfolio/oscar-sandra/IMG_0897.jpg",
           ]}
+          objectPosition="center 20%"
         />
         <div className="absolute inset-0 bg-primary-dark/57" />
         <div className="relative z-10 mx-auto max-w-2xl">
