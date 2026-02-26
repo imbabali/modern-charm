@@ -34,7 +34,7 @@ export default function HeroCarousel({
           alt=""
           fill
           sizes="100vw"
-          className={`object-cover object-[center_25%] transition-opacity duration-1000 ease-in-out ${
+          className={`object-cover object-center transition-opacity duration-1000 ease-in-out ${
             i === current ? "opacity-100" : "opacity-0"
           }`}
           priority={i === 0}

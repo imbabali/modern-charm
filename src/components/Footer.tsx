@@ -85,7 +85,7 @@ export default function Footer() {
           {/* Column 1 — Brand */}
           <div>
             <Link href="/" className="inline-flex items-center gap-2 group">
-              <Logo size={40} letterColor="#FFFFFF" />
+              <Logo size={40} />
               <div className="flex flex-col">
                 <span className="font-heading text-lg font-bold tracking-wider text-white">
                   MODERN CHARM

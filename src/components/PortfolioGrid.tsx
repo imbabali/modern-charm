@@ -9,8 +9,7 @@ import { categoryLabels } from "@/data/portfolio-events";
 
 const categories: (EventCategory | "all")[] = [
   "all",
-  "wedding",
-  "traditional",
+  "planning",
   "styling",
 ];
 
@@ -38,8 +37,8 @@ export default function PortfolioGrid({
             Featured Events
           </h2>
           <p className="mx-auto mt-4 max-w-2xl font-body text-muted">
-            Browse our collection of weddings, traditional ceremonies, and
-            styling showcases across Kampala and beyond.
+            Browse our collection of event planning, styling, and decor
+            showcases across Kampala and beyond.
           </p>
         </div>
 

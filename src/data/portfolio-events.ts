@@ -1,4 +1,4 @@
-export type EventCategory = "wedding" | "traditional" | "styling";
+export type EventCategory = "planning" | "styling";
 
 export interface PortfolioEvent {
   slug: string;
@@ -13,8 +13,8 @@ export interface PortfolioEvent {
 export const portfolioEvents: PortfolioEvent[] = [
   {
     slug: "allan-pauline",
-    title: "Allan & Pauline",
-    category: "wedding",
+    title: "Lavender Garden Wedding",
+    category: "planning",
     description:
       "A romantic lavender garden wedding set along the shores of Lake Victoria, featuring lush floral installations, crystal-draped canopies, and golden sunset vows.",
     coverImage: "/images/portfolio/allan-pauline/img_0652.jpg",
@@ -40,8 +40,8 @@ export const portfolioEvents: PortfolioEvent[] = [
   },
   {
     slug: "oscar-sandra",
-    title: "Oscar & Sandra",
-    category: "wedding",
+    title: "Grand Black & Gold Reception",
+    category: "planning",
     description:
       "A luxury black-and-white reception with towering gold arches, crystal chandeliers, and dramatic floral centrepieces that redefined opulence in Kampala.",
     coverImage: "/images/portfolio/oscar-sandra/IMG_0882.jpg",
@@ -65,8 +65,8 @@ export const portfolioEvents: PortfolioEvent[] = [
   },
   {
     slug: "wedding-highlights",
-    title: "Wedding Highlights",
-    category: "wedding",
+    title: "Sage & Peach Elegance",
+    category: "styling",
     description:
       "A curated collection showcasing sage green bridesmaids, an intimate candle wall, peach bouquets, and dreamy garden ceremony moments.",
     coverImage: "/images/portfolio/wedding-highlights/IMG_3879.jpg",
@@ -86,8 +86,8 @@ export const portfolioEvents: PortfolioEvent[] = [
   },
   {
     slug: "lornas-kuhingira",
-    title: "Lorna's Kuhingira",
-    category: "traditional",
+    title: "Traditional Kuhingira Ceremony",
+    category: "planning",
     description:
       "A vibrant Kuhingira ceremony rich in Ankole tradition, with layered draping, cultural attire, and a beautifully styled gift-presentation stage.",
     coverImage: "/images/portfolio/lornas-kuhingira/7b7a9543.jpg",
@@ -109,8 +109,8 @@ export const portfolioEvents: PortfolioEvent[] = [
   },
   {
     slug: "david-michelle",
-    title: "David & Michelle",
-    category: "wedding",
+    title: "Pink & Gold Luxe Reception",
+    category: "planning",
     description:
       "A luxe pink-and-gold reception featuring elegant table arrangements, sweeping aerial views, and an atmosphere of refined celebration.",
     coverImage: "/images/portfolio/david-michelle/7b7a0805.jpg",
@@ -128,8 +128,8 @@ export const portfolioEvents: PortfolioEvent[] = [
   },
   {
     slug: "sammy-lala",
-    title: "Sammy & Lala",
-    category: "wedding",
+    title: "Classic Wedding Celebration",
+    category: "planning",
     description:
       "A joyful wedding celebration filled with heartfelt moments, stylish florals, and an unforgettable reception atmosphere.",
     coverImage: "/images/portfolio/sammy-lala/img_3558.jpg",
@@ -147,8 +147,8 @@ export const portfolioEvents: PortfolioEvent[] = [
   },
   {
     slug: "rayner-racheal",
-    title: "Rayner & Racheal",
-    category: "wedding",
+    title: "Intimate Garden Wedding",
+    category: "planning",
     description:
       "An intimate and elegant wedding celebration capturing the warmth and beauty of two hearts uniting.",
     coverImage: "/images/portfolio/rayner-racheal/img_4945.jpg",
@@ -160,10 +160,10 @@ export const portfolioEvents: PortfolioEvent[] = [
   },
   {
     slug: "allan-pauline-styling",
-    title: "Allan & Pauline — Styling Details",
+    title: "Floral Tablescape Details",
     category: "styling",
     description:
-      "A close-up look at the meticulous styling details from Allan & Pauline's wedding — tabletop florals, linens, place settings, and decorative accents.",
+      "A close-up look at meticulous styling details — tabletop florals, linens, place settings, and decorative accents that complete the look.",
     coverImage: "/images/portfolio/allan-pauline-styling/img_4822.jpg",
     images: [
       "/images/portfolio/allan-pauline-styling/img_4822.jpg",
@@ -186,8 +186,7 @@ export function getEventsByCategory(
 }
 
 export const categoryLabels: Record<EventCategory | "all", string> = {
-  all: "All Events",
-  wedding: "Weddings",
-  traditional: "Traditional",
-  styling: "Styling",
+  all: "All Projects",
+  planning: "Event Planning & Coordination",
+  styling: "Event Styling & Decor",
 };

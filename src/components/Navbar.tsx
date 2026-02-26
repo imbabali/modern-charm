@@ -95,7 +95,6 @@ export default function Navbar() {
               <Logo
                 className="transition-all duration-300 group-hover:scale-105"
                 size={44}
-                letterColor={isScrolled ? "#3D7A6E" : "#FFFFFF"}
               />
               {/* Brand Name */}
               <div className="flex flex-col">
@@ -200,7 +199,7 @@ export default function Navbar() {
         {/* Drawer Header */}
         <div className="flex items-center justify-between p-6 border-b border-cream-dark">
           <div className="flex items-center gap-2">
-            <Logo size={36} letterColor="#3D7A6E" />
+            <Logo size={36} />
             <span className="font-heading text-lg font-bold tracking-wider text-dark">
               MODERN CHARM
             </span>
