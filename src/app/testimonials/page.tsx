@@ -23,46 +23,47 @@ export const metadata: Metadata = {
 };
 
 const featuredTestimonial = {
-  text: "From the very first consultation, Modern Charm felt like family. They listened to every detail of our vision — the soft blush tones, the cascading florals, the candlelit garden ambiance — and brought it all to life in ways we never imagined possible. On the day of our wedding, we walked into the venue and both burst into tears. It was more beautiful than anything we had seen on Pinterest or in magazines. Every single guest asked us who styled the event. Modern Charm didn't just plan our wedding; they created a living, breathing work of art that we will cherish for the rest of our lives. If you're looking for a team that pours their heart and soul into your celebration, look no further.",
-  name: "Sarah & David",
-  event: "Luxury Garden Wedding, 2025",
+  text: "Thank you for being part of our special day. You did amazing! The event planning & styling was top notch! Thank you for bringing our vision to life. Execution & attention to detail was magnificent. Modern Charm to the world!",
+  name: "Mr. & Mrs. Mugagga Mulindwa",
+  initials: "MM",
+  event: "Wedding",
 };
 
 const testimonials = [
   {
-    text: "You weren't just our wedding planner, you were family! The way you handled every detail of our kwanjula — from the traditional bark cloth draping to the modern floral accents — was nothing short of magical. Our families are still talking about it.",
-    name: "Anita K.",
-    event: "Traditional Kwanjula Ceremony",
+    text: "We truly thank the almighty for having had you grace us with your wisdom, guidance and expertise throughout the process of preparation we went through. Nothing is ever easy for sure but the intensity of the work done was extremely visible in the flawless execution of the function. Tusiima nyo nyo.",
+    name: "The Senkungus",
+    event: "Wedding",
     rating: 5,
   },
   {
-    text: "Our corporate gala was the talk of the office for months. Modern Charm transformed a standard hotel ballroom into an elegant, immersive experience that left our 300+ guests absolutely stunned. Professional, creative, and flawless execution.",
-    name: "James M.",
-    event: "Annual Corporate Gala",
+    text: "Appreciation post to the most peaceful understanding decorators Modern Charm. May God abundantly increase and bless your works. When God puts his hand onto something even a wedding won't stress you — everything will overflow smoothly and abundantly.",
+    name: "Oscar & Sandra",
+    event: "Wedding Reception",
     rating: 5,
   },
   {
-    text: "Modern Charm turned our backyard into a fairytale. We wanted an intimate anniversary dinner under the stars, and they delivered beyond our wildest expectations. The draped canopy, the twinkling lights, the floral centerpieces — pure magic.",
-    name: "Grace & Paul",
-    event: "Intimate Anniversary Dinner",
+    text: "You guys have a solid team, the decor was amazing, food was good, well done on planning and executing this wedding.",
+    name: "Lala T.",
+    event: "Wedding",
     rating: 5,
   },
   {
-    text: "The attention to detail was incredible. Every flower, every drape was perfect. My bridal shower felt like a spread from a luxury magazine. The blush and gold palette was executed to perfection, and the dessert table was a work of art.",
-    name: "Monica N.",
-    event: "Bridal Shower",
+    text: "This wedding was fantastic; it's a while since I attended a very well organized wedding.",
+    name: "Noah N.",
+    event: "Wedding Guest",
     rating: 5,
   },
   {
-    text: "From concept to execution, the team was phenomenal. They understood our brand aesthetic instantly and translated it into a product launch event that generated incredible buzz. The custom installations were a stroke of genius.",
-    name: "Robert O.",
-    event: "Product Launch Event",
+    text: "Philip! So many compliments on the decor. Everyone loved it — thought I'd let you know!",
+    name: "Happy Client",
+    event: "Event Decor",
     rating: 5,
   },
   {
-    text: "Best decision we made was hiring Modern Charm for our introduction ceremony. They seamlessly blended Ankole traditions with modern elegance, and the result was breathtaking. Both families were absolutely thrilled with every detail.",
-    name: "Patricia & Brian",
-    event: "Kuhingira Ceremony",
+    text: "Feedback from guests is perfect. Thanks to everyone who took part in preparations and ensured everything in their docket was going as planned on the day itself.",
+    name: "Happy Client",
+    event: "Wedding",
     rating: 5,
   },
 ];
@@ -122,7 +123,7 @@ export default function TestimonialsPage() {
               <div className="mt-10 flex flex-col items-center gap-4">
                 <div className="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent shadow-md">
                   <span className="font-heading text-2xl font-bold text-white">
-                    S&D
+                    {featuredTestimonial.initials}
                   </span>
                 </div>
                 <div>

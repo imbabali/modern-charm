@@ -596,29 +596,29 @@ export default function Home() {
 
           {/* Testimonial cards — editorial layout */}
           <div className="grid gap-8 md:grid-cols-3">
-            {/* Testimonial 1 */}
+            {/* Testimonial 1 — Mr. & Mrs. Mugagga Mulindwa */}
             <div className="relative rounded-2xl bg-white p-8 shadow-sm transition-shadow duration-300 hover:shadow-md">
               <Quote aria-hidden="true" className="mb-4 h-8 w-8 text-accent/60" />
               <blockquote>
                 <p className="font-body text-base leading-relaxed text-dark/80 italic">
-                  &ldquo;Modern Charm turned our wedding into a fairy tale. Every
-                  single detail was perfect — from the floral centrepieces to the
-                  lighting. Our guests are still talking about it months
-                  later!&rdquo;
+                  &ldquo;Thank you for being part of our special day. You did
+                  amazing! The event planning &amp; styling was top notch! Thank
+                  you for bringing our vision to life. Execution &amp; attention
+                  to detail was magnificent.&rdquo;
                 </p>
               </blockquote>
               <div className="mt-6 flex items-center gap-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10">
                   <span className="font-heading text-sm font-bold text-primary">
-                    NK
+                    MM
                   </span>
                 </div>
                 <div>
                   <p className="font-body text-sm font-semibold text-dark">
-                    Naomi Kisakye
+                    Mr. &amp; Mrs. Mugagga Mulindwa
                   </p>
                   <p className="font-body text-xs text-muted">
-                    Wedding, Munyonyo
+                    Wedding
                   </p>
                 </div>
               </div>
@@ -626,58 +626,58 @@ export default function Home() {
               <div className="absolute right-4 bottom-4 h-8 w-8 rounded-full bg-accent/5" />
             </div>
 
-            {/* Testimonial 2 */}
+            {/* Testimonial 2 — The Senkungus */}
             <div className="relative rounded-2xl bg-white p-8 shadow-sm transition-shadow duration-300 hover:shadow-md md:-mt-4">
               <Quote aria-hidden="true" className="mb-4 h-8 w-8 text-accent/60" />
               <blockquote>
                 <p className="font-body text-base leading-relaxed text-dark/80 italic">
-                  &ldquo;We hired Modern Charm for our company&apos;s annual gala
-                  and the result was absolutely world-class. Professional,
-                  creative, and incredibly easy to work with. They understood our
-                  brand vision perfectly.&rdquo;
+                  &ldquo;The intensity of the work done was extremely visible in
+                  the flawless execution of the function. Nothing is ever easy
+                  for sure but we truly thank you for gracing us with your
+                  wisdom, guidance and expertise. Tusiima nyo nyo.&rdquo;
                 </p>
               </blockquote>
               <div className="mt-6 flex items-center gap-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10">
                   <span className="font-heading text-sm font-bold text-primary">
-                    DM
+                    TS
                   </span>
                 </div>
                 <div>
                   <p className="font-body text-sm font-semibold text-dark">
-                    David Muwanga
+                    The Senkungus
                   </p>
                   <p className="font-body text-xs text-muted">
-                    Corporate Gala, Serena Hotel
+                    Wedding
                   </p>
                 </div>
               </div>
               <div className="absolute right-4 bottom-4 h-8 w-8 rounded-full bg-accent/5" />
             </div>
 
-            {/* Testimonial 3 */}
+            {/* Testimonial 3 — Oscar & Sandra */}
             <div className="relative rounded-2xl bg-white p-8 shadow-sm transition-shadow duration-300 hover:shadow-md">
               <Quote aria-hidden="true" className="mb-4 h-8 w-8 text-accent/60" />
               <blockquote>
                 <p className="font-body text-base leading-relaxed text-dark/80 italic">
-                  &ldquo;Our Kwanjula was the talk of the village! Modern Charm
-                  blended our Ankole traditions with such beautiful modern
-                  touches. My family was so impressed. I could not have asked for
-                  a better team.&rdquo;
+                  &ldquo;Appreciation post to the most peaceful understanding
+                  decorators Modern Charm. When God puts his hand onto something
+                  even a wedding won&apos;t stress you — everything will overflow
+                  smoothly and abundantly.&rdquo;
                 </p>
               </blockquote>
               <div className="mt-6 flex items-center gap-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10">
                   <span className="font-heading text-sm font-bold text-primary">
-                    PA
+                    OS
                   </span>
                 </div>
                 <div>
                   <p className="font-body text-sm font-semibold text-dark">
-                    Patience Ainomugisha
+                    Oscar &amp; Sandra
                   </p>
                   <p className="font-body text-xs text-muted">
-                    Kwanjula Ceremony, Mbarara
+                    Wedding Reception
                   </p>
                 </div>
               </div>
