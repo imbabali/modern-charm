@@ -50,7 +50,7 @@ src/
     page.tsx            # Homepage (8 sections incl. clientele)
     globals.css         # Tailwind theme + custom styles
     about/page.tsx      # Company story, team (5 members), mission/vision, values, how we work, clientele
-    services/page.tsx   # 6 service offerings (planning, styling, management, concept, gifting, launches)
+    services/page.tsx   # 2 service categories (Event Planning & Coordination, Event Styling & Decor)
     testimonials/page.tsx # Client stories + featured testimonial
     blog/page.tsx       # Journal/blog listing
     faq/page.tsx        # Accordion FAQ (client component)
@@ -78,13 +78,12 @@ src/
 - Smooth hover transitions and micro-interactions
 - WhatsApp integration (common in Uganda/East Africa)
 
-## Services Covered (from company profile)
-1. Event Planning
-2. Event Styling
-3. Event Management
-4. Concept Development
-5. Corporate Gifting
-6. Product Launches
+## Services (2 categories)
+### 1. Event Planning & Coordination (`#planning`)
+- Event Planning, Event Management, Concept Development, Product Launches
+
+### 2. Event Styling & Decor (`#styling`)
+- Event Styling, Corporate Gifting
 
 ## Clientele
 - UEGCL (Uganda Electricity Generation Company Limited)
@@ -96,14 +95,14 @@ src/
 
 ## Development Notes
 - Tailwind v4 uses `@theme inline` block in globals.css — NOT tailwind.config.ts
-- Client components marked with `"use client"` only where needed (PortfolioContent, FAQ, Contact, Navbar, WhatsApp, Newsletter, HeroCarousel, AnimateOnScroll)
-- Portfolio page uses server component wrapper (metadata) + PortfolioContent client component (filtering)
+- Client components marked with `"use client"` only where needed (FAQ, Contact, Navbar, WhatsApp, Newsletter, HeroCarousel, AnimateOnScroll)
 - All pages pre-render as static content
 - Base CSS styles wrapped in `@layer base` so Tailwind utilities always override them
 - 3 video reels hosted on Vercel Blob CDN (hero, stats parallax, CTA on homepage)
 - HeroCarousel component provides crossfade image carousels on all sub-page heroes
-- Services page sections have anchor IDs (`#planning`, `#styling`, `#management`, `#concept`, `#gifting`, `#launches`) for hash navigation
-- Footer service links use hash navigation to scroll to correct service section
+- Services page has 2 anchor IDs (`#planning`, `#styling`) for hash navigation
+- Footer service links use hash navigation to scroll to correct service category
+- All images deduplicated — no image path used more than once across the site (except hero-wedding.jpg in OG/meta tags)
 - Contact form POSTs to `/api/contact` (Resend API)
 - Newsletter form POSTs to `/api/newsletter` (Resend API)
 
@@ -169,3 +168,6 @@ src/
 - **2026-02-25**: Footer compacted — tighter spacing throughout (py, gap, space-y), original font sizes preserved
 - **2026-02-25**: Client readiness audit — removed "Coming Soon" blog section + "Featured Image" text, removed 4 gradient placeholder portfolio items, deleted boilerplate SVGs + business-cards.pdf, removed console.error from API routes, cleaned placeholder comments, fixed unused import in Navbar
 - **2026-02-26**: Major company profile integration — extracted 5 team photos from PDF (Philip Higiro, Benjamin Bicung, Lamuel Mukendenta, Lilian Nalukenge, Adonia Waibale), rewrote About page (mission/vision/values from PDF, 5-step "How We Work" process, "Trusted By" clientele section), rewrote Services page (6 offerings: Event Planning, Styling, Management, Concept Development, Corporate Gifting, Product Launches), updated Homepage (6+ years stat, clientele section, updated about text, updated CTAs), removed Pricing and Portfolio pages, updated Navbar/Footer/sitemap/metadata
+- **2026-02-26**: Added 25 new event photos from Google Drive — David & Michelle wedding (8 photos), Lorna's Kuhingira ceremony (14 photos), Allan & Pauline styling (3 photos). All images optimized for web (max 2400px, quality 82)
+- **2026-02-26**: Restructured services into 2 main categories: (1) Event Planning & Coordination (planning, management, concept development, product launches) (2) Event Styling & Decor (styling, corporate gifting). Updated homepage, footer, and all service links
+- **2026-02-26**: Full image deduplication — audited all 40+ image references across 8 files, replaced all duplicates with unique images from expanded collection. Each page now uses completely unique images
