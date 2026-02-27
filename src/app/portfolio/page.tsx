@@ -40,7 +40,7 @@ export default function PortfolioPage() {
           tabIndex={-1}
         >
           <source
-            src="https://6jblcdd6pq0suc42.public.blob.vercel-storage.com/videos/event-reel-1.mp4"
+            src="https://pub-9b4e0ecb8d0044128690526d6078afd6.r2.dev/videos/event-reel-1.mp4"
             type="video/mp4"
           />
         </video>

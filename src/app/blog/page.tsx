@@ -51,7 +51,7 @@ export default function BlogPage() {
           tabIndex={-1}
         >
           <source
-            src="https://6jblcdd6pq0suc42.public.blob.vercel-storage.com/videos/cta-clips/cta-chris-philomera-b-ookfS48nof7IXvX2wCzZVWRvdLKhmi.mp4"
+            src="https://pub-9b4e0ecb8d0044128690526d6078afd6.r2.dev/videos/cta-clips/cta-chris-philomera-b.mp4"
             type="video/mp4"
           />
         </video>

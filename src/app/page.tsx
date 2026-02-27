@@ -23,9 +23,9 @@ export default function Home() {
         {/* Background video carousel — clips from multiple events */}
         <HeroVideoCarousel
           clips={[
-            "https://6jblcdd6pq0suc42.public.blob.vercel-storage.com/videos/hero-clips/clip-allan-pauline-1z6j4pUI2pONw0zp6DePgi7dxlmVgD.mp4",
-            "https://6jblcdd6pq0suc42.public.blob.vercel-storage.com/videos/hero-clips/clip-david-michelle-GP83vWF5U9gnpiz2Pa5AAVb0GT3qhR.mp4",
-            "https://6jblcdd6pq0suc42.public.blob.vercel-storage.com/videos/hero-clips/clip-lornas-kuhingira-2AliKKXbOCPCopwOviA5iPTUT6X8AM.mp4",
+            "https://pub-9b4e0ecb8d0044128690526d6078afd6.r2.dev/videos/hero-clips/clip-allan-pauline.mp4",
+            "https://pub-9b4e0ecb8d0044128690526d6078afd6.r2.dev/videos/hero-clips/clip-david-michelle.mp4",
+            "https://pub-9b4e0ecb8d0044128690526d6078afd6.r2.dev/videos/hero-clips/clip-lornas-kuhingira.mp4",
           ]}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/27 to-black/47" />
@@ -279,7 +279,7 @@ export default function Home() {
           tabIndex={-1}
         >
           <source
-            src="https://6jblcdd6pq0suc42.public.blob.vercel-storage.com/videos/event-reel-1.mp4"
+            src="https://pub-9b4e0ecb8d0044128690526d6078afd6.r2.dev/videos/event-reel-1.mp4"
             type="video/mp4"
           />
         </video>
@@ -534,7 +534,7 @@ export default function Home() {
           tabIndex={-1}
         >
           <source
-            src="https://6jblcdd6pq0suc42.public.blob.vercel-storage.com/videos/cta-clips/cta-lala-intro-b-IJtqrjgXanfbc30d2eRTOpjCN74tlS.mp4"
+            src="https://pub-9b4e0ecb8d0044128690526d6078afd6.r2.dev/videos/cta-clips/cta-lala-intro-b.mp4"
             type="video/mp4"
           />
         </video>
