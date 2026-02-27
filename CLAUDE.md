@@ -113,8 +113,9 @@ src/
 - Client components marked with `"use client"` only where needed (FAQ, Contact, Navbar, WhatsApp, Newsletter, HeroCarousel, HeroVideoCarousel, AnimateOnScroll, PortfolioGrid)
 - All pages pre-render as static content
 - Base CSS styles wrapped in `@layer base` so Tailwind utilities always override them
-- Homepage hero uses HeroVideoCarousel — 6 x 10s clips from different events crossfading (720p, Vercel Blob CDN)
-- 2 additional video reels on Vercel Blob CDN (stats parallax, CTA on homepage)
+- Homepage hero uses HeroVideoCarousel — 3 x 10s clips from different events crossfading (720p, Cloudflare R2)
+- All 11 videos hosted on Cloudflare R2 (bucket: modern-charm-videos, public URL: https://pub-9b4e0ecb8d0044128690526d6078afd6.r2.dev)
+- Migrated from Vercel Blob (suspended due to free tier bandwidth limits) to R2 (10GB free, zero egress fees)
 - HeroCarousel component provides crossfade image carousels on all sub-page heroes
 - Services page has 2 anchor IDs (`#planning`, `#styling`) for hash navigation
 - Footer service links use hash navigation to scroll to correct service category
@@ -209,3 +210,4 @@ src/
 - **2026-02-26**: Portfolio categorization audit — recategorized 4 events based on actual image content: wedding-highlights (styling→planning), lornas-kuhingira (planning→styling), david-michelle (planning→styling), sammy-lala (planning→styling). Now balanced: 4 planning + 4 styling
 - **2026-02-26**: Responsive optimization — 14 fixes across 12 files: stats font/gap scaling, navbar CTA breakpoint alignment (xl), WhatsApp bubble hidden on xs, about section overflow-hidden, testimonial stagger at lg, blog featured image min-height, FAQ answer padding, services list breakpoint, portfolio nav title truncation, contact CTA touch target + spacing, newsletter button min 44px, footer link touch targets (py-1.5)
 - **2026-02-26**: Portfolio detail CTA — upgraded from plain bg-primary-dark to HeroCarousel with 3 images from the current event (event.images.slice(-3))
+- **2026-02-27**: Migrated all 11 videos from Vercel Blob (suspended — free tier bandwidth exceeded) to Cloudflare R2 (10GB free, zero egress). Re-trimmed clips from source videos at 720p/CRF28. R2 bucket: modern-charm-videos
