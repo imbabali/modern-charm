@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import BackgroundVideo from "@/components/BackgroundVideo";
 import HeroCarousel from "@/components/HeroCarousel";
+import { CDN_BASE } from "@/lib/cdn";
 import PortfolioGrid from "@/components/PortfolioGrid";
 import { portfolioEvents } from "@/data/portfolio-events";
 
@@ -31,7 +32,7 @@ export default function PortfolioPage() {
       {/* Hero Banner */}
       <section className="relative overflow-hidden py-32 md:py-40 lg:py-44">
         <BackgroundVideo
-          src="https://pub-9b4e0ecb8d0044128690526d6078afd6.r2.dev/videos/event-reel-1.mp4"
+          src={`${CDN_BASE}/videos/event-reel-1.mp4`}
           className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/47 via-primary-dark/27 to-primary-dark/47" />

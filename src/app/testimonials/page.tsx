@@ -3,6 +3,7 @@ import { Star, Quote } from "lucide-react";
 import Link from "next/link";
 import BackgroundVideo from "@/components/BackgroundVideo";
 import HeroCarousel from "@/components/HeroCarousel";
+import { CDN_BASE } from "@/lib/cdn";
 
 export const metadata: Metadata = {
   title: "Client Stories | Modern Charm Uganda",
@@ -87,13 +88,45 @@ function StarRating({ rating }: { rating: number }) {
   );
 }
 
+const allReviews = [
+  { name: featuredTestimonial.name, text: featuredTestimonial.text, rating: 5 },
+  ...testimonials.map((t) => ({ name: t.name, text: t.text, rating: t.rating })),
+];
+
+const reviewSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "Modern Charm Limited",
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "5",
+    reviewCount: String(allReviews.length),
+    bestRating: "5",
+    worstRating: "1",
+  },
+  review: allReviews.map((r) => ({
+    "@type": "Review",
+    author: { "@type": "Person", name: r.name },
+    reviewRating: {
+      "@type": "Rating",
+      ratingValue: String(r.rating),
+      bestRating: "5",
+    },
+    reviewBody: r.text,
+  })),
+};
+
 export default function TestimonialsPage() {
   return (
     <div className="min-h-screen bg-cream">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
+      />
       {/* Hero Banner */}
       <section className="relative overflow-hidden px-6 py-32 text-center text-white md:py-40 lg:py-44">
         <BackgroundVideo
-          src="https://pub-9b4e0ecb8d0044128690526d6078afd6.r2.dev/videos/cta-clips/cta-allan-pauline-2.mp4"
+          src={`${CDN_BASE}/videos/cta-clips/cta-allan-pauline-2.mp4`}
           className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/47 via-primary-dark/27 to-primary-dark/47" />

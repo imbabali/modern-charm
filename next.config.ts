@@ -29,7 +29,7 @@ const nextConfig: NextConfig = {
               "img-src 'self' data: blob:",
               "media-src 'self' https://pub-9b4e0ecb8d0044128690526d6078afd6.r2.dev",
               "font-src 'self'",
-              "connect-src 'self' https://vitals.vercel-insights.com https://va.vercel-scripts.com",
+              "connect-src 'self' https://vitals.vercel-insights.com https://va.vercel-scripts.com https://api.resend.com",
               "frame-src 'self'",
               "object-src 'none'",
               "base-uri 'self'",

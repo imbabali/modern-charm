@@ -8,15 +8,55 @@ function getResend() {
   return new Resend(process.env.RESEND_API_KEY);
 }
 
+/* ── Simple in-memory rate limiter (per-IP, 3 requests/hour) ── */
+const rateMap = new Map<string, { count: number; resetAt: number }>();
+const RATE_LIMIT = 3;
+const RATE_WINDOW_MS = 60 * 60 * 1000; // 1 hour
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const entry = rateMap.get(ip);
+
+  if (!entry || now > entry.resetAt) {
+    rateMap.set(ip, { count: 1, resetAt: now + RATE_WINDOW_MS });
+    return false;
+  }
+
+  entry.count += 1;
+  return entry.count > RATE_LIMIT;
+}
+
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const MAX_EMAIL_LENGTH = 254; // RFC 5321
+
 export async function POST(request: Request) {
+  // Rate limit by IP
+  const ip =
+    request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ??
+    request.headers.get("x-real-ip") ??
+    "unknown";
+
+  if (isRateLimited(ip)) {
+    return NextResponse.json(
+      { error: "Too many requests. Please try again later." },
+      { status: 429 },
+    );
+  }
+
   try {
     const resend = getResend();
     const { email } = await request.json();
 
-    if (!email || !email.includes("@")) {
+    // Validate email
+    if (
+      !email ||
+      typeof email !== "string" ||
+      email.length > MAX_EMAIL_LENGTH ||
+      !EMAIL_REGEX.test(email)
+    ) {
       return NextResponse.json(
         { error: "Please enter a valid email address." },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -48,7 +88,7 @@ export async function POST(request: Request) {
   } catch (_error) {
     return NextResponse.json(
       { error: "Subscription failed. Please try again." },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

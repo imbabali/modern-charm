@@ -1,4 +1,9 @@
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Page Not Found | Modern Charm Uganda",
+};
 
 export default function NotFound() {
   return (
@@ -12,12 +17,20 @@ export default function NotFound() {
       <p className="mt-3 max-w-md font-body text-lg text-muted">
         The page you are looking for does not exist or has been moved.
       </p>
-      <Link
-        href="/"
-        className="mt-8 inline-flex items-center gap-2 rounded-full bg-accent-dark px-8 py-4 font-body text-sm font-semibold tracking-wide text-white uppercase transition-all duration-300 hover:bg-accent hover:shadow-lg"
-      >
-        Back to Home
-      </Link>
+      <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+        <Link
+          href="/"
+          className="inline-flex items-center gap-2 rounded-full bg-accent-dark px-8 py-4 font-body text-sm font-semibold tracking-wide text-white uppercase transition-all duration-300 hover:bg-accent hover:shadow-lg"
+        >
+          Back to Home
+        </Link>
+        <Link
+          href="/contact"
+          className="inline-flex items-center gap-2 rounded-full border-2 border-primary px-8 py-4 font-body text-sm font-semibold tracking-wide text-primary uppercase transition-all duration-300 hover:bg-primary hover:text-white"
+        >
+          Contact Us
+        </Link>
+      </div>
     </div>
   );
 }

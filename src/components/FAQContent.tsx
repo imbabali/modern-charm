@@ -5,6 +5,7 @@ import { ChevronDown } from "lucide-react";
 import Link from "next/link";
 import BackgroundVideo from "@/components/BackgroundVideo";
 import HeroCarousel from "@/components/HeroCarousel";
+import { CDN_BASE } from "@/lib/cdn";
 
 export interface FAQItem {
   question: string;
@@ -86,7 +87,7 @@ export default function FAQContent({ faqData }: { faqData: FAQCategory[] }) {
       {/* Hero Banner */}
       <section className="relative overflow-hidden px-6 py-32 text-center text-white md:py-40 lg:py-44">
         <BackgroundVideo
-          src="https://pub-9b4e0ecb8d0044128690526d6078afd6.r2.dev/videos/cta-clips/cta-lala-intro-a.mp4"
+          src={`${CDN_BASE}/videos/cta-clips/cta-lala-intro-a.mp4`}
           className="absolute inset-0 h-full w-full object-cover"
           style={{ objectPosition: "center 15%" }}
         />

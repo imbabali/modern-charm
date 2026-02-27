@@ -13,6 +13,7 @@ import BackgroundVideo from "@/components/BackgroundVideo";
 import ClientLogos from "@/components/ClientLogos";
 import PortfolioCarousel from "@/components/PortfolioCarousel";
 import { portfolioEvents } from "@/data/portfolio-events";
+import { CDN_BASE } from "@/lib/cdn";
 
 export default function Home() {
   return (
@@ -24,9 +25,9 @@ export default function Home() {
         {/* Background video carousel — clips from multiple events */}
         <HeroVideoCarousel
           clips={[
-            "https://pub-9b4e0ecb8d0044128690526d6078afd6.r2.dev/videos/hero-clips/clip-allan-pauline.mp4",
-            "https://pub-9b4e0ecb8d0044128690526d6078afd6.r2.dev/videos/hero-clips/clip-david-michelle.mp4",
-            "https://pub-9b4e0ecb8d0044128690526d6078afd6.r2.dev/videos/hero-clips/clip-lornas-kuhingira.mp4",
+            `${CDN_BASE}/videos/hero-clips/clip-allan-pauline.mp4`,
+            `${CDN_BASE}/videos/hero-clips/clip-david-michelle.mp4`,
+            `${CDN_BASE}/videos/hero-clips/clip-lornas-kuhingira.mp4`,
           ]}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/27 to-black/47" />
@@ -269,7 +270,7 @@ export default function Home() {
       <section aria-label="Our impact in numbers" className="relative overflow-hidden px-6 py-24 [clip-path:inset(0)]">
         {/* Background video — event reel 1, fixed parallax effect */}
         <BackgroundVideo
-          src="https://pub-9b4e0ecb8d0044128690526d6078afd6.r2.dev/videos/event-reel-1.mp4"
+          src={`${CDN_BASE}/videos/event-reel-1.mp4`}
           className="fixed inset-0 h-full w-full object-cover"
         />
         {/* Heavy dark overlay so stats remain readable */}
@@ -511,7 +512,7 @@ export default function Home() {
       <section aria-label="Call to action" className="relative overflow-hidden px-6 py-24">
         {/* Background video — Joshua & Rhona reception */}
         <BackgroundVideo
-          src="https://pub-9b4e0ecb8d0044128690526d6078afd6.r2.dev/videos/cta-clips/cta-lala-intro-b.mp4"
+          src={`${CDN_BASE}/videos/cta-clips/cta-lala-intro-b.mp4`}
           className="absolute inset-0 h-full w-full object-cover"
           style={{ objectPosition: "center 15%" }}
         />

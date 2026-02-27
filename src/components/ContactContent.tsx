@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import BackgroundVideo from "@/components/BackgroundVideo";
 import HeroCarousel from "@/components/HeroCarousel";
+import { CDN_BASE } from "@/lib/cdn";
 
 const eventTypes = [
   "Wedding",
@@ -145,7 +146,7 @@ export default function ContactContent() {
       {/* Hero Banner */}
       <section className="relative overflow-hidden py-32 md:py-40 lg:py-44">
         <BackgroundVideo
-          src="https://pub-9b4e0ecb8d0044128690526d6078afd6.r2.dev/videos/cta-clips/cta-joshua-rhona.mp4"
+          src={`${CDN_BASE}/videos/cta-clips/cta-joshua-rhona.mp4`}
           className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/47 via-primary-dark/27 to-primary-dark/47" />
