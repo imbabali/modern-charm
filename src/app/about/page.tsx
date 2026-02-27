@@ -100,7 +100,7 @@ const teamMembers = [
     image: "/images/team/benjamin-bicung.jpg",
   },
   {
-    name: "Lamuel Mukendenta",
+    name: "Lamuel Mukundenta",
     role: "Technical Lead",
     image: "/images/team/lamuel-mukendenta.jpg",
   },

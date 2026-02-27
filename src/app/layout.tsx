@@ -112,7 +112,7 @@ export default function RootLayout({
                 "description": "Premier event management company based in Kampala, Uganda specializing in event planning, styling, corporate events, product launches, and corporate gifting.",
                 "url": "https://modern-charm.vercel.app",
                 "telephone": ["+256779399409", "+256773043255"],
-                "email": "moderncharm30@gmail.com",
+                "email": "info@moderncharmevents.com",
                 "address": {
                   "@type": "PostalAddress",
                   "addressLocality": "Kampala",
@@ -132,7 +132,7 @@ export default function RootLayout({
                 "description": "Premium event styling and decor company in Kampala, Uganda.",
                 "url": "https://modern-charm.vercel.app",
                 "telephone": "+256779399409",
-                "email": "moderncharm30@gmail.com",
+                "email": "info@moderncharmevents.com",
                 "address": {
                   "@type": "PostalAddress",
                   "addressLocality": "Kampala",

@@ -179,11 +179,11 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="mailto:moderncharm30@gmail.com"
+                  href="mailto:info@moderncharmevents.com"
                   className="flex items-center gap-2.5 text-white text-sm hover:text-white transition-colors group py-1.5"
                 >
                   <Mail className="w-4 h-4 text-accent shrink-0" aria-hidden="true" />
-                  moderncharm30@gmail.com
+                  info@moderncharmevents.com
                 </a>
               </li>
               <li>

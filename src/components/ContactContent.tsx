@@ -27,14 +27,6 @@ const eventTypes = [
   "Other",
 ];
 
-const budgetRanges = [
-  "Under 2M UGX",
-  "2 - 5M UGX",
-  "5 - 10M UGX",
-  "10 - 20M UGX",
-  "20M+ UGX",
-];
-
 const contactInfo = [
   {
     icon: Phone,
@@ -45,8 +37,8 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "moderncharm30@gmail.com",
-    href: "mailto:moderncharm30@gmail.com",
+    value: "info@moderncharmevents.com",
+    href: "mailto:info@moderncharmevents.com",
   },
   {
     icon: MapPin,
@@ -82,7 +74,6 @@ export default function ContactContent() {
     phone: "",
     eventType: "",
     eventDate: "",
-    budgetRange: "",
     message: "",
   });
 
@@ -131,7 +122,6 @@ export default function ContactContent() {
           phone: "",
           eventType: "",
           eventDate: "",
-          budgetRange: "",
           message: "",
         });
       }, 4000);
@@ -321,48 +311,22 @@ export default function ContactContent() {
                       </div>
                     </div>
 
-                    {/* Row 3: Event Date & Budget */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                      <div>
-                        <label
-                          htmlFor="eventDate"
-                          className="block text-sm font-medium text-dark mb-2"
-                        >
-                          Event Date
-                        </label>
-                        <input
-                          type="date"
-                          id="eventDate"
-                          name="eventDate"
-                          value={formData.eventDate}
-                          onChange={handleChange}
-                          className="w-full rounded-lg border border-gray-200 px-4 py-3 text-dark focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none transition-colors"
-                        />
-                      </div>
-                      <div>
-                        <label
-                          htmlFor="budgetRange"
-                          className="block text-sm font-medium text-dark mb-2"
-                        >
-                          Budget Range
-                        </label>
-                        <select
-                          id="budgetRange"
-                          name="budgetRange"
-                          value={formData.budgetRange}
-                          onChange={handleChange}
-                          className="w-full rounded-lg border border-gray-200 px-4 py-3 text-dark focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none transition-colors appearance-none bg-[url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2012%2012%22%3E%3Cpath%20fill%3D%22%236B7280%22%20d%3D%22M6%208L1%203h10z%22%2F%3E%3C%2Fsvg%3E')] bg-no-repeat bg-[right_1rem_center]"
-                        >
-                          <option value="" disabled>
-                            Select budget range
-                          </option>
-                          {budgetRanges.map((range) => (
-                            <option key={range} value={range}>
-                              {range}
-                            </option>
-                          ))}
-                        </select>
-                      </div>
+                    {/* Row 3: Event Date */}
+                    <div>
+                      <label
+                        htmlFor="eventDate"
+                        className="block text-sm font-medium text-dark mb-2"
+                      >
+                        Event Date
+                      </label>
+                      <input
+                        type="date"
+                        id="eventDate"
+                        name="eventDate"
+                        value={formData.eventDate}
+                        onChange={handleChange}
+                        className="w-full rounded-lg border border-gray-200 px-4 py-3 text-dark focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none transition-colors"
+                      />
                     </div>
 
                     {/* Message */}

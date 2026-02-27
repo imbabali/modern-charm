@@ -46,15 +46,6 @@ const ALLOWED_EVENT_TYPES = [
   "Other",
 ];
 
-const ALLOWED_BUDGETS = [
-  "Under 2M UGX",
-  "2 - 5M UGX",
-  "5 - 10M UGX",
-  "10 - 20M UGX",
-  "20M+ UGX",
-  "",
-];
-
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PHONE_REGEX = /^\+?[0-9\s\-()]{7,20}$/;
 const MAX_MESSAGE_LENGTH = 5000;
@@ -77,7 +68,7 @@ export async function POST(request: Request) {
   try {
     const resend = getResend();
     const body = await request.json();
-    const { fullName, email, phone, eventType, eventDate, budgetRange, message } = body;
+    const { fullName, email, phone, eventType, eventDate, message } = body;
 
     // Validate required fields
     if (!fullName || !email || !eventType || !message) {
@@ -121,14 +112,6 @@ export async function POST(request: Request) {
       );
     }
 
-    // Validate budget range if provided
-    if (budgetRange && !ALLOWED_BUDGETS.includes(budgetRange)) {
-      return NextResponse.json(
-        { error: "Please select a valid budget range." },
-        { status: 400 },
-      );
-    }
-
     // Validate phone format if provided
     if (phone && !PHONE_REGEX.test(phone)) {
       return NextResponse.json(
@@ -143,12 +126,11 @@ export async function POST(request: Request) {
     const safePhone = escapeHtml(phone || "Not provided");
     const safeEventType = escapeHtml(eventType);
     const safeDate = escapeHtml(eventDate || "Not specified");
-    const safeBudget = escapeHtml(budgetRange || "Not specified");
     const safeMessage = escapeHtml(message).replace(/\n/g, "<br>");
 
     await resend.emails.send({
       from: "Modern Charm <onboarding@resend.dev>",
-      to: "moderncharm30@gmail.com",
+      to: "info@moderncharmevents.com",
       replyTo: email,
       subject: `New Event Inquiry: ${safeEventType} — ${safeName}`,
       html: `
@@ -159,7 +141,6 @@ export async function POST(request: Request) {
           <tr><td style="padding: 8px; font-weight: bold;">Phone:</td><td style="padding: 8px;">${safePhone}</td></tr>
           <tr><td style="padding: 8px; font-weight: bold;">Event Type:</td><td style="padding: 8px;">${safeEventType}</td></tr>
           <tr><td style="padding: 8px; font-weight: bold;">Event Date:</td><td style="padding: 8px;">${safeDate}</td></tr>
-          <tr><td style="padding: 8px; font-weight: bold;">Budget:</td><td style="padding: 8px;">${safeBudget}</td></tr>
         </table>
         <h3>Message:</h3>
         <p>${safeMessage}</p>

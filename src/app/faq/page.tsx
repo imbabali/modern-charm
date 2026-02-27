@@ -110,7 +110,7 @@ const faqData: FAQCategory[] = [
       {
         question: "How do I get in touch?",
         answer:
-          "You can reach us through our Contact page, call us directly at +256 779 399 409 (Philip) or +256 773 043 255 (Benjamin), email us at moderncharm30@gmail.com, or WhatsApp us anytime. We are also active on Instagram (@moderncharm_events) and Facebook (moderncharmevents). After you reach out, our team reviews your inquiry and schedules a consultation call to discuss your event.",
+          "You can reach us through our Contact page, call us directly at +256 779 399 409 (Philip) or +256 773 043 255 (Benjamin), email us at info@moderncharmevents.com, or WhatsApp us anytime. We are also active on Instagram (@moderncharm_events) and Facebook (moderncharmevents). After you reach out, our team reviews your inquiry and schedules a consultation call to discuss your event.",
       },
     ],
   },
