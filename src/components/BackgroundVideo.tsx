@@ -11,14 +11,11 @@ interface BackgroundVideoProps {
 /**
  * Mobile-safe background video with autoplay.
  *
- * Why a component instead of a plain <video>?
- * 1. Sets `video.muted = true` via JS property — more reliable on iOS
- *    than the HTML attribute alone (React sometimes skips it).
- * 2. Calls `video.play()` on mount with `.catch()` fallback.
- * 3. Uses IntersectionObserver to pause/resume — mobile browsers
- *    block autoplay for offscreen videos.
- * 4. Appends `#t=0.001` so iOS renders the first frame immediately
- *    instead of a black box.
+ * Uses the same HTML pattern that worked on mobile (preload="metadata"
+ * + <source> child), plus JS-side fixes for iOS reliability:
+ * 1. Sets video.muted = true via JS property (iOS sometimes ignores HTML attr)
+ * 2. Calls video.play() with .catch() fallback
+ * 3. IntersectionObserver to play when visible, pause when offscreen
  */
 export default function BackgroundVideo({
   src,
@@ -54,9 +51,6 @@ export default function BackgroundVideo({
     return () => observer.disconnect();
   }, []);
 
-  // Append #t=0.001 to force first-frame render on iOS
-  const safeSrc = src.includes("#") ? src : `${src}#t=0.001`;
-
   return (
     <video
       ref={ref}
@@ -64,12 +58,13 @@ export default function BackgroundVideo({
       muted
       loop
       playsInline
-      preload="auto"
-      src={safeSrc}
+      preload="metadata"
       className={className}
       style={style}
       aria-hidden="true"
       tabIndex={-1}
-    />
+    >
+      <source src={src} type="video/mp4" />
+    </video>
   );
 }
