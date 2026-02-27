@@ -11,12 +11,14 @@ export const metadata: Metadata = {
     description:
       "Get in touch with Modern Charm Uganda for event styling consultations.",
     url: "https://modern-charm.vercel.app/contact",
+    images: [{ url: "/images/portfolio/rayner-racheal/IMG_3097.jpg" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Contact Us | Modern Charm Uganda",
     description:
       "Get in touch with Modern Charm Uganda for event styling consultations.",
+    images: ["/images/portfolio/rayner-racheal/IMG_3097.jpg"],
   },
 };
 

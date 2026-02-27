@@ -37,6 +37,9 @@ export async function generateMetadata({
       description: post.excerpt,
       url: `https://modern-charm.vercel.app/blog/${slug}`,
       type: "article",
+      publishedTime: new Date(post.date).toISOString(),
+      modifiedTime: new Date(post.date).toISOString(),
+      tags: [post.category],
       images: [{ url: post.image }],
     },
     twitter: {
@@ -106,6 +109,21 @@ export default async function BlogPostPage({
         </div>
       </article>
 
+      {/* Breadcrumb JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://modern-charm.vercel.app" },
+              { "@type": "ListItem", position: 2, name: "Blog", item: "https://modern-charm.vercel.app/blog" },
+              { "@type": "ListItem", position: 3, name: post.title, item: `https://modern-charm.vercel.app/blog/${slug}` },
+            ],
+          }),
+        }}
+      />
       {/* Article JSON-LD */}
       <script
         type="application/ld+json"

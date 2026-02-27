@@ -17,18 +17,30 @@ export const metadata: Metadata = {
     description:
       "Stunning weddings, traditional ceremonies, and event styling across Uganda.",
     url: "https://modern-charm.vercel.app/portfolio",
+    images: [{ url: "/images/portfolio/allan-pauline/img_0652.jpg" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Our Portfolio | Modern Charm Uganda",
     description:
       "Stunning weddings, traditional ceremonies, and event styling across Uganda.",
+    images: ["/images/portfolio/allan-pauline/img_0652.jpg"],
   },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://modern-charm.vercel.app" },
+    { "@type": "ListItem", position: 2, name: "Portfolio", item: "https://modern-charm.vercel.app/portfolio" },
+  ],
 };
 
 export default function PortfolioPage() {
   return (
     <div className="min-h-screen bg-cream">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       {/* Hero Banner */}
       <section className="relative overflow-hidden py-32 md:py-40 lg:py-44">
         <BackgroundVideo

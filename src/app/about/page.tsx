@@ -32,12 +32,14 @@ export const metadata: Metadata = {
     description:
       "Kampala's premier event management company crafting seamless, impactful, and memorable experiences.",
     url: "https://modern-charm.vercel.app/about",
+    images: [{ url: "/images/portfolio/oscar-sandra/IMG_0795.jpg" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "About Us | Modern Charm Uganda",
     description:
       "Kampala's premier event management company crafting seamless, impactful, and memorable experiences.",
+    images: ["/images/portfolio/oscar-sandra/IMG_0795.jpg"],
   },
 };
 

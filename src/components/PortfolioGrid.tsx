@@ -53,6 +53,7 @@ export default function PortfolioGrid({
               key={cat}
               role="tab"
               aria-selected={active === cat}
+              aria-controls="portfolio-grid"
               onClick={() => setActive(cat)}
               className={`rounded-full px-6 py-2.5 font-body text-sm font-medium transition-all duration-300 cursor-pointer ${
                 active === cat
@@ -66,7 +67,7 @@ export default function PortfolioGrid({
         </div>
 
         {/* Event grid */}
-        <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div id="portfolio-grid" role="tabpanel" className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {filtered.map((event) => (
             <Link
               key={event.slug}

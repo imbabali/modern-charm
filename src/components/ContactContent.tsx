@@ -243,6 +243,7 @@ export default function ContactContent() {
                           id="fullName"
                           name="fullName"
                           required
+                          maxLength={200}
                           autoComplete="name"
                           value={formData.fullName}
                           onChange={handleChange}
@@ -262,6 +263,7 @@ export default function ContactContent() {
                           id="email"
                           name="email"
                           required
+                          maxLength={254}
                           autoComplete="email"
                           value={formData.email}
                           onChange={handleChange}
@@ -284,6 +286,7 @@ export default function ContactContent() {
                           type="tel"
                           id="phone"
                           name="phone"
+                          maxLength={30}
                           autoComplete="tel"
                           value={formData.phone}
                           onChange={handleChange}
@@ -374,6 +377,7 @@ export default function ContactContent() {
                         id="message"
                         name="message"
                         required
+                        maxLength={5000}
                         rows={5}
                         value={formData.message}
                         onChange={handleChange}

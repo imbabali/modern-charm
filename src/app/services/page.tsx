@@ -27,12 +27,14 @@ export const metadata: Metadata = {
     description:
       "Discover Modern Charm Limited's full range of event management services in Kampala.",
     url: "https://modern-charm.vercel.app/services",
+    images: [{ url: "/images/portfolio/lornas-kuhingira/7b7a9575.jpg" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Our Services | Modern Charm Uganda",
     description:
       "Discover Modern Charm Limited's full range of event management services in Kampala.",
+    images: ["/images/portfolio/lornas-kuhingira/7b7a9575.jpg"],
   },
 };
 

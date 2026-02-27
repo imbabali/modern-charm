@@ -63,6 +63,20 @@ export default async function EventDetailPage({ params }: Props) {
 
   return (
     <div className="min-h-screen bg-cream">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://modern-charm.vercel.app" },
+              { "@type": "ListItem", position: 2, name: "Portfolio", item: "https://modern-charm.vercel.app/portfolio" },
+              { "@type": "ListItem", position: 3, name: event.title, item: `https://modern-charm.vercel.app/portfolio/${event.slug}` },
+            ],
+          }),
+        }}
+      />
       {/* Hero Banner */}
       <section className="relative overflow-hidden py-32 md:py-40 lg:py-44">
         <Image
