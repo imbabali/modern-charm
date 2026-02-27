@@ -139,9 +139,34 @@ const serviceCategories = [
   },
 ];
 
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "Modern Charm Limited",
+  url: "https://modern-charm.vercel.app",
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Event Services",
+    itemListElement: serviceCategories.map((cat) => ({
+      "@type": "OfferCatalog",
+      name: cat.title,
+      description: cat.description,
+      itemListElement: cat.subServices.map((sub) => ({
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: sub.title,
+          description: sub.highlights.join(". "),
+        },
+      })),
+    })),
+  },
+};
+
 export default function ServicesPage() {
   return (
     <div className="font-body">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       {/* Hero Banner */}
       <section className="relative overflow-hidden py-32 md:py-40 lg:py-44">
         <BackgroundVideo

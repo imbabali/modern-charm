@@ -72,6 +72,7 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: "#3D7A6E",
+  colorScheme: "light",
   width: "device-width",
   initialScale: 1,
 };
@@ -83,6 +84,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="preconnect" href="https://pub-9b4e0ecb8d0044128690526d6078afd6.r2.dev" />
+        <link rel="dns-prefetch" href="https://pub-9b4e0ecb8d0044128690526d6078afd6.r2.dev" />
+      </head>
       <body
         className={`${playfairDisplay.variable} ${inter.variable} antialiased`}
       >
