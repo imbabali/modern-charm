@@ -24,8 +24,12 @@ export default function HeroVideoCarousel({
 
     const vids = [a, b];
 
+    // Ensure muted via JS property (iOS requirement)
+    a.muted = true;
+    b.muted = true;
+
     // Video A starts playing clip 0
-    a.src = clips[0];
+    a.src = `${clips[0]}#t=0.001`;
     a.load();
     a.play().catch(() => {});
     a.style.opacity = "1";
@@ -33,7 +37,7 @@ export default function HeroVideoCarousel({
 
     // Video B preloads clip 1
     if (clips.length > 1) {
-      b.src = clips[1];
+      b.src = `${clips[1]}#t=0.001`;
       b.load();
       clipIdx.current = 1;
     }
@@ -55,7 +59,7 @@ export default function HeroVideoCarousel({
       // After fade completes, preload the next clip on the now-hidden video
       setTimeout(() => {
         clipIdx.current = (clipIdx.current + 1) % clips.length;
-        vids[curr].src = clips[clipIdx.current];
+        vids[curr].src = `${clips[clipIdx.current]}#t=0.001`;
         vids[curr].load();
       }, FADE_MS + 100);
     }, CLIP_MS);

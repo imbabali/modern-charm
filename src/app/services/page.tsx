@@ -13,6 +13,7 @@ import {
   CalendarCheck,
   Brush,
 } from "lucide-react";
+import BackgroundVideo from "@/components/BackgroundVideo";
 import HeroCarousel from "@/components/HeroCarousel";
 
 export const metadata: Metadata = {
@@ -140,16 +141,9 @@ export default function ServicesPage() {
     <div className="font-body">
       {/* Hero Banner */}
       <section className="relative overflow-hidden py-32 md:py-40 lg:py-44">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
+        <BackgroundVideo
           src="https://pub-9b4e0ecb8d0044128690526d6078afd6.r2.dev/videos/cta-clips/cta-sammy-lala.mp4"
           className="absolute inset-0 h-full w-full object-cover"
-          aria-hidden="true"
-          tabIndex={-1}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/47 via-primary-dark/27 to-primary-dark/47" />
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]">

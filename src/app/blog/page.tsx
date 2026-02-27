@@ -3,6 +3,7 @@ import { ArrowRight, Calendar } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { blogPosts } from "@/data/blog-posts";
+import BackgroundVideo from "@/components/BackgroundVideo";
 import HeroCarousel from "@/components/HeroCarousel";
 
 export const metadata: Metadata = {
@@ -40,16 +41,9 @@ export default function BlogPage() {
     <div className="min-h-screen bg-cream">
       {/* Hero Banner */}
       <section className="relative overflow-hidden px-6 py-32 text-center text-white md:py-40 lg:py-44">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
+        <BackgroundVideo
           src="https://pub-9b4e0ecb8d0044128690526d6078afd6.r2.dev/videos/cta-clips/cta-chris-philomera-b.mp4"
           className="absolute inset-0 h-full w-full object-cover"
-          aria-hidden="true"
-          tabIndex={-1}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/47 via-primary-dark/27 to-primary-dark/47" />
         <div className="relative z-10 mx-auto max-w-3xl drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]">

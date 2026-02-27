@@ -9,6 +9,7 @@ import {
   ChevronDown,
 } from "lucide-react";
 import HeroVideoCarousel from "@/components/HeroVideoCarousel";
+import BackgroundVideo from "@/components/BackgroundVideo";
 import ClientLogos from "@/components/ClientLogos";
 import PortfolioCarousel from "@/components/PortfolioCarousel";
 import { portfolioEvents } from "@/data/portfolio-events";
@@ -267,16 +268,9 @@ export default function Home() {
           ================================================================ */}
       <section aria-label="Our impact in numbers" className="relative overflow-hidden px-6 py-24 [clip-path:inset(0)]">
         {/* Background video — event reel 1, fixed parallax effect */}
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
+        <BackgroundVideo
           src="https://pub-9b4e0ecb8d0044128690526d6078afd6.r2.dev/videos/event-reel-1.mp4"
           className="fixed inset-0 h-full w-full object-cover"
-          aria-hidden="true"
-          tabIndex={-1}
         />
         {/* Heavy dark overlay so stats remain readable */}
         <div className="absolute inset-0 bg-black/53" />
@@ -516,17 +510,10 @@ export default function Home() {
           ================================================================ */}
       <section aria-label="Call to action" className="relative overflow-hidden px-6 py-24">
         {/* Background video — Joshua & Rhona reception */}
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
+        <BackgroundVideo
           src="https://pub-9b4e0ecb8d0044128690526d6078afd6.r2.dev/videos/cta-clips/cta-lala-intro-b.mp4"
           className="absolute inset-0 h-full w-full object-cover"
           style={{ objectPosition: "center 15%" }}
-          aria-hidden="true"
-          tabIndex={-1}
         />
         {/* Heavy dark teal overlay */}
         <div className="absolute inset-0 bg-[#2D5B52]/57" />
