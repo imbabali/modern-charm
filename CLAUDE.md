@@ -213,4 +213,10 @@ src/
 - **2026-02-27**: Migrated all 11 videos from Vercel Blob (suspended — free tier bandwidth exceeded) to Cloudflare R2 (10GB free, zero egress). Re-trimmed clips from source videos at 720p/CRF28. R2 bucket: modern-charm-videos
 - **2026-02-27**: Fixed video autoplay across all 9 files — changed `preload="metadata"` to `preload="auto"` (downloads video data, not just metadata), replaced `<source>` child elements with direct `src` attribute (more reliable for autoplay), added `autoPlay` to HeroVideoCarousel
 - **2026-02-27**: Fixed CSP `media-src` header — was still pointing to old Vercel Blob domain, blocking all R2 video URLs. Updated to allow `pub-*.r2.dev`
-- **2026-02-27**: Created `BackgroundVideo` client component for reliable mobile autoplay — sets `video.muted = true` via JS property (iOS Safari ignores HTML attr), calls `play()` on mount with `.catch()`, IntersectionObserver to pause/resume offscreen videos, `#t=0.001` media fragment for first-frame render on iOS. Replaced all 7 inline `<video>` elements across pages. Applied same fixes to HeroVideoCarousel
+- **2026-02-27**: Created `BackgroundVideo` client component for reliable mobile autoplay — sets `video.muted = true` via JS property (iOS Safari ignores HTML attr), calls `play()` on mount with `.catch()`, IntersectionObserver to pause/resume offscreen videos. Replaced all 7 inline `<video>` elements across pages. Applied same fixes to HeroVideoCarousel
+- **2026-02-27**: 2026 standards audit — critical and high priority fixes:
+  - **Security**: Rate limiting on API routes (5/hr contact, 3/hr newsletter), HTML-escape XSS prevention, eventType whitelist validation, phone/email/length validation, npm audit fix (minimatch ReDoS)
+  - **CSP**: Added `api.resend.com` to connect-src, added `Disallow: /api/` to robots.txt
+  - **SEO**: JSON-LD Review + AggregateRating schema on testimonials page (7 reviews, 5.0 avg)
+  - **Infra**: Centralized R2 CDN URL in `src/lib/cdn.ts` (was hardcoded in 8 files)
+  - **UX**: Enhanced not-found.tsx with metadata and Contact Us link
