@@ -96,16 +96,12 @@ export default function TestimonialsPage() {
           muted
           loop
           playsInline
-          preload="metadata"
+          preload="auto"
+          src="https://pub-9b4e0ecb8d0044128690526d6078afd6.r2.dev/videos/cta-clips/cta-allan-pauline-2.mp4"
           className="absolute inset-0 h-full w-full object-cover"
           aria-hidden="true"
           tabIndex={-1}
-        >
-          <source
-            src="https://pub-9b4e0ecb8d0044128690526d6078afd6.r2.dev/videos/cta-clips/cta-allan-pauline-2.mp4"
-            type="video/mp4"
-          />
-        </video>
+        />
         <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/47 via-primary-dark/27 to-primary-dark/47" />
         <div className="relative z-10 mx-auto max-w-3xl drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]">
           <h1 className="font-heading text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl">

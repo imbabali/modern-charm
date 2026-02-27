@@ -272,17 +272,12 @@ export default function Home() {
           muted
           loop
           playsInline
-          preload="metadata"
-          poster="/images/reception-decor.jpg"
+          preload="auto"
+          src="https://pub-9b4e0ecb8d0044128690526d6078afd6.r2.dev/videos/event-reel-1.mp4"
           className="fixed inset-0 h-full w-full object-cover"
           aria-hidden="true"
           tabIndex={-1}
-        >
-          <source
-            src="https://pub-9b4e0ecb8d0044128690526d6078afd6.r2.dev/videos/event-reel-1.mp4"
-            type="video/mp4"
-          />
-        </video>
+        />
         {/* Heavy dark overlay so stats remain readable */}
         <div className="absolute inset-0 bg-black/53" />
         {/* Decorative elements */}
@@ -526,18 +521,13 @@ export default function Home() {
           muted
           loop
           playsInline
-          preload="metadata"
-          poster="/images/hero-dance.jpg"
+          preload="auto"
+          src="https://pub-9b4e0ecb8d0044128690526d6078afd6.r2.dev/videos/cta-clips/cta-lala-intro-b.mp4"
           className="absolute inset-0 h-full w-full object-cover"
           style={{ objectPosition: "center 15%" }}
           aria-hidden="true"
           tabIndex={-1}
-        >
-          <source
-            src="https://pub-9b4e0ecb8d0044128690526d6078afd6.r2.dev/videos/cta-clips/cta-lala-intro-b.mp4"
-            type="video/mp4"
-          />
-        </video>
+        />
         {/* Heavy dark teal overlay */}
         <div className="absolute inset-0 bg-[#2D5B52]/57" />
         {/* Decorative elements */}

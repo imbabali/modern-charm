@@ -69,6 +69,7 @@ export default function HeroVideoCarousel({
     <>
       <video
         ref={videoA}
+        autoPlay
         muted
         playsInline
         preload="auto"
@@ -79,6 +80,7 @@ export default function HeroVideoCarousel({
       />
       <video
         ref={videoB}
+        autoPlay
         muted
         playsInline
         preload="auto"
