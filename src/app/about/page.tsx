@@ -26,12 +26,12 @@ export const metadata: Metadata = {
   title: "About Us | Modern Charm Uganda",
   description:
     "Learn about Modern Charm Limited — Kampala's premier event management company crafting seamless, impactful, and memorable experiences with over six years of excellence.",
-  alternates: { canonical: "https://modern-charm.vercel.app/about" },
+  alternates: { canonical: "https://moderncharmevents.com/about" },
   openGraph: {
     title: "About Us | Modern Charm Uganda",
     description:
       "Kampala's premier event management company crafting seamless, impactful, and memorable experiences.",
-    url: "https://modern-charm.vercel.app/about",
+    url: "https://moderncharmevents.com/about",
     images: [{ url: "/images/portfolio/oscar-sandra/IMG_0795.jpg" }],
   },
   twitter: {

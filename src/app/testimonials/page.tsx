@@ -9,12 +9,12 @@ export const metadata: Metadata = {
   title: "Client Stories | Modern Charm Uganda",
   description:
     "Hear from the people who trusted Modern Charm Uganda with their most special moments. Real reviews from real clients across Kampala and beyond.",
-  alternates: { canonical: "https://modern-charm.vercel.app/testimonials" },
+  alternates: { canonical: "https://moderncharmevents.com/testimonials" },
   openGraph: {
     title: "Client Stories | Modern Charm Uganda",
     description:
       "Real reviews from real clients across Kampala and beyond.",
-    url: "https://modern-charm.vercel.app/testimonials",
+    url: "https://moderncharmevents.com/testimonials",
     images: [{ url: "/images/portfolio/david-michelle/7b7a0807.jpg" }],
   },
   twitter: {

@@ -31,11 +31,11 @@ export async function generateMetadata({
   return {
     title: `${post.title} | Modern Charm Uganda`,
     description: post.excerpt,
-    alternates: { canonical: `https://modern-charm.vercel.app/blog/${slug}` },
+    alternates: { canonical: `https://moderncharmevents.com/blog/${slug}` },
     openGraph: {
       title: post.title,
       description: post.excerpt,
-      url: `https://modern-charm.vercel.app/blog/${slug}`,
+      url: `https://moderncharmevents.com/blog/${slug}`,
       type: "article",
       publishedTime: new Date(post.date).toISOString(),
       modifiedTime: new Date(post.date).toISOString(),
@@ -117,9 +117,9 @@ export default async function BlogPostPage({
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             itemListElement: [
-              { "@type": "ListItem", position: 1, name: "Home", item: "https://modern-charm.vercel.app" },
-              { "@type": "ListItem", position: 2, name: "Blog", item: "https://modern-charm.vercel.app/blog" },
-              { "@type": "ListItem", position: 3, name: post.title, item: `https://modern-charm.vercel.app/blog/${slug}` },
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://moderncharmevents.com" },
+              { "@type": "ListItem", position: 2, name: "Blog", item: "https://moderncharmevents.com/blog" },
+              { "@type": "ListItem", position: 3, name: post.title, item: `https://moderncharmevents.com/blog/${slug}` },
             ],
           }),
         }}
@@ -133,19 +133,19 @@ export default async function BlogPostPage({
             "@type": "Article",
             "headline": post.title,
             "description": post.excerpt,
-            "image": `https://modern-charm.vercel.app${post.image}`,
+            "image": `https://moderncharmevents.com${post.image}`,
             "datePublished": new Date(post.date).toISOString(),
             "author": {
               "@type": "Organization",
               "name": "Modern Charm Uganda",
-              "url": "https://modern-charm.vercel.app",
+              "url": "https://moderncharmevents.com",
             },
             "publisher": {
               "@type": "Organization",
               "name": "Modern Charm Uganda",
-              "url": "https://modern-charm.vercel.app",
+              "url": "https://moderncharmevents.com",
             },
-            "mainEntityOfPage": `https://modern-charm.vercel.app/blog/${slug}`,
+            "mainEntityOfPage": `https://moderncharmevents.com/blog/${slug}`,
           }),
         }}
       />

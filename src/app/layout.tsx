@@ -22,7 +22,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://modern-charm.vercel.app"),
+  metadataBase: new URL("https://moderncharmevents.com"),
   title: "Modern Charm Uganda | Premier Event Management",
   description:
     "Modern Charm Limited is a premier event management company in Kampala, Uganda. We specialize in event planning, styling, corporate events, product launches, and corporate gifting — crafting seamless, impactful, and memorable experiences.",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     title: "Modern Charm Uganda | Premier Event Management",
     description:
       "Premier event management in Kampala, Uganda. Event planning, styling, corporate events, product launches, and corporate gifting.",
-    url: "https://modern-charm.vercel.app",
+    url: "https://moderncharmevents.com",
     siteName: "Modern Charm Uganda",
     locale: "en_UG",
     type: "website",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     images: ["/images/hero-wedding.jpg"],
   },
   alternates: {
-    canonical: "https://modern-charm.vercel.app",
+    canonical: "https://moderncharmevents.com",
   },
   robots: {
     index: true,
@@ -118,7 +118,7 @@ export default function RootLayout({
                 "@type": "EventPlanning",
                 "name": "Modern Charm Limited",
                 "description": "Premier event management company based in Kampala, Uganda specializing in event planning, styling, corporate events, product launches, and corporate gifting.",
-                "url": "https://modern-charm.vercel.app",
+                "url": "https://moderncharmevents.com",
                 "telephone": ["+256779399409", "+256773043255"],
                 "email": "info@moderncharmevents.com",
                 "address": {
@@ -130,7 +130,7 @@ export default function RootLayout({
                   "https://instagram.com/moderncharm_events",
                   "https://facebook.com/moderncharmevents"
                 ],
-                "image": "https://modern-charm.vercel.app/images/hero-wedding.jpg",
+                "image": "https://moderncharmevents.com/images/hero-wedding.jpg",
                 "priceRange": "$$"
               },
               {
@@ -138,7 +138,7 @@ export default function RootLayout({
                 "@type": "LocalBusiness",
                 "name": "Modern Charm Uganda",
                 "description": "Premium event styling and decor company in Kampala, Uganda.",
-                "url": "https://modern-charm.vercel.app",
+                "url": "https://moderncharmevents.com",
                 "telephone": "+256779399409",
                 "email": "info@moderncharmevents.com",
                 "address": {
@@ -162,7 +162,7 @@ export default function RootLayout({
                   "https://instagram.com/moderncharm_events",
                   "https://facebook.com/moderncharmevents"
                 ],
-                "image": "https://modern-charm.vercel.app/images/hero-wedding.jpg",
+                "image": "https://moderncharmevents.com/images/hero-wedding.jpg",
                 "priceRange": "$$"
               }
             ]),

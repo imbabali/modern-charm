@@ -11,12 +11,12 @@ export const metadata: Metadata = {
   title: "Our Portfolio | Modern Charm Uganda",
   description:
     "Explore our portfolio of stunning weddings, traditional ceremonies, and event styling across Kampala and Uganda. Real celebrations brought to life by Modern Charm.",
-  alternates: { canonical: "https://modern-charm.vercel.app/portfolio" },
+  alternates: { canonical: "https://moderncharmevents.com/portfolio" },
   openGraph: {
     title: "Our Portfolio | Modern Charm Uganda",
     description:
       "Stunning weddings, traditional ceremonies, and event styling across Uganda.",
-    url: "https://modern-charm.vercel.app/portfolio",
+    url: "https://moderncharmevents.com/portfolio",
     images: [{ url: "/images/portfolio/allan-pauline/img_0652.jpg" }],
   },
   twitter: {
@@ -32,8 +32,8 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://modern-charm.vercel.app" },
-    { "@type": "ListItem", position: 2, name: "Portfolio", item: "https://modern-charm.vercel.app/portfolio" },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://moderncharmevents.com" },
+    { "@type": "ListItem", position: 2, name: "Portfolio", item: "https://moderncharmevents.com/portfolio" },
   ],
 };
 

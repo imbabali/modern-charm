@@ -6,12 +6,12 @@ export const metadata: Metadata = {
   title: "FAQ | Modern Charm Uganda",
   description:
     "Find answers to common questions about Modern Charm Uganda's event planning, styling, corporate gifting, pricing, and booking process.",
-  alternates: { canonical: "https://modern-charm.vercel.app/faq" },
+  alternates: { canonical: "https://moderncharmevents.com/faq" },
   openGraph: {
     title: "FAQ | Modern Charm Uganda",
     description:
       "Find answers to common questions about our event planning, styling, corporate gifting, pricing, and booking process.",
-    url: "https://modern-charm.vercel.app/faq",
+    url: "https://moderncharmevents.com/faq",
     images: [{ url: "/images/portfolio/sammy-lala/img_3472.jpg" }],
   },
   twitter: {
@@ -75,7 +75,7 @@ const faqData: FAQCategory[] = [
       {
         question: "What is your pricing structure?",
         answer:
-          "We offer three core packages — Essential Charm (starting from UGX 2,000,000), Premium Charm (starting from UGX 5,000,000), and Grand Charm (starting from UGX 12,000,000) — plus fully custom options. Final pricing depends on factors like event size, venue requirements, design complexity, and additional services. We believe in transparent pricing and always provide a detailed breakdown before you commit. Contact us to discuss which package suits your event best.",
+          "Our pricing is determined on a case-by-case basis depending on your specific needs — including event size, venue requirements, design complexity, and additional services. Every event is unique, and we tailor our packages to match your vision and budget. We believe in transparent pricing and always provide a detailed breakdown before you commit. Contact us through our Contact page or WhatsApp us at +256 779 399 409 to discuss your event, and we will put together a custom quote for you.",
       },
       {
         question: "Do you require a deposit?",

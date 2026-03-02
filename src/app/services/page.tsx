@@ -21,12 +21,12 @@ export const metadata: Metadata = {
   title: "Our Services | Modern Charm Uganda",
   description:
     "From event planning and coordination to styling and decor — discover Modern Charm Limited's full range of event management services in Kampala.",
-  alternates: { canonical: "https://modern-charm.vercel.app/services" },
+  alternates: { canonical: "https://moderncharmevents.com/services" },
   openGraph: {
     title: "Our Services | Modern Charm Uganda",
     description:
       "Discover Modern Charm Limited's full range of event management services in Kampala.",
-    url: "https://modern-charm.vercel.app/services",
+    url: "https://moderncharmevents.com/services",
     images: [{ url: "/images/portfolio/lornas-kuhingira/7b7a9575.jpg" }],
   },
   twitter: {
@@ -143,7 +143,7 @@ const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   name: "Modern Charm Limited",
-  url: "https://modern-charm.vercel.app",
+  url: "https://moderncharmevents.com",
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "Event Services",

@@ -71,7 +71,7 @@ export async function POST(request: Request) {
 
     // Send a welcome/confirmation email
     await resend.emails.send({
-      from: "Modern Charm <onboarding@resend.dev>",
+      from: "Modern Charm <noreply@moderncharmevents.com>",
       to: email,
       subject: "Welcome to Modern Charm — You're Subscribed!",
       html: `

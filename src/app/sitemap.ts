@@ -3,7 +3,7 @@ import { blogPosts } from "@/data/blog-posts";
 import { portfolioEvents } from "@/data/portfolio-events";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://modern-charm.vercel.app";
+  const baseUrl = "https://moderncharmevents.com";
 
   const blogEntries: MetadataRoute.Sitemap = blogPosts.map((post) => ({
     url: `${baseUrl}/blog/${post.slug}`,

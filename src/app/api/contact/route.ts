@@ -129,7 +129,7 @@ export async function POST(request: Request) {
     const safeMessage = escapeHtml(message).replace(/\n/g, "<br>");
 
     await resend.emails.send({
-      from: "Modern Charm <onboarding@resend.dev>",
+      from: "Modern Charm <noreply@moderncharmevents.com>",
       to: "info@moderncharmevents.com",
       replyTo: email,
       subject: `New Event Inquiry: ${safeEventType} — ${safeName}`,

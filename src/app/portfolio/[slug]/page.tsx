@@ -29,12 +29,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${event.title} | Modern Charm Uganda`,
     description: event.description,
     alternates: {
-      canonical: `https://modern-charm.vercel.app/portfolio/${event.slug}`,
+      canonical: `https://moderncharmevents.com/portfolio/${event.slug}`,
     },
     openGraph: {
       title: `${event.title} | Modern Charm Uganda`,
       description: event.description,
-      url: `https://modern-charm.vercel.app/portfolio/${event.slug}`,
+      url: `https://moderncharmevents.com/portfolio/${event.slug}`,
       images: [{ url: event.coverImage, width: 1200, height: 630 }],
     },
     twitter: {
@@ -70,9 +70,9 @@ export default async function EventDetailPage({ params }: Props) {
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             itemListElement: [
-              { "@type": "ListItem", position: 1, name: "Home", item: "https://modern-charm.vercel.app" },
-              { "@type": "ListItem", position: 2, name: "Portfolio", item: "https://modern-charm.vercel.app/portfolio" },
-              { "@type": "ListItem", position: 3, name: event.title, item: `https://modern-charm.vercel.app/portfolio/${event.slug}` },
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://moderncharmevents.com" },
+              { "@type": "ListItem", position: 2, name: "Portfolio", item: "https://moderncharmevents.com/portfolio" },
+              { "@type": "ListItem", position: 3, name: event.title, item: `https://moderncharmevents.com/portfolio/${event.slug}` },
             ],
           }),
         }}
