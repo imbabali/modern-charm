@@ -4,7 +4,7 @@
 Website for **Modern Charm Limited** (@moderncharm_events) — a premier event management company based in Kampala, Uganda. Tagline: *"Some are born with it, others work for it! Then there's us, the ones who make charm happen!"*
 
 ## Live URLs
-- **Production**: https://modern-charm.vercel.app
+- **Production**: https://moderncharmevents.com (custom domain; Vercel also serves at modern-charm.vercel.app)
 - **GitHub**: https://github.com/imbabali/modern-charm
 - **Instagram**: https://www.instagram.com/moderncharm_events/
 
@@ -156,17 +156,17 @@ src/
 - [x] ~~Add real portfolio items~~ — Done (Allan & Pauline wedding gallery)
 - [x] ~~Add real testimonials~~ — Done (7 real reviews from WhatsApp/Instagram screenshots: Mr. & Mrs. Mugagga Mulindwa, The Senkungus, Oscar & Sandra, Lala T., Noah N., + 2 anonymous WhatsApp reviews)
 - [x] ~~Add real team photos~~ — Done (5 professional headshots, center-aligned flexbox grid)
-- [ ] Verify homepage stats accuracy (500+ Events, 6+ Years, 50+ Venue Partners)
+- [x] ~~Verify homepage stats accuracy~~ — Confirmed: 100+ Events, 6+ Years, 50+ Venue Partners
 - [x] ~~Add blog post detail pages~~ — Done (7 blog posts with dynamic [slug] routing)
 - [x] ~~Implement SEO~~ — Done (metadataBase, sitemap.ts with blog slugs, robots.ts, JSON-LD EventPlanning + LocalBusiness + Article + FAQ schemas, per-page OG/Twitter/canonical tags)
 - [x] ~~Add page transition animations~~ — Done (AnimateOnScroll component, CSS scroll animations)
 - [x] ~~Performance optimization~~ — Done (AVIF format, image sizes, font trimming, security headers, React Compiler, optimizePackageImports)
 - [x] ~~Analytics integration~~ — Done (@vercel/analytics + @vercel/speed-insights)
-- [ ] Set up RESEND_API_KEY environment variable on Vercel for contact form + newsletter
-- [ ] Verify custom domain (moderncharmuganda.com) in Resend for branded sender emails
+- [x] ~~Set up RESEND_API_KEY environment variable on Vercel~~ — Done (key set in Vercel production env)
+- [x] ~~Verify custom domain in Resend for branded sender emails~~ — Done (moderncharmevents.com verified, sender: noreply@moderncharmevents.com)
 - [ ] Add RESEND_AUDIENCE_ID for newsletter subscriber management
 - [ ] Set up Google Business Profile for Modern Charm Uganda (enables Google Reviews)
-- [ ] Submit sitemap to Google Search Console (https://modern-charm.vercel.app/sitemap.xml)
+- [x] ~~Submit sitemap to Google Search Console~~ — Done (GSC set up, sitemap URLs migrated to moderncharmevents.com)
 
 ## Progress Log
 - **2026-02-24**: Initial build — complete website with 9 pages, all components, deployed to Vercel
@@ -220,3 +220,14 @@ src/
   - **SEO**: JSON-LD Review + AggregateRating schema on testimonials page (7 reviews, 5.0 avg)
   - **Infra**: Centralized R2 CDN URL in `src/lib/cdn.ts` (was hardcoded in 8 files)
   - **UX**: Enhanced not-found.tsx with metadata and Contact Us link
+- **2026-02-28**: 2026 standards audit — medium priority fixes:
+  - **SEO**: OG/Twitter images on all 7 sub-pages, blog detail publishedTime/modifiedTime/tags, BreadcrumbList JSON-LD on portfolio + blog detail pages, Service JSON-LD with OfferCatalog on services page
+  - **Accessibility**: PortfolioGrid aria-controls + tabpanel role, contact form maxLength attributes
+  - **Performance**: Preconnect/dns-prefetch for R2 CDN, TypeScript target ES2022
+  - **Standards**: color-scheme: light (CSS + viewport meta), X-Robots-Tag noindex on API routes, sitemap dates updated to 2026-02-27
+- **2026-02-28**: Content updates — corrected Lamuel Mukundenta surname, updated contact email to info@moderncharmevents.com (6 files), removed budget range from contact form + API route
+- **2026-03-02**: Generated favicon set from logo — favicon.ico (32x32), apple-touch-icon.png (180x180), PWA icons (192x192, 512x512). Updated layout.tsx icons metadata + manifest.ts
+- **2026-03-02**: Set up RESEND_API_KEY on Vercel production, domain verified in Resend
+- **2026-03-02**: Domain migration — replaced all `modern-charm.vercel.app` URLs with `moderncharmevents.com` across 12 source files (sitemap, robots, layout, all page metadata/canonical/OG/JSON-LD). Fixes Google Search Console "URL not allowed" errors
+- **2026-03-02**: Removed specific package prices from FAQ (pricing is now case-by-case per client needs)
+- **2026-03-02**: Updated Resend sender from `onboarding@resend.dev` to `noreply@moderncharmevents.com` (branded domain verified)
