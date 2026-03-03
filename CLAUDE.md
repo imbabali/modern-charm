@@ -164,8 +164,8 @@ src/
 - [x] ~~Analytics integration~~ — Done (@vercel/analytics + @vercel/speed-insights)
 - [x] ~~Set up RESEND_API_KEY environment variable on Vercel~~ — Done (key set in Vercel production env)
 - [x] ~~Verify custom domain in Resend for branded sender emails~~ — Done (moderncharmevents.com verified, sender: noreply@moderncharmevents.com)
-- [ ] Add RESEND_AUDIENCE_ID for newsletter subscriber management
-- [ ] Set up Google Business Profile for Modern Charm Uganda (enables Google Reviews)
+- [x] ~~Add RESEND_AUDIENCE_ID for newsletter subscriber management~~ — Done (audience "Modern Charm Newsletter" created, ID set in Vercel production env)
+- [ ] Set up Google Business Profile for Modern Charm Uganda (enables Google Reviews) — requires manual identity verification by client
 - [x] ~~Submit sitemap to Google Search Console~~ — Done (GSC set up, sitemap URLs migrated to moderncharmevents.com)
 
 ## Progress Log
@@ -231,3 +231,6 @@ src/
 - **2026-03-02**: Domain migration — replaced all `modern-charm.vercel.app` URLs with `moderncharmevents.com` across 12 source files (sitemap, robots, layout, all page metadata/canonical/OG/JSON-LD). Fixes Google Search Console "URL not allowed" errors
 - **2026-03-02**: Removed specific package prices from FAQ (pricing is now case-by-case per client needs)
 - **2026-03-02**: Updated Resend sender from `onboarding@resend.dev` to `noreply@moderncharmevents.com` (branded domain verified)
+- **2026-03-02**: Created Resend audience "Modern Charm Newsletter" (ID: 3bed8a42-857d-41a6-998a-314e0cad9a5a), set RESEND_AUDIENCE_ID on Vercel production. Newsletter subscribers now tracked automatically
+- **2026-03-02**: Force deployed twice to Vercel production — all env vars (RESEND_API_KEY, RESEND_AUDIENCE_ID) active
+- **2026-03-03**: Site rated 9/10 for client handover readiness. Only remaining item: Google Business Profile (requires client's manual identity verification with Google)
