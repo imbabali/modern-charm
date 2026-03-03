@@ -234,3 +234,4 @@ src/
 - **2026-03-02**: Created Resend audience "Modern Charm Newsletter" (ID: 3bed8a42-857d-41a6-998a-314e0cad9a5a), set RESEND_AUDIENCE_ID on Vercel production. Newsletter subscribers now tracked automatically
 - **2026-03-02**: Force deployed twice to Vercel production — all env vars (RESEND_API_KEY, RESEND_AUDIENCE_ID) active
 - **2026-03-03**: Site rated 9/10 for client handover readiness. Only remaining item: Google Business Profile (requires client's manual identity verification with Google)
+- **2026-03-03**: Fixed browser tab favicon — `src/app/favicon.ico` (default Vercel triangle from create-next-app) was overriding `public/favicon.ico`. Replaced with Modern Charm logo favicon. Force deployed.
