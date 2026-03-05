@@ -16,6 +16,20 @@ const heroPositions: Record<string, string> = {
   "budget-friendly-event-styling-ideas": "center 45%",
 };
 
+/* Per-image position overrides (index-based) for specific posts */
+const heroImagePositions: Record<string, string[]> = {
+  "the-ultimate-guide-to-planning-a-ugandan-wedding-in-2026": [
+    "center 20%",
+    "center 20%",
+    "center 30%",
+  ],
+  "top-10-wedding-decor-trends-in-uganda-for-2026": [
+    "center 25%",
+    "center 35%",
+    "center 35%",
+  ],
+};
+
 export function generateStaticParams() {
   return blogPosts.map((post) => ({ slug: post.slug }));
 }
@@ -63,7 +77,7 @@ export default async function BlogPostPage({
     <div className="min-h-screen bg-cream">
       {/* Hero */}
       <section className="relative overflow-hidden px-6 py-24 text-center text-white md:py-32">
-        <HeroCarousel images={post.heroImages} objectPosition={heroPositions[slug] || "center"} />
+        <HeroCarousel images={post.heroImages} objectPosition={heroPositions[slug] || "center"} imagePositions={heroImagePositions[slug]} />
         <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/70 via-primary-dark/50 to-primary-dark/70" />
         <div className="relative z-10 mx-auto max-w-3xl">
           <nav
@@ -155,6 +169,7 @@ export default async function BlogPostPage({
         <HeroCarousel
           images={post.heroImages}
           objectPosition={heroPositions[slug] || "center"}
+          imagePositions={heroImagePositions[slug]}
         />
         <div className="absolute inset-0 bg-primary-dark/57" />
         <div className="relative z-10 mx-auto max-w-2xl">

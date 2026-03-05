@@ -7,12 +7,14 @@ interface HeroCarouselProps {
   images: string[];
   interval?: number;
   objectPosition?: string;
+  imagePositions?: string[];
 }
 
 export default function HeroCarousel({
   images,
   interval = 5000,
   objectPosition = "center",
+  imagePositions,
 }: HeroCarouselProps) {
   const [current, setCurrent] = useState(0);
 
@@ -36,7 +38,7 @@ export default function HeroCarousel({
           alt=""
           fill
           sizes="100vw"
-          style={{ objectPosition }}
+          style={{ objectPosition: imagePositions?.[i] || objectPosition }}
           className={`object-cover transition-opacity duration-1000 ease-in-out ${
             i === current ? "opacity-100" : "opacity-0"
           }`}
