@@ -19,12 +19,12 @@ const heroPositions: Record<string, string> = {
 /* Per-image position overrides (index-based) for specific posts */
 const heroImagePositions: Record<string, string[]> = {
   "the-ultimate-guide-to-planning-a-ugandan-wedding-in-2026": [
-    "center 0%",
-    "center 0%",
+    "center 20%",
+    "center 20%",
     "center 30%",
   ],
   "top-10-wedding-decor-trends-in-uganda-for-2026": [
-    "center 0%",
+    "center 20%",
     "center 35%",
     "center 35%",
   ],
