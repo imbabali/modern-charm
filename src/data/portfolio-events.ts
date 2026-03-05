@@ -21,7 +21,7 @@ export const portfolioEvents: PortfolioEvent[] = [
     description:
       "A high-profile corporate summit for the Private Sector Foundation Uganda, featuring keynote presentations, panel discussions, and professional networking — executed with precision and elegance.",
     coverImage: "/images/portfolio/psfu-business-summit/am9a4213.jpg",
-    heroPosition: "center 40%",
+    heroPosition: "center 0%",
     images: [
       "/images/portfolio/psfu-business-summit/am9a4154.jpg",
       "/images/portfolio/psfu-business-summit/am9a4175.jpg",
@@ -81,8 +81,8 @@ export const portfolioEvents: PortfolioEvent[] = [
     description:
       "A professionally managed university conference for Unicaf, featuring speaker panels, catering, branded setups, and seamless event coordination for academic and corporate delegates.",
     coverImage: "/images/portfolio/unicaf-corporate/unicaf_DON_2084.jpg",
-    heroPosition: "center 40%",
-    ctaPosition: "center 40%",
+    heroPosition: "center 0%",
+    ctaPosition: "center 0%",
     images: [
       "/images/portfolio/unicaf-corporate/unicaf_setup_1.jpg",
       "/images/portfolio/unicaf-corporate/unicaf_setup_2.jpg",
