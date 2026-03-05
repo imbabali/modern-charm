@@ -53,7 +53,7 @@ src/
     globals.css         # Tailwind theme + custom styles
     about/page.tsx      # Company story, team (5 members), mission/vision, values, how we work, clientele
     services/page.tsx   # 2 service categories (Event Planning & Coordination, Event Styling & Decor)
-    portfolio/page.tsx  # Filterable portfolio grid (All/Planning/Styling)
+    portfolio/page.tsx  # Filterable portfolio grid (All/Planning/Styling), 12 events
     portfolio/[slug]/page.tsx # Event detail page with image gallery
     testimonials/page.tsx # Client stories + featured testimonial
     blog/page.tsx       # Journal/blog listing
@@ -235,3 +235,9 @@ src/
 - **2026-03-02**: Force deployed twice to Vercel production — all env vars (RESEND_API_KEY, RESEND_AUDIENCE_ID) active
 - **2026-03-03**: Site rated 9/10 for client handover readiness. Only remaining item: Google Business Profile (requires client's manual identity verification with Google)
 - **2026-03-03**: Fixed browser tab favicon — `src/app/favicon.ico` (default Vercel triangle from create-next-app) was overriding `public/favicon.ico`. Replaced with Modern Charm logo favicon. Force deployed.
+- **2026-03-05**: Added 5 new corporate portfolio events — PSFU Business Summit (8 images), Hima Cement Corporate Event (8 images), Bloomberg Philanthropies Launch (10 images), Unicaf University Conference (10 images), and Romantic Garden Celebration / Phil & Pesh (13 images). All corporate events under `category: "planning"`.
+- **2026-03-05**: Removed Allan & Pauline couple entry from portfolio (all images showed the couple). Expanded allan-pauline-styling with 5 new WhatsApp decor images (now 8 total). Portfolio now has 12 events total (7 planning + 5 styling).
+- **2026-03-05**: Removed all Allan couple image/video references across 11 source files — homepage hero video, about CTA, services CTA, portfolio OG images, testimonials hero video, blog post #6 content & images, FAQ answer text. Replaced with decor/corporate alternatives.
+- **2026-03-05**: Replaced `about-couple.jpg` and `hero-wedding.jpg` on disk with Lorna's Kuhingira decor shots. Updated homepage about section alt text.
+- **2026-03-05**: Updated corporate blog post (#4) images to use real PSFU/Hima/Bloomberg/Unicaf photos. Updated FAQ to mention corporate clients.
+- **2026-03-05**: Sitemap dates updated to 2026-03-05. New portfolio slugs auto-included via dynamic sitemap generation.
