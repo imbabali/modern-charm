@@ -316,7 +316,7 @@ export default function ServicesPage() {
           images={[
             "/images/portfolio/lornas-kuhingira/7b7a9610.jpg",
             "/images/portfolio/oscar-sandra/IMG_0886.jpg",
-            "/images/portfolio/allan-pauline/img_0637.jpg",
+            "/images/portfolio/phil-pesh/pp_session-55.jpg",
           ]}
           objectPosition="center 30%"
         />

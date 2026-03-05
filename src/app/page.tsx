@@ -25,9 +25,9 @@ export default function Home() {
         {/* Background video carousel — clips from multiple events */}
         <HeroVideoCarousel
           clips={[
-            `${CDN_BASE}/videos/hero-clips/clip-allan-pauline.mp4`,
             `${CDN_BASE}/videos/hero-clips/clip-david-michelle.mp4`,
             `${CDN_BASE}/videos/hero-clips/clip-lornas-kuhingira.mp4`,
+            `${CDN_BASE}/videos/cta-clips/cta-sammy-lala.mp4`,
           ]}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/27 to-black/47" />
@@ -96,7 +96,7 @@ export default function Home() {
             <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl">
               <Image
                 src="/images/about-couple.jpg"
-                alt="Couple portrait under floral arch styled by Modern Charm Uganda"
+                alt="Elegant event decor and floral installation styled by Modern Charm Uganda"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover object-[center_35%]"

@@ -128,7 +128,7 @@ export default function TestimonialsPage() {
       {/* Hero Banner */}
       <section className="relative overflow-hidden px-6 py-32 text-center text-white md:py-40 lg:py-44">
         <BackgroundVideo
-          src={`${CDN_BASE}/videos/cta-clips/cta-allan-pauline-2.mp4`}
+          src={`${CDN_BASE}/videos/cta-clips/cta-sammy-lala.mp4`}
           className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/47 via-primary-dark/27 to-primary-dark/47" />

@@ -17,14 +17,14 @@ export const metadata: Metadata = {
     description:
       "Stunning weddings, traditional ceremonies, and event styling across Uganda.",
     url: "https://moderncharmevents.com/portfolio",
-    images: [{ url: "/images/portfolio/allan-pauline/img_0652.jpg" }],
+    images: [{ url: "/images/portfolio/oscar-sandra/IMG_0882.jpg" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Our Portfolio | Modern Charm Uganda",
     description:
       "Stunning weddings, traditional ceremonies, and event styling across Uganda.",
-    images: ["/images/portfolio/allan-pauline/img_0652.jpg"],
+    images: ["/images/portfolio/oscar-sandra/IMG_0882.jpg"],
   },
 };
 

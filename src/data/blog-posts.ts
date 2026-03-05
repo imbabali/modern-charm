@@ -161,11 +161,11 @@ export const blogPosts: BlogPost[] = [
     category: "Corporate",
     date: "January 28, 2026",
     gradient: "from-primary-light/60 to-primary/80",
-    image: "/images/portfolio/david-michelle/7b7a0807.jpg",
+    image: "/images/portfolio/psfu-business-summit/am9a4213.jpg",
     heroImages: [
-      "/images/portfolio/david-michelle/7b7a0810.jpg",
-      "/images/portfolio/david-michelle/dji_0407.jpg",
-      "/images/portfolio/david-michelle/dji_0408.jpg",
+      "/images/portfolio/hima-cement-event/898A8514.jpg",
+      "/images/portfolio/bloomberg-launch/dsc_4337.jpg",
+      "/images/portfolio/unicaf-corporate/unicaf_DON_2084.jpg",
     ],
   },
   {
@@ -213,11 +213,11 @@ export const blogPosts: BlogPost[] = [
     content: `
       <h2>When a Dream Meets the Shores of Lake Victoria</h2>
       <p>
-        Some weddings stay with you long after the last guest has departed. Allan and Pauline's lakeside celebration was one of those weddings \u2014 a day so meticulously planned and so full of genuine emotion that every member of our team left feeling we had been part of something truly special. Set against the serene backdrop of Lake Victoria, this wedding was a masterclass in luxury outdoor entertaining, and we are thrilled to take you behind the scenes of how it all came together.
+        Some weddings stay with you long after the last guest has departed. This lakeside celebration was one of those weddings \u2014 a day so meticulously planned and so full of genuine emotion that every member of our team left feeling we had been part of something truly special. Set against the serene backdrop of Lake Victoria, this wedding was a masterclass in luxury outdoor entertaining, and we are thrilled to take you behind the scenes of how it all came together.
       </p>
       <h2>The Vision</h2>
       <p>
-        Allan and Pauline came to us with a clear vision: they wanted a celebration that felt like an elegant garden party by the water, with a colour palette of soft lavender, ivory, and gold. They wanted their guests to feel transported \u2014 away from the bustle of Kampala and into a world of beauty, romance, and celebration. The challenge was creating that level of refinement in an outdoor setting, where weather, terrain, and logistics all add layers of complexity that an indoor venue does not present.
+        The couple came to us with a clear vision: they wanted a celebration that felt like an elegant garden party by the water, with a colour palette of soft lavender, ivory, and gold. They wanted their guests to feel transported \u2014 away from the bustle of Kampala and into a world of beauty, romance, and celebration. The challenge was creating that level of refinement in an outdoor setting, where weather, terrain, and logistics all add layers of complexity that an indoor venue does not present.
       </p>
       <h2>The Setup: 48 Hours of Transformation</h2>
       <p>
@@ -225,21 +225,21 @@ export const blogPosts: BlogPost[] = [
       </p>
       <h2>The Day Itself</h2>
       <p>
-        Wedding day dawned clear and golden \u2014 a gift after a week of unpredictable weather. The ceremony began at 3 PM, with Pauline walking down a petal-strewn aisle flanked by lanterns and lavender arrangements, toward an arch that framed the shimmering lake behind Allan. The emotional vows, the gentle breeze off the water, and the soft string quartet created a moment of pure magic. As the sun began to set, guests moved to the cocktail area where they were greeted with signature drinks and canap\u00e9s, while our team executed the rapid reception turnaround \u2014 lighting the 300 candles, doing final table checks, and cueing the dramatic reveal moment when the marquee doors opened.
+        Wedding day dawned clear and golden \u2014 a gift after a week of unpredictable weather. The ceremony began at 3 PM, with the bride walking down a petal-strewn aisle flanked by lanterns and lavender arrangements, toward an arch that framed the shimmering lake. The emotional vows, the gentle breeze off the water, and the soft string quartet created a moment of pure magic. As the sun began to set, guests moved to the cocktail area where they were greeted with signature drinks and canap\u00e9s, while our team executed the rapid reception turnaround \u2014 lighting the 300 candles, doing final table checks, and cueing the dramatic reveal moment when the marquee doors opened.
       </p>
       <h2>Lessons for Your Own Celebration</h2>
       <p>
-        Every wedding teaches us something new, and Allan and Pauline's celebration reinforced several principles we hold dear. First, always have a weather contingency \u2014 we had a full backup plan that could have been executed in under two hours. Second, invest in lighting; it was the single element that drew the most compliments from guests, transforming the space as the evening unfolded. Third, do not underestimate the power of small details \u2014 the hand-lettered place cards, the custom cocktail menu, the lavender sachets as guest favours \u2014 these are the touches that make guests feel truly cared for. And finally, trust your team. A wedding of this scale requires coordination, communication, and the kind of calm-under-pressure professionalism that comes from experience. It was an honour to be part of Allan and Pauline's love story.
+        Every wedding teaches us something new, and this celebration reinforced several principles we hold dear. First, always have a weather contingency \u2014 we had a full backup plan that could have been executed in under two hours. Second, invest in lighting; it was the single element that drew the most compliments from guests, transforming the space as the evening unfolded. Third, do not underestimate the power of small details \u2014 the hand-lettered place cards, the custom cocktail menu, the lavender sachets as guest favours \u2014 these are the touches that make guests feel truly cared for. And finally, trust your team. A wedding of this scale requires coordination, communication, and the kind of calm-under-pressure professionalism that comes from experience. It was an honour to be part of this beautiful love story.
       </p>
     `,
     category: "Portfolio",
     date: "January 14, 2026",
     gradient: "from-primary-dark/60 to-primary-light/80",
-    image: "/images/portfolio/allan-pauline/img_0652.jpg",
+    image: "/images/portfolio/rayner-racheal/venue-chandeliers.jpg",
     heroImages: [
-      "/images/portfolio/allan-pauline/img_0659.jpg",
-      "/images/portfolio/allan-pauline/img_0662.jpg",
-      "/images/portfolio/allan-pauline/img_0675.jpg",
+      "/images/portfolio/rayner-racheal/table-setting.jpg",
+      "/images/portfolio/rayner-racheal/venue-entrance.jpg",
+      "/images/portfolio/rayner-racheal/reception-entrance.jpg",
     ],
   },
   {

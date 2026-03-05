@@ -55,7 +55,7 @@ const faqData: FAQCategory[] = [
       {
         question: "Do you handle both traditional and modern weddings?",
         answer:
-          "Absolutely. We have deep expertise in both traditional Ugandan ceremonies and contemporary celebrations. Whether you are planning a kwanjula (Buganda introduction), kuhingira (Ankole introduction), or a modern white wedding, we understand the cultural nuances, protocols, and aesthetics that make each ceremony unique. Our portfolio includes weddings like Allan & Pauline's lavender garden wedding at Lake Victoria, Oscar & Sandra's luxury black-and-white reception with gold arches and chandeliers, and Lorna's traditional kuhingira ceremony. Many of our clients choose to blend traditional and modern elements, and we love creating that seamless fusion.",
+          "Absolutely. We have deep expertise in both traditional Ugandan ceremonies and contemporary celebrations. Whether you are planning a kwanjula (Buganda introduction), kuhingira (Ankole introduction), or a modern white wedding, we understand the cultural nuances, protocols, and aesthetics that make each ceremony unique. Our portfolio includes stunning celebrations like Oscar & Sandra's luxury black-and-white reception with gold arches and chandeliers, Lorna's traditional kuhingira ceremony, and elegant garden receptions. We also handle corporate events for clients like PSFU, Hima Cement, Bloomberg Philanthropies, and Unicaf University. Many of our clients choose to blend traditional and modern elements, and we love creating that seamless fusion.",
       },
       {
         question: "Can you work with my existing vendors?",

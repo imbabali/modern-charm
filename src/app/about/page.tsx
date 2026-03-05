@@ -511,7 +511,7 @@ export default function AboutPage() {
           images={[
             "/images/portfolio/david-michelle/dji_0407.jpg",
             "/images/portfolio/lornas-kuhingira/7b7a9559.jpg",
-            "/images/portfolio/allan-pauline/img_0717.jpg",
+            "/images/portfolio/bloomberg-launch/dsc_4337.jpg",
           ]}
           objectPosition="center 35%"
         />
