@@ -27,14 +27,14 @@ export const metadata: Metadata = {
     description:
       "Discover Modern Charm Limited's full range of event management services in Kampala.",
     url: "https://moderncharmevents.com/services",
-    images: [{ url: "/images/portfolio/lornas-kuhingira/7b7a9575.jpg" }],
+    images: [{ url: "/images/portfolio/lornas-kuhingira/7b7a9583.jpg" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Our Services | Modern Charm Uganda",
     description:
       "Discover Modern Charm Limited's full range of event management services in Kampala.",
-    images: ["/images/portfolio/lornas-kuhingira/7b7a9575.jpg"],
+    images: ["/images/portfolio/lornas-kuhingira/7b7a9583.jpg"],
   },
 };
 
@@ -46,9 +46,9 @@ const serviceCategories = [
     tagline: "From vision to flawless execution",
     description:
       "We take the stress out of event planning by handling every logistical detail — from initial concept to day-of coordination. Our experienced team manages budgets, timelines, vendor sourcing, and on-site operations so you can focus on enjoying your celebration. Whether it's a corporate conference, a product launch, or an intimate dinner, we plan with precision and care.",
-    image: "/images/portfolio/oscar-sandra/IMG_2416.jpg",
+    image: "/images/portfolio/oscar-sandra/IMG_2411.jpg",
     imageAlt:
-      "Elegant reception venue with gold chandeliers and floral installations styled by Modern Charm",
+      "Grand black and gold reception venue with crystal chandeliers styled by Modern Charm",
     subServices: [
       {
         icon: ClipboardList,
@@ -107,9 +107,9 @@ const serviceCategories = [
     tagline: "Transforming spaces into unforgettable experiences",
     description:
       "Transform any venue into a breathtaking experience. Our creative team designs immersive environments that reflect your vision and tell your story. From floral installations and lighting design to bespoke gift curation and statement backdrops — we style every detail to perfection, creating spaces that leave lasting impressions.",
-    image: "/images/portfolio/david-michelle/dji_0436.jpg",
+    image: "/images/portfolio/lornas-kuhingira/7b7a9560.jpg",
     imageAlt:
-      "Aerial view of luxurious wedding reception with blush linens, gold chairs, and crystal chandeliers",
+      "Sage green reception with hanging floral installations and cross-back chairs styled by Modern Charm",
     subServices: [
       {
         icon: Palette,
@@ -316,9 +316,9 @@ export default function ServicesPage() {
       <section className="py-20 md:py-28 relative overflow-hidden">
         <HeroCarousel
           images={[
-            "/images/portfolio/lornas-kuhingira/7b7a9610.jpg",
+            "/images/portfolio/lornas-kuhingira/7b7a9597.jpg",
             "/images/portfolio/oscar-sandra/IMG_0886.jpg",
-            "/images/portfolio/phil-pesh/pp_session-55.jpg",
+            "/images/portfolio/oscar-sandra/IMG_0934.jpg",
           ]}
           objectPosition="center 30%"
         />

@@ -189,10 +189,10 @@ export default function AboutPage() {
             <div className="relative">
               <div className="aspect-[4/5] rounded-2xl overflow-hidden relative">
                 <Image
-                  src="/images/portfolio/oscar-sandra/IMG_0834.jpg"
-                  alt="Couple framed through elegant oval-back reception chairs"
+                  src="/images/portfolio/oscar-sandra/IMG_0883.jpg"
+                  alt="Bridal party in champagne gowns at a luxury reception styled by Modern Charm"
                   fill
-                  className="object-cover"
+                  className="object-cover object-[center_20%]"
                   quality={80}
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
@@ -511,9 +511,9 @@ export default function AboutPage() {
       <section className="py-20 md:py-28 relative overflow-hidden">
         <HeroCarousel
           images={[
-            "/images/portfolio/david-michelle/dji_0407.jpg",
-            "/images/portfolio/lornas-kuhingira/7b7a9559.jpg",
-            "/images/portfolio/bloomberg-launch/dsc_4337.jpg",
+            "/images/portfolio/oscar-sandra/IMG_0928.jpg",
+            "/images/portfolio/lornas-kuhingira/7b7a9563.jpg",
+            "/images/portfolio/lornas-kuhingira/7b7a9545.jpg",
           ]}
           objectPosition="center 35%"
         />

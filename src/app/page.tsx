@@ -96,8 +96,8 @@ export default function Home() {
           <div className="relative">
             <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl">
               <Image
-                src="/images/about-couple.jpg"
-                alt="Elegant event decor and floral installation styled by Modern Charm Uganda"
+                src="/images/portfolio/oscar-sandra/IMG_0932.jpg"
+                alt="Bride in stunning mermaid gown at a luxury black and gold reception styled by Modern Charm Uganda"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover object-[center_35%]"

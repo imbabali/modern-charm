@@ -15,14 +15,14 @@ export const metadata: Metadata = {
     description:
       "Real reviews from real clients across Kampala and beyond.",
     url: "https://moderncharmevents.com/testimonials",
-    images: [{ url: "/images/portfolio/david-michelle/7b7a0807.jpg" }],
+    images: [{ url: "/images/portfolio/oscar-sandra/IMG_0941.jpg" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Client Stories | Modern Charm Uganda",
     description:
       "Real reviews from real clients across Kampala and beyond.",
-    images: ["/images/portfolio/david-michelle/7b7a0807.jpg"],
+    images: ["/images/portfolio/oscar-sandra/IMG_0941.jpg"],
   },
 };
 
@@ -224,9 +224,9 @@ export default function TestimonialsPage() {
       <section className="relative overflow-hidden px-6 py-20 text-center md:py-28">
         <HeroCarousel
           images={[
-            "/images/portfolio/oscar-sandra/IMG_0795.jpg",
+            "/images/portfolio/lornas-kuhingira/7b7a9596.jpg",
             "/images/portfolio/lornas-kuhingira/7b7a9567.jpg",
-            "/images/portfolio/lornas-kuhingira/7b7a9579.jpg",
+            "/images/portfolio/lornas-kuhingira/7b7a9589.jpg",
           ]}
           objectPosition="center 40%"
         />

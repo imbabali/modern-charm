@@ -41,11 +41,11 @@ export const blogPosts: BlogPost[] = [
     category: "Weddings",
     date: "February 18, 2026",
     gradient: "from-primary via-primary-light to-accent",
-    image: "/images/portfolio/oscar-sandra/IMG_0851.jpg",
+    image: "/images/portfolio/oscar-sandra/IMG_0897.jpg",
     heroImages: [
       "/images/portfolio/oscar-sandra/IMG_0848.jpg",
       "/images/portfolio/oscar-sandra/IMG_0854.jpg",
-      "/images/portfolio/oscar-sandra/IMG_0868.jpg",
+      "/images/portfolio/oscar-sandra/IMG_0918.jpg",
     ],
     featured: true,
   },
@@ -87,7 +87,7 @@ export const blogPosts: BlogPost[] = [
     category: "Weddings",
     date: "February 12, 2026",
     gradient: "from-primary/60 to-primary-dark/80",
-    image: "/images/portfolio/oscar-sandra/IMG_1917.jpg",
+    image: "/images/portfolio/oscar-sandra/IMG_1961.jpg",
     heroImages: [
       "/images/portfolio/oscar-sandra/IMG_1919.jpg",
       "/images/portfolio/oscar-sandra/IMG_1924.jpg",
@@ -128,7 +128,7 @@ export const blogPosts: BlogPost[] = [
     heroImages: [
       "/images/portfolio/lornas-kuhingira/7b7a9524.jpg",
       "/images/portfolio/lornas-kuhingira/7b7a9532.jpg",
-      "/images/portfolio/lornas-kuhingira/7b7a9535.jpg",
+      "/images/portfolio/lornas-kuhingira/7b7a9537.jpg",
     ],
   },
   {
@@ -161,11 +161,11 @@ export const blogPosts: BlogPost[] = [
     category: "Corporate",
     date: "January 28, 2026",
     gradient: "from-primary-light/60 to-primary/80",
-    image: "/images/portfolio/psfu-business-summit/am9a4213.jpg",
+    image: "/images/portfolio/psfu-business-summit/am9a4238.jpg",
     heroImages: [
-      "/images/portfolio/hima-cement-event/898A8514.jpg",
-      "/images/portfolio/bloomberg-launch/dsc_4337.jpg",
-      "/images/portfolio/unicaf-corporate/unicaf_DON_2084.jpg",
+      "/images/portfolio/hima-cement-event/898A8528.jpg",
+      "/images/portfolio/bloomberg-launch/dsc_4451.jpg",
+      "/images/portfolio/unicaf-corporate/unicaf_DON_2106.jpg",
     ],
   },
   {
@@ -198,11 +198,11 @@ export const blogPosts: BlogPost[] = [
     category: "Tips",
     date: "January 20, 2026",
     gradient: "from-accent-light/60 to-accent/80",
-    image: "/images/portfolio/wedding-highlights/IMG_3886.jpg",
+    image: "/images/portfolio/wedding-highlights/IMG_3885.jpg",
     heroImages: [
       "/images/portfolio/wedding-highlights/IMG_3887.jpg",
       "/images/portfolio/wedding-highlights/IMG_3888.jpg",
-      "/images/portfolio/wedding-highlights/IMG_3889.jpg",
+      "/images/portfolio/wedding-highlights/IMG_3893.jpg",
     ],
   },
   {

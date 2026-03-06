@@ -449,7 +449,7 @@ export default function ContactContent() {
           images={[
             "/images/portfolio/lornas-kuhingira/7b7a9480.jpg",
             "/images/portfolio/lornas-kuhingira/7b7a9513.jpg",
-            "/images/portfolio/oscar-sandra/IMG_0897.jpg",
+            "/images/portfolio/oscar-sandra/IMG_1963.jpg",
           ]}
           objectPosition="center 30%"
         />
