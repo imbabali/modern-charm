@@ -241,3 +241,5 @@ src/
 - **2026-03-05**: Replaced `about-couple.jpg` and `hero-wedding.jpg` on disk with Lorna's Kuhingira decor shots. Updated homepage about section alt text.
 - **2026-03-05**: Updated corporate blog post (#4) images to use real PSFU/Hima/Bloomberg/Unicaf photos. Updated FAQ to mention corporate clients.
 - **2026-03-05**: Sitemap dates updated to 2026-03-05. New portfolio slugs auto-included via dynamic sitemap generation.
+- **2026-03-05**: Image positioning — PSFU hero at `center 20%`, Unicaf hero + CTA at `center 20%`, blog hero per-image positions via `heroImagePositions` map in blog/[slug]/page.tsx. HeroCarousel now supports `imagePositions?: string[]` prop for per-image overrides.
+- **2026-03-06**: Aesthetic refinements (4-phase plan) — h1/h2 letter-spacing (0.025em), section-divider CSS class (gold gradient accent lines), simplified CTA overlays to 2-stop gradients across 8 pages, AnimateOnScroll on homepage stats/services/testimonials, form focus bg-cream shift, FAQ accordion padding increase, team card hover shadows, portfolio gallery mobile fix, blog prose typography, section dividers on About + Services pages.
