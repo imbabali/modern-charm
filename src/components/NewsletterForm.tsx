@@ -59,7 +59,7 @@ export default function NewsletterForm() {
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Your email"
           disabled={status === "loading" || status === "success"}
-          className="flex-1 min-w-0 px-4 py-2.5 bg-primary-dark border border-white/25 rounded-l-lg text-sm text-white placeholder-white/70 focus:outline-none focus:border-accent focus:bg-primary-dark transition-colors disabled:opacity-50"
+          className="flex-1 min-w-0 px-4 py-2.5 bg-primary-dark border border-white/25 rounded-l-lg text-sm text-white placeholder-white/70 focus:outline-none focus:border-accent focus:bg-primary-dark/80 transition-all duration-200 disabled:opacity-50"
           aria-label="Email address for newsletter"
         />
         <button

@@ -12,6 +12,7 @@ import HeroVideoCarousel from "@/components/HeroVideoCarousel";
 import BackgroundVideo from "@/components/BackgroundVideo";
 import ClientLogos from "@/components/ClientLogos";
 import PortfolioCarousel from "@/components/PortfolioCarousel";
+import AnimateOnScroll from "@/components/AnimateOnScroll";
 import { portfolioEvents } from "@/data/portfolio-events";
 import { CDN_BASE } from "@/lib/cdn";
 
@@ -186,7 +187,8 @@ export default function Home() {
           {/* Service cards grid */}
           <div className="grid gap-8 sm:grid-cols-2">
             {/* Card 1 — Event Planning & Coordination */}
-            <div className="group relative rounded-2xl border border-gray-100 bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-xl hover:shadow-accent/5">
+            <AnimateOnScroll delay={0}>
+            <div className="group relative rounded-2xl border border-gray-100 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-xl hover:shadow-accent/5">
               <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-accent/10 group-hover:text-accent-dark">
                 <ClipboardList className="h-7 w-7" aria-hidden="true" />
               </div>
@@ -223,8 +225,11 @@ export default function Home() {
               </Link>
             </div>
 
+            </AnimateOnScroll>
+
             {/* Card 2 — Event Styling & Decor */}
-            <div className="group relative rounded-2xl border border-gray-100 bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-xl hover:shadow-accent/5">
+            <AnimateOnScroll delay={150}>
+            <div className="group relative rounded-2xl border border-gray-100 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-xl hover:shadow-accent/5">
               <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-accent/10 group-hover:text-accent-dark">
                 <Palette className="h-7 w-7" aria-hidden="true" />
               </div>
@@ -260,6 +265,7 @@ export default function Home() {
                 <ArrowRight aria-hidden="true" className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
             </div>
+            </AnimateOnScroll>
           </div>
         </div>
       </section>
@@ -301,48 +307,56 @@ export default function Home() {
           {/* Stats grid */}
           <div className="grid grid-cols-2 gap-4 sm:gap-8 lg:grid-cols-4 lg:gap-12">
             {/* Stat 1 */}
-            <div className="text-center">
-              <div className="font-heading text-4xl font-bold text-accent-light sm:text-5xl md:text-6xl">
-                100+
+            <AnimateOnScroll delay={0}>
+              <div className="text-center">
+                <div className="font-heading text-4xl font-bold text-accent-light sm:text-5xl md:text-6xl">
+                  100+
+                </div>
+                <div className="mt-2 h-0.5 mx-auto w-8 rounded-full bg-accent/50" />
+                <p className="font-body mt-3 text-base font-medium tracking-wide text-white/90">
+                  Events Styled
+                </p>
               </div>
-              <div className="mt-2 h-0.5 mx-auto w-8 rounded-full bg-accent/50" />
-              <p className="font-body mt-3 text-base font-medium tracking-wide text-white/90">
-                Events Styled
-              </p>
-            </div>
+            </AnimateOnScroll>
 
             {/* Stat 2 */}
-            <div className="text-center">
-              <div className="font-heading text-4xl font-bold text-accent-light sm:text-5xl md:text-6xl">
-                6+
+            <AnimateOnScroll delay={100}>
+              <div className="text-center">
+                <div className="font-heading text-4xl font-bold text-accent-light sm:text-5xl md:text-6xl">
+                  6+
+                </div>
+                <div className="mt-2 h-0.5 mx-auto w-8 rounded-full bg-accent/50" />
+                <p className="font-body mt-3 text-base font-medium tracking-wide text-white/90">
+                  Years of Excellence
+                </p>
               </div>
-              <div className="mt-2 h-0.5 mx-auto w-8 rounded-full bg-accent/50" />
-              <p className="font-body mt-3 text-base font-medium tracking-wide text-white/90">
-                Years of Excellence
-              </p>
-            </div>
+            </AnimateOnScroll>
 
             {/* Stat 3 */}
-            <div className="text-center">
-              <div className="font-heading text-4xl font-bold text-accent-light sm:text-5xl md:text-6xl">
-                100%
+            <AnimateOnScroll delay={200}>
+              <div className="text-center">
+                <div className="font-heading text-4xl font-bold text-accent-light sm:text-5xl md:text-6xl">
+                  100%
+                </div>
+                <div className="mt-2 h-0.5 mx-auto w-8 rounded-full bg-accent/50" />
+                <p className="font-body mt-3 text-base font-medium tracking-wide text-white/90">
+                  Client Satisfaction
+                </p>
               </div>
-              <div className="mt-2 h-0.5 mx-auto w-8 rounded-full bg-accent/50" />
-              <p className="font-body mt-3 text-base font-medium tracking-wide text-white/90">
-                Client Satisfaction
-              </p>
-            </div>
+            </AnimateOnScroll>
 
             {/* Stat 4 */}
-            <div className="text-center">
-              <div className="font-heading text-4xl font-bold text-accent-light sm:text-5xl md:text-6xl">
-                50+
+            <AnimateOnScroll delay={300}>
+              <div className="text-center">
+                <div className="font-heading text-4xl font-bold text-accent-light sm:text-5xl md:text-6xl">
+                  50+
+                </div>
+                <div className="mt-2 h-0.5 mx-auto w-8 rounded-full bg-accent/50" />
+                <p className="font-body mt-3 text-base font-medium tracking-wide text-white/90">
+                  Partners
+                </p>
               </div>
-              <div className="mt-2 h-0.5 mx-auto w-8 rounded-full bg-accent/50" />
-              <p className="font-body mt-3 text-base font-medium tracking-wide text-white/90">
-                Partners
-              </p>
-            </div>
+            </AnimateOnScroll>
           </div>
         </div>
       </section>
@@ -416,6 +430,7 @@ export default function Home() {
           {/* Testimonial cards — editorial layout */}
           <div className="grid gap-8 md:grid-cols-3">
             {/* Testimonial 1 — Mr. & Mrs. Mugagga Mulindwa */}
+            <AnimateOnScroll delay={0}>
             <div className="relative rounded-2xl bg-white p-8 shadow-sm transition-shadow duration-300 hover:shadow-md">
               <Quote aria-hidden="true" className="mb-4 h-8 w-8 text-accent/60" />
               <blockquote>
@@ -445,7 +460,10 @@ export default function Home() {
               <div className="absolute right-4 bottom-4 h-8 w-8 rounded-full bg-accent/5" />
             </div>
 
+            </AnimateOnScroll>
+
             {/* Testimonial 2 — The Senkungus */}
+            <AnimateOnScroll delay={150}>
             <div className="relative rounded-2xl bg-white p-8 shadow-sm transition-shadow duration-300 hover:shadow-md lg:-mt-4">
               <Quote aria-hidden="true" className="mb-4 h-8 w-8 text-accent/60" />
               <blockquote>
@@ -474,7 +492,10 @@ export default function Home() {
               <div className="absolute right-4 bottom-4 h-8 w-8 rounded-full bg-accent/5" />
             </div>
 
+            </AnimateOnScroll>
+
             {/* Testimonial 3 — Oscar & Sandra */}
+            <AnimateOnScroll delay={300}>
             <div className="relative rounded-2xl bg-white p-8 shadow-sm transition-shadow duration-300 hover:shadow-md">
               <Quote aria-hidden="true" className="mb-4 h-8 w-8 text-accent/60" />
               <blockquote>
@@ -502,6 +523,7 @@ export default function Home() {
               </div>
               <div className="absolute right-4 bottom-4 h-8 w-8 rounded-full bg-accent/5" />
             </div>
+            </AnimateOnScroll>
           </div>
         </div>
       </section>

@@ -310,6 +310,8 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      <div className="section-divider mx-auto max-w-7xl" />
+
       {/* Bottom CTA Section */}
       <section className="py-20 md:py-28 relative overflow-hidden">
         <HeroCarousel
@@ -320,7 +322,7 @@ export default function ServicesPage() {
           ]}
           objectPosition="center 30%"
         />
-        <div className="absolute inset-0 bg-primary-dark/57" />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/50 to-primary-dark/65" />
         <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
             Ready to Get Started?

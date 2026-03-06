@@ -238,7 +238,7 @@ export default function ContactContent() {
                           value={formData.fullName}
                           onChange={handleChange}
                           placeholder="Your full name"
-                          className="w-full rounded-lg border border-gray-200 px-4 py-3 text-dark placeholder:text-muted/50 focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none transition-colors"
+                          className="w-full rounded-lg border border-gray-200 px-4 py-3 text-dark placeholder:text-muted/50 focus:border-primary focus:ring-2 focus:ring-primary/20 focus:bg-cream focus:outline-none transition-all duration-200"
                         />
                       </div>
                       <div>
@@ -258,7 +258,7 @@ export default function ContactContent() {
                           value={formData.email}
                           onChange={handleChange}
                           placeholder="you@example.com"
-                          className="w-full rounded-lg border border-gray-200 px-4 py-3 text-dark placeholder:text-muted/50 focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none transition-colors"
+                          className="w-full rounded-lg border border-gray-200 px-4 py-3 text-dark placeholder:text-muted/50 focus:border-primary focus:ring-2 focus:ring-primary/20 focus:bg-cream focus:outline-none transition-all duration-200"
                         />
                       </div>
                     </div>
@@ -281,7 +281,7 @@ export default function ContactContent() {
                           value={formData.phone}
                           onChange={handleChange}
                           placeholder="+256 7XX XXX XXX"
-                          className="w-full rounded-lg border border-gray-200 px-4 py-3 text-dark placeholder:text-muted/50 focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none transition-colors"
+                          className="w-full rounded-lg border border-gray-200 px-4 py-3 text-dark placeholder:text-muted/50 focus:border-primary focus:ring-2 focus:ring-primary/20 focus:bg-cream focus:outline-none transition-all duration-200"
                         />
                       </div>
                       <div>
@@ -297,7 +297,7 @@ export default function ContactContent() {
                           required
                           value={formData.eventType}
                           onChange={handleChange}
-                          className="w-full rounded-lg border border-gray-200 px-4 py-3 text-dark focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none transition-colors appearance-none bg-[url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2012%2012%22%3E%3Cpath%20fill%3D%22%236B7280%22%20d%3D%22M6%208L1%203h10z%22%2F%3E%3C%2Fsvg%3E')] bg-no-repeat bg-[right_1rem_center]"
+                          className="w-full rounded-lg border border-gray-200 px-4 py-3 text-dark focus:border-primary focus:ring-2 focus:ring-primary/20 focus:bg-cream focus:outline-none transition-all duration-200 appearance-none bg-[url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2012%2012%22%3E%3Cpath%20fill%3D%22%236B7280%22%20d%3D%22M6%208L1%203h10z%22%2F%3E%3C%2Fsvg%3E')] bg-no-repeat bg-[right_1rem_center]"
                         >
                           <option value="" disabled>
                             Select event type
@@ -325,7 +325,7 @@ export default function ContactContent() {
                         name="eventDate"
                         value={formData.eventDate}
                         onChange={handleChange}
-                        className="w-full rounded-lg border border-gray-200 px-4 py-3 text-dark focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none transition-colors"
+                        className="w-full rounded-lg border border-gray-200 px-4 py-3 text-dark focus:border-primary focus:ring-2 focus:ring-primary/20 focus:bg-cream focus:outline-none transition-all duration-200"
                       />
                     </div>
 
@@ -346,7 +346,7 @@ export default function ContactContent() {
                         value={formData.message}
                         onChange={handleChange}
                         placeholder="Tell us about your event vision, any specific themes or ideas you have in mind..."
-                        className="w-full rounded-lg border border-gray-200 px-4 py-3 text-dark placeholder:text-muted/50 focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none transition-colors resize-none"
+                        className="w-full rounded-lg border border-gray-200 px-4 py-3 text-dark placeholder:text-muted/50 focus:border-primary focus:ring-2 focus:ring-primary/20 focus:bg-cream focus:outline-none transition-all duration-200 resize-none"
                       />
                     </div>
 
@@ -453,7 +453,7 @@ export default function ContactContent() {
           ]}
           objectPosition="center 30%"
         />
-        <div className="absolute inset-0 bg-primary-dark/57" />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/50 to-primary-dark/65" />
         <div className="relative z-10 mx-auto max-w-2xl">
           <h2 className="font-heading text-3xl font-bold text-white md:text-4xl">
             Have Questions?

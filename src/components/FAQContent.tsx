@@ -116,7 +116,7 @@ export default function FAQContent({ faqData }: { faqData: FAQCategory[] }) {
               </div>
 
               {/* FAQ Items */}
-              <div className="rounded-xl bg-white p-2 shadow-sm md:p-4">
+              <div className="rounded-xl bg-white p-4 shadow-sm md:p-6">
                 {category.items.map((item, itemIndex) => {
                   const id = `${catIndex}-${itemIndex}`;
                   return (
@@ -145,7 +145,7 @@ export default function FAQContent({ faqData }: { faqData: FAQCategory[] }) {
           ]}
           objectPosition="center 35%"
         />
-        <div className="absolute inset-0 bg-primary-dark/57" />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/50 to-primary-dark/65" />
         <div className="relative z-10 mx-auto max-w-2xl">
           <h2 className="font-heading text-3xl font-bold text-white md:text-4xl">
             Still have questions?

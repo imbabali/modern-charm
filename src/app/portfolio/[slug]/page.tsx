@@ -151,7 +151,7 @@ export default async function EventDetailPage({ params }: Props) {
                 key={image}
                 className={`group relative overflow-hidden rounded-2xl bg-cream-dark ${
                   index === 0
-                    ? "sm:col-span-2 lg:col-span-2 aspect-[16/9]"
+                    ? "lg:col-span-2 aspect-[16/9]"
                     : "aspect-[4/3]"
                 }`}
               >
@@ -229,7 +229,7 @@ export default async function EventDetailPage({ params }: Props) {
           images={event.images.slice(-3)}
           objectPosition={event.ctaPosition || "center"}
         />
-        <div className="absolute inset-0 bg-primary-dark/57" />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/50 to-primary-dark/65" />
         <div className="relative z-10 mx-auto max-w-2xl">
           <h2 className="font-heading text-3xl font-bold text-white md:text-4xl">
             Ready to plan your event?

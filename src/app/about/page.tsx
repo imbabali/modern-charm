@@ -237,6 +237,8 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <div className="section-divider mx-auto max-w-7xl" />
+
       {/* Mission & Vision Section */}
       <section className="py-20 md:py-28 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -480,7 +482,7 @@ export default function AboutPage() {
                 key={member.name}
                 className="group text-center rounded-2xl bg-white p-6 hover:shadow-lg transition-all duration-300 w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.75rem)]"
               >
-                <div className="mx-auto mb-5 h-40 w-40 rounded-full overflow-hidden shadow-lg group-hover:scale-105 transition-transform duration-300 relative">
+                <div className="mx-auto mb-5 h-40 w-40 rounded-full overflow-hidden shadow-lg group-hover:scale-105 group-hover:shadow-xl transition-all duration-300 relative">
                   <Image
                     src={member.image}
                     alt={`${member.name} - ${member.role} at Modern Charm`}
@@ -515,7 +517,7 @@ export default function AboutPage() {
           ]}
           objectPosition="center 35%"
         />
-        <div className="absolute inset-0 bg-primary-dark/57" />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/50 to-primary-dark/65" />
         <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
             Ready to Create Something Beautiful?

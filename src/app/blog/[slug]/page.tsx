@@ -76,7 +76,7 @@ export default async function BlogPostPage({
   return (
     <div className="min-h-screen bg-cream">
       {/* Hero */}
-      <section className="relative overflow-hidden px-6 py-24 text-center text-white md:py-32">
+      <section className="relative overflow-hidden px-6 py-32 text-center text-white md:py-40 lg:py-44">
         <HeroCarousel images={post.heroImages} objectPosition={heroPositions[slug] || "center"} imagePositions={heroImagePositions[slug]} />
         <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/70 via-primary-dark/50 to-primary-dark/70" />
         <div className="relative z-10 mx-auto max-w-3xl">
@@ -117,7 +117,7 @@ export default async function BlogPostPage({
       <article className="px-6 py-16 md:py-24">
         <div className="mx-auto max-w-3xl">
           <div
-            className="prose prose-lg prose-headings:font-heading prose-headings:text-dark prose-p:leading-relaxed prose-p:text-muted prose-a:text-primary prose-strong:text-dark"
+            className="prose prose-lg prose-headings:font-heading prose-headings:text-dark prose-headings:tracking-wide prose-h2:text-2xl prose-h2:md:text-3xl prose-p:leading-relaxed prose-p:text-muted prose-p:font-body prose-a:text-primary prose-strong:text-dark"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
         </div>
@@ -171,7 +171,7 @@ export default async function BlogPostPage({
           objectPosition={heroPositions[slug] || "center"}
           imagePositions={heroImagePositions[slug]}
         />
-        <div className="absolute inset-0 bg-primary-dark/57" />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/50 to-primary-dark/65" />
         <div className="relative z-10 mx-auto max-w-2xl">
           <h2 className="font-heading text-3xl font-bold text-white md:text-4xl">
             Ready to plan your event?

@@ -44,6 +44,10 @@
     font-weight: 700;
   }
 
+  h1, h2 {
+    letter-spacing: 0.025em;
+  }
+
   /* ===== Selection ===== */
 
   ::selection {
@@ -197,6 +201,14 @@
 
 .animate-marquee {
   animation: marquee 40s linear infinite;
+}
+
+/* ===== Subtle Section Divider ===== */
+
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+  opacity: 0.2;
 }
 
 /* ===== Scroll-triggered Animations ===== */
