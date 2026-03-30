@@ -106,6 +106,15 @@ export const portfolioEvents: PortfolioEvent[] = [
       "An intimate and romantic celebration set in lush greenery, with warm golden tones, elegant styling, and heartfelt moments captured throughout the day.",
     coverImage: "/images/portfolio/phil-pesh/pp_session-55.jpg",
     heroPosition: "center 40%",
+    imagePositions: {
+      2: "center 30%",
+      3: "center 28%",
+      4: "center 25%",
+      6: "center 28%",
+      7: "center 28%",
+      9: "center 25%",
+      11: "center 25%",
+    },
     images: [
       "/images/portfolio/phil-pesh/pp_session-15.jpg",
       "/images/portfolio/phil-pesh/pp_session-24.jpg",
