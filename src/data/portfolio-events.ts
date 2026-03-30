@@ -132,7 +132,16 @@ export const portfolioEvents: PortfolioEvent[] = [
     coverImage: "/images/portfolio/oscar-sandra/IMG_0882.jpg",
     heroPosition: "center 45%",
     ctaPosition: "center 45%",
-    imagePositions: { 0: "center 40%", 4: "center 65%", 6: "center 50%" },
+    imagePositions: {
+      0: "center 40%",
+      1: "center 55%",
+      3: "center 30%",
+      4: "center 30%",
+      5: "center 25%",
+      6: "center 30%",
+      9: "center 30%",
+      10: "center 30%",
+    },
     images: [
       "/images/portfolio/oscar-sandra/IMG_0882.jpg",
       "/images/portfolio/oscar-sandra/IMG_0267.jpg",
