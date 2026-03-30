@@ -47,6 +47,7 @@ const serviceCategories = [
     description:
       "We take the stress out of event planning by handling every logistical detail — from initial concept to day-of coordination. Our experienced team manages budgets, timelines, vendor sourcing, and on-site operations so you can focus on enjoying your celebration. Whether it's a corporate conference, a product launch, or an intimate dinner, we plan with precision and care.",
     image: "/images/portfolio/oscar-sandra/IMG_2411.jpg",
+    imagePosition: "center 20%",
     imageAlt:
       "Grand black and gold reception venue with crystal chandeliers styled by Modern Charm",
     subServices: [
@@ -108,6 +109,7 @@ const serviceCategories = [
     description:
       "Transform any venue into a breathtaking experience. Our creative team designs immersive environments that reflect your vision and tell your story. From floral installations and lighting design to bespoke gift curation and statement backdrops — we style every detail to perfection, creating spaces that leave lasting impressions.",
     image: "/images/portfolio/lornas-kuhingira/7b7a9560.jpg",
+    imagePosition: "center 30%",
     imageAlt:
       "Sage green reception with hanging floral installations and cross-back chairs styled by Modern Charm",
     subServices: [
@@ -218,7 +220,8 @@ export default function ServicesPage() {
                           src={category.image}
                           alt={category.imageAlt}
                           fill
-                          className="object-cover object-[center_30%] group-hover:scale-105 transition-transform duration-500"
+                          className="object-cover group-hover:scale-105 transition-transform duration-500"
+                          style={{ objectPosition: category.imagePosition }}
                           quality={80}
                           sizes="(max-width: 1024px) 100vw, 50vw"
                         />

@@ -22,7 +22,7 @@ export const portfolioEvents: PortfolioEvent[] = [
     description:
       "A high-profile corporate summit for the Private Sector Foundation Uganda, featuring keynote presentations, panel discussions, and professional networking — executed with precision and elegance.",
     coverImage: "/images/portfolio/psfu-business-summit/am9a4213.jpg",
-    heroPosition: "center 20%",
+    heroPosition: "center 35%",
     images: [
       "/images/portfolio/psfu-business-summit/am9a4154.jpg",
       "/images/portfolio/psfu-business-summit/am9a4175.jpg",
@@ -82,8 +82,8 @@ export const portfolioEvents: PortfolioEvent[] = [
     description:
       "A professionally managed university conference for Unicaf, featuring speaker panels, catering, branded setups, and seamless event coordination for academic and corporate delegates.",
     coverImage: "/images/portfolio/unicaf-corporate/unicaf_DON_2084.jpg",
-    heroPosition: "center 20%",
-    ctaPosition: "center 20%",
+    heroPosition: "center 35%",
+    ctaPosition: "center 35%",
     images: [
       "/images/portfolio/unicaf-corporate/unicaf_setup_1.jpg",
       "/images/portfolio/unicaf-corporate/unicaf_setup_2.jpg",
@@ -130,8 +130,8 @@ export const portfolioEvents: PortfolioEvent[] = [
     description:
       "A luxury black-and-white reception with towering gold arches, crystal chandeliers, and dramatic floral centrepieces that redefined opulence in Kampala.",
     coverImage: "/images/portfolio/oscar-sandra/IMG_0882.jpg",
-    heroPosition: "center 40%",
-    ctaPosition: "center 40%",
+    heroPosition: "center 45%",
+    ctaPosition: "center 45%",
     imagePositions: { 0: "center 40%", 4: "center 65%", 6: "center 50%" },
     images: [
       "/images/portfolio/oscar-sandra/IMG_0882.jpg",
@@ -180,6 +180,7 @@ export const portfolioEvents: PortfolioEvent[] = [
     description:
       "A vibrant Kuhingira ceremony rich in Ankole tradition, with layered draping, cultural attire, and a beautifully styled gift-presentation stage.",
     coverImage: "/images/portfolio/lornas-kuhingira/7b7a9543.jpg",
+    heroPosition: "center 40%",
     images: [
       "/images/portfolio/lornas-kuhingira/7b7a9543.jpg",
       "/images/portfolio/lornas-kuhingira/7b7a9477.jpg",
@@ -206,7 +207,7 @@ export const portfolioEvents: PortfolioEvent[] = [
     description:
       "A luxe pink-and-gold reception featuring elegant table arrangements, sweeping aerial views, and an atmosphere of refined celebration.",
     coverImage: "/images/portfolio/david-michelle/7b7a0805.jpg",
-    heroPosition: "center 30%",
+    heroPosition: "center 35%",
     images: [
       "/images/portfolio/david-michelle/7b7a0805.jpg",
       "/images/portfolio/david-michelle/7b7a0757.jpg",
@@ -226,6 +227,7 @@ export const portfolioEvents: PortfolioEvent[] = [
     description:
       "A joyful wedding celebration filled with heartfelt moments, stylish florals, and an unforgettable reception atmosphere.",
     coverImage: "/images/portfolio/sammy-lala/img_3472.jpg",
+    heroPosition: "center 35%",
     images: [
       "/images/portfolio/sammy-lala/img_3558.jpg",
       "/images/portfolio/sammy-lala/img_3561.jpg",

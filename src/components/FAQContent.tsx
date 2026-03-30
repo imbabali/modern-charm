@@ -89,7 +89,7 @@ export default function FAQContent({ faqData }: { faqData: FAQCategory[] }) {
         <BackgroundVideo
           src={`${CDN_BASE}/videos/cta-clips/cta-lala-intro-a.mp4`}
           className="absolute inset-0 h-full w-full object-cover"
-          style={{ objectPosition: "center 15%" }}
+          style={{ objectPosition: "center 25%" }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/47 via-primary-dark/27 to-primary-dark/47" />
         <div className="relative z-10 mx-auto max-w-3xl drop-shadow-hero">

@@ -100,7 +100,7 @@ export default function Home() {
                 alt="Bride in stunning mermaid gown at a luxury black and gold reception styled by Modern Charm Uganda"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover object-[center_35%]"
+                className="object-cover object-[center_40%]"
                 quality={85}
               />
               {/* Inner decorative frame */}
