@@ -37,6 +37,7 @@ export async function POST(request: Request) {
     "unknown";
 
   if (isRateLimited(ip)) {
+    console.warn("[newsletter] Rate limited IP:", ip);
     return NextResponse.json(
       { error: "Too many requests. Please try again later." },
       { status: 429 },
@@ -84,8 +85,10 @@ export async function POST(request: Request) {
       `,
     });
 
+    console.info("[newsletter] New subscriber added");
     return NextResponse.json({ success: true });
-  } catch (_error) {
+  } catch (error) {
+    console.error("[newsletter] Failed to process subscription:", error instanceof Error ? error.message : error);
     return NextResponse.json(
       { error: "Subscription failed. Please try again." },
       { status: 500 },

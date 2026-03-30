@@ -5,6 +5,7 @@ import { Send, Check, AlertCircle } from "lucide-react";
 
 export default function NewsletterForm() {
   const [email, setEmail] = useState("");
+  const [consent, setConsent] = useState(false);
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [message, setMessage] = useState("");
 
@@ -38,6 +39,7 @@ export default function NewsletterForm() {
       setStatus("success");
       setMessage("You're subscribed! Check your inbox for a welcome email.");
       setEmail("");
+      setConsent(false);
 
       // Reset to idle after a few seconds
       setTimeout(() => {
@@ -64,7 +66,7 @@ export default function NewsletterForm() {
         />
         <button
           type="submit"
-          disabled={status === "loading" || status === "success"}
+          disabled={status === "loading" || status === "success" || !consent || !email}
           className="px-4 py-2.5 min-h-[44px] min-w-[44px] bg-accent-dark hover:bg-accent disabled:opacity-60 disabled:cursor-not-allowed rounded-r-lg transition-colors duration-300 flex items-center justify-center"
           aria-label="Subscribe to newsletter"
         >
@@ -77,6 +79,18 @@ export default function NewsletterForm() {
           )}
         </button>
       </form>
+      <label className="flex items-start gap-2 mt-2 cursor-pointer">
+        <input
+          type="checkbox"
+          checked={consent}
+          onChange={(e) => setConsent(e.target.checked)}
+          disabled={status === "loading" || status === "success"}
+          className="mt-0.5 accent-accent"
+        />
+        <span className="text-xs text-white/70">
+          I agree to receive event styling tips and offers. You can unsubscribe anytime.
+        </span>
+      </label>
       {message && (
         <p
           role={status === "error" ? "alert" : "status"}

@@ -59,6 +59,7 @@ export async function POST(request: Request) {
     "unknown";
 
   if (isRateLimited(ip)) {
+    console.warn("[contact] Rate limited IP:", ip);
     return NextResponse.json(
       { error: "Too many requests. Please try again later." },
       { status: 429 },
@@ -147,8 +148,10 @@ export async function POST(request: Request) {
       `,
     });
 
+    console.info("[contact] Email sent for:", safeEventType);
     return NextResponse.json({ success: true });
-  } catch (_error) {
+  } catch (error) {
+    console.error("[contact] Failed to send email:", error instanceof Error ? error.message : error);
     return NextResponse.json(
       { error: "Failed to send message. Please try again." },
       { status: 500 },
