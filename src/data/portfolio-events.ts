@@ -84,12 +84,6 @@ export const portfolioEvents: PortfolioEvent[] = [
     coverImage: "/images/portfolio/unicaf-corporate/unicaf_DON_2084.jpg",
     heroPosition: "center 35%",
     ctaPosition: "center 35%",
-    imagePositions: {
-      5: "center 30%",
-      6: "center 30%",
-      8: "center 35%",
-      9: "center 60%",
-    },
     images: [
       "/images/portfolio/unicaf-corporate/unicaf_setup_1.jpg",
       "/images/portfolio/unicaf-corporate/unicaf_setup_2.jpg",
