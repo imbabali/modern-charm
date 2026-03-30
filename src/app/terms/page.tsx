@@ -31,9 +31,9 @@ export default function TermsOfServicePage() {
       <section className="relative overflow-hidden py-32 md:py-40 lg:py-44">
         <HeroCarousel
           images={[
-            "/images/portfolio/psfu-business-summit/IMG_4870.jpg",
-            "/images/portfolio/hima-cement/IMG_5129.jpg",
-            "/images/portfolio/bloomberg-philanthropies/IMG_4524.jpg",
+            "/images/portfolio/psfu-business-summit/am9a4213.jpg",
+            "/images/portfolio/hima-cement-event/898A8548.jpg",
+            "/images/portfolio/bloomberg-launch/dsc_4310.jpg",
           ]}
           objectPosition="center"
         />

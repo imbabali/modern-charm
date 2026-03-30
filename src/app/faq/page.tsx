@@ -12,14 +12,14 @@ export const metadata: Metadata = {
     description:
       "Find answers to common questions about our event planning, styling, corporate gifting, pricing, and booking process.",
     url: "https://moderncharmevents.com/faq",
-    images: [{ url: "/images/portfolio/wedding-highlights/IMG_3880.jpg" }],
+    images: [{ url: "/images/portfolio/david-michelle/dji_0436.jpg" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "FAQ | Modern Charm Uganda",
     description:
       "Find answers to common questions about our event planning, styling, corporate gifting, pricing, and booking process.",
-    images: ["/images/portfolio/wedding-highlights/IMG_3880.jpg"],
+    images: ["/images/portfolio/david-michelle/dji_0436.jpg"],
   },
 };
 

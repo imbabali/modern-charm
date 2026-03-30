@@ -17,14 +17,14 @@ export const metadata: Metadata = {
     description:
       "Tips, trends, and behind-the-scenes stories from the world of event styling in Uganda.",
     url: "https://moderncharmevents.com/blog",
-    images: [{ url: "/images/portfolio/wedding-highlights/IMG_3877.jpg" }],
+    images: [{ url: "/images/portfolio/sammy-lala/img_3472.jpg" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Our Journal | Modern Charm Uganda",
     description:
       "Tips, trends, and behind-the-scenes stories from the world of event styling in Uganda.",
-    images: ["/images/portfolio/wedding-highlights/IMG_3877.jpg"],
+    images: ["/images/portfolio/sammy-lala/img_3472.jpg"],
   },
 };
 

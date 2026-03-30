@@ -31,9 +31,9 @@ export default function PrivacyPolicyPage() {
       <section className="relative overflow-hidden py-32 md:py-40 lg:py-44">
         <HeroCarousel
           images={[
-            "/images/portfolio/bloomberg-philanthropies/IMG_4524.jpg",
-            "/images/portfolio/unicaf-university/IMG_7571.jpg",
-            "/images/portfolio/hima-cement/IMG_5129.jpg",
+            "/images/portfolio/bloomberg-launch/dsc_4497_pano.jpg",
+            "/images/portfolio/hima-cement-event/898A8544.jpg",
+            "/images/portfolio/unicaf-corporate/unicaf_setup_1.jpg",
           ]}
           objectPosition="center"
         />

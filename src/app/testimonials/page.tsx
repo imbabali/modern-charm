@@ -15,14 +15,14 @@ export const metadata: Metadata = {
     description:
       "Real reviews from real clients across Kampala and beyond.",
     url: "https://moderncharmevents.com/testimonials",
-    images: [{ url: "/images/portfolio/oscar-sandra/IMG_0941.jpg" }],
+    images: [{ url: "/images/portfolio/oscar-sandra/IMG_1930.jpg" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Client Stories | Modern Charm Uganda",
     description:
       "Real reviews from real clients across Kampala and beyond.",
-    images: ["/images/portfolio/oscar-sandra/IMG_0941.jpg"],
+    images: ["/images/portfolio/oscar-sandra/IMG_1930.jpg"],
   },
 };
 
