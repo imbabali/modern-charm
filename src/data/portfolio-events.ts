@@ -9,6 +9,7 @@ export interface PortfolioEvent {
   heroPosition?: string;
   ctaPosition?: string;
   imagePositions?: Record<number, string>;
+  coverPosition?: string;
   images: string[];
   date: string;
 }
@@ -244,6 +245,7 @@ export const portfolioEvents: PortfolioEvent[] = [
     description:
       "A breathtaking lakeside wedding featuring a grand tented reception with crystal chandeliers, vibrant floral walls in pink, orange, and yellow, elegant rattan seating, and a stunning multi-tier R&R cake — from church ceremony to golden-hour portraits.",
     coverImage: "/images/portfolio/rayner-racheal/couple-kiss-venue.jpg",
+    coverPosition: "center 40%",
     heroPosition: "center 55%",
     ctaPosition: "center 35%",
     images: [

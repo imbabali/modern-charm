@@ -21,6 +21,7 @@ function EventCard({ event }: { event: PortfolioEvent }) {
           sizes="360px"
           className="object-cover transition-transform duration-500 group-hover:scale-105"
           quality={80}
+          style={event.coverPosition ? { objectPosition: event.coverPosition } : undefined}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/5 to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-40" />
         <span className="absolute top-4 left-4 rounded-full bg-white/20 px-3 py-1 font-body text-xs font-medium tracking-wide text-white backdrop-blur-sm">

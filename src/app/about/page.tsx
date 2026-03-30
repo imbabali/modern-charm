@@ -192,7 +192,7 @@ export default function AboutPage() {
                   src="/images/portfolio/oscar-sandra/IMG_0883.jpg"
                   alt="Bridal party in champagne gowns at a luxury reception styled by Modern Charm"
                   fill
-                  className="object-cover object-[center_20%]"
+                  className="object-cover object-[center_30%]"
                   quality={80}
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />

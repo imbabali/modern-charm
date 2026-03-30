@@ -536,7 +536,7 @@ export default function Home() {
         <BackgroundVideo
           src={`${CDN_BASE}/videos/cta-clips/cta-lala-intro-b.mp4`}
           className="absolute inset-0 h-full w-full object-cover"
-          style={{ objectPosition: "center 15%" }}
+          style={{ objectPosition: "center 30%" }}
         />
         {/* Heavy dark teal overlay */}
         <div className="absolute inset-0 bg-primary-dark/57" />
