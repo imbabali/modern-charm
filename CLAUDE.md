@@ -60,6 +60,8 @@ src/
     blog/[slug]/page.tsx # Blog post detail with HeroCarousel
     faq/page.tsx        # Accordion FAQ (client component)
     contact/page.tsx    # Contact form + info (client component)
+    privacy/page.tsx    # Privacy Policy (Uganda DPA 2019 + GDPR)
+    terms/page.tsx      # Terms of Service (booking, cancellation, governing law)
   components/
     Navbar.tsx          # Sticky nav, scroll-aware, mobile drawer
     Footer.tsx          # 4-column footer with newsletter
@@ -244,3 +246,4 @@ src/
 - **2026-03-05**: Image positioning — PSFU hero at `center 20%`, Unicaf hero + CTA at `center 20%`, blog hero per-image positions via `heroImagePositions` map in blog/[slug]/page.tsx. HeroCarousel now supports `imagePositions?: string[]` prop for per-image overrides.
 - **2026-03-06**: Full image deduplication audit — replaced homepage about image with bride portrait (IMG_0932), swapped 30+ images across 9 files to eliminate all cross-page duplicates. Every non-portfolio-detail image is now unique sitewide. About story uses bridal party (IMG_0883), services uses grand venue (IMG_2411) + sage floral styling (7b7a9560), all CTA/OG images unique per page, blog post listing/hero images all use unused gallery shots.
 - **2026-03-06**: Aesthetic refinements (4-phase plan) — h1/h2 letter-spacing (0.025em), section-divider CSS class (gold gradient accent lines), simplified CTA overlays to 2-stop gradients across 8 pages, AnimateOnScroll on homepage stats/services/testimonials, form focus bg-cream shift, FAQ accordion padding increase, team card hover shadows, portfolio gallery mobile fix, blog prose typography, section dividers on About + Services pages.
+- **2026-03-30**: Added Privacy Policy (/privacy) and Terms of Service (/terms) pages. Privacy covers Uganda DPA 2019 + GDPR, data collection (contact form, newsletter, Vercel Analytics), Resend as processor. Terms cover booking (40% deposit), cancellation tiers (60/30 day), IP rights, force majeure, governing law (Uganda). Added footer quick links + sitemap entries. Build clean, 10 pages total.

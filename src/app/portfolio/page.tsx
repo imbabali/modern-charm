@@ -48,7 +48,7 @@ export default function PortfolioPage() {
           className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/47 via-primary-dark/27 to-primary-dark/47" />
-        <div className="relative z-10 mx-auto max-w-3xl px-4 text-center drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]">
+        <div className="relative z-10 mx-auto max-w-3xl px-4 text-center drop-shadow-hero">
           <nav
             aria-label="Breadcrumb"
             className="mb-6 flex items-center justify-center gap-2 text-sm text-white/90"

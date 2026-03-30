@@ -211,6 +211,10 @@
   opacity: 0.2;
 }
 
+.drop-shadow-hero {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+}
+
 /* ===== Scroll-triggered Animations ===== */
 
 .animate-on-scroll {

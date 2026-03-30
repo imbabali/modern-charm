@@ -539,7 +539,7 @@ export default function Home() {
           style={{ objectPosition: "center 15%" }}
         />
         {/* Heavy dark teal overlay */}
-        <div className="absolute inset-0 bg-[#2D5B52]/57" />
+        <div className="absolute inset-0 bg-primary-dark/57" />
         {/* Decorative elements */}
         <div className="pointer-events-none absolute top-8 left-8 h-px w-24 bg-accent/40" />
         <div className="pointer-events-none absolute top-8 left-8 h-24 w-px bg-accent/40" />

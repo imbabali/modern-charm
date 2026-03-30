@@ -90,7 +90,7 @@ export default async function EventDetailPage({ params }: Props) {
           quality={85}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/47 via-primary-dark/27 to-primary-dark/47" />
-        <div className="relative z-10 mx-auto max-w-3xl px-4 text-center drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]">
+        <div className="relative z-10 mx-auto max-w-3xl px-4 text-center drop-shadow-hero">
           {/* Breadcrumb */}
           <nav
             aria-label="Breadcrumb"

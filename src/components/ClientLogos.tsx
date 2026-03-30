@@ -62,9 +62,9 @@ export default function ClientLogos() {
                   style={{
                     fontFamily:
                       client.style === "serif"
-                        ? "'Playfair Display', serif"
-                        : "'Inter', sans-serif",
-                    fontWeight: client.style === "serif" ? 700 : 800,
+                        ? "var(--font-heading)"
+                        : "var(--font-body)",
+                    fontWeight: 700,
                     fontSize:
                       client.name.length > 8
                         ? "14px"
@@ -73,7 +73,7 @@ export default function ClientLogos() {
                           : "20px",
                     letterSpacing:
                       client.style === "sans" ? "0.12em" : "0.04em",
-                    fill: "#1A1A1A",
+                    fill: "var(--color-dark)",
                   }}
                 >
                   {client.name}
@@ -84,11 +84,11 @@ export default function ClientLogos() {
                     y="42"
                     textAnchor="middle"
                     style={{
-                      fontFamily: "'Inter', sans-serif",
+                      fontFamily: "var(--font-body)",
                       fontWeight: 400,
                       fontSize: "8px",
                       letterSpacing: "0.08em",
-                      fill: "#5F6570",
+                      fill: "var(--color-muted)",
                     }}
                   >
                     {client.subtitle}

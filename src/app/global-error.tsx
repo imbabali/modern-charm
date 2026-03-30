@@ -1,14 +1,22 @@
 "use client";
 
+import * as Sentry from "@sentry/nextjs";
+import { useEffect } from "react";
+
 export default function GlobalError({
+  error,
   reset,
 }: {
   error: Error & { digest?: string };
   reset: () => void;
 }) {
+  useEffect(() => {
+    Sentry.captureException(error);
+  }, [error]);
+
   return (
     <html lang="en">
-      <body style={{ fontFamily: "system-ui, sans-serif", backgroundColor: "#FDFAF6", color: "#1A1A1A", margin: 0 }}>
+      <body style={{ fontFamily: "var(--font-body), system-ui, sans-serif", backgroundColor: "var(--color-cream)", color: "var(--color-dark)", margin: 0 }}>
         <div
           role="alert"
           style={{
@@ -24,7 +32,7 @@ export default function GlobalError({
           <h1 style={{ fontSize: "2.5rem", fontWeight: 700, marginBottom: "1rem" }}>
             Something went wrong
           </h1>
-          <p style={{ fontSize: "1.125rem", color: "#5F6570", maxWidth: "28rem", marginBottom: "2rem" }}>
+          <p style={{ fontSize: "1.125rem", color: "var(--color-muted)", maxWidth: "28rem", marginBottom: "2rem" }}>
             We apologise for the inconvenience. Please try again or return to the homepage.
           </p>
           <div style={{ display: "flex", gap: "1rem" }}>
@@ -33,7 +41,7 @@ export default function GlobalError({
               style={{
                 padding: "0.75rem 2rem",
                 borderRadius: "9999px",
-                backgroundColor: "#3D7A6E",
+                backgroundColor: "var(--color-primary)",
                 color: "#fff",
                 fontWeight: 600,
                 fontSize: "0.875rem",
@@ -48,7 +56,7 @@ export default function GlobalError({
               style={{
                 padding: "0.75rem 2rem",
                 borderRadius: "9999px",
-                backgroundColor: "#C4915C",
+                backgroundColor: "var(--color-accent)",
                 color: "#fff",
                 fontWeight: 600,
                 fontSize: "0.875rem",

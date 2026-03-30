@@ -92,7 +92,7 @@ export default function FAQContent({ faqData }: { faqData: FAQCategory[] }) {
           style={{ objectPosition: "center 15%" }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/47 via-primary-dark/27 to-primary-dark/47" />
-        <div className="relative z-10 mx-auto max-w-3xl drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]">
+        <div className="relative z-10 mx-auto max-w-3xl drop-shadow-hero">
           <h1 className="font-heading text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl">
             Frequently Asked Questions
           </h1>
