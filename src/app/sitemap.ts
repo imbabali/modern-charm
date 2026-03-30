@@ -28,6 +28,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/blog`, lastModified: new Date("2026-03-05"), changeFrequency: "weekly", priority: 0.7 },
     { url: `${baseUrl}/faq`, lastModified: new Date("2026-03-05"), changeFrequency: "monthly", priority: 0.6 },
     { url: `${baseUrl}/contact`, lastModified: new Date("2026-03-05"), changeFrequency: "yearly", priority: 0.8 },
+    { url: `${baseUrl}/privacy`, lastModified: new Date("2026-03-30"), changeFrequency: "yearly", priority: 0.3 },
+    { url: `${baseUrl}/terms`, lastModified: new Date("2026-03-30"), changeFrequency: "yearly", priority: 0.3 },
     ...blogEntries,
     ...portfolioEntries,
   ];
