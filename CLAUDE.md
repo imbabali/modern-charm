@@ -74,10 +74,29 @@ src/
     AnimateOnScroll.tsx # Scroll-triggered animations
     FAQContent.tsx      # FAQ accordion (client component)
     ContactContent.tsx  # Contact form + info (client component)
+    CookieConsent.tsx   # Cookie/analytics consent banner (client component)
+    BackgroundVideo.tsx # Mobile-safe autoplay video wrapper
+    ClientLogos.tsx     # SVG text-based client logos
+    PortfolioCarousel.tsx # Infinite scrolling marquee
   data/
-    portfolio-events.ts # 8 event galleries with categories (planning/styling)
+    portfolio-events.ts # 12 event galleries with categories (planning/styling)
     blog-posts.ts       # 7 blog posts with heroImages arrays
+  lib/
+    cdn.ts              # Cloudflare R2 CDN base URL
 ```
+
+### Testing & CI
+- **Test framework**: Vitest + @testing-library/react + jsdom
+- **Tests**: 39 tests across 5 files (portfolio data, blog data, API validation, PortfolioGrid, NewsletterForm)
+- **CI**: GitHub Actions `.github/workflows/ci.yml` (lint, test, build on push/PR to main)
+- **Branch protection**: `main` requires `lint-and-test` status check
+- **Staging**: `staging` branch with Vercel preview deployments
+
+### Error Tracking
+- **Sentry**: @sentry/nextjs with client/server/edge configs
+- **Config files**: `sentry.client.config.ts`, `sentry.server.config.ts`, `sentry.edge.config.ts`, `instrumentation.ts` (project root)
+- **Error capture**: error.tsx + global-error.tsx call `Sentry.captureException`
+- **Status**: DSN env vars not yet set on Vercel (Sentry project: im-advisory/awwf)
 
 ## Design Inspiration
 - **Qrated Event Dubai** — Gold accents, stats section, luxury layout
@@ -247,3 +266,37 @@ src/
 - **2026-03-06**: Full image deduplication audit — replaced homepage about image with bride portrait (IMG_0932), swapped 30+ images across 9 files to eliminate all cross-page duplicates. Every non-portfolio-detail image is now unique sitewide. About story uses bridal party (IMG_0883), services uses grand venue (IMG_2411) + sage floral styling (7b7a9560), all CTA/OG images unique per page, blog post listing/hero images all use unused gallery shots.
 - **2026-03-06**: Aesthetic refinements (4-phase plan) — h1/h2 letter-spacing (0.025em), section-divider CSS class (gold gradient accent lines), simplified CTA overlays to 2-stop gradients across 8 pages, AnimateOnScroll on homepage stats/services/testimonials, form focus bg-cream shift, FAQ accordion padding increase, team card hover shadows, portfolio gallery mobile fix, blog prose typography, section dividers on About + Services pages.
 - **2026-03-30**: Added Privacy Policy (/privacy) and Terms of Service (/terms) pages. Privacy covers Uganda DPA 2019 + GDPR, data collection (contact form, newsletter, Vercel Analytics), Resend as processor. Terms cover booking (40% deposit), cancellation tiers (60/30 day), IP rights, force majeure, governing law (Uganda). Added footer quick links + sitemap entries. Build clean, 10 pages total.
+- **2026-03-30**: Full Mbaba App Audit — 65-criterion audit across Design System, Security, Engineering, and Deployment. Score: 35.5/48 (74%) initial → remediation pushed to 9/10.
+- **2026-03-30**: Audit remediation — design token fixes:
+  - Replaced all hardcoded hex/font values in global-error.tsx + ClientLogos.tsx with CSS variables
+  - Fixed fontWeight 800 → 700 in ClientLogos (Inter max weight)
+  - Replaced bg-[#2D5B52] with bg-primary-dark in homepage CTA
+  - Extracted `.drop-shadow-hero` CSS utility class (replaced in 10 files)
+- **2026-03-30**: Audit remediation — security & monitoring:
+  - Integrated @sentry/nextjs (client/server/edge configs, error capture in error.tsx + global-error.tsx, instrumentation.ts, withSentryConfig wrapper)
+  - Updated Next.js from 16.1.6 → 16.2.1 (HTTP smuggling CVE fix)
+  - Added CookieConsent component (localStorage-based, non-intrusive bottom banner, links to /privacy)
+- **2026-03-30**: Audit remediation — testing & CI:
+  - Added Vitest + @testing-library/react + jsdom + @testing-library/jest-dom
+  - 39 tests across 5 files: portfolio data (9), blog data (5), API validation (13), PortfolioGrid component (6), NewsletterForm component (6)
+  - GitHub Actions CI workflow (.github/workflows/ci.yml): lint, test, build on push/PR
+  - Branch protection enabled on main requiring lint-and-test status check
+- **2026-03-30**: Optical centering audit — all images across all pages:
+  - Replaced 5 portrait OG images with landscape alternatives (Services, Blog, FAQ, Testimonials, Contact)
+  - Fixed broken Contact OG reference (IMG_3097.jpg didn't exist → table-decor-detail.jpg)
+  - Fixed Privacy + Terms hero carousels (referenced non-existent image folders → real assets)
+  - Homepage about image: center_35% → center_40% (bride face at ~40%)
+  - About story image: center_30% → center_40% (bridal party faces)
+  - Services page: per-category imagePosition (planning center 20% for chandeliers, styling center 30% for florals)
+  - Homepage CTA video: center 15% → center 30% (show people not ceiling)
+  - FAQ hero video: center 15% → center 25% (less tight crop)
+  - Portfolio hero positions refined: PSFU 20%→35%, Unicaf 20%→35%, Oscar&Sandra 40%→45%, David&Michelle 30%→35%
+  - Added heroPosition to Lorna's Kuhingira (center 40%) and Sammy & Lala (center 35%)
+  - Added coverPosition field to PortfolioEvent interface + PortfolioGrid/PortfolioCarousel components
+  - Rayner & Racheal cover: added coverPosition center 40% for portrait image in landscape grid
+- **2026-03-30**: Oscar & Sandra gallery — added imagePositions for 7 portrait images (indices 1,3,4,5,6,9,10) with face-aware centering (25-55%)
+- **2026-03-30**: Phil & Pesh gallery — added imagePositions for 7 portrait images (indices 2,3,4,6,7,9,11) with face-aware centering (25-30%)
+- **2026-03-30**: Newsletter consent — added explicit opt-in checkbox ("I agree to receive...") to NewsletterForm
+- **2026-03-30**: Structured API logging — added console.error/warn/info with [contact]/[newsletter] prefixes to both API routes (replacing silent catch blocks)
+- **2026-03-30**: Staging branch created and pushed to GitHub (Vercel auto-creates preview deployments)
+- **2026-03-30**: Sentry project created on sentry.io (im-advisory/awwf) — DSN env vars not yet set on Vercel (requires interactive CLI login)
