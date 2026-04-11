@@ -3,15 +3,10 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import type { PortfolioEvent, EventCategory } from "@/data/portfolio-events";
 import { categoryLabels } from "@/data/portfolio-events";
 
-const categories: (EventCategory | "all")[] = [
-  "all",
-  "planning",
-  "styling",
-];
+const categories: (EventCategory | "all")[] = ["all", "planning", "styling"];
 
 export default function PortfolioGrid({
   events,
@@ -26,25 +21,30 @@ export default function PortfolioGrid({
       : events.filter((e) => e.category === active);
 
   return (
-    <section className="bg-white px-6 py-20 md:py-28">
+    <section className="bg-cream px-6 py-24 md:py-32">
       <div className="mx-auto max-w-7xl">
         {/* Section header */}
-        <div className="text-center mb-6">
-          <span className="inline-block text-accent-dark font-heading text-sm font-semibold tracking-widest uppercase mb-3">
-            Our Work
-          </span>
-          <h2 className="font-heading text-3xl font-bold text-dark md:text-4xl">
-            Featured Events
-          </h2>
-          <p className="mx-auto mt-4 max-w-2xl font-body text-muted">
-            Browse our collection of event planning, styling, and decor
-            showcases across Kampala and beyond.
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
+          <div className="max-w-2xl">
+            <span className="label-mono text-accent-dark">Our Work / 01</span>
+            <h2
+              className="mt-5 font-heading text-[clamp(2.25rem,5vw,4rem)] text-near-black leading-[0.95]"
+              style={{ letterSpacing: "-0.025em" }}
+            >
+              Featured events,
+              <br />
+              across Kampala and beyond.
+            </h2>
+          </div>
+          <p className="font-body text-muted max-w-sm">
+            A curated collection of event planning, styling, and decor
+            showcases we have produced for discerning clients.
           </p>
         </div>
 
-        {/* Filter pills */}
+        {/* Filter tabs */}
         <div
-          className="mt-10 flex flex-wrap items-center justify-center gap-3"
+          className="mt-14 flex flex-wrap items-center gap-2"
           role="tablist"
           aria-label="Filter events by category"
         >
@@ -55,72 +55,78 @@ export default function PortfolioGrid({
               aria-selected={active === cat}
               aria-controls="portfolio-grid"
               onClick={() => setActive(cat)}
-              className={`rounded-full px-6 py-2.5 font-body text-sm font-medium transition-all duration-300 cursor-pointer ${
+              data-cursor-label="FILTER"
+              className={`btn-fluid transition-colors duration-300 ${
                 active === cat
-                  ? "bg-primary text-white shadow-md"
-                  : "bg-cream-dark text-dark hover:bg-primary/10"
+                  ? "btn-fluid-dark"
+                  : "btn-fluid-outline"
               }`}
             >
               {categoryLabels[cat]}
             </button>
           ))}
+          <span className="ml-auto label-mono-sm text-muted">
+            {String(filtered.length).padStart(2, "0")} / {String(events.length).padStart(2, "0")}
+          </span>
         </div>
 
+        <div className="mt-6 hairline bg-near-black" />
+
         {/* Event grid */}
-        <div id="portfolio-grid" role="tabpanel" className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {filtered.map((event) => (
+        <div
+          id="portfolio-grid"
+          role="tabpanel"
+          className="mt-12 grid gap-x-6 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
+        >
+          {filtered.map((event, idx) => (
             <Link
               key={event.slug}
               href={`/portfolio/${event.slug}`}
-              className="group relative overflow-hidden rounded-2xl bg-cream shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+              className="group block"
+              data-cursor-label="VIEW EVENT"
             >
-              {/* Cover image */}
-              <div className="relative aspect-[4/3] overflow-hidden">
+              <div className="relative aspect-[4/5] overflow-hidden bg-near-black">
                 <Image
                   src={event.coverImage}
                   alt={`${event.title} — ${event.description}`}
                   fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
                   quality={80}
                   style={event.coverPosition ? { objectPosition: event.coverPosition } : undefined}
                 />
-                {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/5 to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-40" />
-                {/* Category badge */}
-                <span className="absolute top-4 left-4 rounded-full bg-white/20 px-3 py-1 font-body text-xs font-medium tracking-wide text-white backdrop-blur-sm">
-                  {categoryLabels[event.category]}
+                <div className="absolute inset-0 bg-gradient-to-t from-near-black/60 via-near-black/10 to-transparent" />
+                <span className="absolute top-5 left-5 label-mono text-cream">
+                  {String(idx + 1).padStart(2, "0")} · {categoryLabels[event.category]}
                 </span>
-                {/* Image count badge */}
-                <span className="absolute top-4 right-4 rounded-full bg-white/20 px-3 py-1 font-body text-xs font-medium text-white backdrop-blur-sm">
-                  {event.images.length} photos
+                <span className="absolute bottom-5 left-5 label-mono-sm text-cream/80">
+                  {event.images.length} Photos
                 </span>
               </div>
 
-              {/* Card body */}
-              <div className="p-6">
-                <h3 className="font-heading text-xl font-bold text-dark group-hover:text-primary transition-colors duration-300">
-                  {event.title}
-                </h3>
-                <p className="mt-2 font-body text-sm leading-relaxed text-muted line-clamp-2">
-                  {event.description}
-                </p>
-                <span className="mt-4 inline-flex items-center gap-1.5 font-body text-sm font-semibold text-accent-dark transition-colors group-hover:text-primary">
-                  View Gallery
-                  <ArrowRight
-                    className="h-4 w-4 transition-transform group-hover:translate-x-1"
-                    aria-hidden="true"
-                  />
+              <div className="mt-5 flex items-start justify-between gap-4">
+                <div>
+                  <h3
+                    className="font-heading text-xl text-near-black transition-colors group-hover:text-primary"
+                    style={{ letterSpacing: "-0.015em" }}
+                  >
+                    {event.title}
+                  </h3>
+                  <p className="mt-2 font-body text-sm leading-relaxed text-muted line-clamp-2">
+                    {event.description}
+                  </p>
+                </div>
+                <span className="label-mono text-near-black transition-all shrink-0 pt-1 group-hover:translate-x-1">
+                  View →
                 </span>
               </div>
             </Link>
           ))}
         </div>
 
-        {/* Empty state */}
         {filtered.length === 0 && (
           <div className="mt-14 text-center">
-            <p className="font-body text-muted">
+            <p className="label-mono text-muted">
               No events found in this category yet. Check back soon!
             </p>
           </div>

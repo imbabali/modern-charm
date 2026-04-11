@@ -111,16 +111,15 @@ describe("PortfolioGrid", () => {
       // Title is unique per event
       expect(screen.getByText(event.title)).toBeInTheDocument();
 
-      // Photo count badge lives inside the same link as the title.
-      // Multiple events can share the same count, so query within the card.
+      // Photo count lives inside the same link as the title. Use a text
+      // match rather than structural selector so the test survives
+      // restyling of the card markup.
       const link = screen.getByRole("link", {
         name: new RegExp(event.title),
       });
-      const badge = link.querySelector(
-        ".absolute.top-4.right-4"
+      expect(link.textContent).toMatch(
+        new RegExp(`${event.images.length}\\s*Photos?`, "i")
       );
-      expect(badge).not.toBeNull();
-      expect(badge!.textContent).toContain(`${event.images.length} photos`);
     }
   });
 });

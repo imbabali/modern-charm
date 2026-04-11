@@ -5,56 +5,56 @@ import Link from "next/link";
 
 export default function CookieConsent() {
   const [visible, setVisible] = useState(false);
+  const [dismissed, setDismissed] = useState(false);
 
   useEffect(() => {
     const consent = localStorage.getItem("cookie-consent");
     if (consent !== "accepted") {
-      // Small delay so the banner animates in
-      const timer = setTimeout(() => setVisible(true), 500);
+      const timer = setTimeout(() => setVisible(true), 800);
       return () => clearTimeout(timer);
+    } else {
+      setDismissed(true);
     }
   }, []);
 
   const handleAccept = () => {
     localStorage.setItem("cookie-consent", "accepted");
     setVisible(false);
+    setTimeout(() => setDismissed(true), 400);
   };
-
-  // Don't render at all if already accepted (checked after mount)
-  const [dismissed, setDismissed] = useState(false);
-
-  useEffect(() => {
-    if (!visible && localStorage.getItem("cookie-consent") === "accepted") {
-      const timer = setTimeout(() => setDismissed(true), 300);
-      return () => clearTimeout(timer);
-    }
-  }, [visible]);
 
   if (dismissed) return null;
 
   return (
     <div
-      className={`fixed bottom-0 left-1/2 z-50 w-full max-w-lg -translate-x-1/2 rounded-t-2xl bg-dark px-6 py-4 shadow-lg transition-transform duration-300 ease-out ${
-        visible ? "translate-y-0" : "translate-y-full"
+      className={`fixed z-[55] transition-all duration-500 ease-out glass-pill ${
+        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"
       }`}
       role="banner"
       aria-label="Cookie consent"
+      style={{
+        left: "1.5rem",
+        bottom: "1.5rem",
+        maxWidth: "min(32rem, calc(100vw - 3rem))",
+        padding: "0.9rem 1.25rem",
+      }}
     >
-      {/* Desktop: single row | Mobile: stacked */}
-      <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-between sm:gap-4">
-        <p className="text-center text-sm text-white sm:text-left">
-          We use privacy-respecting analytics to improve your experience. No
-          personal data is collected.{" "}
+      <div className="flex items-center gap-4 flex-wrap sm:flex-nowrap">
+        <p className="label-mono-sm text-cream/85 flex-1 min-w-0">
+          We use privacy-respecting analytics.{" "}
           <Link
             href="/privacy"
-            className="text-accent-light underline hover:text-white"
+            className="btn-fluid-alpha inline text-accent"
+            data-cursor-label="READ MORE"
           >
             Learn more
           </Link>
         </p>
         <button
           onClick={handleAccept}
-          className="shrink-0 cursor-pointer rounded-full bg-accent-dark px-6 py-2 text-sm font-medium text-white transition-colors hover:bg-accent"
+          className="btn-fluid btn-fluid-gold shrink-0"
+          style={{ padding: "0.55rem 1rem", fontSize: "0.7rem" }}
+          data-cursor-label="ACCEPT"
         >
           Accept
         </button>

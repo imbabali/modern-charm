@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Send, Check, AlertCircle } from "lucide-react";
+import { Check, AlertCircle } from "lucide-react";
 
 export default function NewsletterForm() {
   const [email, setEmail] = useState("");
@@ -41,7 +41,6 @@ export default function NewsletterForm() {
       setEmail("");
       setConsent(false);
 
-      // Reset to idle after a few seconds
       setTimeout(() => {
         setStatus("idle");
         setMessage("");
@@ -52,50 +51,57 @@ export default function NewsletterForm() {
     }
   };
 
+  const isDisabled = status === "loading" || status === "success";
+
   return (
     <div>
-      <form onSubmit={handleSubmit} className="flex gap-0">
+      <form onSubmit={handleSubmit} className="flex items-stretch gap-0">
         <input
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          placeholder="Your email"
-          disabled={status === "loading" || status === "success"}
-          className="flex-1 min-w-0 px-4 py-2.5 bg-primary-dark border border-white/25 rounded-l-lg text-sm text-white placeholder-white/70 focus:outline-none focus:border-accent focus:bg-primary-dark/80 transition-all duration-200 disabled:opacity-50"
+          placeholder="you@domain.com"
+          disabled={isDisabled}
+          className="flex-1 min-w-0 h-11 px-4 bg-transparent border-b border-cream/30 text-sm text-cream placeholder:text-cream/40 focus:outline-none focus:border-accent transition-all duration-300 disabled:opacity-50 font-body"
+          style={{ fontFamily: "var(--font-body)" }}
           aria-label="Email address for newsletter"
         />
         <button
           type="submit"
-          disabled={status === "loading" || status === "success" || !consent || !email}
-          className="px-4 py-2.5 min-h-[44px] min-w-[44px] bg-accent-dark hover:bg-accent disabled:opacity-60 disabled:cursor-not-allowed rounded-r-lg transition-colors duration-300 flex items-center justify-center"
+          disabled={isDisabled || !consent || !email}
+          className="shrink-0 h-11 px-5 label-mono text-near-black bg-accent disabled:opacity-50 disabled:cursor-not-allowed hover:bg-accent-light transition-colors duration-300 flex items-center justify-center gap-2"
           aria-label="Subscribe to newsletter"
+          data-cursor-label="SUBSCRIBE"
         >
           {status === "loading" ? (
-            <span className="h-4 w-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+            <span className="h-4 w-4 border-2 border-near-black/30 border-t-near-black rounded-full animate-spin" />
           ) : status === "success" ? (
-            <Check className="w-4 h-4 text-white" aria-hidden="true" />
+            <>
+              <Check className="w-3.5 h-3.5" aria-hidden="true" />
+              Sent
+            </>
           ) : (
-            <Send className="w-4 h-4 text-white" aria-hidden="true" />
+            <>Join</>
           )}
         </button>
       </form>
-      <label className="flex items-start gap-2 mt-2 cursor-pointer">
+      <label className="flex items-start gap-2 mt-3 cursor-pointer">
         <input
           type="checkbox"
           checked={consent}
           onChange={(e) => setConsent(e.target.checked)}
-          disabled={status === "loading" || status === "success"}
+          disabled={isDisabled}
           className="mt-0.5 accent-accent"
         />
-        <span className="text-xs text-white/70">
+        <span className="text-xs text-cream/60 leading-relaxed">
           I agree to receive event styling tips and offers. You can unsubscribe anytime.
         </span>
       </label>
       {message && (
         <p
           role={status === "error" ? "alert" : "status"}
-          className={`mt-2 text-xs flex items-center gap-1 ${
-            status === "success" ? "text-green-300" : "text-red-300"
+          className={`mt-3 label-mono-sm flex items-center gap-1 ${
+            status === "success" ? "text-primary-light" : "text-accent-light"
           }`}
         >
           {status === "error" && <AlertCircle className="w-3 h-3 flex-shrink-0" aria-hidden="true" />}

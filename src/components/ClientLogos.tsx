@@ -1,100 +1,45 @@
 export default function ClientLogos() {
   const clients = [
-    {
-      name: "UEGCL",
-      subtitle: "Uganda Electricity Generation",
-      style: "serif" as const,
-    },
-    {
-      name: "UNICAF",
-      subtitle: "University",
-      style: "sans" as const,
-    },
-    {
-      name: "KCB",
-      subtitle: "Bank Group",
-      style: "sans" as const,
-    },
-    {
-      name: "HIMA",
-      subtitle: "by LafargeHolcim",
-      style: "sans" as const,
-    },
-    {
-      name: "Bloomberg",
-      subtitle: "Philanthropies",
-      style: "serif" as const,
-    },
-    {
-      name: "MAAD",
-      subtitle: "McCann",
-      style: "sans" as const,
-    },
+    { name: "UEGCL", subtitle: "Uganda Electricity Generation" },
+    { name: "UNICAF", subtitle: "University" },
+    { name: "KCB", subtitle: "Bank Group" },
+    { name: "HIMA", subtitle: "by LafargeHolcim" },
+    { name: "BLOOMBERG", subtitle: "Philanthropies" },
+    { name: "MAAD", subtitle: "McCann" },
   ];
 
   return (
-    <section className="py-16 bg-cream-dark" aria-label="Trusted by leading organizations">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <p className="text-center text-muted text-sm font-body uppercase tracking-[0.2em] mb-10">
-          Trusted by Leading Organizations
-        </p>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
+    <section
+      className="py-20 bg-near-black text-cream overflow-hidden"
+      aria-label="Trusted by leading organizations"
+    >
+      <div className="container-custom">
+        <div className="flex items-center gap-6">
+          <span className="label-mono text-accent/80 whitespace-nowrap">
+            Trusted by / 01
+          </span>
+          <div className="hairline bg-cream flex-1" />
+        </div>
+
+        <div className="mt-14 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-y-10 gap-x-6">
           {clients.map((client) => (
             <div
               key={client.name}
-              className="h-20 flex items-center justify-center rounded-lg bg-cream opacity-40 hover:opacity-100 transition-opacity duration-500 cursor-default"
+              className="flex flex-col items-center justify-center text-center opacity-60 hover:opacity-100 transition-opacity duration-500"
             >
-              <svg
-                viewBox="0 0 160 60"
-                className="w-full h-full px-3"
-                role="img"
-                aria-label={`${client.name} ${client.subtitle}`}
+              <span
+                className="font-heading text-cream"
+                style={{
+                  fontSize: "clamp(1.125rem, 1.6vw, 1.5rem)",
+                  letterSpacing: "0.02em",
+                  lineHeight: 1,
+                }}
               >
-                <text
-                  x="80"
-                  y={client.subtitle ? "24" : "34"}
-                  textAnchor="middle"
-                  className={
-                    client.style === "serif"
-                      ? "font-heading"
-                      : "font-body"
-                  }
-                  style={{
-                    fontFamily:
-                      client.style === "serif"
-                        ? "var(--font-heading)"
-                        : "var(--font-body)",
-                    fontWeight: 700,
-                    fontSize:
-                      client.name.length > 8
-                        ? "14px"
-                        : client.name.length > 5
-                          ? "16px"
-                          : "20px",
-                    letterSpacing:
-                      client.style === "sans" ? "0.12em" : "0.04em",
-                    fill: "var(--color-dark)",
-                  }}
-                >
-                  {client.name}
-                </text>
-                {client.subtitle && (
-                  <text
-                    x="80"
-                    y="42"
-                    textAnchor="middle"
-                    style={{
-                      fontFamily: "var(--font-body)",
-                      fontWeight: 400,
-                      fontSize: "8px",
-                      letterSpacing: "0.08em",
-                      fill: "var(--color-muted)",
-                    }}
-                  >
-                    {client.subtitle}
-                  </text>
-                )}
-              </svg>
+                {client.name}
+              </span>
+              <span className="mt-2 label-mono-sm text-cream/50">
+                {client.subtitle}
+              </span>
             </div>
           ))}
         </div>

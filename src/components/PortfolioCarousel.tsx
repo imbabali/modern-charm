@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import type { PortfolioEvent } from "@/data/portfolio-events";
 import { categoryLabels } from "@/data/portfolio-events";
 
@@ -10,40 +9,37 @@ function EventCard({ event }: { event: PortfolioEvent }) {
   return (
     <Link
       href={`/portfolio/${event.slug}`}
-      className="group relative flex-shrink-0 overflow-hidden rounded-2xl bg-cream shadow-sm transition-all duration-300 hover:shadow-xl"
+      className="group relative flex-shrink-0 block"
       style={{ width: "min(360px, 80vw)" }}
+      data-cursor-label="VIEW EVENT"
     >
-      <div className="relative aspect-[4/3] overflow-hidden">
+      <div className="relative aspect-[4/5] overflow-hidden bg-near-black">
         <Image
           src={event.coverImage}
           alt={event.description}
           fill
           sizes="360px"
-          className="object-cover transition-transform duration-500 group-hover:scale-105"
+          className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
           quality={80}
           style={event.coverPosition ? { objectPosition: event.coverPosition } : undefined}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/5 to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-40" />
-        <span className="absolute top-4 left-4 rounded-full bg-white/20 px-3 py-1 font-body text-xs font-medium tracking-wide text-white backdrop-blur-sm">
+        <div className="absolute inset-0 bg-gradient-to-t from-near-black/65 via-near-black/15 to-transparent" />
+        <span className="absolute top-5 left-5 label-mono text-cream">
           {categoryLabels[event.category]}
         </span>
-        <span className="absolute top-4 right-4 rounded-full bg-white/20 px-3 py-1 font-body text-xs font-medium text-white backdrop-blur-sm">
-          {event.images.length} photos
+        <span className="absolute bottom-5 left-5 label-mono-sm text-cream/80">
+          {event.images.length} Photos
         </span>
       </div>
-      <div className="p-6">
-        <h3 className="font-heading text-xl font-bold text-dark group-hover:text-primary transition-colors duration-300">
+      <div className="mt-5 flex items-start justify-between gap-4">
+        <h3
+          className="font-heading text-lg text-near-black transition-colors group-hover:text-primary"
+          style={{ letterSpacing: "-0.015em" }}
+        >
           {event.title}
         </h3>
-        <p className="mt-2 font-body text-sm leading-relaxed text-muted line-clamp-2">
-          {event.description}
-        </p>
-        <span className="mt-4 inline-flex items-center gap-1.5 font-body text-sm font-semibold text-accent-dark transition-colors group-hover:text-primary">
-          View Gallery
-          <ArrowRight
-            className="h-4 w-4 transition-transform group-hover:translate-x-1"
-            aria-hidden="true"
-          />
+        <span className="label-mono shrink-0 text-near-black pt-1 group-hover:translate-x-1 transition-transform">
+          View →
         </span>
       </div>
     </Link>
@@ -56,20 +52,18 @@ export default function PortfolioCarousel({
   events: PortfolioEvent[];
 }) {
   return (
-    <div className="relative overflow-hidden">
+    <div className="relative overflow-hidden pause-on-hover">
       {/* Fade edges */}
-      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-white to-transparent sm:w-20" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-white to-transparent sm:w-20" />
+      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-cream to-transparent sm:w-20" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-cream to-transparent sm:w-20" />
 
       {/* Scrolling track — duplicated for seamless loop */}
-      <div className="flex animate-marquee hover:[animation-play-state:paused]">
-        {/* First set */}
+      <div className="flex animate-marquee">
         <div className="flex shrink-0 gap-6 pr-6">
           {events.map((event) => (
             <EventCard key={event.slug} event={event} />
           ))}
         </div>
-        {/* Duplicate set for seamless loop */}
         <div className="flex shrink-0 gap-6 pr-6" aria-hidden="true">
           {events.map((event) => (
             <EventCard key={`dup-${event.slug}`} event={event} />
