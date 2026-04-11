@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ChevronRight } from "lucide-react";
 import HeroCarousel from "@/components/HeroCarousel";
 
 export const metadata: Metadata = {
@@ -27,8 +26,8 @@ export const metadata: Metadata = {
 export default function TermsOfServicePage() {
   return (
     <div className="font-body">
-      {/* Hero */}
-      <section className="relative overflow-hidden py-32 md:py-40 lg:py-44">
+      {/* Hero — near-black */}
+      <section className="relative overflow-hidden bg-near-black pt-40 md:pt-48 pb-28 md:pb-36">
         <HeroCarousel
           images={[
             "/images/portfolio/psfu-business-summit/am9a4213.jpg",
@@ -37,32 +36,35 @@ export default function TermsOfServicePage() {
           ]}
           objectPosition="center"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/47 via-primary-dark/27 to-primary-dark/47" />
-        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center drop-shadow-hero">
-          <nav
-            aria-label="Breadcrumb"
-            className="mb-6 flex items-center justify-center gap-2 text-sm text-white/90"
-          >
-            <Link href="/" className="hover:text-white transition-colors">
-              Home
-            </Link>
-            <ChevronRight className="h-4 w-4" aria-hidden="true" />
-            <span className="text-white font-medium">Terms of Service</span>
+        <div className="absolute inset-0 bg-near-black/70" />
+        <div className="relative z-10 container-custom drop-shadow-hero">
+          <nav aria-label="Breadcrumb" className="label-mono-sm text-cream/60 flex items-center gap-2 mb-6">
+            <Link href="/" className="hover:text-cream transition-colors">Home</Link>
+            <span aria-hidden="true">/</span>
+            <span className="text-cream">Terms of Service</span>
           </nav>
-          <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 tracking-[0.025em]">
+          <span className="label-mono text-accent/80">Legal / 00</span>
+          <h1
+            className="mt-6 font-heading text-cream max-w-4xl"
+            style={{
+              fontSize: "clamp(2.5rem, 7vw, 6.5rem)",
+              lineHeight: 0.92,
+              letterSpacing: "-0.035em",
+            }}
+          >
             Terms of Service
           </h1>
-          <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
-            Conditions governing our event planning and styling services
+          <p className="mt-8 max-w-xl text-cream/75 text-lg leading-relaxed">
+            Conditions governing our event planning and styling services.
           </p>
         </div>
       </section>
 
       {/* Content */}
-      <section className="py-20 md:py-28 bg-cream">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-2xl p-8 md:p-12 shadow-sm">
-            <p className="text-muted text-sm mb-8">
+      <section className="py-24 md:py-32 bg-cream">
+        <div className="container-custom max-w-3xl">
+          <div>
+            <p className="label-mono-sm text-muted mb-10">
               Effective date: 30 March 2026
             </p>
 

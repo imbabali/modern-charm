@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ArrowRight, Camera } from "lucide-react";
 import {
   portfolioEvents,
   getEventBySlug,
@@ -54,8 +53,7 @@ export default async function EventDetailPage({ params }: Props) {
 
   // Find previous and next events for navigation
   const currentIndex = portfolioEvents.findIndex((e) => e.slug === slug);
-  const prevEvent =
-    currentIndex > 0 ? portfolioEvents[currentIndex - 1] : null;
+  const prevEvent = currentIndex > 0 ? portfolioEvents[currentIndex - 1] : null;
   const nextEvent =
     currentIndex < portfolioEvents.length - 1
       ? portfolioEvents[currentIndex + 1]
@@ -77,8 +75,9 @@ export default async function EventDetailPage({ params }: Props) {
           }),
         }}
       />
-      {/* Hero Banner */}
-      <section className="relative overflow-hidden py-32 md:py-40 lg:py-44">
+
+      {/* Hero — event cover, near-black surface */}
+      <section className="relative overflow-hidden bg-near-black min-h-[80vh] flex items-end">
         <Image
           src={event.coverImage}
           alt={`${event.title} cover photo`}
@@ -89,71 +88,67 @@ export default async function EventDetailPage({ params }: Props) {
           style={{ objectPosition: event.heroPosition || "center" }}
           quality={85}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/47 via-primary-dark/27 to-primary-dark/47" />
-        <div className="relative z-10 mx-auto max-w-3xl px-4 text-center drop-shadow-hero">
-          {/* Breadcrumb */}
-          <nav
-            aria-label="Breadcrumb"
-            className="mb-6 flex items-center justify-center gap-2 text-sm text-white/90"
-          >
-            <Link href="/" className="hover:text-white transition-colors">
-              Home
-            </Link>
+        <div className="absolute inset-0 bg-gradient-to-b from-near-black/30 via-near-black/20 to-near-black/85" />
+
+        <div className="relative z-10 container-custom w-full pb-20 md:pb-28 pt-40 drop-shadow-hero">
+          <nav aria-label="Breadcrumb" className="label-mono-sm text-cream/60 flex items-center gap-2 mb-6">
+            <Link href="/" className="hover:text-cream transition-colors">Home</Link>
             <span aria-hidden="true">/</span>
-            <Link
-              href="/portfolio"
-              className="hover:text-white transition-colors"
-            >
-              Portfolio
-            </Link>
+            <Link href="/portfolio" className="hover:text-cream transition-colors">Portfolio</Link>
             <span aria-hidden="true">/</span>
-            <span className="text-white font-medium">{event.title}</span>
+            <span className="text-cream">{event.title}</span>
           </nav>
-          <span className="inline-block rounded-full bg-white/20 px-4 py-1.5 font-body text-xs font-medium tracking-wide text-white backdrop-blur-sm mb-4">
-            {categoryLabels[event.category]}
+
+          <span className="label-mono text-accent">
+            {categoryLabels[event.category]} · {event.date}
           </span>
-          <h1 className="font-heading text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl">
+          <h1
+            className="mt-6 font-heading text-cream max-w-5xl"
+            style={{
+              fontSize: "clamp(2.5rem, 6.5vw, 7rem)",
+              lineHeight: 0.9,
+              letterSpacing: "-0.035em",
+            }}
+          >
             {event.title}
           </h1>
-          <p className="mt-6 font-body text-lg leading-relaxed text-white/90 md:text-xl max-w-2xl mx-auto">
+          <p className="mt-8 max-w-2xl text-cream/80 text-lg leading-relaxed">
             {event.description}
           </p>
         </div>
       </section>
 
       {/* Event Info Bar */}
-      <section className="border-b border-cream-dark bg-white">
-        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-6 py-5">
+      <section className="bg-cream border-b border-near-black/10">
+        <div className="container-custom py-6 flex flex-wrap items-center justify-between gap-4">
           <Link
             href="/portfolio"
-            className="inline-flex items-center gap-2 font-body text-sm font-medium text-muted hover:text-primary transition-colors"
+            className="btn-fluid-alpha inline label-mono text-near-black"
+            data-cursor-label="BACK"
           >
-            <ArrowLeft className="h-4 w-4" aria-hidden="true" />
-            Back to Portfolio
+            ← Back to Portfolio
           </Link>
-          <div className="flex items-center gap-2 font-body text-sm text-muted">
-            <Camera className="h-4 w-4" aria-hidden="true" />
+          <div className="flex items-center gap-6 label-mono-sm text-muted">
             <span>
-              {event.images.length} photo{event.images.length !== 1 && "s"}
+              {event.images.length} PHOTO{event.images.length !== 1 ? "S" : ""}
             </span>
-            <span className="text-cream-dark">|</span>
-            <span>{event.date}</span>
+            <span aria-hidden="true">·</span>
+            <span>{event.date.toUpperCase()}</span>
           </div>
         </div>
       </section>
 
       {/* Image Gallery */}
-      <section className="px-6 py-20 md:py-28">
-        <div className="mx-auto max-w-7xl">
+      <section className="py-20 md:py-28">
+        <div className="container-custom">
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {event.images.map((image, index) => (
               <div
                 key={image}
-                className={`group relative overflow-hidden rounded-2xl bg-cream-dark ${
-                  index === 0
-                    ? "lg:col-span-2 aspect-[16/9]"
-                    : "aspect-[4/3]"
+                className={`group relative overflow-hidden bg-cream-dark ${
+                  index === 0 ? "lg:col-span-2 aspect-[16/9]" : "aspect-[4/3]"
                 }`}
+                data-cursor-label={`PHOTO ${String(index + 1).padStart(2, "0")}`}
               >
                 <Image
                   src={image}
@@ -164,11 +159,18 @@ export default async function EventDetailPage({ params }: Props) {
                       ? "(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 66vw"
                       : "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   }
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  style={event.imagePositions?.[index] ? { objectPosition: event.imagePositions[index] } : undefined}
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                  style={
+                    event.imagePositions?.[index]
+                      ? { objectPosition: event.imagePositions[index] }
+                      : undefined
+                  }
                   quality={80}
                   loading={index < 3 ? "eager" : "lazy"}
                 />
+                <span className="absolute bottom-4 left-4 label-mono-sm text-cream/70 tabular-nums">
+                  {String(index + 1).padStart(2, "0")} / {String(event.images.length).padStart(2, "0")}
+                </span>
               </div>
             ))}
           </div>
@@ -176,25 +178,21 @@ export default async function EventDetailPage({ params }: Props) {
       </section>
 
       {/* Previous / Next Navigation */}
-      <section className="border-t border-cream-dark bg-white px-6 py-12">
-        <div className="mx-auto flex max-w-7xl flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+      <section className="border-t border-near-black/10 py-14">
+        <div className="container-custom grid grid-cols-2 gap-8">
           {prevEvent ? (
             <Link
               href={`/portfolio/${prevEvent.slug}`}
-              className="group flex items-center gap-3 text-left"
+              className="group text-left"
+              data-cursor-label="PREVIOUS"
             >
-              <ArrowLeft
-                className="h-5 w-5 text-muted transition-transform group-hover:-translate-x-1"
-                aria-hidden="true"
-              />
-              <div>
-                <span className="font-body text-xs font-medium uppercase tracking-wider text-muted">
-                  Previous
-                </span>
-                <p className="font-heading text-lg font-bold text-dark group-hover:text-primary transition-colors line-clamp-1">
-                  {prevEvent.title}
-                </p>
-              </div>
+              <span className="label-mono-sm text-muted">← Previous</span>
+              <p
+                className="mt-3 font-heading text-xl md:text-2xl text-near-black transition-colors group-hover:text-primary line-clamp-1"
+                style={{ letterSpacing: "-0.015em" }}
+              >
+                {prevEvent.title}
+              </p>
             </Link>
           ) : (
             <div />
@@ -202,20 +200,16 @@ export default async function EventDetailPage({ params }: Props) {
           {nextEvent ? (
             <Link
               href={`/portfolio/${nextEvent.slug}`}
-              className="group flex items-center gap-3 text-right sm:flex-row-reverse sm:text-right"
+              className="group text-right"
+              data-cursor-label="NEXT"
             >
-              <ArrowRight
-                className="h-5 w-5 text-muted transition-transform group-hover:translate-x-1"
-                aria-hidden="true"
-              />
-              <div>
-                <span className="font-body text-xs font-medium uppercase tracking-wider text-muted">
-                  Next
-                </span>
-                <p className="font-heading text-lg font-bold text-dark group-hover:text-primary transition-colors line-clamp-1">
-                  {nextEvent.title}
-                </p>
-              </div>
+              <span className="label-mono-sm text-muted">Next →</span>
+              <p
+                className="mt-3 font-heading text-xl md:text-2xl text-near-black transition-colors group-hover:text-primary line-clamp-1"
+                style={{ letterSpacing: "-0.015em" }}
+              >
+                {nextEvent.title}
+              </p>
             </Link>
           ) : (
             <div />
@@ -224,32 +218,46 @@ export default async function EventDetailPage({ params }: Props) {
       </section>
 
       {/* Bottom CTA */}
-      <section className="relative overflow-hidden px-6 py-20 text-center md:py-28">
+      <section className="relative overflow-hidden py-28 md:py-36">
         <HeroCarousel
           images={event.images.slice(-3)}
           objectPosition={event.ctaPosition || "center"}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/50 to-primary-dark/65" />
-        <div className="relative z-10 mx-auto max-w-2xl">
-          <h2 className="font-heading text-3xl font-bold text-white md:text-4xl">
-            Ready to plan your event?
-          </h2>
-          <p className="mt-4 font-body text-lg text-white/90">
-            Let us bring your vision to life with the same care and creativity.
-          </p>
-          <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link
-              href="/contact"
-              className="inline-block rounded-full bg-accent-dark px-10 py-4 font-body text-base font-semibold text-white shadow-lg transition-all duration-300 hover:bg-accent hover:shadow-xl"
+        <div className="absolute inset-0 bg-near-black/65" />
+        <div className="relative z-10 container-custom drop-shadow-hero">
+          <div className="max-w-4xl">
+            <span className="label-mono text-accent">Start a project</span>
+            <h2
+              className="mt-6 font-heading text-cream"
+              style={{
+                fontSize: "clamp(2.25rem, 5vw, 4.5rem)",
+                lineHeight: 0.92,
+                letterSpacing: "-0.03em",
+              }}
             >
-              Get in Touch
-            </Link>
-            <Link
-              href="/portfolio"
-              className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-8 py-4 font-body text-base font-semibold text-white transition-colors duration-300 hover:bg-white/20"
-            >
-              View More Events
-            </Link>
+              Ready to plan
+              <br />
+              your event?
+            </h2>
+            <p className="mt-8 text-cream/85 text-lg max-w-xl">
+              Let us bring your vision to life with the same care and creativity.
+            </p>
+            <div className="mt-10 flex flex-wrap items-center gap-4">
+              <Link
+                href="/contact"
+                className="btn-fluid btn-fluid-gold"
+                data-cursor-label="GET IN TOUCH"
+              >
+                Get in touch →
+              </Link>
+              <Link
+                href="/portfolio"
+                className="btn-fluid btn-fluid-glass"
+                data-cursor-label="MORE EVENTS"
+              >
+                More events
+              </Link>
+            </div>
           </div>
         </div>
       </section>

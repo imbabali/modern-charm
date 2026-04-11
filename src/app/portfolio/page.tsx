@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ChevronRight } from "lucide-react";
 import BackgroundVideo from "@/components/BackgroundVideo";
 import HeroCarousel from "@/components/HeroCarousel";
 import { CDN_BASE } from "@/lib/cdn";
@@ -41,30 +40,31 @@ export default function PortfolioPage() {
   return (
     <div className="min-h-screen bg-cream">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      {/* Hero Banner */}
-      <section className="relative overflow-hidden py-32 md:py-40 lg:py-44">
+
+      {/* Hero Banner — near-black */}
+      <section className="relative overflow-hidden bg-near-black pt-40 md:pt-48 pb-28 md:pb-40">
         <BackgroundVideo
           src={`${CDN_BASE}/videos/event-reel-1.mp4`}
-          className="absolute inset-0 h-full w-full object-cover"
+          className="absolute inset-0 h-full w-full object-cover opacity-35"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/47 via-primary-dark/27 to-primary-dark/47" />
-        <div className="relative z-10 mx-auto max-w-3xl px-4 text-center drop-shadow-hero">
-          <nav
-            aria-label="Breadcrumb"
-            className="mb-6 flex items-center justify-center gap-2 text-sm text-white/90"
+        <div className="absolute inset-0 bg-gradient-to-b from-near-black/55 via-near-black/30 to-near-black/80" />
+        <div className="relative z-10 container-custom">
+          <span className="label-mono text-accent/80">Portfolio / 00</span>
+          <h1
+            className="mt-6 font-heading text-cream max-w-5xl"
+            style={{
+              fontSize: "clamp(2.75rem, 8vw, 8rem)",
+              lineHeight: 0.9,
+              letterSpacing: "-0.035em",
+            }}
           >
-            <Link href="/" className="hover:text-white transition-colors">
-              Home
-            </Link>
-            <ChevronRight className="h-4 w-4" aria-hidden="true" />
-            <span className="text-white font-medium">Portfolio</span>
-          </nav>
-          <h1 className="font-heading text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl">
-            Our Portfolio
+            Every event
+            <br />
+            tells a story.
           </h1>
-          <p className="mt-6 font-body text-lg leading-relaxed text-white/90 md:text-xl">
-            Every event tells a story. Here are some of the moments we have had
-            the honour of bringing to life.
+          <p className="mt-10 max-w-xl text-cream/75 text-lg leading-relaxed">
+            A curated selection of celebrations we have had the honour of
+            bringing to life.
           </p>
         </div>
       </section>
@@ -73,7 +73,7 @@ export default function PortfolioPage() {
       <PortfolioGrid events={portfolioEvents} />
 
       {/* Bottom CTA */}
-      <section className="relative overflow-hidden px-6 py-20 text-center md:py-28">
+      <section className="relative overflow-hidden py-28 md:py-36">
         <HeroCarousel
           images={[
             "/images/portfolio/lornas-kuhingira/7b7a9541.jpg",
@@ -82,20 +82,36 @@ export default function PortfolioPage() {
           ]}
           objectPosition="center 30%"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/50 to-primary-dark/65" />
-        <div className="relative z-10 mx-auto max-w-2xl">
-          <h2 className="font-heading text-3xl font-bold text-white md:text-4xl">
-            Love what you see?
-          </h2>
-          <p className="mt-4 font-body text-lg text-white/90">
-            Let&apos;s create something beautiful together for your special day.
-          </p>
-          <Link
-            href="/contact"
-            className="mt-8 inline-block rounded-full bg-accent-dark px-10 py-4 font-body text-base font-semibold text-white shadow-lg transition-all duration-300 hover:bg-accent hover:shadow-xl"
-          >
-            Start Your Journey
-          </Link>
+        <div className="absolute inset-0 bg-near-black/65" />
+        <div className="relative z-10 container-custom drop-shadow-hero">
+          <div className="max-w-4xl">
+            <span className="label-mono text-accent">Love what you see?</span>
+            <h2
+              className="mt-6 font-heading text-cream"
+              style={{
+                fontSize: "clamp(2.5rem, 6vw, 5.5rem)",
+                lineHeight: 0.9,
+                letterSpacing: "-0.03em",
+              }}
+            >
+              Let&apos;s create
+              <br />
+              something beautiful.
+            </h2>
+            <p className="mt-8 text-cream/85 text-lg max-w-xl">
+              Start a project with us and let&apos;s bring your vision to life
+              for your special day.
+            </p>
+            <div className="mt-10">
+              <Link
+                href="/contact"
+                className="btn-fluid btn-fluid-gold"
+                data-cursor-label="START PROJECT"
+              >
+                Start your journey →
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
     </div>

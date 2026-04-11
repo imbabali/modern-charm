@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { ArrowRight, Calendar } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { blogPosts } from "@/data/blog-posts";
@@ -31,122 +30,150 @@ export const metadata: Metadata = {
 const featuredPost = blogPosts.find((post) => post.featured) ?? blogPosts[0];
 const gridPosts = blogPosts.filter((post) => !post.featured);
 
-function CategoryBadge({ category }: { category: string }) {
-  return (
-    <span className="inline-block rounded-full bg-accent/15 px-3 py-1 font-body text-xs font-semibold tracking-wide text-accent-dark uppercase">
-      {category}
-    </span>
-  );
-}
-
 export default function BlogPage() {
   return (
     <div className="min-h-screen bg-cream">
-      {/* Hero Banner */}
-      <section className="relative overflow-hidden px-6 py-32 text-center text-white md:py-40 lg:py-44">
+      {/* Hero — near-black */}
+      <section className="relative overflow-hidden bg-near-black pt-40 md:pt-48 pb-28 md:pb-40">
         <BackgroundVideo
           src={`${CDN_BASE}/videos/cta-clips/cta-chris-philomera-b.mp4`}
-          className="absolute inset-0 h-full w-full object-cover"
+          className="absolute inset-0 h-full w-full object-cover opacity-35"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/47 via-primary-dark/27 to-primary-dark/47" />
-        <div className="relative z-10 mx-auto max-w-3xl drop-shadow-hero">
-          <h1 className="font-heading text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl">
-            Our Journal
+        <div className="absolute inset-0 bg-gradient-to-b from-near-black/55 via-near-black/30 to-near-black/80" />
+        <div className="relative z-10 container-custom">
+          <span className="label-mono text-accent/80">Journal / 00</span>
+          <h1
+            className="mt-6 font-heading text-cream max-w-5xl"
+            style={{
+              fontSize: "clamp(2.75rem, 8vw, 8rem)",
+              lineHeight: 0.9,
+              letterSpacing: "-0.035em",
+            }}
+          >
+            Stories, tips,
+            <br />
+            and trends.
           </h1>
-          <p className="mt-6 font-body text-lg leading-relaxed text-white/90 md:text-xl">
-            Tips, trends, and behind-the-scenes stories from the world of event
-            styling
+          <p className="mt-10 max-w-xl text-cream/75 text-lg leading-relaxed">
+            Behind-the-scenes dispatches from the world of event styling.
           </p>
         </div>
       </section>
 
-      {/* Featured Blog Post */}
-      <section className="px-6 py-20 md:py-28">
-        <div className="mx-auto max-w-6xl">
-          <Link href={`/blog/${featuredPost.slug}`} className="group block">
-            <div className="overflow-hidden rounded-2xl bg-white shadow-md transition-all duration-300 hover:shadow-xl md:flex">
-              <div className="relative h-64 w-full md:min-h-[320px] md:h-auto md:w-1/2">
-                <Image
-                  src={featuredPost.image}
-                  alt={featuredPost.title}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
+      {/* Featured post — cream editorial */}
+      <section className="py-28 md:py-36 bg-cream">
+        <div className="container-custom">
+          <span className="label-mono text-accent-dark">Featured / 01</span>
+          <Link
+            href={`/blog/${featuredPost.slug}`}
+            className="group mt-10 block"
+            data-cursor-label="READ ARTICLE"
+          >
+            <div className="grid grid-cols-12 gap-8 md:gap-16 items-start">
+              <div className="col-span-12 lg:col-span-7">
+                <div className="relative aspect-[4/3] w-full overflow-hidden bg-near-black">
+                  <Image
+                    src={featuredPost.image}
+                    alt={featuredPost.title}
+                    fill
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                    sizes="(max-width: 1024px) 100vw, 58vw"
+                  />
+                </div>
               </div>
-
-              {/* Content */}
-              <div className="flex flex-col justify-center p-8 md:w-1/2 md:p-12">
-                <CategoryBadge category={featuredPost.category} />
-                <h2 className="mt-4 font-heading text-2xl font-bold text-dark transition-colors group-hover:text-primary md:text-3xl">
+              <div className="col-span-12 lg:col-span-5 lg:pt-10">
+                <div className="flex items-center gap-4">
+                  <span className="label-mono text-accent-dark">
+                    {featuredPost.category}
+                  </span>
+                  <span className="hairline bg-near-black flex-1" />
+                  <span className="label-mono-sm text-muted">
+                    {featuredPost.date}
+                  </span>
+                </div>
+                <h2
+                  className="mt-8 font-heading text-near-black transition-colors group-hover:text-primary"
+                  style={{
+                    fontSize: "clamp(1.75rem, 3.5vw, 3rem)",
+                    lineHeight: 1,
+                    letterSpacing: "-0.025em",
+                  }}
+                >
                   {featuredPost.title}
                 </h2>
-                <p className="mt-4 font-body text-base leading-relaxed text-muted">
+                <p className="mt-6 text-muted leading-relaxed">
                   {featuredPost.excerpt}
                 </p>
-                <div className="mt-6 flex items-center gap-2 font-body text-sm text-muted">
-                  <Calendar className="h-4 w-4" aria-hidden="true" />
-                  <span>{featuredPost.date}</span>
-                </div>
-                <div className="mt-6 inline-flex items-center gap-2 font-body text-sm font-semibold text-primary transition-colors group-hover:text-primary-dark">
-                  Read More
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
-                </div>
+                <span className="btn-fluid-alpha inline mt-8 label-mono text-near-black">
+                  Read article →
+                </span>
               </div>
             </div>
           </Link>
         </div>
       </section>
 
-      {/* Blog Grid */}
-      <section className="bg-white px-6 py-20 md:py-28">
-        <div className="mx-auto max-w-6xl">
-          <h2 className="text-center font-heading text-3xl font-bold text-dark md:text-4xl">
-            Latest Articles
-          </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-center font-body text-muted">
-            Insights and inspiration for your next unforgettable event
-          </p>
+      {/* Blog Grid — editorial list */}
+      <section className="bg-cream pb-28 md:pb-36">
+        <div className="container-custom">
+          <div className="flex items-end justify-between gap-6 flex-wrap">
+            <div>
+              <span className="label-mono text-accent-dark">Latest / 02</span>
+              <h2
+                className="mt-6 font-heading text-near-black max-w-2xl"
+                style={{
+                  fontSize: "clamp(2rem, 4.5vw, 3.75rem)",
+                  lineHeight: 0.95,
+                  letterSpacing: "-0.03em",
+                }}
+              >
+                Latest articles.
+              </h2>
+            </div>
+            <p className="label-mono-sm text-muted">
+              {String(gridPosts.length).padStart(2, "0")} Articles
+            </p>
+          </div>
 
-          <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {gridPosts.map((post) => (
+          <div className="mt-12 hairline bg-near-black" />
+
+          <div className="mt-16 grid gap-x-6 gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
+            {gridPosts.map((post, i) => (
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
                 className="group block"
+                data-cursor-label="READ"
               >
-                <article className="h-full overflow-hidden rounded-xl bg-cream transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
-                  <div className="relative h-48 w-full overflow-hidden">
-                    <Image
-                      src={post.image}
-                      alt={post.title}
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    />
+                <div className="relative aspect-[4/3] w-full overflow-hidden bg-near-black">
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    fill
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                  <span className="absolute top-5 left-5 label-mono text-cream">
+                    {String(i + 1).padStart(2, "0")} · {post.category}
+                  </span>
+                </div>
+                <div className="mt-5">
+                  <h3
+                    className="font-heading text-xl text-near-black transition-colors group-hover:text-primary"
+                    style={{ letterSpacing: "-0.015em" }}
+                  >
+                    {post.title}
+                  </h3>
+                  <p className="mt-3 text-sm text-muted leading-relaxed line-clamp-2">
+                    {post.excerpt}
+                  </p>
+                  <div className="mt-5 flex items-center justify-between">
+                    <span className="label-mono-sm text-muted">{post.date}</span>
+                    <span className="label-mono text-near-black group-hover:translate-x-1 transition-transform">
+                      Read →
+                    </span>
                   </div>
-
-                  {/* Content */}
-                  <div className="p-6">
-                    <CategoryBadge category={post.category} />
-                    <h3 className="mt-3 font-heading text-lg font-bold text-dark transition-colors group-hover:text-primary">
-                      {post.title}
-                    </h3>
-                    <p className="mt-2 font-body text-sm leading-relaxed text-muted">
-                      {post.excerpt}
-                    </p>
-                    <div className="mt-4 flex items-center justify-between">
-                      <div className="flex items-center gap-1.5 font-body text-xs text-muted">
-                        <Calendar className="h-3.5 w-3.5" aria-hidden="true" />
-                        <span>{post.date}</span>
-                      </div>
-                      <span className="inline-flex items-center gap-1 font-body text-xs font-semibold text-primary transition-colors group-hover:text-primary-dark">
-                        Read More
-                        <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
-                      </span>
-                    </div>
-                  </div>
-                </article>
+                </div>
               </Link>
             ))}
           </div>
@@ -154,7 +181,7 @@ export default function BlogPage() {
       </section>
 
       {/* Bottom CTA */}
-      <section className="relative overflow-hidden px-6 py-20 text-center md:py-28">
+      <section className="relative overflow-hidden py-28 md:py-36">
         <HeroCarousel
           images={[
             "/images/portfolio/lornas-kuhingira/7b7a9603.jpg",
@@ -163,23 +190,33 @@ export default function BlogPage() {
           ]}
           objectPosition="center 40%"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/50 to-primary-dark/65" />
-        <div className="relative z-10 mx-auto max-w-2xl">
-          <h2 className="font-heading text-3xl font-bold text-white md:text-4xl">
-            Have a Story to Tell?
-          </h2>
-          <p className="mt-4 font-body text-lg text-white/90">
-            Let us help you create an event worth writing about.
-          </p>
-          <Link
-            href="/contact"
-            className="mt-8 inline-block rounded-full bg-accent-dark px-10 py-4 font-body text-base font-semibold text-white shadow-lg transition-all duration-300 hover:bg-accent hover:shadow-xl"
-          >
-            Start Planning
-          </Link>
+        <div className="absolute inset-0 bg-near-black/65" />
+        <div className="relative z-10 container-custom drop-shadow-hero">
+          <div className="max-w-4xl">
+            <span className="label-mono text-accent">Have a story / 03</span>
+            <h2
+              className="mt-6 font-heading text-cream"
+              style={{
+                fontSize: "clamp(2.5rem, 6vw, 5.5rem)",
+                lineHeight: 0.9,
+                letterSpacing: "-0.03em",
+              }}
+            >
+              Have a story
+              <br />
+              worth telling?
+            </h2>
+            <p className="mt-8 text-cream/85 text-lg max-w-xl">
+              Let us help you create an event worth writing about.
+            </p>
+            <div className="mt-10">
+              <Link href="/contact" className="btn-fluid btn-fluid-gold" data-cursor-label="START PLANNING">
+                Start planning →
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
-
     </div>
   );
 }

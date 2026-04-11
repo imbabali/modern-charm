@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Star, Quote } from "lucide-react";
+import { Quote } from "lucide-react";
 import Link from "next/link";
 import BackgroundVideo from "@/components/BackgroundVideo";
 import HeroCarousel from "@/components/HeroCarousel";
@@ -12,16 +12,14 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://moderncharmevents.com/testimonials" },
   openGraph: {
     title: "Client Stories | Modern Charm Uganda",
-    description:
-      "Real reviews from real clients across Kampala and beyond.",
+    description: "Real reviews from real clients across Kampala and beyond.",
     url: "https://moderncharmevents.com/testimonials",
     images: [{ url: "/images/portfolio/oscar-sandra/IMG_1930.jpg" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Client Stories | Modern Charm Uganda",
-    description:
-      "Real reviews from real clients across Kampala and beyond.",
+    description: "Real reviews from real clients across Kampala and beyond.",
     images: ["/images/portfolio/oscar-sandra/IMG_1930.jpg"],
   },
 };
@@ -29,7 +27,6 @@ export const metadata: Metadata = {
 const featuredTestimonial = {
   text: "Thank you for being part of our special day. You did amazing! The event planning & styling was top notch! Thank you for bringing our vision to life. Execution & attention to detail was magnificent. Modern Charm to the world!",
   name: "Mr. & Mrs. Mugagga Mulindwa",
-  initials: "MM",
   event: "Wedding",
 };
 
@@ -72,24 +69,6 @@ const testimonials = [
   },
 ];
 
-function StarRating({ rating }: { rating: number }) {
-  return (
-    <div className="flex gap-1" role="img" aria-label={`${rating} out of 5 stars`}>
-      {Array.from({ length: 5 }).map((_, i) => (
-        <Star
-          key={i}
-          aria-hidden="true"
-          className={`h-4 w-4 ${
-            i < rating
-              ? "fill-accent text-accent"
-              : "fill-cream-dark text-cream-dark"
-          }`}
-        />
-      ))}
-    </div>
-  );
-}
-
 const allReviews = [
   { name: featuredTestimonial.name, text: featuredTestimonial.text, rating: 5 },
   ...testimonials.map((t) => ({ name: t.name, text: t.text, rating: t.rating })),
@@ -125,95 +104,130 @@ export default function TestimonialsPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
       />
-      {/* Hero Banner */}
-      <section className="relative overflow-hidden px-6 py-32 text-center text-white md:py-40 lg:py-44">
+
+      {/* Hero — dark teal */}
+      <section className="relative overflow-hidden bg-dark-teal pt-40 md:pt-48 pb-28 md:pb-40">
         <BackgroundVideo
           src={`${CDN_BASE}/videos/cta-clips/cta-sammy-lala.mp4`}
-          className="absolute inset-0 h-full w-full object-cover"
+          className="absolute inset-0 h-full w-full object-cover opacity-35"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/47 via-primary-dark/27 to-primary-dark/47" />
-        <div className="relative z-10 mx-auto max-w-3xl drop-shadow-hero">
-          <h1 className="font-heading text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl">
-            Client Stories
+        <div className="absolute inset-0 bg-gradient-to-b from-near-black/55 via-near-black/30 to-near-black/75" />
+        <div className="relative z-10 container-custom">
+          <span className="label-mono text-accent/80">Testimonials / 00</span>
+          <h1
+            className="mt-6 font-heading text-cream max-w-5xl"
+            style={{
+              fontSize: "clamp(2.75rem, 8vw, 8rem)",
+              lineHeight: 0.9,
+              letterSpacing: "-0.035em",
+            }}
+          >
+            Words from
+            <br />
+            our clients.
           </h1>
-          <p className="mt-6 font-body text-lg leading-relaxed text-white/90 md:text-xl">
-            Hear from the people who trusted us with their most special moments
-          </p>
-        </div>
-      </section>
-
-      {/* Featured Testimonial */}
-      <section className="px-6 py-20 md:py-28">
-        <div className="mx-auto max-w-4xl">
-          <div className="relative rounded-2xl bg-cream p-8 shadow-lg ring-1 ring-accent/20 md:p-14">
-            <div className="relative z-10 flex flex-col items-center text-center">
-              <Quote className="mb-4 h-10 w-10 text-accent/40 md:h-14 md:w-14" aria-hidden="true" />
-              <p className="font-body text-base leading-relaxed text-dark/80 italic md:text-lg lg:text-xl lg:leading-9">
-                {featuredTestimonial.text}
-              </p>
-              <Quote className="mt-4 h-10 w-10 rotate-180 text-accent/40 md:h-14 md:w-14" aria-hidden="true" />
-
-              <div className="mt-10 flex flex-col items-center gap-4">
-                <div className="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent shadow-md">
-                  <span className="font-heading text-2xl font-bold text-white">
-                    {featuredTestimonial.initials}
-                  </span>
-                </div>
-                <div>
-                  <p className="font-heading text-xl font-semibold text-dark">
-                    {featuredTestimonial.name}
-                  </p>
-                  <p className="mt-1 font-body text-sm text-muted">
-                    {featuredTestimonial.event}
-                  </p>
-                </div>
-                <div className="flex gap-1" role="img" aria-label="5 out of 5 stars">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star
-                      key={i}
-                      aria-hidden="true"
-                      className="h-5 w-5 fill-accent text-accent"
-                    />
-                  ))}
-                </div>
-              </div>
+          <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl">
+            <div>
+              <span className="label-mono-sm text-accent/70">Rating</span>
+              <p className="mt-2 font-heading text-3xl text-cream" style={{ letterSpacing: "-0.02em" }}>5.0</p>
+            </div>
+            <div>
+              <span className="label-mono-sm text-accent/70">Reviews</span>
+              <p className="mt-2 font-heading text-3xl text-cream" style={{ letterSpacing: "-0.02em" }}>{allReviews.length}</p>
+            </div>
+            <div>
+              <span className="label-mono-sm text-accent/70">Events</span>
+              <p className="mt-2 font-heading text-3xl text-cream" style={{ letterSpacing: "-0.02em" }}>100+</p>
+            </div>
+            <div>
+              <span className="label-mono-sm text-accent/70">Years</span>
+              <p className="mt-2 font-heading text-3xl text-cream" style={{ letterSpacing: "-0.02em" }}>06+</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Testimonial Grid */}
-      <section className="bg-white px-6 py-20 md:py-28">
-        <div className="mx-auto max-w-6xl">
-          <h2 className="text-center font-heading text-3xl font-bold text-dark md:text-4xl">
-            More Kind Words
-          </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-center font-body text-muted">
-            Every event is a new story, and we are honoured to be part of so many
-            beautiful celebrations across Uganda.
-          </p>
-
-          <div className="mt-14 grid gap-8 md:grid-cols-2">
-            {testimonials.map((testimonial, index) => (
-              <div
-                key={index}
-                className="group rounded-xl bg-cream-dark p-8 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10"
-              >
-                <Quote className="mb-4 h-8 w-8 text-accent/50" aria-hidden="true" />
-                <p className="font-body text-base leading-relaxed text-dark/80 italic">
-                  &ldquo;{testimonial.text}&rdquo;
+      {/* Featured Testimonial — cream editorial */}
+      <section className="py-28 md:py-36 bg-cream">
+        <div className="container-custom">
+          <span className="label-mono text-accent-dark">Featured / 01</span>
+          <blockquote className="mt-10 max-w-5xl">
+            <Quote className="h-10 w-10 text-accent mb-8" aria-hidden="true" />
+            <p
+              className="font-heading text-near-black"
+              style={{
+                fontSize: "clamp(1.75rem, 4vw, 3.25rem)",
+                lineHeight: 1.15,
+                letterSpacing: "-0.02em",
+              }}
+            >
+              &ldquo;{featuredTestimonial.text}&rdquo;
+            </p>
+            <footer className="mt-12 flex items-center gap-6 pt-6 border-t border-near-black/15">
+              <div>
+                <p className="label-mono text-near-black">
+                  {featuredTestimonial.name}
                 </p>
-                <div className="mt-6 flex items-center justify-between">
-                  <div>
-                    <p className="font-heading text-lg font-semibold text-dark">
-                      {testimonial.name}
-                    </p>
-                    <p className="mt-0.5 font-body text-sm text-muted">
-                      {testimonial.event}
-                    </p>
-                  </div>
-                  <StarRating rating={testimonial.rating} />
+                <p className="label-mono-sm text-muted mt-2">
+                  {featuredTestimonial.event}
+                </p>
+              </div>
+            </footer>
+          </blockquote>
+        </div>
+      </section>
+
+      {/* Testimonial Grid — cream, editorial columns */}
+      <section className="bg-cream pb-28 md:pb-36">
+        <div className="container-custom">
+          <div className="flex items-end justify-between gap-6 flex-wrap">
+            <div>
+              <span className="label-mono text-accent-dark">More praise / 02</span>
+              <h2
+                className="mt-6 font-heading text-near-black max-w-2xl"
+                style={{
+                  fontSize: "clamp(2rem, 4.5vw, 3.75rem)",
+                  lineHeight: 0.95,
+                  letterSpacing: "-0.03em",
+                }}
+              >
+                More kind words.
+              </h2>
+            </div>
+          </div>
+
+          <div className="mt-12 hairline bg-near-black" />
+
+          <div className="mt-12 grid gap-0 md:grid-cols-2">
+            {testimonials.map((t, i) => (
+              <div
+                key={i}
+                className={`p-8 md:p-10 border-b border-near-black/15 ${
+                  i % 2 === 0 ? "md:border-r md:border-near-black/15" : ""
+                }`}
+              >
+                <div className="flex items-start justify-between">
+                  <Quote className="h-6 w-6 text-accent" aria-hidden="true" />
+                  <span className="label-mono-sm text-muted tabular-nums">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
                 </div>
+                <blockquote className="mt-6">
+                  <p
+                    className="font-heading text-near-black"
+                    style={{
+                      fontSize: "clamp(1.125rem, 1.6vw, 1.375rem)",
+                      lineHeight: 1.35,
+                      letterSpacing: "-0.01em",
+                    }}
+                  >
+                    &ldquo;{t.text}&rdquo;
+                  </p>
+                </blockquote>
+                <footer className="mt-8 pt-6 border-t border-near-black/15">
+                  <p className="label-mono text-near-black">{t.name}</p>
+                  <p className="label-mono-sm text-muted mt-2">{t.event}</p>
+                </footer>
               </div>
             ))}
           </div>
@@ -221,7 +235,7 @@ export default function TestimonialsPage() {
       </section>
 
       {/* Bottom CTA */}
-      <section className="relative overflow-hidden px-6 py-20 text-center md:py-28">
+      <section className="relative overflow-hidden py-28 md:py-36">
         <HeroCarousel
           images={[
             "/images/portfolio/lornas-kuhingira/7b7a9596.jpg",
@@ -230,20 +244,31 @@ export default function TestimonialsPage() {
           ]}
           objectPosition="center 40%"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/50 to-primary-dark/65" />
-        <div className="relative z-10 mx-auto max-w-2xl">
-          <h2 className="font-heading text-3xl font-bold text-white md:text-4xl">
-            Ready to create your own story?
-          </h2>
-          <p className="mt-4 font-body text-lg text-white/90">
-            Let&apos;s talk about bringing your vision to life.
-          </p>
-          <Link
-            href="/contact"
-            className="mt-8 inline-block rounded-full bg-accent-dark px-10 py-4 font-body text-base font-semibold text-white shadow-lg transition-all duration-300 hover:bg-accent hover:shadow-xl"
-          >
-            Let&apos;s Talk
-          </Link>
+        <div className="absolute inset-0 bg-near-black/65" />
+        <div className="relative z-10 container-custom drop-shadow-hero">
+          <div className="max-w-4xl">
+            <span className="label-mono text-accent">Start a project / 03</span>
+            <h2
+              className="mt-6 font-heading text-cream"
+              style={{
+                fontSize: "clamp(2.5rem, 6vw, 5.5rem)",
+                lineHeight: 0.9,
+                letterSpacing: "-0.03em",
+              }}
+            >
+              Ready to create
+              <br />
+              your own story?
+            </h2>
+            <p className="mt-8 text-cream/85 text-lg max-w-xl">
+              Let&apos;s talk about bringing your vision to life.
+            </p>
+            <div className="mt-10">
+              <Link href="/contact" className="btn-fluid btn-fluid-gold" data-cursor-label="LET'S TALK">
+                Let&apos;s talk →
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
     </div>

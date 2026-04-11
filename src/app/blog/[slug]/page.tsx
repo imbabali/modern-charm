@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ChevronRight, Calendar, ArrowLeft } from "lucide-react";
 import { blogPosts } from "@/data/blog-posts";
 import { notFound } from "next/navigation";
 import HeroCarousel from "@/components/HeroCarousel";
@@ -16,7 +15,6 @@ const heroPositions: Record<string, string> = {
   "budget-friendly-event-styling-ideas": "center 45%",
 };
 
-/* Per-image position overrides (index-based) for specific posts */
 const heroImagePositions: Record<string, string[]> = {
   "the-ultimate-guide-to-planning-a-ugandan-wedding-in-2026": [
     "center 20%",
@@ -75,49 +73,51 @@ export default async function BlogPostPage({
 
   return (
     <div className="min-h-screen bg-cream">
-      {/* Hero */}
-      <section className="relative overflow-hidden px-6 py-32 text-center text-white md:py-40 lg:py-44">
-        <HeroCarousel images={post.heroImages} objectPosition={heroPositions[slug] || "center"} imagePositions={heroImagePositions[slug]} />
-        <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/70 via-primary-dark/50 to-primary-dark/70" />
-        <div className="relative z-10 mx-auto max-w-3xl">
+      {/* Hero — near-black with hero carousel */}
+      <section className="relative overflow-hidden bg-near-black min-h-[70vh] flex items-end">
+        <HeroCarousel
+          images={post.heroImages}
+          objectPosition={heroPositions[slug] || "center"}
+          imagePositions={heroImagePositions[slug]}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-near-black/40 via-near-black/20 to-near-black/90" />
+
+        <div className="relative z-10 container-custom w-full pt-40 pb-20 md:pb-28 drop-shadow-hero">
           <nav
-            className="mb-6 flex items-center justify-center gap-2 text-sm text-white/90"
+            className="label-mono-sm text-cream/60 flex items-center gap-2 mb-6"
             aria-label="Breadcrumb"
           >
-            <Link
-              href="/"
-              className="transition-colors hover:text-white"
-            >
-              Home
-            </Link>
-            <ChevronRight className="h-4 w-4" aria-hidden="true" />
-            <Link
-              href="/blog"
-              className="transition-colors hover:text-white"
-            >
-              Blog
-            </Link>
-            <ChevronRight className="h-4 w-4" aria-hidden="true" />
-            <span className="font-medium text-white">{post.category}</span>
+            <Link href="/" className="hover:text-cream transition-colors">Home</Link>
+            <span aria-hidden="true">/</span>
+            <Link href="/blog" className="hover:text-cream transition-colors">Journal</Link>
+            <span aria-hidden="true">/</span>
+            <span className="text-cream">{post.category}</span>
           </nav>
-          <span className="inline-block rounded-full bg-white/20 px-4 py-1 text-xs font-semibold uppercase tracking-wide backdrop-blur-sm">
-            {post.category}
+
+          <span className="label-mono text-accent">
+            {post.category} · {post.date}
           </span>
-          <h1 className="mt-4 font-heading text-3xl font-bold tracking-tight text-white md:text-4xl lg:text-5xl">
+          <h1
+            className="mt-6 font-heading text-cream max-w-5xl"
+            style={{
+              fontSize: "clamp(2.25rem, 6vw, 6rem)",
+              lineHeight: 0.92,
+              letterSpacing: "-0.03em",
+            }}
+          >
             {post.title}
           </h1>
-          <div className="mt-6 flex items-center justify-center gap-2 text-white/90">
-            <Calendar className="h-4 w-4" aria-hidden="true" />
-            <span className="font-body text-sm">{post.date}</span>
-          </div>
+          <p className="mt-8 max-w-2xl text-cream/80 text-lg leading-relaxed">
+            {post.excerpt}
+          </p>
         </div>
       </section>
 
       {/* Article Content */}
-      <article className="px-6 py-16 md:py-24">
-        <div className="mx-auto max-w-3xl">
+      <article className="py-24 md:py-32 bg-cream">
+        <div className="container-custom max-w-3xl">
           <div
-            className="prose prose-lg prose-headings:font-heading prose-headings:text-dark prose-headings:tracking-wide prose-h2:text-2xl prose-h2:md:text-3xl prose-p:leading-relaxed prose-p:text-muted prose-p:font-body prose-a:text-primary prose-strong:text-dark"
+            className="prose prose-lg max-w-none prose-headings:font-heading prose-headings:text-near-black prose-headings:tracking-tight prose-h2:text-2xl prose-h2:md:text-3xl prose-h2:mt-12 prose-p:leading-relaxed prose-p:text-muted prose-p:font-body prose-a:text-primary prose-a:no-underline prose-a:font-semibold prose-strong:text-near-black"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
         </div>
@@ -165,34 +165,39 @@ export default async function BlogPostPage({
       />
 
       {/* Bottom CTA */}
-      <section className="relative overflow-hidden px-6 py-20 text-center md:py-28">
+      <section className="relative overflow-hidden py-28 md:py-36">
         <HeroCarousel
           images={post.heroImages}
           objectPosition={heroPositions[slug] || "center"}
           imagePositions={heroImagePositions[slug]}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/50 to-primary-dark/65" />
-        <div className="relative z-10 mx-auto max-w-2xl">
-          <h2 className="font-heading text-3xl font-bold text-white md:text-4xl">
-            Ready to plan your event?
-          </h2>
-          <p className="mt-4 font-body text-lg text-white/90">
-            Let us bring your vision to life with the same care and creativity.
-          </p>
-          <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link
-              href="/contact"
-              className="inline-block rounded-full bg-accent-dark px-10 py-4 font-body text-base font-semibold text-white shadow-lg transition-all duration-300 hover:bg-accent hover:shadow-xl"
+        <div className="absolute inset-0 bg-near-black/65" />
+        <div className="relative z-10 container-custom drop-shadow-hero">
+          <div className="max-w-4xl">
+            <span className="label-mono text-accent">Start a project</span>
+            <h2
+              className="mt-6 font-heading text-cream"
+              style={{
+                fontSize: "clamp(2.25rem, 5vw, 4.5rem)",
+                lineHeight: 0.92,
+                letterSpacing: "-0.03em",
+              }}
             >
-              Get in Touch
-            </Link>
-            <Link
-              href="/blog"
-              className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-8 py-4 font-body text-base font-semibold text-white transition-colors duration-300 hover:bg-white/20"
-            >
-              <ArrowLeft className="h-4 w-4" aria-hidden="true" />
-              Back to Journal
-            </Link>
+              Ready to plan
+              <br />
+              your event?
+            </h2>
+            <p className="mt-8 text-cream/85 text-lg max-w-xl">
+              Let us bring your vision to life with the same care and creativity.
+            </p>
+            <div className="mt-10 flex flex-wrap items-center gap-4">
+              <Link href="/contact" className="btn-fluid btn-fluid-gold" data-cursor-label="GET IN TOUCH">
+                Get in touch →
+              </Link>
+              <Link href="/blog" className="btn-fluid btn-fluid-glass" data-cursor-label="BACK TO JOURNAL">
+                ← Back to Journal
+              </Link>
+            </div>
           </div>
         </div>
       </section>

@@ -1,18 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  ChevronRight,
-  ArrowRight,
-  ClipboardList,
-  Palette,
-  Users,
-  Lightbulb,
-  Gift,
-  Rocket,
-  CalendarCheck,
-  Brush,
-} from "lucide-react";
 import BackgroundVideo from "@/components/BackgroundVideo";
 import HeroCarousel from "@/components/HeroCarousel";
 import { CDN_BASE } from "@/lib/cdn";
@@ -41,7 +29,6 @@ export const metadata: Metadata = {
 const serviceCategories = [
   {
     id: "planning",
-    icon: CalendarCheck,
     title: "Event Planning & Coordination",
     tagline: "From vision to flawless execution",
     description:
@@ -52,7 +39,6 @@ const serviceCategories = [
       "Grand black and gold reception venue with crystal chandeliers styled by Modern Charm",
     subServices: [
       {
-        icon: ClipboardList,
         title: "Event Planning",
         highlights: [
           "Full event planning from concept to execution",
@@ -64,7 +50,6 @@ const serviceCategories = [
         ],
       },
       {
-        icon: Users,
         title: "Event Management",
         highlights: [
           "End-to-end event coordination",
@@ -76,7 +61,6 @@ const serviceCategories = [
         ],
       },
       {
-        icon: Lightbulb,
         title: "Concept Development",
         highlights: [
           "Creative brainstorming sessions",
@@ -88,7 +72,6 @@ const serviceCategories = [
         ],
       },
       {
-        icon: Rocket,
         title: "Product Launches",
         highlights: [
           "Launch event design & coordination",
@@ -103,7 +86,6 @@ const serviceCategories = [
   },
   {
     id: "styling",
-    icon: Brush,
     title: "Event Styling & Decor",
     tagline: "Transforming spaces into unforgettable experiences",
     description:
@@ -114,7 +96,6 @@ const serviceCategories = [
       "Sage green reception with hanging floral installations and cross-back chairs styled by Modern Charm",
     subServices: [
       {
-        icon: Palette,
         title: "Event Styling",
         highlights: [
           "Venue styling & transformation",
@@ -126,7 +107,6 @@ const serviceCategories = [
         ],
       },
       {
-        icon: Gift,
         title: "Corporate Gifting",
         highlights: [
           "Bespoke gift box design & assembly",
@@ -169,154 +149,154 @@ export default function ServicesPage() {
   return (
     <div className="font-body">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
-      {/* Hero Banner */}
-      <section className="relative overflow-hidden py-32 md:py-40 lg:py-44">
+
+      {/* Hero Banner — near-black */}
+      <section className="relative overflow-hidden bg-near-black pt-40 md:pt-48 pb-28 md:pb-40">
         <BackgroundVideo
           src={`${CDN_BASE}/videos/cta-clips/cta-sammy-lala.mp4`}
-          className="absolute inset-0 h-full w-full object-cover"
+          className="absolute inset-0 h-full w-full object-cover opacity-35"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/47 via-primary-dark/27 to-primary-dark/47" />
-        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center drop-shadow-hero">
-          <nav
-            aria-label="Breadcrumb"
-            className="mb-6 flex items-center justify-center gap-2 text-sm text-white/90"
+        <div className="absolute inset-0 bg-gradient-to-b from-near-black/55 via-near-black/30 to-near-black/80" />
+        <div className="relative z-10 container-custom">
+          <span className="label-mono text-accent/80">Services / 00</span>
+          <h1
+            className="mt-6 font-heading text-cream max-w-5xl"
+            style={{
+              fontSize: "clamp(2.75rem, 8vw, 8rem)",
+              lineHeight: 0.9,
+              letterSpacing: "-0.035em",
+            }}
           >
-            <Link href="/" className="hover:text-white transition-colors">
-              Home
-            </Link>
-            <ChevronRight className="h-4 w-4" aria-hidden="true" />
-            <span className="text-white font-medium">Our Services</span>
-          </nav>
-          <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
-            Our Services
+            From vision to
+            <br />
+            flawless execution.
           </h1>
-          <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
-            From event planning and coordination to styling and decor — we bring
-            your vision to life
+          <p className="mt-10 max-w-xl text-cream/75 text-lg leading-relaxed">
+            Two disciplines, one obsessive craft. Event planning and
+            coordination, and event styling and décor.
           </p>
         </div>
       </section>
 
       {/* Service Categories */}
-      <section className="py-20 md:py-28 bg-cream">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="space-y-28 md:space-y-36">
-            {serviceCategories.map((category, catIndex) => {
-              const CatIcon = category.icon;
-              const isReversed = catIndex % 2 !== 0;
+      {serviceCategories.map((category, catIndex) => {
+        const isStyling = category.id === "styling";
+        const sectionBg = isStyling ? "bg-dark-teal text-cream" : "bg-cream";
+        const accent = isStyling ? "text-accent/80" : "text-accent-dark";
+        const hairline = isStyling ? "bg-cream" : "bg-near-black";
+        const textMain = isStyling ? "text-cream" : "text-near-black";
+        const textBody = isStyling ? "text-cream/75" : "text-muted";
+        const subtitleColor = isStyling ? "text-accent-light" : "text-accent-dark";
 
-              return (
-                <div key={category.id} id={category.id} className="scroll-mt-24">
-                  {/* Category Header with Image */}
-                  <div
-                    className={`grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center mb-16`}
-                  >
-                    {/* Image */}
-                    <div
-                      className={`${isReversed ? "lg:order-2" : "lg:order-1"}`}
-                    >
-                      <div className="aspect-[4/3] rounded-2xl relative overflow-hidden group">
-                        <Image
-                          src={category.image}
-                          alt={category.imageAlt}
-                          fill
-                          className="object-cover group-hover:scale-105 transition-transform duration-500"
-                          style={{ objectPosition: category.imagePosition }}
-                          quality={80}
-                          sizes="(max-width: 1024px) 100vw, 50vw"
-                        />
-                      </div>
-                    </div>
-
-                    {/* Text Content */}
-                    <div
-                      className={`${isReversed ? "lg:order-1" : "lg:order-2"}`}
-                    >
-                      <div className="flex items-center gap-3 mb-4">
-                        <div className="flex h-12 w-12 items-center justify-center rounded-full bg-accent/10">
-                          <CatIcon
-                            className="h-6 w-6 text-accent"
-                            aria-hidden="true"
-                          />
-                        </div>
-                        <span className="text-accent-dark font-heading text-xs font-semibold tracking-widest uppercase">
-                          Service {String(catIndex + 1).padStart(2, "0")}
-                        </span>
-                      </div>
-                      <h2 className="font-heading text-3xl md:text-4xl font-bold text-dark mb-4">
-                        {category.title}
-                      </h2>
-                      <p className="text-lg text-accent-dark font-medium italic mb-4">
-                        {category.tagline}
-                      </p>
-                      <p className="text-muted leading-relaxed mb-6">
-                        {category.description}
-                      </p>
-                      <Link
-                        href="/contact"
-                        className="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white font-semibold px-6 py-3 rounded-full transition-colors duration-300 shadow-md hover:shadow-lg"
-                      >
-                        Get a Quote
-                        <ArrowRight
-                          className="h-4 w-4"
-                          aria-hidden="true"
-                        />
-                      </Link>
-                    </div>
-                  </div>
-
-                  {/* Sub-services Grid */}
-                  <div
-                    className={`grid gap-6 ${
-                      category.subServices.length <= 2
-                        ? "grid-cols-1 md:grid-cols-2"
-                        : "grid-cols-1 md:grid-cols-2"
-                    }`}
-                  >
-                    {category.subServices.map((sub) => {
-                      const SubIcon = sub.icon;
-                      return (
-                        <div
-                          key={sub.title}
-                          className="rounded-2xl bg-white p-6 md:p-8 border border-gray-100 hover:shadow-lg hover:border-accent/30 transition-all duration-300"
-                        >
-                          <div className="flex items-center gap-3 mb-4">
-                            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10">
-                              <SubIcon
-                                className="h-5 w-5 text-primary"
-                                aria-hidden="true"
-                              />
-                            </div>
-                            <h3 className="font-heading text-xl font-bold text-dark">
-                              {sub.title}
-                            </h3>
-                          </div>
-                          <ul className="grid grid-cols-1 lg:grid-cols-2 gap-2.5">
-                            {sub.highlights.map((item) => (
-                              <li
-                                key={item}
-                                className="flex items-start gap-2 text-sm text-dark"
-                              >
-                                <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-accent flex-shrink-0" />
-                                {item}
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      );
-                    })}
+        return (
+          <section
+            key={category.id}
+            id={category.id}
+            className={`${sectionBg} py-28 md:py-40 scroll-mt-32`}
+          >
+            <div className="container-custom">
+              <div className="grid grid-cols-12 gap-8 md:gap-16">
+                <div className={`col-span-12 lg:col-span-5 ${isStyling ? "lg:order-2" : ""}`}>
+                  <div className="relative aspect-[4/5] w-full overflow-hidden bg-near-black">
+                    <Image
+                      src={category.image}
+                      alt={category.imageAlt}
+                      fill
+                      className="object-cover transition-transform duration-700 ease-out hover:scale-[1.03]"
+                      style={{ objectPosition: category.imagePosition }}
+                      quality={80}
+                      sizes="(max-width: 1024px) 100vw, 40vw"
+                    />
                   </div>
                 </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
 
-      <div className="section-divider mx-auto max-w-7xl" />
+                <div className={`col-span-12 lg:col-span-7 ${isStyling ? "lg:order-1 lg:pr-8" : "lg:pl-8"}`}>
+                  <span className={`label-mono ${accent}`}>
+                    Service / {String(catIndex + 1).padStart(2, "0")}
+                  </span>
+                  <h2
+                    className={`mt-6 font-heading ${textMain}`}
+                    style={{
+                      fontSize: "clamp(2rem, 4.5vw, 4rem)",
+                      lineHeight: 0.95,
+                      letterSpacing: "-0.03em",
+                    }}
+                  >
+                    {category.title}
+                  </h2>
+                  <p className={`mt-6 font-heading text-xl italic ${subtitleColor}`}>
+                    {category.tagline}
+                  </p>
+                  <p className={`mt-8 ${textBody} leading-relaxed max-w-2xl`}>
+                    {category.description}
+                  </p>
+                  <div className="mt-10">
+                    <Link
+                      href="/contact"
+                      className={isStyling ? "btn-fluid btn-fluid-gold" : "btn-fluid btn-fluid-dark"}
+                      data-cursor-label="GET A QUOTE"
+                    >
+                      Get a quote →
+                    </Link>
+                  </div>
+                </div>
+              </div>
 
-      {/* Bottom CTA Section */}
-      <section className="py-20 md:py-28 relative overflow-hidden">
+              <div className={`mt-24 hairline ${hairline}`} />
+
+              {/* Sub-services */}
+              <div className="mt-16 grid md:grid-cols-2 gap-x-0 gap-y-0">
+                {category.subServices.map((sub, i) => (
+                  <div
+                    key={sub.title}
+                    className={`p-8 md:p-10 ${
+                      i % 2 === 1 ? "md:border-l" : ""
+                    } ${i >= 2 ? "md:border-t" : ""} ${
+                      i > 0 && i % 2 === 0 ? "border-t md:border-t" : ""
+                    } ${i > 0 && i % 2 === 1 ? "border-t md:border-t-0" : ""} ${
+                      isStyling ? "border-cream/15" : "border-near-black/15"
+                    }`}
+                    style={{
+                      borderTopWidth: i > 0 ? "1px" : undefined,
+                    }}
+                  >
+                    <div className="flex items-start justify-between gap-4">
+                      <span className={`label-mono-sm ${accent} tabular-nums`}>
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                      <span className={`label-mono-sm ${textBody}`}>
+                        {category.id === "planning" ? "Planning" : "Styling"}
+                      </span>
+                    </div>
+                    <h3
+                      className={`mt-6 font-heading text-2xl ${textMain}`}
+                      style={{ letterSpacing: "-0.015em" }}
+                    >
+                      {sub.title}
+                    </h3>
+                    <ul className="mt-6 grid grid-cols-1 gap-3">
+                      {sub.highlights.map((item) => (
+                        <li
+                          key={item}
+                          className={`flex items-start gap-3 text-sm ${textBody}`}
+                        >
+                          <span className={`mt-2 h-px w-3 shrink-0 ${
+                            isStyling ? "bg-accent-light" : "bg-accent"
+                          }`} />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        );
+      })}
+
+      {/* Bottom CTA */}
+      <section className="relative overflow-hidden py-28 md:py-36">
         <HeroCarousel
           images={[
             "/images/portfolio/lornas-kuhingira/7b7a9597.jpg",
@@ -325,22 +305,35 @@ export default function ServicesPage() {
           ]}
           objectPosition="center 30%"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/50 to-primary-dark/65" />
-        <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
-            Ready to Get Started?
-          </h2>
-          <p className="text-white/90 text-lg md:text-xl mb-10 max-w-2xl mx-auto">
-            Every event is unique, and we love a creative challenge. Let&apos;s
-            work together to plan, style, and bring your vision to life.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 bg-accent-dark hover:bg-accent text-white font-semibold px-8 py-4 rounded-full text-lg transition-colors duration-300 shadow-lg hover:shadow-xl"
-          >
-            Let&apos;s Get Started
-            <ArrowRight className="h-5 w-5" aria-hidden="true" />
-          </Link>
+        <div className="absolute inset-0 bg-near-black/65" />
+        <div className="relative z-10 container-custom drop-shadow-hero">
+          <div className="max-w-4xl">
+            <span className="label-mono text-accent">Next step / 03</span>
+            <h2
+              className="mt-6 font-heading text-cream"
+              style={{
+                fontSize: "clamp(2.5rem, 6vw, 5.5rem)",
+                lineHeight: 0.9,
+                letterSpacing: "-0.03em",
+              }}
+            >
+              Ready to get started?
+            </h2>
+            <p className="mt-8 text-cream/85 text-lg max-w-xl">
+              Every event is unique, and we love a creative challenge.
+              Let&apos;s work together to plan, style, and bring your vision
+              to life.
+            </p>
+            <div className="mt-10">
+              <Link
+                href="/contact"
+                className="btn-fluid btn-fluid-gold"
+                data-cursor-label="GET STARTED"
+              >
+                Let&apos;s get started →
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
     </div>
