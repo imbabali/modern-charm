@@ -4,6 +4,18 @@ import { useEffect, useState } from "react";
 
 const STORAGE_KEY = "mc-intro-seen";
 
+type Phase = "intro" | "fading" | "gone";
+
+function readInitialPhase(): Phase {
+  if (typeof window === "undefined") return "gone";
+  try {
+    if (window.sessionStorage.getItem(STORAGE_KEY)) return "gone";
+  } catch {
+    // sessionStorage blocked — still show intro
+  }
+  return "intro";
+}
+
 /**
  * First-visit brand intro — rotates the MC monogram 315° over 1.5s,
  * then fades the overlay out. Gated by sessionStorage so it only plays
@@ -13,26 +25,14 @@ const STORAGE_KEY = "mc-intro-seen";
  * 300ms fade instead.
  */
 export default function LoadingIntro() {
-  const [phase, setPhase] = useState<"hidden" | "intro" | "fading" | "gone">("hidden");
+  // Lazy initial state avoids setState-in-effect and prevents the intro
+  // flashing on repeat visits (it's already "gone" at first render).
+  const [phase, setPhase] = useState<Phase>(readInitialPhase);
 
   useEffect(() => {
-    if (typeof window === "undefined") return;
-
-    let shouldShow = true;
-    try {
-      if (sessionStorage.getItem(STORAGE_KEY)) shouldShow = false;
-    } catch {
-      // sessionStorage blocked (private mode / embedded) — still show intro
-    }
-
-    if (!shouldShow) {
-      setPhase("gone");
-      return;
-    }
+    if (phase !== "intro") return;
 
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    setPhase("intro");
-
     const holdMs = reduce ? 200 : 1600;
     const fadeMs = reduce ? 200 : 600;
 
@@ -40,7 +40,7 @@ export default function LoadingIntro() {
     const goneTimer = window.setTimeout(() => {
       setPhase("gone");
       try {
-        sessionStorage.setItem(STORAGE_KEY, "1");
+        window.sessionStorage.setItem(STORAGE_KEY, "1");
       } catch {
         // ignore
       }
@@ -50,6 +50,9 @@ export default function LoadingIntro() {
       window.clearTimeout(fadeTimer);
       window.clearTimeout(goneTimer);
     };
+    // Only depends on the initial phase; subsequent setPhase calls inside
+    // the effect are expected transitions.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (phase === "gone") return null;

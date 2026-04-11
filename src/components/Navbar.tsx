@@ -30,8 +30,10 @@ export default function Navbar() {
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
 
-  // Close on route change
+  // Close on route change. This is the textbook "synchronise UI state with
+  // external navigation" effect — the lint rule is intentionally disabled.
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsMenuOpen(false);
   }, [pathname]);
 

@@ -300,3 +300,15 @@ src/
 - **2026-03-30**: Structured API logging — added console.error/warn/info with [contact]/[newsletter] prefixes to both API routes (replacing silent catch blocks)
 - **2026-03-30**: Staging branch created and pushed to GitHub (Vercel auto-creates preview deployments)
 - **2026-03-30**: Sentry project created on sentry.io (im-advisory/awwf) — DSN env vars not yet set on Vercel (requires interactive CLI login)
+- **2026-04-11**: **Fluid Glass rework** (inspired by fluid.glass — architectural minimal glassmorphism). On staging branch.
+  - Design tokens: added `--color-near-black` (#0F1513), `--color-dark-teal` (#1A2F2A), `--color-ink` (#0B1012), glass variables, JetBrains Mono family, easing curves. Tightened h1/h2 tracking from 0.025em → -0.02em.
+  - New utilities in globals.css: `.glass-pill`, `.glass-card`, `.glass-card-teal`, `.label-mono`, `.label-mono-sm`, `.h-display`, `.section-pin`, `.line-mask`, `.btn-fluid-*` (dark/gold/glass/outline/alpha), `.hairline`, `.bg-near-black`, `.bg-dark-teal`, `.bg-ink`.
+  - **Motion layer**: `SmoothScroll.tsx` wraps content in Lenis (v1.3.21, `anchors: true`), `CustomCursor.tsx` (desktop-only pill cursor with `data-cursor-label` API), `LoadingIntro.tsx` (sessionStorage-gated MC monogram intro, 1.5s rotate + 600ms fade). All respect `prefers-reduced-motion`.
+  - **Navbar**: floating bottom-center glass pill on desktop (4 primary links + overflow), top glass bar + full-screen overlay menu on mobile. `data-cursor-label` on every link.
+  - **Footer**: full-width near-black with masked "MODERN CHARM" wordmark backdrop, 4-column editorial grid (Brand / Navigate / Services / Stay Inspired). Bottom padding clears floating nav.
+  - **All 10 pages restyled** with cream → dark-teal → near-black section progression, editorial `clamp()` headlines, mono labels ("Services / 03"), sharp corners everywhere. Data, metadata, JSON-LD (EventPlanning, LocalBusiness, Service, Article, FAQPage, Review+AggregateRating, BreadcrumbList) preserved exactly.
+  - **Components restyled**: PortfolioGrid, PortfolioCarousel (4:5 cards, mono tags, glass filter tabs), ContactContent (editorial floating-label form), FAQContent (Plus/Minus glass accordion), NewsletterForm (dark-bg variant), CookieConsent (glass-pill at bottom-left), WhatsAppButton (glass pill), ClientLogos (mono treatment), AnimateOnScroll (new `variant="line-mask"` for line reveals).
+  - **Cleanup**: removed orphaned `@vercel/blob` from package.json (unused since R2 migration).
+  - **Tests**: all 39 vitest tests still pass. PortfolioGrid photo-count test updated to use text match instead of brittle CSS class selector.
+  - **Lint**: two intentional eslint-disables — `react-hooks/set-state-in-effect` on Navbar pathname→close effect (textbook sync), and `@next/next/no-html-link-for-pages` on `<a href="/">` in global-error.tsx (Link unavailable outside layout tree).
+  - **Build**: passes clean. 37 static pages generated. Deployed to `staging` branch.

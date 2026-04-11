@@ -3,24 +3,34 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 
+function readInitialDismissed(): boolean {
+  if (typeof window === "undefined") return true; // SSR: render nothing
+  try {
+    return window.localStorage.getItem("cookie-consent") === "accepted";
+  } catch {
+    return false;
+  }
+}
+
 export default function CookieConsent() {
+  // Lazy initial state — avoids setState-in-effect on hydration
+  const [dismissed, setDismissed] = useState<boolean>(readInitialDismissed);
   const [visible, setVisible] = useState(false);
-  const [dismissed, setDismissed] = useState(false);
 
   useEffect(() => {
-    const consent = localStorage.getItem("cookie-consent");
-    if (consent !== "accepted") {
-      const timer = setTimeout(() => setVisible(true), 800);
-      return () => clearTimeout(timer);
-    } else {
-      setDismissed(true);
-    }
-  }, []);
+    if (dismissed) return;
+    const timer = window.setTimeout(() => setVisible(true), 800);
+    return () => window.clearTimeout(timer);
+  }, [dismissed]);
 
   const handleAccept = () => {
-    localStorage.setItem("cookie-consent", "accepted");
+    try {
+      window.localStorage.setItem("cookie-consent", "accepted");
+    } catch {
+      // ignore
+    }
     setVisible(false);
-    setTimeout(() => setDismissed(true), 400);
+    window.setTimeout(() => setDismissed(true), 400);
   };
 
   if (dismissed) return null;
