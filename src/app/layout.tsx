@@ -1,10 +1,13 @@
 import type { Metadata, Viewport } from "next";
-import { Playfair_Display, Inter } from "next/font/google";
+import { Playfair_Display, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import CookieConsent from "@/components/CookieConsent";
+import SmoothScroll from "@/components/SmoothScroll";
+import CustomCursor from "@/components/CustomCursor";
+import LoadingIntro from "@/components/LoadingIntro";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
@@ -20,6 +23,13 @@ const inter = Inter({
   subsets: ["latin"],
   display: "swap",
   weight: ["400", "500", "600", "700"],
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["400", "500", "600"],
 });
 
 export const metadata: Metadata = {
@@ -98,17 +108,21 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://pub-9b4e0ecb8d0044128690526d6078afd6.r2.dev" />
       </head>
       <body
-        className={`${playfairDisplay.variable} ${inter.variable} antialiased`}
+        className={`${playfairDisplay.variable} ${inter.variable} ${jetbrainsMono.variable} antialiased`}
       >
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-lg focus:bg-primary focus:px-4 focus:py-2 focus:text-white focus:shadow-lg"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-near-black focus:px-4 focus:py-2 focus:text-cream focus:label-mono"
         >
           Skip to main content
         </a>
-        <Navbar />
-        <main id="main-content" className="min-h-screen">{children}</main>
-        <Footer />
+        <LoadingIntro />
+        <SmoothScroll>
+          <Navbar />
+          <main id="main-content" className="min-h-screen">{children}</main>
+          <Footer />
+        </SmoothScroll>
+        <CustomCursor />
         <WhatsAppButton />
         <CookieConsent />
         <script
