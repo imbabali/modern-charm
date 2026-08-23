@@ -8,3 +8,7 @@ Sentry.init({
   environment: process.env.NODE_ENV,
   enabled: process.env.NODE_ENV === "production",
 });
+
+/* Reports App Router client-side navigations so browser errors carry the
+   route that produced them. */
+export const onRouterTransitionStart = Sentry.captureRouterTransitionStart;

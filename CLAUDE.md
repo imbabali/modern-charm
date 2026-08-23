@@ -4,7 +4,7 @@
 Website for **Modern Charm Limited** (@moderncharm_events) — a premier event management company based in Kampala, Uganda. Tagline: *"Some are born with it, others work for it! Then there's us, the ones who make charm happen!"*
 
 ## Live URLs
-- **Production**: https://moderncharmevents.com (custom domain; Vercel also serves at modern-charm.vercel.app)
+- **Production**: https://moderncharmevents.com (custom domain; `www` also serves). `modern-charm.vercel.app` returns 404 and has never been a project domain — the Vercel-issued hosts are `modern-charm-ismail-mbabalis-projects.vercel.app` and `modern-charm-git-main-ismail-mbabalis-projects.vercel.app`
 - **GitHub**: https://github.com/imbabali/modern-charm
 - **Instagram**: https://www.instagram.com/moderncharm_events/
 
@@ -13,7 +13,7 @@ Website for **Modern Charm Limited** (@moderncharm_events) — a premier event m
 - **Styling**: Tailwind CSS v4 (CSS-based config, no tailwind.config.ts)
 - **Language**: TypeScript
 - **Icons**: lucide-react
-- **Fonts**: Playfair Display (headings) + Inter (body) via next/font/google
+- **Fonts**: Playfair Display (headings) + Inter (body) + JetBrains Mono (mono labels) via next/font/google
 - **Deployment**: Vercel (auto-deploys on push to main)
 - **Package Manager**: npm
 
@@ -36,6 +36,7 @@ Website for **Modern Charm Limited** (@moderncharm_events) — a premier event m
 ### Typography
 - **Headings**: Playfair Display (serif) — `font-heading`
 - **Body**: Inter (sans-serif) — `font-body`
+- **Mono labels**: JetBrains Mono — `font-mono`, used by the `.label-mono` utilities
 
 ### Logo
 - MC monogram in gold/copper on black background
@@ -79,7 +80,7 @@ src/
     ClientLogos.tsx     # SVG text-based client logos
     PortfolioCarousel.tsx # Infinite scrolling marquee
   data/
-    portfolio-events.ts # 12 event galleries with categories (planning/styling)
+    portfolio-events.ts # 12 event galleries — 8 planning, 4 styling
     blog-posts.ts       # 7 blog posts with heroImages arrays
   lib/
     cdn.ts              # Cloudflare R2 CDN base URL
@@ -94,9 +95,25 @@ src/
 
 ### Error Tracking
 - **Sentry**: @sentry/nextjs with client/server/edge configs
-- **Config files**: `sentry.client.config.ts`, `sentry.server.config.ts`, `sentry.edge.config.ts`, `instrumentation.ts` (project root)
+- **Config files**: `instrumentation-client.ts`, `sentry.server.config.ts`, `sentry.edge.config.ts`, `instrumentation.ts` (all project root)
 - **Error capture**: error.tsx + global-error.tsx call `Sentry.captureException`
-- **Status**: DSN env vars not yet set on Vercel (Sentry project: im-advisory/awwf)
+- **Status**: wired but dark until a DSN is supplied. Client init lives in `instrumentation-client.ts` (loaded automatically by Next.js) and `instrumentation.ts` exports `onRequestError`, so client and server errors both have a path to Sentry once `NEXT_PUBLIC_SENTRY_DSN` is set. The documented project `im-advisory/awwf` belongs to a different product
+
+### Environment Variables
+Declared in code at `src/lib/env.ts`; documented for new developers in `.env.example`.
+Source of truth is the Vercel project — pull with `vercel env pull .env.local`.
+
+| Variable | Required | Environments | Feature it gates |
+|---|---|---|---|
+| `RESEND_API_KEY` | Yes | Production, Preview, Development | Contact form and newsletter |
+| `RESEND_AUDIENCE_ID` | No | Production, Preview, Development | Adding signups to the mailing list |
+| `NEXT_PUBLIC_SENTRY_DSN` | No | *not set* | Error reporting |
+| `SENTRY_ORG` | No | *not set* | Source map upload at build |
+| `SENTRY_PROJECT` | No | *not set* | Source map upload at build |
+| `SENTRY_AUTH_TOKEN` | No | *not set* | Source map upload at build |
+
+`requireEnv()` throws a message naming the broken feature and the `vercel env add`
+command that fixes it; `optionalEnv()` returns undefined so callers degrade instead.
 
 ## Design Inspiration
 - **Qrated Event Dubai** — Gold accents, stats section, luxury layout
@@ -312,3 +329,20 @@ src/
   - **Tests**: all 39 vitest tests still pass. PortfolioGrid photo-count test updated to use text match instead of brittle CSS class selector.
   - **Lint**: two intentional eslint-disables — `react-hooks/set-state-in-effect` on Navbar pathname→close effect (textbook sync), and `@next/next/no-html-link-for-pages` on `<a href="/">` in global-error.tsx (Link unavailable outside layout tree).
   - **Build**: passes clean. 37 static pages generated. Deployed to `staging` branch.
+- **2026-08-23**: Favicon rebuilt from the monogram. The old icon set was the full logo lock-up (monogram + two-line wordmark) scaled into a square, so at 32px it rendered as an indistinct copper blob over two grey bars and at 16px had no recoverable form.
+  - Monogram redrawn as vector, geometry measured off `public/images/logo-gold.jpg`: two concentric rings sharing one centre, `R_inner = 2/3 R_outer`, stroke `R/8`, outer arcs opening 34.6° either side of top and 44° either side of bottom, mitred peaks, a flat-cut V, and an inner ring broken between 27.9° and 113.3° clockwise from top (the C).
+  - **Two drawings, one mark**: 48px and above carry the full three-element monogram; 32px and below carry the M alone at 1.45× stroke, because the inner ring collides with the V below 48px. The `.ico` holds a different drawing per resolution (16, 32, 48).
+  - Colourway is the lock-up's own — near-black `#0F1513` field, gold `#C4915C` mark.
+  - New assets: `public/icons/icon.svg` (vector master), `public/icons/maskable-512x512.png` (Android adaptive; the manifest previously declared none, so Android cropped a square icon and clipped the mark). Replaced `favicon.ico` (both copies), `apple-touch-icon.png`, both `favicon-*.png` and both `icon-*.png`.
+  - `metadata.icons` in layout.tsx no longer repeats `/favicon.ico` — the App Router file convention emits it from `src/app/favicon.ico` automatically, and declaring it twice produced duplicate `<link>` tags.
+- **2026-08-23**: Vercel environment cleanup.
+  - **Deleted the orphaned Vercel Blob storage.** `BLOB_READ_WRITE_TOKEN` was still injected into Production and Preview, and the store `modern-charm-videos` (`store_6jbLCDD6pq0sUC42`) was still Active with 18 files / 85.66 MB, 179 days after the migration to Cloudflare R2 removed `@vercel/blob` from the project. Nothing read either. All 18 blobs were archived first to `modern-charm-assets/videos/vercel-blob-archive/` (outside the repo), then the variable was removed and both stores deleted — a second, empty duplicate store `store_utntpCxKU6fzxkzm` also existed.
+  - **Resend keys extended to Preview and Development.** They had been Production-only, so `/api/contact` and `/api/newsletter` threw on every preview and staging deployment and could not be exercised by `npm run dev`.
+  - **Sentry wiring corrected.** `sentry.client.config.ts` was imported by no file, so browser errors could never reach Sentry even with a DSN set; renamed to `instrumentation-client.ts`, which Next.js loads automatically, and it now also exports `onRouterTransitionStart`. `instrumentation.ts` now exports `onRequestError = Sentry.captureRequestError`, without which Server Component and route-handler errors go unreported. Still dark until a DSN is supplied.
+  - Added `src/lib/env.ts` and `.env.example`; both API routes now read Resend config through it instead of duplicating an inline check.
+  - `next.config.ts`: dropped the deprecated `disableLogger` (it warned twice on every production build and its replacement is unsupported under Turbopack), added `authToken`, and gated source-map upload on that token so credential-less builds stay warning-free.
+- **2026-08-23**: Full app audit (`ismail-app-audit`, full mode) at commit `82429e8` — **74.7%** weighted, zero P0 and zero P1 failures, but below the 80% release bar. State written to `.mbaba-audit/last-run.json` (gitignored). Corrected three claims in this file that the code contradicted: the portfolio split is 8 planning / 4 styling (not 7/5), three Google fonts load (not two), and `modern-charm.vercel.app` returns 404.
+
+## Obsidian command center (vault mirror)
+
+This project is represented in a cross-project Obsidian vault (the "command center") at `~/Downloads/mbabas-projects/_command-center`, a sibling of the `modern-charm` folder under `mbabas-projects`. The vault holds `Projects/modern-charm.md` (the project hub) and an area note at `Areas/Software Portfolio`. The vault is a read and coordination layer; the work here stays the source of truth. When something material changes, update the hub note or ask Claude to.

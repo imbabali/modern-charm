@@ -1,11 +1,9 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
+import { optionalEnv, requireEnv } from "@/lib/env";
 
 function getResend() {
-  if (!process.env.RESEND_API_KEY) {
-    throw new Error("RESEND_API_KEY environment variable is not set");
-  }
-  return new Resend(process.env.RESEND_API_KEY);
+  return new Resend(requireEnv("RESEND_API_KEY"));
 }
 
 /* ── Simple in-memory rate limiter (per-IP, 3 requests/hour) ── */
@@ -62,7 +60,7 @@ export async function POST(request: Request) {
     }
 
     // If RESEND_AUDIENCE_ID is set, add to audience
-    const audienceId = process.env.RESEND_AUDIENCE_ID;
+    const audienceId = optionalEnv("RESEND_AUDIENCE_ID");
     if (audienceId) {
       await resend.contacts.create({
         email,
