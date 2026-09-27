@@ -1,3 +1,5 @@
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
 import { ImageResponse } from "next/og";
 import { getInviteByToken } from "@/lib/invites/queries";
 import { invitesConfigured } from "@/lib/invites/db";
@@ -20,8 +22,22 @@ export const alt = "Wedding invitation";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
+/**
+ * Satori ships no system fonts, so an unembedded family falls back to a
+ * generic sans and `fontStyle: "italic"` is dropped without warning. These two
+ * faces are static instances subset to Latin, read server-side only, so they
+ * never count against the guest's page budget.
+ */
+const FONT_DIR = join(process.cwd(), "public", "fonts", "invite");
+
+const fonts = Promise.all([
+  readFile(join(FONT_DIR, "CormorantGaramond-Regular.ttf")),
+  readFile(join(FONT_DIR, "CormorantGaramond-LightItalic.ttf")),
+]);
+
 export default async function Image({ params }: { params: Promise<{ token: string }> }) {
   const { token } = await params;
+  const [regular, lightItalic] = await fonts;
 
   const bundle =
     invitesConfigured() && isWellFormedToken(token) ? await getInviteByToken(token) : null;
@@ -57,7 +73,7 @@ export default async function Image({ params }: { params: Promise<{ token: strin
           justifyContent: "center",
           background: theme.paper,
           color: theme.ink,
-          fontFamily: "Georgia, serif",
+          fontFamily: "Cormorant Garamond",
           position: "relative",
         }}
       >
@@ -138,6 +154,12 @@ export default async function Image({ params }: { params: Promise<{ token: strin
         ) : null}
       </div>
     ),
-    size,
+    {
+      ...size,
+      fonts: [
+        { name: "Cormorant Garamond", data: regular, weight: 400, style: "normal" },
+        { name: "Cormorant Garamond", data: lightItalic, weight: 400, style: "italic" },
+      ],
+    },
   );
 }
