@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { checkInGuest, getEventByScannerToken } from "@/lib/invites/queries";
+import { checkIn } from "@/lib/invites/queries";
 import { invitesConfigured } from "@/lib/invites/db";
 import { isWellFormedToken } from "@/lib/invites/tokens";
 
@@ -24,16 +24,15 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "That code was not recognised." }, { status: 400 });
     }
 
-    const event = await getEventByScannerToken(scannerToken);
-    if (!event) {
+    const result = await checkIn({
+      scannerToken,
+      guestToken,
+      scannedBy: typeof scannedBy === "string" ? scannedBy.slice(0, 80) : null,
+    });
+
+    if (result.status === "unauthorised") {
       return NextResponse.json({ error: "This scanner link is not valid." }, { status: 403 });
     }
-
-    const result = await checkInGuest({
-      eventId: event.id,
-      guestToken,
-      scannedBy: typeof scannedBy === "string" && scannedBy.trim() ? scannedBy.trim().slice(0, 80) : null,
-    });
 
     return NextResponse.json(result);
   } catch (error) {

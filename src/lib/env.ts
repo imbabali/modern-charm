@@ -47,7 +47,7 @@ export const ENV_VARS = {
     required: false,
     feature: "Personalised e-invites, RSVP capture and door check-in",
   },
-  SUPABASE_SERVICE_ROLE_KEY: {
+  SUPABASE_PUBLISHABLE_KEY: {
     required: false,
     feature: "Personalised e-invites, RSVP capture and door check-in",
   },

@@ -65,6 +65,44 @@ export interface InviteBundle {
   rsvp: Rsvp | null;
 }
 
+export interface BoardRow {
+  display_name: string;
+  group_label: string | null;
+  seats: number;
+  attending: boolean | null;
+  seats_confirmed: number | null;
+  responded_at: string | null;
+  checked_in_seats: number;
+}
+
+export interface BoardData {
+  event: InviteEvent;
+  rows: BoardRow[];
+  totals: {
+    invitations: number;
+    seatsOffered: number;
+    accepted: number;
+    declined: number;
+    pending: number;
+    seatsConfirmed: number;
+    seatsCheckedIn: number;
+  };
+}
+
+export interface CheckInResult {
+  status:
+    | "admitted"
+    | "already-admitted"
+    | "not-attending"
+    | "no-response"
+    | "unknown-guest"
+    | "unauthorised";
+  guestName?: string;
+  seatsAdmitted?: number;
+  seatsConfirmed?: number;
+  previouslyAdmitted?: number;
+}
+
 /** Palette used when an event has not overridden a colour. */
 export const DEFAULT_THEME: EventTheme = {
   paper: "#FBF7F0",

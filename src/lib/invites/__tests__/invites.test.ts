@@ -1,6 +1,5 @@
 import { describe, expect, it } from "vitest";
 import { createToken, hashToken, isWellFormedToken, safeEquals } from "../tokens";
-import { clampSeats } from "../rsvp-rules";
 import { resolveTheme, DEFAULT_THEME } from "../types";
 
 describe("invitation tokens", () => {
@@ -46,30 +45,6 @@ describe("invitation tokens", () => {
     expect(safeEquals(token, token)).toBe(true);
     expect(safeEquals(token, createToken())).toBe(false);
     expect(safeEquals(token, token.slice(0, 10))).toBe(false);
-  });
-});
-
-describe("seat confirmation", () => {
-  it("confirms what a guest asks for when it is within their allowance", () => {
-    expect(clampSeats({ attending: true, requested: 2, allowed: 4 })).toBe(2);
-  });
-
-  it("never confirms more seats than the guest was given", () => {
-    expect(clampSeats({ attending: true, requested: 99, allowed: 2 })).toBe(2);
-  });
-
-  it("confirms no seats for a guest who declines", () => {
-    expect(clampSeats({ attending: false, requested: 5, allowed: 5 })).toBe(0);
-  });
-
-  it("falls back to one seat when the number makes no sense", () => {
-    for (const bad of [0, -3, NaN, "abc", null, undefined]) {
-      expect(clampSeats({ attending: true, requested: bad, allowed: 4 })).toBe(1);
-    }
-  });
-
-  it("truncates a fractional request rather than rounding up", () => {
-    expect(clampSeats({ attending: true, requested: 2.9, allowed: 4 })).toBe(2);
   });
 });
 

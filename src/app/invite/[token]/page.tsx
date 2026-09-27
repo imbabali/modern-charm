@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import InviteExperience from "@/components/invite/InviteExperience";
+import InvitePlainText from "@/components/invite/InvitePlainText";
 import { getInviteByToken } from "@/lib/invites/queries";
 import { invitesConfigured } from "@/lib/invites/db";
 import { isWellFormedToken } from "@/lib/invites/tokens";
@@ -50,5 +51,18 @@ export default async function InvitePage({ params }: InvitePageProps) {
 
   if (!bundle) notFound();
 
-  return <InviteExperience bundle={bundle} token={token} />;
+  return (
+    <>
+      <InviteExperience bundle={bundle} token={token} />
+      {/*
+        The paged experience begins on a sealed envelope, so without JavaScript
+        a guest would be left holding an envelope that never opens. This renders
+        the same details as plain markup for that case, and for a screen reader
+        that would rather read the invitation than operate it.
+      */}
+      <noscript>
+        <InvitePlainText bundle={bundle} token={token} />
+      </noscript>
+    </>
+  );
 }

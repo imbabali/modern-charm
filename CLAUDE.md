@@ -381,9 +381,21 @@ is what lets the preview render the recipient's name before they tap.
 
 Postgres on Supabase, project `modern-charm-invites` in eu-west-1. Six tables: `events`,
 `event_moments`, `guests`, `rsvps`, `rsvp_log`, `checkins`. Row Level Security is enabled on every
-table with no policy granted, so `anon` and publishable keys read nothing. Every read and write runs
-server-side under the service role. `src/lib/invites/db.ts` must never be imported by a client
-component.
+table with **no policy granted**, so no key reads a table directly.
+
+**There is no service role key in this application.** The only door is five `security definer`
+functions — `invite_get`, `invite_rsvp`, `invite_board`, `invite_checkin`, `invite_scanner_event`.
+Each takes a raw bearer token, hashes it inside the database, and returns only the rows that token
+owns. The app therefore authenticates with the publishable key, which on its own reads nothing: a
+caller still needs a 128-bit token. A leaked publishable key is worthless; a leaked service role key
+would have been total compromise.
+
+The raw token is hashed in SQL rather than by the caller. Passing a hash instead would mean a
+database disclosure yielded working credentials, which is the exact property storing hashes buys.
+
+Seat clamping and repeat-scan handling live in those functions, not in TypeScript, because the
+database is the only place a rule about the headcount cannot be bypassed. `src/lib/invites/db.ts` is
+still server-only.
 
 Guest links, board links and scanner links are bearer tokens: 16 random bytes, base64url, with only
 the SHA-256 hash stored. Seat counts are clamped server-side against the guest's allowance, so the
@@ -405,7 +417,7 @@ node scripts/invite-guests.mjs --event <slug> --in <guests.csv> --out <links.csv
 Input needs a `name` column; `seats`, `group` and `phone` are optional. Re-running skips guests
 already on the list, so a partial run resumes safely.
 
-Requires `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY`. Both are optional in `src/lib/env.ts`, so
+Requires `SUPABASE_URL` and `SUPABASE_PUBLISHABLE_KEY`. Both are optional in `src/lib/env.ts`, so
 the marketing site serves normally without them while the invite routes return not-found.
 
 ## Obsidian command center (vault mirror)

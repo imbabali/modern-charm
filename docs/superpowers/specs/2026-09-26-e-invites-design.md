@@ -35,9 +35,14 @@ The invite runs inside the existing Next.js application and deploys with it. No 
 /api/checkin                     records an admission
 ```
 
-Guests never reach the database. Every read and write passes through a route handler holding the
-service role key. Row Level Security is enabled and forced on every table with no policy granted to
-`anon` or `authenticated`, so a leaked publishable key yields nothing.
+Guests never reach the database. Row Level Security is enabled on every table with no policy
+granted, so no key reads a table directly. Access runs through five `security definer` functions,
+each of which takes a raw bearer token, hashes it in SQL, and returns only the rows that token owns.
+
+No service role key exists in the application. The publishable key alone reads nothing, because a
+caller still needs a 128-bit token, so the blast radius of losing that key is zero. Seat clamping
+and repeat-scan handling live in those functions rather than in TypeScript, since the database is
+the only place a rule about the headcount cannot be bypassed.
 
 ### Why the token sits in the path
 
@@ -95,6 +100,7 @@ exports a per-guest link ready to paste into WhatsApp.
 
 ## Verification
 
-Route handler validation is unit tested alongside the existing contact and newsletter tests.
-Token hashing, seat clamping, and CSV import are tested directly. The share preview is measured in
+Token issuance, rejection of malformed tokens, and theme resolution are unit tested alongside the
+existing contact and newsletter tests. Seat clamping is verified against the database function that
+enforces it, not against a TypeScript copy that nothing calls. The share preview is measured in
 bytes against the 300 KB ceiling rather than assumed.

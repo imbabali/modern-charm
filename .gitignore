@@ -56,3 +56,6 @@ WeBsite content -20260226T020032Z-3-001.zip
 /guest-lists/
 *.guests.csv
 *.links.csv
+
+# operational tokens for live events — never committed
+/.invite-secrets/

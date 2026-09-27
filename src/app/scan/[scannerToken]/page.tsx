@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import ScannerConsole from "@/components/invite/ScannerConsole";
-import { getEventByScannerToken } from "@/lib/invites/queries";
+import { getScannerEvent } from "@/lib/invites/queries";
 import { invitesConfigured } from "@/lib/invites/db";
 import { isWellFormedToken } from "@/lib/invites/tokens";
 
@@ -21,13 +21,13 @@ export default async function ScanPage({ params }: ScanPageProps) {
 
   if (!invitesConfigured() || !isWellFormedToken(scannerToken)) notFound();
 
-  const event = await getEventByScannerToken(scannerToken);
-  if (!event) notFound();
+  const scanner = await getScannerEvent(scannerToken);
+  if (!scanner) notFound();
 
   return (
     <ScannerConsole
       scannerToken={scannerToken}
-      coupleLine={`${event.couple_a_name} & ${event.couple_b_name}`}
+      coupleLine={scanner.coupleLine}
     />
   );
 }

@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getInviteByToken, recordRsvp } from "@/lib/invites/queries";
+import { recordRsvp } from "@/lib/invites/queries";
 import { invitesConfigured } from "@/lib/invites/db";
 import { isWellFormedToken } from "@/lib/invites/tokens";
 
@@ -66,25 +66,27 @@ export async function POST(request: Request) {
       );
     }
 
-    // The token is the credential. Resolving it server-side is what stops a
-    // guest confirming more seats than they were given, or answering for
-    // somebody else, whatever the client sent.
-    const bundle = await getInviteByToken(token);
-    if (!bundle) {
-      return NextResponse.json({ error: "This invitation link is not valid." }, { status: 404 });
-    }
-
-    const { seatsConfirmed } = await recordRsvp({
-      guestId: bundle.guest.id,
-      eventId: bundle.event.id,
-      seatsAllowed: bundle.guest.seats,
+    // The token is the credential, and the database is what enforces the
+    // seat limit. Whatever the client sends, invite_rsvp clamps to the seats
+    // this guest was actually offered and returns what it committed to.
+    const result = await recordRsvp({
+      token,
       attending,
-      seatsRequested: typeof seats === "number" ? seats : 1,
+      seats: typeof seats === "number" ? seats : 1,
       message: typeof message === "string" && message.trim() ? message.trim() : null,
     });
 
-    console.info("[rsvp] Recorded response for event", bundle.event.slug);
-    return NextResponse.json({ success: true, seatsConfirmed });
+    if (!result.ok) {
+      const status = result.reason === "closed" ? 409 : 404;
+      const error =
+        result.reason === "closed"
+          ? "Responses for this celebration are closed."
+          : "This invitation link is not valid.";
+      return NextResponse.json({ error }, { status });
+    }
+
+    console.info("[rsvp] Recorded a response");
+    return NextResponse.json({ success: true, seatsConfirmed: result.seatsConfirmed });
   } catch (error) {
     console.error("[rsvp] Failed to record response:", error instanceof Error ? error.message : error);
     return NextResponse.json(
