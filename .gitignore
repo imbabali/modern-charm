@@ -51,3 +51,8 @@ WeBsite content -20260226T020032Z-3-001.zip
 
 # audit state
 .mbaba-audit/
+
+# guest lists and generated invitation links — personal data, never committed
+/guest-lists/
+*.guests.csv
+*.links.csv

@@ -352,6 +352,62 @@ command that fixes it; `optionalEnv()` returns undefined so callers degrade inst
   - `npm audit` reports 27 advisories (1 critical, 11 high, 14 moderate) against an unchanged lockfile, up from 22 in August.
   - **Searching this folder needs filters.** The media under `public/` and the sibling `modern-charm-assets/` is iCloud-evicted, so an unfiltered `grep -r` or `rg` stalls while iCloud fetches roughly 1.5 GB. Use extension globs plus `--exclude-dir={node_modules,.git,.next,.wrangler}`.
 
+## Personalised e-invites
+
+A multi-tenant digital invitation product. One celebration is a row in `events`, not a branch, so a
+second client is data entry rather than a deploy. The first event is a December 2026 wedding.
+
+### Routes
+
+| Route | Purpose |
+|---|---|
+| `/invite/[token]` | The guest's invitation. Envelope, paged scenes, RSVP. |
+| `/invite/[token]/opengraph-image` | Share preview carrying that guest's own name. |
+| `/invite/[token]/pass` | QR admission pass, issued only after acceptance. |
+| `/invite/[token]/calendar` | `.ics` download. |
+| `/rsvp-board/[boardToken]` | Host's read-only live RSVP view. |
+| `/scan/[scannerToken]` | Door check-in for stewards. |
+| `/api/rsvp`, `/api/checkin` | Write paths. |
+
+All six pages are `force-dynamic`, carry `noindex`, and are disallowed in `robots.ts`.
+
+### Why the token is in the path, not a query string
+
+Open Graph metadata resolves per route segment and cannot read a query string. A query-based
+invitation therefore shows every guest an identical WhatsApp preview. Putting the token in the path
+is what lets the preview render the recipient's name before they tap.
+
+### Data and access
+
+Postgres on Supabase, project `modern-charm-invites` in eu-west-1. Six tables: `events`,
+`event_moments`, `guests`, `rsvps`, `rsvp_log`, `checkins`. Row Level Security is enabled on every
+table with no policy granted, so `anon` and publishable keys read nothing. Every read and write runs
+server-side under the service role. `src/lib/invites/db.ts` must never be imported by a client
+component.
+
+Guest links, board links and scanner links are bearer tokens: 16 random bytes, base64url, with only
+the SHA-256 hash stored. Seat counts are clamped server-side against the guest's allowance, so the
+client cannot inflate a headcount. A repeat door scan reports the earlier admission instead of
+admitting twice.
+
+### Personal data
+
+Guest names and telephone numbers are personal data under Uganda's Data Protection and Privacy Act
+2019, and this repository is public. No couple or guest content belongs in the tree. Guest lists and
+generated link files are gitignored; keep both outside the repository.
+
+### Operating it
+
+```
+node scripts/invite-guests.mjs --event <slug> --in <guests.csv> --out <links.csv>
+```
+
+Input needs a `name` column; `seats`, `group` and `phone` are optional. Re-running skips guests
+already on the list, so a partial run resumes safely.
+
+Requires `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY`. Both are optional in `src/lib/env.ts`, so
+the marketing site serves normally without them while the invite routes return not-found.
+
 ## Obsidian command center (vault mirror)
 
 This project is represented in a cross-project Obsidian vault (the "command center") at `~/Documents/_command-center`, a sibling of the `modern-charm` folder under `~/Documents`. The vault holds `Projects/modern-charm.md` (the project hub) and an area note at `Areas/Software Portfolio`. The vault is a read and coordination layer; the work here stays the source of truth. When something material changes, update the hub note or ask Claude to.

@@ -43,6 +43,18 @@ export const ENV_VARS = {
     required: false,
     feature: "Source map upload at build time",
   },
+  SUPABASE_URL: {
+    required: false,
+    feature: "Personalised e-invites, RSVP capture and door check-in",
+  },
+  SUPABASE_SERVICE_ROLE_KEY: {
+    required: false,
+    feature: "Personalised e-invites, RSVP capture and door check-in",
+  },
+  INVITE_ADMIN_PASSCODE: {
+    required: false,
+    feature: "The e-invite administration screen",
+  },
 } as const satisfies Record<string, EnvSpec>;
 
 export type EnvVarName = keyof typeof ENV_VARS;
