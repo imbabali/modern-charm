@@ -420,6 +420,13 @@ already on the list, so a partial run resumes safely.
 Requires `SUPABASE_URL` and `SUPABASE_PUBLISHABLE_KEY`. Both are optional in `src/lib/env.ts`, so
 the marketing site serves normally without them while the invite routes return not-found.
 
+### Client overview
+
+A one-page client-facing PDF of the product sits outside this repository at
+`../Modern Charm Personalised E-Invites.pdf`. Its source is in `../e-invites-overview-source/`, and
+`e-invites.html` renders to PDF with headless Chrome. Keep both out of the tree, since the
+repository is public.
+
 ## Obsidian command center (vault mirror)
 
 This project is represented in a cross-project Obsidian vault (the "command center") at `~/Documents/_command-center`, a sibling of the `modern-charm` folder under `~/Documents`. The vault holds `Projects/modern-charm.md` (the project hub) and an area note at `Areas/Software Portfolio`. The vault is a read and coordination layer; the work here stays the source of truth. When something material changes, update the hub note or ask Claude to.
